@@ -1,3 +1,6 @@
+<?php
+    include('data.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,25 +11,53 @@
     <link rel="icon" href="../../../assets/Janus-Bee/1.logo.png">
 </head>
 <body>
-    <header class="site-header">
+    <nav class="nav-menu">
         <div class="logo-container">
             <a href="index.php?p=accueil">
                 <div class="logo-container-size">
                     <img src="../../../assets/Janus-Bee/1.logo.png" width="50" alt="logo-JB">
-                    <div>Janus-<span>Bee</span></div> 
+                    <div class="logo-text-part">Janus-<span>Bee</span></div> 
                 </div>  
             </a>
         </div>
-        <div class="menu-hamburger">
-            <span></span>
+        <div class="zone-recherche">
+            <form action="index.php?page=catalogue" method="GET">
+                <input type="search" id="recherche-input" name="texteRecherche" placeholder="Rechercher..." class="recherche-input" value="<?php
+                        if (isset($_GET["texteRecherche"])) {
+                            echo htmlspecialchars($_GET["texteRecherche"]);
+                        } else {
+                            echo '';
+                        }
+                    ?>">
+                <button type="submit" name="submit-recherche" class="recherche-bouton">
+                    <img src="../../../assets/loupe.png" alt="image loupe">
+                </button>
+            </form>
         </div>
-    </header>
-
-    <nav class="nav-menu">
+        <div class="catalogue-container">
+            <a href="index.php?p=catalogue">
+                <div class="catalogue-texte">
+                    Catalogue
+                </div>
+                <div class="catalogue-icone">
+                    <img src="../../../assets/catalogue.png" alt="icone catalogue">
+                </div>
+            </a>
+        </div>
     </nav>
 
     <main class="site-content">
-        <img src="../../../assets/construction.png" alt="image en construction" width="300">
+        <?php
+            if (isset($_GET['p'])) {
+                if(file_exists($_GET['p'].'.php'))
+                    include($_GET['p'].'.php');
+                else if (file_exists($_GET['p'].'.html'))
+                    include($_GET['p'].'.html');
+                else
+                    echo '<img src="../../../assets/construction.png" alt="image en construction" width="300">';
+                }
+            else include('accueil.php');
+        ?>
     </main>
     
     <footer class="site-footer">
@@ -52,5 +83,4 @@
         </div>
     </footer>
 </body>
-<script src="app.js"></script>
 </html>
