@@ -602,6 +602,29 @@
             "duree" => "119 minutes",
             "synopsis" => "Ren, un jeune garçon de neuf ans solitaire et fugueur, s'égare dans les rues de Shibuya et franchit par hasard une porte vers Jutengai, le monde des Bêtes. Il y rencontre Kumatetsu, une bête féroce et solitaire qui cherche un disciple pour prouver sa valeur et devenir le prochain Grand Maître. Malgré leurs caractères explosifs, l'homme-bête et l'enfant entament un entraînement mutuel qui va durer des années. Mais alors que Ren grandit, il doit faire face à son identité humaine et au vide qui ronge son cœur, menaçant de détruire les deux mondes."
         ),
+        array(
+            "titre" => "Mon Voisin Totoro",
+            "titres_alternatifs" => array(
+                "Tonari no Totoro",
+                "My Neighbor Totoro"
+            ),
+            "image" => "mon_voisin_totoro.jpg",
+            "types" => array(
+                "Film d'animation"
+            ),
+            "genres" => array(
+                "Aventure", 
+                "Drame", 
+                "Famille",
+                "Fantastique", 
+                "Surnaturel",
+                "Tranche de vie"
+            ),
+            "sortie" => "1988",
+            "status" => "Terminé",
+            "duree" => "86 minutes",
+            "synopsis" => "Dans le Japon des années 50, deux petites filles, Satsuki et sa sœur Mei, s'installent avec leur père dans une vieille maison à la campagne pour se rapprocher de l'hôpital où leur mère est soignée. Elles découvrent vite que la nature environnante est habitée par des créatures mystérieuses et invisibles aux yeux des adultes, notamment Totoro, un esprit de la forêt géant et protecteur. Ensemble, elles vont vivre un été magique entre l'attente impatiente de leur mère et la découverte des merveilles cachées de la forêt."
+        ),
         #Série live
         array(
             "titre" => "Breaking Bad",
@@ -706,6 +729,283 @@
             "duree" => "142 minutes",
             "synopsis" => "Assis sur un banc à Savannah, Forrest Gump raconte son incroyable destin aux passants. Bien que doté d'un quotient intellectuel inférieur à la moyenne, Forrest va, sans jamais vraiment s'en rendre compte, devenir un acteur clé des événements marquants des États-Unis entre les années 1950 et 1980. De la guerre du Vietnam aux mouvements hippies, de la rencontre avec Elvis Presley au scandale du Watergate, il traverse l'histoire avec une innocence désarmante, guidé par son amour inconditionnel pour son amie d'enfance, Jenny."
         ),
+        array(
+            "titre" => "Interstellar",
+            "image" => "interstellar.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action", 
+                "Aventure", 
+                "Drame", 
+                "Philosophie", 
+                "Psychologie", 
+                "Science-fiction", 
+                "Surnaturel",
+                "Thriller"
+            ),
+            "sortie" => "2014",
+            "status" => "Terminé",
+            "duree" => "169 minutes",
+            "synopsis" => "Dans un futur proche, la Terre est devenue hostile à l'humanité : des tempêtes de poussière ravagent les cultures et l'air devient irrespirable. Cooper, un ancien pilote de la NASA devenu agriculteur, est recruté pour une mission désespérée : piloter un vaisseau spatial à travers un trou de ver apparu près de Saturne. Son but est de trouver une nouvelle planète habitable parmi trois mondes potentiels. Mais ce voyage aux confins de l'espace et du temps l'oblige à laisser ses enfants derrière lui, affrontant la relativité temporelle où une heure sur une planète peut représenter des décennies sur Terre."
+        ),
+        array(
+            "titre" => "Into the Wild",
+            "titres_alternatifs" => array(
+                "Vers l'inconnu"
+            ),
+            "image" => "into_the_wild.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Aventure", 
+                "Drame", 
+                "Historique", 
+                "Philosophie", 
+                "Psychologie", 
+                "Tranche de vie"
+            ),
+            "sortie" => "2007",
+            "status" => "Terminé",
+            "duree" => "148 minutes",
+            "synopsis" => "Tout juste diplômé de l'université, Christopher McCandless, 22 ans, promet un avenir brillant. Pourtant, tournant le dos à la société de consommation et à une famille dysfonctionnelle, il décide de brûler ses papiers, donne ses économies à une œuvre caritative et part sur les routes sous le nom d'Alexander Supertramp. Son but ultime : l'Alaska, pour vivre en communion totale avec la nature sauvage. Au cours de son périple de deux ans, il fera des rencontres marquantes qui changeront sa vision du monde avant d'affronter l'épreuve finale de la solitude absolue."
+        ),
+        array(
+            "titre" => "I Origins",
+            "image" => "i_origins.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Drame", 
+                "Philosophie", 
+                "Psychologie", 
+                "Romance",
+                "Science-fiction", 
+                "Surnaturel",
+                "Thriller"
+            ),
+            "sortie" => "2014",
+            "status" => "Terminé",
+            "duree" => "113 minutes",
+            "synopsis" => "Ian Gray est un biologiste moléculaire spécialisé dans l'évolution de l'œil humain. Athée convaincu, il cherche à prouver scientifiquement que l'œil a évolué par lui-même, afin de réfuter l'idée d'une création divine. Sa vie bascule lorsqu'il rencontre Sofi, une jeune femme mystique dont il tombe éperdument amoureux malgré leurs visions opposées du monde. Des années après une tragédie, les recherches de Ian le mènent en Inde, où une découverte scientifique sur l'unicité de l'iris suggère que les âmes pourraient se réincarner d'un individu à l'autre."
+        ),
+        array(
+            "titre" => "The Irishman",
+            "titres_alternatifs" => array(
+                "L'Irlandais"
+            ),
+            "image" => "the_irishman.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action", 
+                "Combat", 
+                "Drame", 
+                "Historique", 
+                "Policier", 
+                "Politique", 
+                "Psychologie",
+                "Thriller"
+            ),
+            "sortie" => "2019",
+            "status" => "Terminé",
+            "duree" => "209 minutes",
+            "synopsis" => "Frank Sheeran, un ancien soldat de la Seconde Guerre mondiale devenu chauffeur de camion, fait la connaissance de Russell Bufalino, le chef d'une puissante famille mafieuse. Sheeran monte les échelons et devient un tueur à gages efficace, surnommé 'l'Irlandais'. Son parcours croise celui de Jimmy Hoffa, le charismatique et influent leader du syndicat des camionneurs, lié au crime organisé. Sur plusieurs décennies, le film suit l'implication de Sheeran dans les coulisses de la mafia, la disparition mystérieuse de Hoffa et le poids écrasant des regrets à l'hiver de sa vie."
+        ),
+        array(
+            "titre" => "Joker",
+            "image" => "joker.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action", 
+                "Combat", 
+                "Drame", 
+                "Policier", 
+                "Politique", 
+                "Psychologie", 
+                "Thriller"
+            ),
+            "sortie" => "2019",
+            "status" => "Terminé",
+            "duree" => "122 minutes",
+            "synopsis" => "Dans les années 80 à Gotham City, Arthur Fleck est un homme méprisé par la société. Humoriste raté travaillant comme clown de rue, il souffre de troubles mentaux et d'un rire compulsif qu'il ne peut contrôler. Entre une mère instable, une ville en pleine déchéance sociale et une solitude écrasante, Arthur bascule peu à peu dans la folie. Un acte de violence déclenche une réaction en chaîne, le transformant en un symbole de rébellion anarchique et donnant naissance au plus célèbre des antagonistes : le Joker."
+        ),
+        array(
+            "titre" => "Matrix",
+            "image" => "matrix.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action", 
+                "Combat", 
+                "Cyberpunk",
+                "Drame", 
+                "Philosophie", 
+                "Psychologie", 
+                "Science-fiction", 
+                "Surnaturel",
+                "Thriller"
+            ),
+            "sortie" => "1999",
+            "status" => "Terminé",
+            "duree" => "136 minutes",
+            "synopsis" => "Thomas Anderson, un programmeur informatique menant une double vie de hacker sous le pseudonyme de Néo, est contacté par un mystérieux groupe de rebelles mené par Morpheus. Ce dernier lui révèle une vérité impensable : le monde dans lequel il vit n'est qu'une simulation virtuelle appelée la Matrice, créée par des machines pour asservir l'humanité et utiliser son énergie. Néo doit alors choisir entre retourner à sa vie d'illusion ou rejoindre la résistance pour devenir 'L'Élu', celui capable de manipuler le code de la Matrice et de libérer les humains."
+        ),
+        array(
+            "titre" => "Mr. Wolff",
+            "titres_alternatifs" => array(
+                "The Accountant",
+                "Le Comptable"
+            ),
+            "image" => "mr_wolff.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action", 
+                "Combat", 
+                "Drame", 
+                "Médical",
+                "Policier", 
+                "Psychologie", 
+                "Thriller"
+            ),
+            "sortie" => "2016",
+            "status" => "Terminé",
+            "duree" => "128 minutes",
+            "synopsis" => "Christian Wolff est un expert-comptable autiste doté d'une intelligence mathématique hors du commun. Sous l'apparence d'un cabinet de banlieue, il travaille en réalité pour les organisations criminelles les plus dangereuses au monde. Lorsqu'il accepte de vérifier les comptes d'une entreprise de robotique légale pour 'se normaliser', il découvre une fraude massive impliquant plusieurs millions de dollars. Alors qu'il commence à démêler les fils du complot, des tueurs sont envoyés à ses trousses, révélant que Wolff est aussi un redoutable combattant entraîné depuis l'enfance."
+        ),
+        array(
+            "titre" => "Taxi Driver",
+            "titres_alternatifs" => array(
+                "Chauffeur de taxi"
+            ),
+            "image" => "taxi_driver.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action", 
+                "Combat", 
+                "Drame", 
+                "Historique", 
+                "Policier", 
+                "Politique", 
+                "Psychologie", 
+                "Thriller"
+            ),
+            "sortie" => "1976",
+            "status" => "Terminé",
+            "duree" => "114 minutes",
+            "synopsis" => "Travis Bickle, un vétéran de la guerre du Vietnam souffrant d'insomnie chronique, devient chauffeur de taxi de nuit à New York. Confronté quotidiennement à la violence, à la corruption et à ce qu'il perçoit comme la 'lie' de la société, il sombre progressivement dans une solitude paranoïaque. Après avoir échoué à séduire une collaboratrice d'un candidat à la présidentielle, il décide de 'nettoyer' la ville par le sang en s'armant lourdement pour sauver une jeune prostituée de 12 ans, Iris, de son souteneur."
+        ),
+        array(
+            "titre" => "The Revenant",
+            "titres_alternatifs" => array(
+                "Le Revenant"
+            ),
+            "image" => "the_revenant.jpg",
+            "types" => array(
+                "Film live",
+                "Livre"
+            ),
+            "genres" => array(
+                "Action", 
+                "Aventure", 
+                "Combat", 
+                "Drame", 
+                "Historique", 
+                "Philosophie", 
+                "Psychologie", 
+                "Thriller"
+            ),
+            "sortie" => "2015",
+            "status" => "Terminé",
+            "duree" => "156 minutes",
+            "synopsis" => "Dans une Amérique sauvage du XIXe siècle, le trappeur Hugh Glass est brutalement attaqué par un ours et laissé pour mort par les membres de son propre équipage. Témoin du meurtre de son fils par John Fitzgerald, l'homme qui devait veiller sur lui, Glass survit par pure volonté de vengeance. Il entame alors un périple de plus de 300 kilomètres dans un environnement polaire hostile, traqué par des tribus autochtones et luttant contre une nature impitoyable pour retrouver celui qui l'a trahi."
+        ),
+        array(
+            "titre" => "The Truman Show",
+            "titres_alternatifs" => array(
+                "Le Truman Show"
+            ),
+            "image" => "truman_show.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Aventure",
+                "Comédie",
+                "Drame", 
+                "Philosophie", 
+                "Politique",
+                "Psychologie", 
+                "Science-fiction",
+                "Thriller"
+            ),
+            "sortie" => "1998",
+            "status" => "Terminé",
+            "duree" => "103 minutes",
+            "synopsis" => "Truman Burbank mène une vie paisible et rangée dans la station balnéaire de Seahaven. Il ignore que depuis sa naissance, il est le héros involontaire d'une émission de télé-réalité planétaire. Sa ville est un immense studio de cinéma, ses amis et sa famille sont des acteurs, et des milliers de caméras filment ses moindres faits et gestes 24h/24. Sous la direction du producteur-créateur Christof, tout est orchestré pour que Truman ne s'échappe jamais. Mais un jour, une série d'incidents techniques pousse Truman à se poser des questions sur la réalité de son monde."
+        ),
+        array(
+            "titre" => "À l'Ouest, rien de nouveau",
+            "titres_alternatifs" => array(
+                "All Quiet on the Western Front",
+                "Im Westen nichts Neues"
+            ),
+            "image" => "a_l_ouest_rien_de_nouveau.jpg",
+            "types" => array(
+                "Film live",
+                "Livre"
+            ),
+            "genres" => array(
+                "Action", 
+                "Combat", 
+                "Drame", 
+                "Guerre",
+                "Historique", 
+                "Politique", 
+                "Psychologie", 
+                "Thriller"
+            ),
+            "sortie" => "2022",
+            "status" => "Terminé",
+            "duree" => "148 minutes",
+            "synopsis" => "En 1917, Paul Bäumer, 17 ans, s'enrôle avec enthousiasme dans l'armée impériale allemande, poussé par la propagande patriotique. Son idéalisme vole en éclats dès son arrivée sur le front français. Confronté à la brutalité des tranchées, à la faim, à la boue et à la mort omniprésente, il doit lutter pour sa survie. Pendant que les soldats sont sacrifiés pour quelques mètres de terrain, les hauts gradés et les politiciens négocient un armistice dans le confort, illustrant l'absurdité totale de la Grande Guerre."
+        ),
+        array(
+            "titre" => "American Sniper",
+            "titres_alternatifs" => array(
+                "Tireur d'élite américain"
+            ),
+            "image" => "american_sniper.jpg",
+            "types" => array(
+                "Film live",
+                "Livre"
+            ),
+            "genres" => array(
+                "Action", 
+                "Combat", 
+                "Drame", 
+                "Guerre",
+                "Historique", 
+                "Politique", 
+                "Psychologie", 
+                "Thriller"
+            ),
+            "sortie" => "2014",
+            "status" => "Terminé",
+            "duree" => "133 minutes",
+            "synopsis" => "Adapté de l'histoire vraie de Chris Kyle, tireur d'élite des SEAL de la marine américaine. Envoyé en Irak avec une mission précise : protéger ses frères d'armes. Sa précision chirurgicale sauve d'innombrables vies et lui vaut le surnom de 'La Légende'. Cependant, au fil de ses quatre missions, Kyle découvre que son engagement a un prix : il ne parvient plus à laisser la guerre derrière lui. De retour chez lui, auprès de sa femme et de ses enfants, il réalise que ce sont les ombres du combat qui le hantent le plus, rendant sa réinsertion dans la vie civile presque impossible."
+        ),
         #Court métrage
         array(
             "titre" => "El Empleo",
@@ -729,6 +1029,137 @@
             "status" => "Terminé",
             "duree" => "6:24 minutes",
             "synopsis" => "Dans un monde où les objets inanimés ont été remplacés par des êtres humains, un homme se prépare pour une nouvelle journée de travail. De sa table de petit-déjeuner à l'ascenseur de son immeuble, chaque élément de son quotidien est un individu qui remplit une fonction utilitaire. Ce court métrage sans paroles offre une critique acerbe de l'aliénation au travail et de la déshumanisation de la société moderne."
+        ),
+        array(
+            "titre" => "Nuggets",
+            "image" => "nuggets_animation.jpg",
+            "video" => "https://youtu.be/HUngLgGRJpo",
+            "types" => array(
+                "Court métrage"
+            ),
+            "genres" => array(
+                "Drame", 
+                "Médical", 
+                "Philosophie", 
+                "Psychologie", 
+                "Tranche de vie"
+            ),
+            "sortie" => "2014",
+            "status" => "Terminé",
+            "duree" => "5 minutes",
+            "synopsis" => "Un petit oiseau (un kiwi) marche sur une ligne horizontale et découvre par terre une pépite dorée (un 'nugget'). En la goûtant, il s'envole brièvement dans un état d'extase et de légèreté absolue. Mais à chaque nouvelle pépite consommée, le plaisir dure moins longtemps, la chute est plus brutale et le monde autour de lui devient de plus en plus sombre et terne. Le film dépeint de manière minimaliste le cycle inévitable de l'addiction."
+        ),
+        array(
+            "titre" => "In Shadow",
+            "titres_alternatifs" => array(
+                "In Shadow: A Modern Odyssey"
+            ),
+            "image" => "in_shadow.jpg",
+            "video" => "https://youtu.be/j800SVeiS5I",
+            "types" => array(
+                "Court métrage"
+            ),
+            "genres" => array(
+                "Drame", 
+                "Horreur",
+                "Philosophie", 
+                "Politique", 
+                "Psychologie", 
+                "Science-fiction",
+                "Thriller"
+            ),
+            "sortie" => "2017",
+            "status" => "Terminé",
+            "duree" => "13 minutes",
+            "synopsis" => "Sans aucun dialogue, ce film est une odyssée sombre à travers la psyché collective de la société moderne. Il dépeint un monde dystopique où les individus portent des masques pour cacher leur détresse, où l'industrie dévore la nature et où les élites manipulent les masses par la consommation et les médias. À travers une série d'images puissantes et dérangeantes, le film explore la 'part d'ombre' de l'humanité (le concept d'Ombre de Jung) avant de proposer une voie vers l'éveil et la libération spirituelle."
+        ),
+        array(
+            "titre" => "A Brief Disagreement",
+            "titres_alternatifs" => array(
+                "Un bref désaccord"
+            ),
+            "image" => "a_brief_disagreement.jpg",
+            "video" => "https://youtu.be/9x7FGbW3IVc",
+            "types" => array(
+                "Court métrage"
+            ),
+            "genres" => array(
+                "Action", 
+                "Combat", 
+                "Guerre",
+                "Historique", 
+                "Philosophie", 
+                "Politique", 
+                "Psychologie"
+            ),
+            "sortie" => "2024",
+            "status" => "Terminé",
+            "duree" => "3 minutes",
+            "synopsis" => "À travers les âges, de l'âge de pierre à un futur apocalyptique, deux hommes se disputent pour un motif insignifiant. Ce qui commence par une simple altercation entre deux hommes des cavernes s'intensifie à travers les siècles : les bâtons deviennent des épées, puis des mousquets, des chars et enfin des missiles nucléaires. Le film illustre de manière satirique et implacable l'évolution de la technologie de guerre au service de l'entêtement humain, menant inévitablement à l'autodestruction."
+        ),
+        array(
+            "titre" => "Happiness",
+            "titres_alternatifs" => array(
+                "Bonheur"
+            ),
+            "image" => "happiness_steve_cutts.jpg",
+            "video" => "https://youtu.be/e9dZQelULDk",
+            "types" => array(
+                "Court métrage"
+            ),
+            "genres" => array(
+                "Drame", 
+                "Philosophie", 
+                "Politique", 
+                "Psychologie",
+                "Tranche de vie"
+            ),
+            "sortie" => "2017",
+            "status" => "Terminé",
+            "duree" => "4 minutes",
+            "synopsis" => "Dans une métropole grouillante, des milliers de rats se bousculent pour aller travailler, consommer et trouver le bonheur. Le film suit le parcours d'un rat parmi les autres, cherchant désespérément la satisfaction à travers les soldes, l'achat d'une voiture de luxe, l'alcool ou les médicaments. Cette 'course de rats' (rat race) effrénée montre comment la quête du bonheur est devenue un produit de consommation comme un autre, menant inévitablement à l'épuisement et au piège du système."
+        ),
+        array(
+            "titre" => "In the Fall",
+            "titres_alternatifs" => array(
+                "Dans la chute"
+            ),
+            "image" => "in_the_fall.jpg",
+            "video" => "https://youtu.be/A-rEb0KuopI",
+            "types" => array(
+                "Court métrage"
+            ),
+            "genres" => array(
+                "Drame", 
+                "Philosophie", 
+                "Psychologie",
+                "Tranche de vie"
+            ),
+            "sortie" => "2011",
+            "status" => "Terminé",
+            "duree" => "2 minutes",
+            "synopsis" => "Un homme d'âge moyen, assis sur son balcon, tombe accidentellement dans le vide du haut de son immeuble. Alors que le sol se rapproche inévitablement, sa vie défile littéralement devant ses yeux. Mais au lieu d'une épopée héroïque, il voit défiler la monotonie écrasante de son existence : des décennies passées derrière un bureau, des repas solitaires devant la télé et une routine grise et répétitive. Le film pose une question brutale : notre vie mérite-t-elle d'être revue juste avant de mourir ?"
+        ),
+        array(
+            "titre" => "Carmen",
+            "titres_alternatifs" => array(
+                "Stromae - Carmen"
+            ),
+            "image" => "stromae_carmen.jpg",
+            "video" => "https://youtu.be/UKftOH54iNU",
+            "types" => array(
+                "Court métrage"
+            ),
+            "genres" => array(
+                "Drame", 
+                "Horreur",
+                "Philosophie",
+                "Psychologie"
+            ),
+            "sortie" => "2015",
+            "status" => "Terminé",
+            "duree" => "4 minutes",
+            "synopsis" => "Inspiré par l'air de l'opéra Carmen de Bizet, ce court-métrage suit l'ascension et la chute d'un jeune homme possédé par son addiction aux réseaux sociaux, représentés par un petit oiseau bleu (Twitter). D'abord mignon, l'oiseau grandit, devient omniprésent et finit par dévorer la vie réelle de l'individu, ses relations et son identité, avant de le conduire, lui et le reste de l'humanité, vers une fin industrielle et macabre."
         ),
         #Livre
         array(
