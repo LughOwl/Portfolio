@@ -22,19 +22,18 @@
         "Historique",
         "Horreur",
         "Médical",
-        "Musical",
         "Mystère",
         "Policier",
         "Politique",
         "Psychologie",
         "Romance",
         "Science-fiction",
+        "Société",
         "Sport",
         "Super-héros",
         "Surnaturel",
         "Thriller",
-        "Tranche de vie",
-        "Western"
+        "Tranche de vie"
     );
     $Oeuvres=array(
         # Série d'animation (principalement)
@@ -56,8 +55,7 @@
                 "Guerre", 
                 "Horreur", 
                 "Mystère", 
-                "Politique", 
-                "Psychologie"
+                "Politique"
             ),
             "sortie" => "2013 à 2023",
             "status" => "Terminé",
@@ -72,14 +70,11 @@
                 "Film d'animation"
             ),
             "genres" => array(
-                "Action", 
                 "Aventure", 
                 "Drame", 
                 "Fantastique", 
                 "Horreur", 
-                "Mystère", 
-                "Psychologie",
-                "Science-fiction"
+                "Mystère"
             ),
             "sortie" => "2017 à aujourd'hui",
             "status" => "En cours",
@@ -98,9 +93,7 @@
                 "Drame", 
                 "Guerre", 
                 "Historique", 
-                "Politique", 
-                "Psychologie",
-                "Tranche de vie"
+                "Politique"
             ),
             "sortie" => "2019 à aujourd'hui",
             "status" => "En cours",
@@ -121,8 +114,7 @@
                 "Drame", 
                 "Fantastique", 
                 "Psychologie",
-                "Surnaturel",
-                "Tranche de vie"
+                "Surnaturel"
             ),
             "sortie" => "2021 à aujourd'hui",
             "status" => "En cours",
@@ -157,8 +149,7 @@
             ),
             "genres" => array(
                 "Action", 
-                "Aventure", 
-                "Combat", 
+                "Aventure",
                 "Comédie", 
                 "Cuisine", 
                 "Guerre", 
@@ -182,7 +173,6 @@
                 "Film d'animation"
             ),
             "genres" => array(
-                "Action", 
                 "Drame", 
                 "Espace", 
                 "Guerre", 
@@ -204,8 +194,7 @@
             "genres" => array(
                 "Action", 
                 "Combat", 
-                "Politique", 
-                "Psychologie", 
+                "Politique",
                 "Sport"
             ),
             "sortie" => "2019 à 2024",
@@ -229,8 +218,7 @@
                 "Comédie", 
                 "Cuisine", 
                 "Fantastique", 
-                "Fantasy", 
-                "Mystère"
+                "Fantasy"
             ),
             "sortie" => "2024 à aujourd'hui",
             "status" => "En cours",
@@ -247,12 +235,10 @@
                 "Série d'animation"
             ),
             "genres" => array(
-                "Action", 
                 "Aventure", 
                 "Drame", 
                 "Fantasy", 
-                "Philosophie", 
-                "Psychologie",
+                "Philosophie",
                 "Tranche de vie"
             ),
             "sortie" => "2023 à aujourd'hui",
@@ -269,9 +255,7 @@
             "genres" => array(
                 "Action", 
                 "Comédie", 
-                "Policier", 
-                "Psychologie", 
-                "Thriller", 
+                "Policier",
                 "Tranche de vie"
             ),
             "sortie" => "2024 à aujourd'hui",
@@ -288,8 +272,7 @@
             ),
             "genres" => array(
                 "Action", 
-                "Aventure", 
-                "Combat", 
+                "Aventure",
                 "Comédie", 
                 "Fantasy", 
                 "Politique"
@@ -308,7 +291,6 @@
             "genres" => array(
                 "Action", 
                 "Aventure", 
-                "Combat", 
                 "Drame", 
                 "Fantasy", 
                 "Psychologie"
@@ -330,14 +312,11 @@
             ),
             "genres" => array(
                 "Action", 
-                "Aventure", 
-                "Combat", 
+                "Aventure",
                 "Drame", 
                 "Fantastique", 
                 "Guerre",
-                "Politique",
-                "Psychologie",
-                "Surnaturel"
+                "Politique"
             ),
             "sortie" => "2009 à 2010",
             "status" => "Terminé",
@@ -373,8 +352,7 @@
                 "Drame", 
                 "Historique", 
                 "Médical", 
-                "Policier", 
-                "Politique", 
+                "Policier",
                 "Psychologie", 
                 "Thriller"
             ),
@@ -418,8 +396,7 @@
             "genres" => array(
                 "Drame",
                 "Guerre",
-                "Historique",
-                "Psychologie"
+                "Historique"
             ),
             "sortie" => "1988",
             "status" => "Terminé",
@@ -440,8 +417,7 @@
                 "Aventure", 
                 "Drame", 
                 "Fantastique", 
-                "Fantasy", 
-                "Guerre",
+                "Fantasy",
                 "Romance",
                 "Surnaturel"
             ),
@@ -464,10 +440,8 @@
                 "Aventure", 
                 "Drame", 
                 "Fantastique", 
-                "Fantasy", 
-                "Psychologie",
-                "Surnaturel",
-                "Tranche de vie"
+                "Fantasy",
+                "Surnaturel"
             ),
             "sortie" => "2001",
             "status" => "Terminé",
@@ -486,13 +460,11 @@
             ),
             "genres" => array(
                 "Action", 
-                "Aventure", 
-                "Combat", 
+                "Aventure",
                 "Fantastique", 
                 "Fantasy", 
                 "Guerre",
                 "Historique",
-                "Politique",
                 "Surnaturel"
             ),
             "sortie" => "1997",
@@ -512,14 +484,11 @@
             ),
             "genres" => array(
                 "Action", 
-                "Aventure", 
-                "Combat", 
+                "Aventure",
                 "Drame", 
                 "Fantasy", 
                 "Guerre",
                 "Horreur",
-                "Politique",
-                "Psychologie",
                 "Surnaturel"
             ),
             "sortie" => "2012 à 2013",
@@ -538,13 +507,11 @@
                 "Film d'animation"
             ),
             "genres" => array(
-                "Action",
                 "Aventure", 
                 "Drame", 
                 "Fantastique", 
                 "Fantasy", 
-                "Philosophie", 
-                "Psychologie",
+                "Philosophie",
                 "Surnaturel"
             ),
             "sortie" => "2006",
@@ -569,7 +536,6 @@
                 "Fantastique", 
                 "Guerre",
                 "Politique",
-                "Psychologie",
                 "Science-fiction"
             ),
             "sortie" => "1984",
@@ -589,13 +555,11 @@
             ),
             "genres" => array(
                 "Action", 
-                "Aventure", 
-                "Combat", 
+                "Aventure",
                 "Drame", 
                 "Fantastique", 
                 "Fantasy", 
-                "Psychologie",
-                "Tranche de vie"
+                "Psychologie"
             ),
             "sortie" => "2015",
             "status" => "Terminé",
@@ -614,8 +578,7 @@
             ),
             "genres" => array(
                 "Aventure", 
-                "Drame", 
-                "Famille",
+                "Drame",
                 "Fantastique", 
                 "Surnaturel",
                 "Tranche de vie"
@@ -635,9 +598,7 @@
             "genres" => array(
                 "Action",
                 "Drame",
-                "Médical",
                 "Policier",
-                "Psychologie",
                 "Thriller"
             ),
             "sortie" => "2008 à 2013",
@@ -655,9 +616,8 @@
             "genres" => array(
                 "Comédie",
                 "Philosophie",
-                "Politique",
                 "Science-fiction",
-                "Tranche de vie"
+                "Société"
             ),
             "sortie" => "1996",
             "status" => "Terminé",
@@ -671,14 +631,11 @@
                 "Film live"
             ),
             "genres" => array(
-                "Action", 
                 "Aventure", 
                 "Drame", 
                 "Fantastique", 
                 "Historique", 
                 "Philosophie", 
-                "Politique", 
-                "Psychologie", 
                 "Science-fiction", 
                 "Thriller"
             ),
@@ -695,12 +652,10 @@
             ),
             "genres" => array(
                 "Action", 
-                "Combat", 
                 "Drame", 
-                "Médical", 
                 "Politique", 
-                "Psychologie", 
-                "Science-fiction", 
+                "Science-fiction",
+                "Société",
                 "Thriller"
             ),
             "sortie" => "2013",
@@ -718,9 +673,7 @@
                 "Aventure", 
                 "Drame", 
                 "Guerre",
-                "Historique", 
-                "Politique", 
-                "Psychologie", 
+                "Historique",
                 "Romance",
                 "Tranche de vie"
             ),
@@ -736,13 +689,10 @@
                 "Film live"
             ),
             "genres" => array(
-                "Action", 
                 "Aventure", 
                 "Drame", 
-                "Philosophie", 
-                "Psychologie", 
-                "Science-fiction", 
-                "Surnaturel",
+                "Philosophie",
+                "Science-fiction",
                 "Thriller"
             ),
             "sortie" => "2014",
@@ -764,7 +714,7 @@
                 "Drame", 
                 "Historique", 
                 "Philosophie", 
-                "Psychologie", 
+                "Société", 
                 "Tranche de vie"
             ),
             "sortie" => "2007",
@@ -780,12 +730,10 @@
             ),
             "genres" => array(
                 "Drame", 
-                "Philosophie", 
-                "Psychologie", 
+                "Philosophie",  
                 "Romance",
                 "Science-fiction", 
-                "Surnaturel",
-                "Thriller"
+                "Surnaturel"
             ),
             "sortie" => "2014",
             "status" => "Terminé",
@@ -802,13 +750,10 @@
                 "Film live"
             ),
             "genres" => array(
-                "Action", 
-                "Combat", 
                 "Drame", 
                 "Historique", 
                 "Policier", 
-                "Politique", 
-                "Psychologie",
+                "Politique",
                 "Thriller"
             ),
             "sortie" => "2019",
@@ -823,12 +768,11 @@
                 "Film live"
             ),
             "genres" => array(
-                "Action", 
-                "Combat", 
                 "Drame", 
                 "Policier", 
                 "Politique", 
-                "Psychologie", 
+                "Psychologie",
+                "Société",
                 "Thriller"
             ),
             "sortie" => "2019",
@@ -844,13 +788,9 @@
             ),
             "genres" => array(
                 "Action", 
-                "Combat", 
-                "Cyberpunk",
                 "Drame", 
                 "Philosophie", 
-                "Psychologie", 
-                "Science-fiction", 
-                "Surnaturel",
+                "Science-fiction",
                 "Thriller"
             ),
             "sortie" => "1999",
@@ -870,9 +810,7 @@
             ),
             "genres" => array(
                 "Action", 
-                "Combat", 
                 "Drame", 
-                "Médical",
                 "Policier", 
                 "Psychologie", 
                 "Thriller"
@@ -892,13 +830,11 @@
                 "Film live"
             ),
             "genres" => array(
-                "Action", 
-                "Combat", 
                 "Drame", 
                 "Historique", 
-                "Policier", 
-                "Politique", 
-                "Psychologie", 
+                "Policier",
+                "Psychologie",
+                "Société",
                 "Thriller"
             ),
             "sortie" => "1976",
@@ -913,17 +849,13 @@
             ),
             "image" => "the_revenant.jpg",
             "types" => array(
-                "Film live",
-                "Livre"
+                "Film live"
             ),
             "genres" => array(
                 "Action", 
-                "Aventure", 
-                "Combat", 
+                "Aventure",
                 "Drame", 
-                "Historique", 
-                "Philosophie", 
-                "Psychologie", 
+                "Historique",
                 "Thriller"
             ),
             "sortie" => "2015",
@@ -941,14 +873,12 @@
                 "Film live"
             ),
             "genres" => array(
-                "Aventure",
                 "Comédie",
                 "Drame", 
                 "Philosophie", 
                 "Politique",
-                "Psychologie", 
                 "Science-fiction",
-                "Thriller"
+                "Société",
             ),
             "sortie" => "1998",
             "status" => "Terminé",
@@ -963,18 +893,14 @@
             ),
             "image" => "a_l_ouest_rien_de_nouveau.jpg",
             "types" => array(
-                "Film live",
-                "Livre"
+                "Film live"
             ),
             "genres" => array(
                 "Action", 
-                "Combat", 
                 "Drame", 
                 "Guerre",
                 "Historique", 
-                "Politique", 
-                "Psychologie", 
-                "Thriller"
+                "Politique"
             ),
             "sortie" => "2022",
             "status" => "Terminé",
@@ -988,17 +914,14 @@
             ),
             "image" => "american_sniper.jpg",
             "types" => array(
-                "Film live",
-                "Livre"
+                "Film live"
             ),
             "genres" => array(
-                "Action", 
-                "Combat", 
+                "Action",
                 "Drame", 
                 "Guerre",
                 "Historique", 
-                "Politique", 
-                "Psychologie", 
+                "Politique",
                 "Thriller"
             ),
             "sortie" => "2014",
@@ -1021,9 +944,7 @@
                 "Drame",
                 "Philosophie",
                 "Politique",
-                "Psychologie",
-                "Science-fiction",
-                "Tranche de vie"
+                "Société"
             ),
             "sortie" => "2008",
             "status" => "Terminé",
@@ -1039,10 +960,8 @@
             ),
             "genres" => array(
                 "Drame", 
-                "Médical", 
-                "Philosophie", 
-                "Psychologie", 
-                "Tranche de vie"
+                "Médical",
+                "Psychologie"
             ),
             "sortie" => "2014",
             "status" => "Terminé",
@@ -1065,8 +984,7 @@
                 "Philosophie", 
                 "Politique", 
                 "Psychologie", 
-                "Science-fiction",
-                "Thriller"
+                "Société"
             ),
             "sortie" => "2017",
             "status" => "Terminé",
@@ -1084,13 +1002,11 @@
                 "Court métrage"
             ),
             "genres" => array(
-                "Action", 
-                "Combat", 
+                "Action",
                 "Guerre",
                 "Historique", 
                 "Philosophie", 
-                "Politique", 
-                "Psychologie"
+                "Politique"
             ),
             "sortie" => "2024",
             "status" => "Terminé",
@@ -1111,8 +1027,7 @@
                 "Drame", 
                 "Philosophie", 
                 "Politique", 
-                "Psychologie",
-                "Tranche de vie"
+                "Société"
             ),
             "sortie" => "2017",
             "status" => "Terminé",
@@ -1131,8 +1046,7 @@
             ),
             "genres" => array(
                 "Drame", 
-                "Philosophie", 
-                "Psychologie",
+                "Philosophie",
                 "Tranche de vie"
             ),
             "sortie" => "2011",
@@ -1153,13 +1067,29 @@
             "genres" => array(
                 "Drame", 
                 "Horreur",
-                "Philosophie",
-                "Psychologie"
+                "Société"
             ),
             "sortie" => "2015",
             "status" => "Terminé",
             "duree" => "4 minutes",
             "synopsis" => "Inspiré par l'air de l'opéra Carmen de Bizet, ce court-métrage suit l'ascension et la chute d'un jeune homme possédé par son addiction aux réseaux sociaux, représentés par un petit oiseau bleu (Twitter). D'abord mignon, l'oiseau grandit, devient omniprésent et finit par dévorer la vie réelle de l'individu, ses relations et son identité, avant de le conduire, lui et le reste de l'humanité, vers une fin industrielle et macabre."
+        ),
+        array(
+            "titre" => "Animation vs. Addiction",
+            "image" => "animation_vs_addiction_alan_becker.jpg",
+            "video" => "https://youtu.be/KoB2cqmYZNg",
+            "types" => array(
+                "Court métrage"
+            ),
+            "genres" => array(
+                "Action",
+                "Drame", 
+                "Psychologie"
+            ),
+            "sortie" => "2024",
+            "status" => "Terminé",
+            "duree" => "11 minutes",
+            "synopsis" => "Dans un univers simpliste, le stickman bleu découvre un mystérieux bouton lumineux (représentant la dopamine/drogue). Ce qui commence comme une simple curiosité se transforme rapidement en une spirale infernale. On suit sa déchéance et sa lutte désespérée contre son addiction qui prend le contrôle de son environnement et de son esprit."
         ),
         #Livre
         array(
@@ -1172,16 +1102,163 @@
                 "Livre"
             ),
             "genres" => array(
-                "Aventure", 
-                "Fantastique", 
+                "Aventure",
                 "Fantasy", 
-                "Philosophie", 
-                "Psychologie"
+                "Philosophie"
             ),
             "sortie" => "1988",
             "status" => "Terminé",
             "duree" => "Environ 190 pages",
             "synopsis" => "Santiago, un jeune berger andalou, fait à plusieurs reprises le même rêve : un trésor l'attend au pied des Pyramides d'Égypte. Poussé par son désir de découvrir sa 'Légende Personnelle', il décide de vendre son troupeau pour traverser le détroit de Gibraltar et s'aventurer dans le désert. Ce voyage initiatique, semé de rencontres marquantes et d'épreuves, le transformera profondément en lui apprenant à écouter son cœur et à lire les signes du destin."
+        ),
+        array(
+            "titre" => "1984",
+            "image" => "1984_book_cover.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Politique",
+                "Science-fiction",
+                "Société"
+            ),
+            "sortie" => "1949",
+            "status" => "Terminé",
+            "duree" => "Environ 400 pages",
+            "synopsis" => "Dans un monde divisé en trois blocs, Londres est la capitale de l'Océania, un État totalitaire dirigé par le mystérieux 'Big Brother'. Winston Smith est un modeste employé au Ministère de la Vérité, dont le travail consiste à réécrire l'Histoire pour qu'elle corresponde à la ligne actuelle du Parti. Dans une société où la surveillance est totale via les télécrans, où la pensée est contrôlée par la 'Novlangue' et où l'amour est interdit, Winston commence à tenir un journal intime, commettant ainsi le crime ultime : le 'Crimepensée'. Sa rencontre avec Julia va transformer son désir de rébellion en une quête désespérée de liberté."
+        ),
+        array(
+            "titre" => "La Trilogie des Fourmis",
+            "titres_alternatifs" => array(
+                "Les Fourmis",
+                "Le Jour des fourmis",
+                "La Révolution des fourmis"
+            ),
+            "image" => "les_fourmis_werber.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Aventure",
+                "Philosophie", 
+                "Policier",
+                "Psychologie", 
+                "Science-fiction"
+            ),
+            "sortie" => "1991 - 1996",
+            "status" => "Terminé",
+            "duree" => "3 Tomes (environ 1500 pages)",
+            "synopsis" => "Le récit entremêle deux mondes. Chez les humains, Jonathan Wells hérite d'un appartement et d'une mystérieuse consigne de son oncle entomologiste : 'Ne descendez jamais à la cave'. En braquant l'interdiction, il découvre un secret qui va bouleverser l'humanité. Parallèlement, nous suivons la vie de Bel-o-kan, une cité de fourmis rousses ultra-développée. On y suit le périple de 103e, une fourmi exploratrice, qui soupçonne l'existence de 'Dieux' géants et tente de comprendre les forces mystérieuses qui menacent sa colonie. Les deux mondes finiront par entrer en contact, changeant à jamais la perception de la vie sur Terre."
+        ),
+        array(
+            "titre" => "Le Meilleur des mondes",
+            "titres_alternatifs" => array(
+                "Brave New World"
+            ),
+            "image" => "le_meilleur_des_mondes.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Politique", 
+                "Science-fiction",
+                "Société"
+            ),
+            "sortie" => "1932",
+            "status" => "Terminé",
+            "duree" => "Environ 300 pages",
+            "synopsis" => "Dans un futur lointain, la société mondiale est unifiée et pacifiée. La reproduction naturelle a disparu au profit de la culture en flacons, où les humains sont prédestinés biologiquement à appartenir à des castes (Alpha, Bêta, Gamma, Delta ou Epsilon). La souffrance, la vieillesse et la guerre n'existent plus grâce au 'Soma', une drogue légale sans effets secondaires, et au conditionnement hypnotique dès l'enfance. Bernard Marx, un Alpha qui se sent différent, part en vacances dans une 'Réserve de Sauvages' et en ramène John, un homme né naturellement. Ce 'Sauvage' va découvrir avec horreur cette civilisation qui a sacrifié l'art, la religion et la liberté sur l'autel du bonheur obligatoire."
+        ),
+        array(
+            "titre" => "Propaganda",
+            "titres_alternatifs" => array(
+                "Comment manipuler l'opinion en démocratie",
+                "La Fabrique du consentement"
+            ),
+            "image" => "propaganda_bernays.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Historique", 
+                "Philosophie", 
+                "Politique", 
+                "Société"
+            ),
+            "sortie" => "1928",
+            "status" => "Terminé",
+            "duree" => "140 pages",
+            "synopsis" => "Edward Bernays, considéré comme le père des relations publiques, y explique comment les élites peuvent et doivent manipuler les masses dans une démocratie. En utilisant les découvertes de la psychanalyse de son oncle Sigmund Freud, il théorise la 'fabrique du consentement' : l'art de diriger les désirs inconscients des individus pour influencer leurs choix politiques et de consommation."
+        ),
+        array(
+            "titre" => "Discours de la servitude volontaire",
+            "titres_alternatifs" => array(
+                "Le Contr'un"
+            ),
+            "image" => "la_boetie_servitude.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Philosophie", 
+                "Politique", 
+                "Société"
+            ),
+            "sortie" => "1576",
+            "status" => "Terminé",
+            "duree" => "Environ 50 pages",
+            "synopsis" => "Dans ce texte révolutionnaire, La Boétie pose une question simple mais terrifiante : pourquoi des millions d'hommes acceptent-ils de servir un seul tyran, souvent plus faible qu'eux ? Il démontre que le pouvoir du tyran ne repose pas sur la force, mais sur le consentement des opprimés. Pour lui, la liberté est naturelle, mais l'homme s'habitue à la soumission par l'éducation, la distraction (jeux, spectacles) et les avantages matériels. Sa conclusion est radicale : pour redevenir libre, il ne faut pas combattre le tyran, il suffit de cesser de le servir."
+        ),
+        array(
+            "titre" => "Le Règne de la quantité et les signes des temps",
+            "image" => "regne_de_la_quantite.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Historique", 
+                "Philosophie", 
+                "Politique", 
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "1945",
+            "status" => "Terminé",
+            "duree" => "Environ 300 pages",
+            "synopsis" => "René Guénon y expose une critique radicale du monde moderne. Il explique que l'humanité est entrée dans une phase finale de son cycle (le Kali Yuga), où la qualité est sacrifiée au profit de la quantité. Tout devient mesurable, mathématique et matériel, vidant le monde de son sens spirituel. Le livre décrit le passage de la 'solidification' du monde (matérialisme pur) à sa 'dissolution' (chaos et parodie de spiritualité). Guénon y prédit l'avènement d'une 'contre-tradition' qui précède la fin d'un cycle de civilisation."
+        ),
+        array(
+            "titre" => "Siddhartha",
+            "image" => "siddhartha_hermann_hesse.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Aventure",
+                "Historique", 
+                "Philosophie",
+                "Tranche de vie"
+            ),
+            "sortie" => "1922",
+            "status" => "Terminé",
+            "duree" => "Environ 160 pages",
+            "synopsis" => "Dans l'Inde ancienne, au temps du Bouddha, Siddhartha, le fils d'un Brahmane, quitte sa vie confortable pour chercher la vérité ultime. Son voyage le mène à travers plusieurs étapes : l'ascétisme radical chez les Samanas, la rencontre avec Gotama (le Bouddha), puis la découverte des plaisirs matériels, de la richesse et de l'amour charnel auprès de la belle Kamala. Écœuré par la vacuité de sa vie mondaine, il finit par s'installer au bord d'un fleuve auprès d'un vieux passeur. C'est en écoutant le murmure de l'eau qu'il atteindra enfin l'illumination, comprenant que la sagesse ne s'enseigne pas, mais s'expérimente."
+        ),
+        array(
+            "titre" => "La Société du Spectacle",
+            "image" => "societe_du_spectacle.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Philosophie", 
+                "Politique", 
+                "Société"
+            ),
+            "sortie" => "1967",
+            "status" => "Terminé",
+            "duree" => "221 thèses (environ 150 pages)",
+            "synopsis" => "Debord analyse le monde moderne comme une mise en scène permanente où le 'vécu' a été remplacé par des images. Le 'Spectacle' n'est pas seulement un ensemble d'images (publicité, médias, cinéma), mais un rapport social entre des personnes, médiatisé par des images. Dans cette société, 'tout ce qui était directement vécu s'est éloigné dans une représentation'. L'individu n'est plus ce qu'il est, ni même ce qu'il possède, mais ce qu'il paraît. Le spectacle aliène l'homme en le transformant en spectateur passif de sa propre vie."
         ),
         #Jeu vidéo
         array(
@@ -1192,17 +1269,314 @@
             ),
             "genres" => array(
                 "Action", 
-                "Aventure", 
-                "Fantastique", 
-                "Fantasy", 
-                "Science-fiction", 
-                "Tranche de vie"
+                "Aventure",
+                "Fantasy"
             ),
             "sortie" => "2011 à aujourd'hui",
             "status" => "En cours",
             "duree" => "Infinie (Monde ouvert)",
             "synopsis" => "Plongé dans un monde infini composé entièrement de blocs, vous devez survivre en exploitant les ressources naturelles qui vous entourent. Sans but imposé, vous pouvez bâtir des structures monumentales, explorer des réseaux de grottes complexes ou voyager vers des dimensions parallèles comme le Nether et l'Ender. Entre création pure le jour et survie face aux créatures nocturnes, chaque joueur écrit sa propre épopée dans ce bac à sable géant."
+        ),
+        array(
+            "titre" => "Detroit: Become Human",
+            "image" => "detroit_become_human_cover.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Drame", 
+                "Philosophie", 
+                "Policier",
+                "Politique", 
+                "Psychologie", 
+                "Science-fiction",
+                "Société",
+                "Thriller"
+            ),
+            "sortie" => "2018",
+            "status" => "Terminé",
+            "duree" => "Environ 12-15 heures (pour une partie)",
+            "synopsis" => "En 2038, à Détroit, les androïdes font partie intégrante du quotidien, servant d'ouvriers, d'infirmiers ou de domestiques. Ils sont traités comme de simples machines sans âme. Le jeu suit le destin croisé de trois androïdes : Connor, un prototype chargé de traquer les machines 'déviantes' qui ressentent des émotions ; Kara, une domestique qui s'enfuit pour protéger une petite fille ; et Markus, qui va mener la révolte pour les droits de son peuple. À travers vos choix, vous déciderez si les androïdes sont des objets ou des êtres vivants, et si leur révolution sera pacifique ou sanglante."
+        ),
+        array(
+            "titre" => "Professeur Layton (Saga)",
+            "titres_alternatifs" => array(
+                "L'Étrange Village",
+                "La Boîte de Pandore",
+                "Le Destin Perdu",
+                "L'Appel du Spectre",
+                "Le Masque des Miracles",
+                "L'Héritage des Aslantes",
+                "Le Nouveau Monde à Vapeur"
+            ),
+            "image" => "professor_layton.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Aventure",
+                "Mystère",
+                "Policier"
+            ),
+            "sortie" => "2007 - Présent",
+            "status" => "En cours",
+            "duree" => "7 jeux principaux",
+            "synopsis" => "Le célèbre archéologue Hershel Layton et son apprenti Luke Triton parcourent le monde pour résoudre des énigmes qui semblent défier toute logique rationnelle. Derrière chaque mystère 'surnaturel' se cache une réalité complexe mêlant traumatismes psychologiques, inventions technologiques oubliées et conspirations politiques. Le professeur utilise sa logique pour déconstruire les illusions et révéler des vérités souvent tragiques sur la nature humaine."
+        ),
+        array(
+            "titre" => "Elden Ring",
+            "titres_alternatifs" => array(
+                "Shadow of the Erdtree"
+            ),
+            "image" => "elden_ring_cover.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure", 
+                "Combat",
+                "Fantasy", 
+                "Horreur"
+            ),
+            "sortie" => "2022",
+            "status" => "Terminé",
+            "duree" => "80 - 150+ heures",
+            "synopsis" => "Dans l'Entre-terre, le Cercle d'Elden, source de l'Arbre-Monde, a été brisé. Les demi-dieux, enfants de la Reine Marika, se sont emparés des fragments (les Runes Majeures), déclenchant une guerre dévastatrice : l'Éclatement. Vous incarnez un Sans-éclat, un exilé revenu d'entre les morts, guidé par la grâce pour traverser des terres désolées, vaincre les monarques déchus et devenir le Seigneur d'Elden afin de restaurer (ou de transformer totalement) l'ordre du monde."
+        ),
+        array(
+            "titre" => "NieR: Automata",
+            "image" => "nier_automata.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Combat",
+                "Philosophie",
+                "Science-fiction"
+            ),
+            "sortie" => "2017",
+            "status" => "Terminé",
+            "duree" => "40 heures (pour voir les fins principales A à E)",
+            "synopsis" => "Dans un futur lointain, l'humanité a fui vers la Lune après l'invasion de la Terre par des formes de vie mécaniques extraterrestres. Pour reprendre leur planète, les humains ont créé l'unité d'élite YoRHa, composée d'androïdes de combat. On suit l'histoire de 2B et 9S qui luttent sur le terrain. Cependant, au fil de leurs missions, ils découvrent que les machines commencent à imiter les comportements humains et à développer des émotions. La guerre qu'ils mènent 'pour la gloire de l'humanité' cache une vérité bien plus sombre sur la nature de leur propre existence."
+        ),
+        array(
+            "titre" => "Ori and the Blind Forest",
+            "image" => "ori_and_the_blind_forest.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Aventure",
+                "Drame",
+                "Fantastique"
+            ),
+            "sortie" => "2015",
+            "status" => "Terminé",
+            "duree" => "8 - 10 heures",
+            "synopsis" => "La forêt de Nibel se meurt après une catastrophe dévastatrice. Après qu'une tempête a déclenché une série d'événements tragiques, Ori, un jeune esprit de la forêt, doit entreprendre un voyage périlleux pour trouver le courage de sauver sa maison. Sur son chemin, Ori devra affronter Kuro, une chouette géante consumée par la vengeance, et restaurer les trois éléments vitaux : les Eaux, les Vents et la Chaleur. C'est une histoire de sacrifice, d'amour et de la résilience de la nature face aux ténèbres."
+        ),
+        array(
+            "titre" => "Monster Hunter: World",
+            "titres_alternatifs" => array(
+                "MHW",
+                "Monster Hunter World: Iceborne"
+            ),
+            "image" => "monster_hunter_world.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure"
+            ),
+            "sortie" => "2018",
+            "status" => "Terminé",
+            "duree" => "50h (histoire) - 500h+ (complétion)",
+            "synopsis" => "En tant que membre de la Cinquième Flotte, vous débarquez sur le Nouveau Monde, un continent sauvage et inexploré, pour suivre la Traversée des Anciens (la migration de dragons colossaux). Votre mission n'est pas de conquérir, mais de comprendre l'écosystème. En chassant des créatures majestueuses et redoutables, vous récoltez des ressources pour forger de meilleurs équipements, tout en préservant l'équilibre fragile de cette terre où chaque prédateur a un rôle crucial à jouer."
+        ),
+        array(
+            "titre" => "The Legend of Zelda: Breath of the Wild",
+            "titres_alternatifs" => array(
+                "BotW"
+            ),
+            "image" => "zelda_botw_cover.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Fantastique"
+            ),
+            "sortie" => "2017",
+            "status" => "Terminé",
+            "duree" => "50h (histoire) - 200h+ (exploration)",
+            "synopsis" => "Après un sommeil de 100 ans, Link se réveille amnésique dans un royaume d'Hyrule dévasté et repris par la nature. Le Fléau Ganon est enfermé dans le château, contenu par le pouvoir faiblissant de la princesse Zelda. Sans guide ni directives précises, Link doit explorer les ruines de son passé, retrouver ses souvenirs et sa force pour libérer les quatre Créatures Divines et affronter le mal ultime. C'est un voyage où la liberté est totale : le monde n'est pas un décor, mais un terrain d'expérimentation."
+        ),
+        array(
+            "titre" => "Horizon Zero Dawn",
+            "titres_alternatifs" => array(
+                "HZD"
+            ),
+            "image" => "horizon_zero_dawn.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Aventure", 
+                "Mystère",
+                "Science-fiction"
+            ),
+            "sortie" => "2017",
+            "status" => "Terminé",
+            "duree" => "30h (histoire) - 60h+ (exploration)",
+            "synopsis" => "Dans un futur où l'humanité est revenue à l'âge de pierre et vit en tribus, la Terre est dominée par des machines colossales aux allures d'animaux. Aloy, une jeune paria en quête de ses origines, découvre qu'elle est liée au destin de l'ancien monde, celui des 'Métallurgiques' (notre civilisation actuelle). En explorant des complexes technologiques enfouis, elle doit découvrir pourquoi le monde s'est effondré et quelle menace pèse sur le futur de la vie biologique."
+        ),
+        array(
+            "titre" => "ARK: Survival Evolved",
+            "image" => "ark_survival_evolved_cover.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Aventure", 
+                "Horreur",
+                "Science-fiction"
+            ),
+            "sortie" => "2017",
+            "status" => "Terminé",
+            "duree" => "100h+ pour l'histoire des Arches",
+            "synopsis" => "Vous vous réveillez nu et affamé sur les rivages d'une île mystérieuse appelée ARK, peuplée de dinosaures et de créatures préhistoriques. Un implant étrange est incrusté dans votre bras. Pour survivre, vous devez chasser, récolter des ressources, fabriquer des outils et construire des abris. Mais au-delà de la survie sauvage, ARK cache une vérité technologique vertigineuse : ces îles sont des stations spatiales orbitales destinées à préserver la vie terrestre, et vous faites partie d'une expérience génétique à l'échelle planétaire."
+        ),
+        array(
+            "titre" => "God of War",
+            "image" => "god_of_war_kratos_atreus.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure", 
+                "Combat",
+                "Drame"
+            ),
+            "sortie" => "2018",
+            "status" => "Terminé",
+            "duree" => "20 - 40 heures",
+            "synopsis" => "Après avoir anéanti les dieux de l'Olympe, Kratos vit désormais caché dans les terres nordiques de Midgard. Devenu père de nouveau, il mène une vie d'ermite jusqu'au décès de sa femme, Faye. Pour respecter sa dernière volonté, il doit porter ses cendres au plus haut sommet des neuf royaumes avec son fils Atreus. Ce voyage initiatique force Kratos à confronter son passé monstrueux, à gérer sa colère et à apprendre à son fils à être un dieu, tout en évitant les foudres d'Odin et de ses fils."
+        ),
+        array(
+            "titre" => "The Witcher 3: Wild Hunt",
+            "image" => "the_witcher_3_geralt.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Fantasy"
+            ),
+            "sortie" => "2015",
+            "status" => "Terminé",
+            "duree" => "50h (histoire) - 150h+ (avec extensions)",
+            "synopsis" => "Dans un monde médiéval ravagé par la guerre et les monstres, Geralt de Riv est un Sorceleur, un mutant chasseur de primes. Il est à la recherche de Ciri, sa fille adoptive, qui est poursuivie par la Chasse Sauvage, une cavalerie spectrale d'un autre monde. Au-delà de cette quête personnelle, Geralt se retrouve mêlé aux intrigues de rois, de sorcières et de divinités locales, dans un continent où la cruauté humaine dépasse souvent celle des monstres qu'il combat."
+        ),
+        array(
+            "titre" => "Grand Theft Auto V",
+            "titres_alternatifs" => array(
+                "GTA 5",
+                "GTA V"
+            ),
+            "image" => "gta_5.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Drame", 
+                "Société"
+            ),
+            "sortie" => "2013",
+            "status" => "Terminé (Solo) / En cours (Online)",
+            "duree" => "30h (histoire) - 100h+ (exploration)",
+            "synopsis" => "À Los Santos, une métropole californienne fictive, trois criminels aux profils radicalement différents voient leurs destins s'entrecroiser : Michael, un ancien braqueur de banques à la retraite dorée mais dépressif ; Franklin, un jeune voyou de rue qui veut changer d'échelle ; et Trevor, un psychopathe imprévisible vivant en marge de la société. Ensemble, ils planifient une série de braquages audacieux tout en étant manipulés par des agences gouvernementales corrompues et les excès du système capitaliste."
+        ),
+        array(
+            "titre" => "Metro Exodus",
+            "titres_alternatifs" => array(
+                "Metro 3"
+            ),
+            "image" => "metro_exodus.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Horreur",
+                "Mystère",
+                "Science-fiction"
+            ),
+            "sortie" => "2019",
+            "status" => "Terminé",
+            "duree" => "20h (histoire) - 40h+ (exploration complète)",
+            "synopsis" => "En 2036, un quart de siècle après qu'une guerre nucléaire a dévasté la Terre, quelques milliers de survivants s'accrochent à l'existence dans les tunnels du métro de Moscou. Artyom, convaincu que la vie existe à l'extérieur, parvient à s'échapper du métro avec un groupe de Rangers à bord de l'Aurora, une locomotive blindée. Leur voyage à travers la Russie post-nucléaire leur fera découvrir des sociétés isolées, des fanatismes religieux et la vérité sur le silence radio imposé par les autorités russes."
+        ),
+        array(
+            "titre" => "Outer Wilds",
+            "titres_alternatifs" => array(
+                "Outer Wilds: Echoes of the Eye"
+            ),
+            "image" => "outer_wilds.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Aventure",
+                "Mystère",
+                "Science-fiction"
+            ),
+            "sortie" => "2019",
+            "status" => "Terminé",
+            "duree" => "15h - 25h",
+            "synopsis" => "Vous êtes la nouvelle recrue de Outer Wilds Ventures, un programme spatial modeste. Alors que vous décollez pour explorer votre système solaire, le soleil explose en supernova, détruisant tout. Mais au lieu de mourir, vous vous réveillez 22 minutes plus tôt, au coin du feu. Coincé dans une boucle temporelle, vous devez explorer des planètes changeantes (une cité s'ensablant, une planète qui s'effondre) pour comprendre qui étaient les Nomaï, cette civilisation antique disparue, et pourquoi l'univers est en train de mourir."
+        ),
+        array(
+            "titre" => "Tunic",
+            "image" => "tunic.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure", 
+                "Combat",
+                "Mystère"
+            ),
+            "sortie" => "2022",
+            "status" => "Terminé",
+            "duree" => "12h - 20h",
+            "synopsis" => "Un petit renard s'échoue sur une terre mystérieuse remplie de ruines antiques et de créatures hostiles. Sans aucune instruction, vous devez explorer ce monde pour libérer une entité prisonnière. La particularité ? Le jeu est écrit dans une langue inconnue. Votre seul guide est un manuel d'instruction dont vous devez retrouver les pages éparpillées, révélant peu à peu non seulement les mécaniques du jeu, mais aussi la vérité tragique sur le cycle de pouvoir de ce monde."
+        ),
+        array(
+            "titre" => "Clair Obscur: Expedition 33",
+            "image" => "expedition_33.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure", 
+                "Combat",
+                "Drame",
+                "Fantastique",
+                "Psychologie"
+            ),
+            "sortie" => "2025",
+            "status" => "Terminé",
+            "duree" => "30h - 50h",
+            "synopsis" => "Chaque année, une entité nommée la Peintre se réveille pour peindre un nombre maudit sur son monolithe. Tous ceux dont l'âge correspond à ce nombre tombent instantanément en poussière. Alors qu'elle s'apprête à peindre le nombre '33', Gustave et ses compagnons forment l'Expédition 33. Leur mission suicidaire : traverser des terres surréalistes pour atteindre la Peintre et mettre fin à ce cycle macabre avant que leur propre génération ne soit effacée."
         )
     );
-
 ?>
