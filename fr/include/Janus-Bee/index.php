@@ -21,14 +21,15 @@
             </a>
         </div>
         <div class="zone-recherche">
-            <form action="index.php?page=catalogue" method="GET">
+            <form action="index.php" method="GET">
+                <input type="hidden" name="p" value="catalogue">
                 <input type="search" id="recherche-input" name="texteRecherche" placeholder="Rechercher..." class="recherche-input" value="<?php
-                        if (isset($_GET["texteRecherche"])) {
-                            echo htmlspecialchars($_GET["texteRecherche"]);
-                        } else {
-                            echo '';
-                        }
-                    ?>">
+                    if (isset($_GET["texteRecherche"])) {
+                        echo htmlspecialchars($_GET["texteRecherche"]);
+                    } else {
+                        echo '';
+                    }
+                ?>">
                 <button type="submit" name="submit-recherche" class="recherche-bouton">
                     <img src="../../../assets/loupe.png" alt="image loupe">
                 </button>
