@@ -1,5 +1,17 @@
 <?php
     include('data.php');
+    // Fonction pour convertir en majuscules avec accents français
+    function strtoupper_fr_simple($string) {
+        $search = array(
+            'à', 'â', 'ä', 'é', 'è', 'ê', 'ë', 'î', 'ï', 'ô', 'ö', 'ù', 'û', 'ü', 'ÿ', 'ç', 'æ', 'œ'
+        );
+        
+        $replace = array(
+            'À', 'Â', 'Ä', 'É', 'È', 'Ê', 'Ë', 'Î', 'Ï', 'Ô', 'Ö', 'Ù', 'Û', 'Ü', 'Ÿ', 'Ç', 'Æ', 'Œ'
+        );
+        
+        return str_replace($search, $replace, strtoupper($string));
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">

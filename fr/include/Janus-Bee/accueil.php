@@ -1,17 +1,5 @@
 <h1>Accueil</h1>
 <?php
-function strtoupper_fr_simple($string) {
-    // Liste des caractères accentués français
-    $search = array(
-        'à', 'â', 'ä', 'é', 'è', 'ê', 'ë', 'î', 'ï', 'ô', 'ö', 'ù', 'û', 'ü', 'ÿ', 'ç', 'æ', 'œ'
-    );
-    
-    $replace = array(
-        'À', 'Â', 'Ä', 'É', 'È', 'Ê', 'Ë', 'Î', 'Ï', 'Ô', 'Ö', 'Ù', 'Û', 'Ü', 'Ÿ', 'Ç', 'Æ', 'Œ'
-    );
-    
-    return str_replace($search, $replace, strtoupper($string));
-}
 // Grouper les œuvres par type
 $OeuvresParType = array();
 foreach ($Types as $type) {
