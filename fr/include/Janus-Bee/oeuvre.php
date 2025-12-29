@@ -22,7 +22,7 @@ $oeuvre = $Oeuvres[$id];
 ?>
 
 <div class="oeuvre-detail-container">
-    <a href="index.php?p=accueil" class="retour-lien">← Retourner à l'accueil</a>
+    <a href="index.php?p=catalogue&types%5B%5D=<?php echo htmlspecialchars($oeuvre['types'][0]); ?>" class="retour-lien">← Voir d'autres œuvres du type <?php echo htmlspecialchars($oeuvre['types'][0]); ?></a>
     
     <div class="oeuvre-main-content">
         <div class="oeuvre-detail-image">

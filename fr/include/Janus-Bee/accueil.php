@@ -62,11 +62,13 @@ foreach ($typesAffichages as $type) {
             </div>
             <button class="slider-btn slider-next" onclick="slideCarousel(this, 1)">❯</button>
         </div>
-        <br>
         <?php
     }
 }
 ?>
+<div>
+    <a href="index.php?p=catalogue" class="bouton-accueil">Accéder à l'ensemble des œuvres</a>
+</div>
 
 <script>
 function slideCarousel(button, direction) {

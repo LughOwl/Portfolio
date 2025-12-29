@@ -1577,6 +1577,215 @@
             "status" => "Terminé",
             "duree" => "30h - 50h",
             "synopsis" => "Chaque année, une entité nommée la Peintre se réveille pour peindre un nombre maudit sur son monolithe. Tous ceux dont l'âge correspond à ce nombre tombent instantanément en poussière. Alors qu'elle s'apprête à peindre le nombre '33', Gustave et ses compagnons forment l'Expédition 33. Leur mission suicidaire : traverser des terres surréalistes pour atteindre la Peintre et mettre fin à ce cycle macabre avant que leur propre génération ne soit effacée."
-        )
+        ),
+        array(
+            "titre" => "Satisfactory",
+            "image" => "satisfactory.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Aventure",
+                "Espace",
+                "Science-fiction",
+                "Société"
+            ),
+            "sortie" => "2019 (Early Access) / 2024 (1.0)",
+            "status" => "Terminé",
+            "duree" => "100h - 500h+",
+            "synopsis" => "En tant qu'employé de FICSIT Inc., vous êtes parachuté sur une planète extraterrestre luxuriante avec une mission unique : coloniser et exploiter le monde pour construire des usines toujours plus massives. Explorez la faune et la flore, automatisez des lignes de production complexes et construisez des ascenseurs spatiaux pour envoyer des ressources à vos mystérieux employeurs. Sous ses airs de jeu de construction satisfaisant, le titre interroge subtilement l'impact de l'industrialisation à outrance sur un écosystème vierge."
+        ),
+        array(
+            "titre" => "Sea of Thieves",
+            "titres_alternatifs" => array(
+                "SoT"
+            ),
+            "image" => "sea_of_thieves.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Combat",
+                "Fantasy"
+            ),
+            "sortie" => "2018",
+            "status" => "En cours",
+            "duree" => "Indéfinie",
+            "synopsis" => "Devenez le pirate que vous avez toujours rêvé d'être dans un monde partagé immense. À bord de votre propre navire, seul ou en équipage, naviguez sur une mer parsemée d'îles mystérieuses, de squelettes maudits et de monstres marins colossaux. Entre la recherche de trésors enfouis, les batailles navales épiques et les alliances fragiles avec d'autres joueurs, le titre propose une expérience où la liberté est totale et où chaque rencontre à l'horizon peut mener à une amitié durable ou à une trahison sanglante."
+        ),
+        array(
+            "titre" => "Terraria",
+            "image" => "terraria.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Combat",
+                "Fantasy"
+            ),
+            "sortie" => "2011",
+            "status" => "Terminé",
+            "duree" => "50h - 200h+",
+            "synopsis" => "Creusez, battez-vous, explorez, construisez ! Dans ce monde en 2D généré procéduralement, vous commencez avec quelques outils de base et un guide. Votre objectif est de transformer cet environnement hostile en une terre prospère. En explorant des cavernes profondes et des îles flottantes, vous récolterez des matériaux pour invoquer et terrasser des boss légendaires. Le jeu met l'accent sur la progression d'une micro-société : en bâtissant des logements adaptés, vous attirez divers marchands et alliés qui vous aideront à repousser les forces des ténèbres qui cherchent à corrompre votre monde."
+        ),
+        array(
+            "titre" => "Ni no Kuni II : L'Avènement d'un Nouveau Royaume",
+            "titres_alternatifs" => array(
+                "Ni no Kuni II: Revenant Kingdom"
+            ),
+            "image" => "ni_no_kuni_2.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Politique"
+            ),
+            "sortie" => "2018",
+            "status" => "Terminé",
+            "duree" => "40h - 80h",
+            "synopsis" => "Après un coup d'État dans son royaume de Carabas, le jeune roi Evan Pettiwhisker Tildrum est contraint à l'exil. Aidé par Roland, un président venu de notre monde, Evan décide de ne pas simplement reprendre son trône, mais de bâtir un tout nouveau royaume nommé Estavania, où tout le monde pourra vivre en paix. Pour y parvenir, il devra explorer le monde, recruter des citoyens talentueux, gérer le développement de sa cité et signer des traités de paix avec des nations rivales pour unifier le continent face à une menace occulte."
+        ),
+        array(
+            "titre" => "Celeste",
+            "image" => "celeste.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Aventure",
+                "Drame",
+                "Psychologie"
+            ),
+            "sortie" => "2018",
+            "status" => "Terminé",
+            "duree" => "10h - 30h+",
+            "synopsis" => "Madeline est une jeune femme déterminée à gravir le mont Celeste, une montagne légendaire réputée pour ses propriétés étranges. Au cours de son ascension périlleuse, elle doit affronter ses démons intérieurs, personnifiés par une version sombre d'elle-même. Ce qui n'était qu'un défi physique devient une quête de réconciliation personnelle. À travers des épreuves de plateforme d'une difficulté extrême, Madeline apprend que la persévérance et l'acceptation de ses propres faiblesses sont les seules voies pour atteindre le sommet."
+        ),
+        array(
+            "titre" => "Baldur's Gate 3",
+            "titres_alternatifs" => array(
+                "BG3"
+            ),
+            "image" => "baldurs_gate_3.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Combat",
+                "Fantasy",
+                "Politique",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "2023",
+            "status" => "Terminé",
+            "duree" => "100h - 200h+",
+            "synopsis" => "Capturé par des flagelleurs mentaux, un parasite destructeur est inséré dans votre cerveau. Alors que vous commencez à muter, vous devez choisir : résister à cette corruption ou embrasser ce nouveau pouvoir pour dominer le monde. Accompagné d'un groupe de parias ayant chacun leurs propres secrets, vous vous retrouvez au centre d'un conflit millénaire entre divinités, démons et factions politiques. Vos choix dictent non seulement votre survie, mais aussi le destin de cités entières et l'équilibre moral de tout un continent."
+        ),
+        array(
+            "titre" => "Forts",
+            "image" => "forts.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Combat",
+                "Guerre"
+            ),
+            "sortie" => "2017",
+            "status" => "Terminé",
+            "duree" => "10h - 100h+",
+            "synopsis" => "Dans un futur où les ressources naturelles se font rares, des factions rivales s'affrontent pour le contrôle des derniers gisements d'énergie. Vous devez concevoir et construire des forteresses blindées en temps réel, tout en les armant de batteries de canons, de missiles et de lasers. Le titre repose sur un moteur physique exigeant : un tir bien placé peut faire s'écrouler toute la structure ennemie. Entre gestion du personnel, recherche technologique et batailles explosives, vous devez protéger votre cœur énergétique à tout prix sous peine d'annihilation totale."
+        ),
+        array(
+            "titre" => "Dying Light",
+            "image" => "dying_light_1.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Combat",
+                "Horreur",
+                "Société",
+                "Surnaturel"
+            ),
+            "sortie" => "2015",
+            "status" => "Terminé",
+            "duree" => "20h - 50h",
+            "synopsis" => "Kyle Crane, un agent infiltré du GRE, est parachuté dans la ville de Harran, mise en quarantaine après l'apparition d'un virus transformant la population en prédateurs nocturnes. Sa mission est de retrouver un fichier confidentiel, mais il se retrouve rapidement déchiré entre ses ordres et sa loyauté envers les survivants locaux. Dans ce milieu urbain dévasté, la survie dépend de votre maîtrise du parkour et de votre capacité à anticiper le coucher du soleil, moment où les infectés les plus dangereux sortent de l'ombre."
+        ),
+        array(
+            "titre" => "Dying Light 2: Stay Human",
+            "image" => "dying_light_2.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Combat",
+                "Horreur",
+                "Politique",
+                "Société"
+            ),
+            "sortie" => "2022",
+            "status" => "En cours",
+            "duree" => "30h - 100h+",
+            "synopsis" => "Vingt ans après les événements d'Harran, l'humanité a presque disparu. Vous incarnez Aiden, un pèlerin errant dans un monde post-apocalyptique à la recherche de sa sœur. Votre voyage vous mène à 'La Ville', l'un des derniers bastions humains. Ici, la menace n'est pas seulement biologique mais aussi idéologique : vous devez naviguer entre les factions (Survivants, Pacificateurs, Renegats) dont les visions de la société s'affrontent violemment. Chaque décision politique que vous prenez remodèle physiquement la ville et scelle le destin de ses habitants."
+        ),
+        array(
+            "titre" => "Cyberpunk 2077",
+            "titres_alternatifs" => array(
+                "Cyberpunk 2077: Phantom Liberty"
+            ),
+            "image" => "cyberpunk_2077.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Drame",
+                "Politique",
+                "Psychologie",
+                "Science-fiction",
+                "Société"
+            ),
+            "sortie" => "2020",
+            "status" => "Terminé",
+            "duree" => "30h - 100h+",
+            "synopsis" => "Dans la mégalopole de Night City, vous incarnez V, un mercenaire dont l'esprit est colonisé par la conscience numérique du terroriste Johnny Silverhand. Tandis que les méga-corporations Arasaka et Militech se disputent le contrôle de l'immortalité numérique, vous devez naviguer dans une société en décomposition où la technologie a remplacé l'humanité. Entre survie personnelle et révolte politique, vos choix détermineront l'héritage que vous laisserez dans une ville qui n'oublie jamais, mais qui ne pardonne personne."
+        ),
+        array(
+            "titre" => "Warhammer 40,000: Space Marine 2",
+            "titres_alternatifs" => array(
+                "SM2",
+                "Space Marine II"
+            ),
+            "image" => "space_marine_2.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Espace",
+                "Guerre",
+                "Science-fiction",
+                "Société"
+            ),
+            "sortie" => "2024",
+            "status" => "Terminé",
+            "duree" => "12h - 50h+",
+            "synopsis" => "Le Lieutenant Titus des Ultramarines reprend du service pour défendre l'Humanité contre les hordes insatiables de Tyranides. Dans un 41ème millénaire où il n'y a que la guerre, vous devez exterminer des armées extraterrestres pour protéger les mondes-clés de l'Imperium. Mais au-delà de la menace biologique, Titus doit naviguer au sein d'une société impériale rigide, marquée par la suspicion religieuse et les intrigues de l'Inquisition, tout en prouvant sa loyauté envers l'Empereur."
+        ),
     );
 ?>
