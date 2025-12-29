@@ -181,9 +181,6 @@ body {
         text-align: center;
         padding: 0;
     }
-    .f-img {
-        order: -1;
-    }
 }
 
 /* --- ACCUEIL PAGE --- */
@@ -230,9 +227,9 @@ body {
 }
 
 .slider-item {
-    flex: 0 0 220px;
-    min-width: 220px;
-    height: 380px;
+    flex: 0 0 250px;
+    width: 280px;
+    height: 400px;
 }
 
 .oeuvre-card {
@@ -275,7 +272,7 @@ body {
 
 .oeuvre-info h3 {
     margin: 0 0 4px 0;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: bold;
     color: var(--noir-pur);
     line-height: 1.2;
@@ -284,7 +281,7 @@ body {
 
 .titre-secondaire {
     margin: 0 0 8px 0;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-style: italic;
     color: #555;
     line-height: 1.2;
@@ -297,7 +294,6 @@ body {
     border-top: 1px solid #ddd;
     padding-top: 8px;
     gap: 8px;
-    font-size: 0.65rem;
     flex: 1;
     overflow: hidden;
 }
@@ -311,15 +307,14 @@ body {
 .detail-titre {
     font-weight: bold;
     color: var(--noir-pur);
-    font-size: 0.68rem;
+    font-size: 0.9rem;
 }
 
 .detail-contenu {
     color: #555;
     word-break: break-word;
-    font-size: 0.63rem;
+    font-size: 0.8rem;
 }
-
 .slider-btn {
     flex: 0 0 40px;
     height: 40px;
@@ -331,46 +326,31 @@ body {
     font-size: 1.2rem;
     transition: all 0.2s;
 }
-
 .slider-btn:hover {
     background: var(--jaune-bee);
     color: var(--noir-pur);
 }
+.bouton-accueil {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 12px 25px;
+    background: var(--jaune-bee);
+    color: var(--noir-pur);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    width: auto;
+}
+.bouton-accueil:hover {
+    background: #e6c600;
+}
 
 @media (max-width: 768px) {
-    .slider-item {
-        flex: 0 0 180px;
-        min-width: 180px;
-        height: 320px;
-    }
-    
-    .oeuvre-image {
-        height: 160px;
-    }
-    
     .slider-btn {
         flex: 0 0 35px;
         height: 35px;
         font-size: 1rem;
-    }
-    .oeuvre-info h3 {
-        font-size: 0.7rem;
-    }
-    
-    .titre-secondaire {
-        font-size: 0.65rem;
-    }
-    
-    .oeuvre-details {
-        font-size: 0.6rem;
-    }
-    
-    .detail-titre {
-        font-size: 0.6rem;
-    }
-    
-    .detail-contenu {
-        font-size: 0.6rem;
     }
 }
 
@@ -522,22 +502,6 @@ body {
 
     .catalogue-container a {
         padding: 10px;
-    }
-
-    .site-footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .f-contact, .f-info {
-        text-align: center;
-        max-width: 100%;
-    }
-
-    .f-img {
-        order: -1;
     }
 }
 /* --- CATALOGUE PAGE --- */
@@ -727,7 +691,7 @@ body {
     background: var(--gris-leger);
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
-    height: 350px;
+    height: 400px;
 }
 
 .catalogue-carte-oeuvre:hover {
@@ -737,7 +701,7 @@ body {
 
 .catalogue-image {
     width: 100%;
-    height: 180px;
+    height: 200px;
     overflow: hidden;
     background: #ddd;
     flex-shrink: 0;
@@ -758,8 +722,8 @@ body {
 }
 
 .catalogue-titre {
-    margin: 0 0 3px 0;
-    font-size: 0.85rem;
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
     font-weight: bold;
     color: var(--noir-pur);
     line-height: 1.2;
@@ -767,8 +731,8 @@ body {
 }
 
 .catalogue-titre-secondaire {
-    margin: 0 0 6px 0;
-    font-size: 0.65rem;
+    margin: 0 0 8px 0;
+    font-size: 0.8rem;
     font-style: italic;
     color: #555;
     line-height: 1.2;
@@ -781,7 +745,6 @@ body {
     border-top: 1px solid #ddd;
     padding-top: 6px;
     gap: 6px;
-    font-size: 0.6rem;
     flex: 1;
     overflow: hidden;
 }
@@ -795,13 +758,13 @@ body {
 .catalogue-detail-titre {
     font-weight: bold;
     color: var(--noir-pur);
-    font-size: 0.6rem;
+    font-size: 0.9rem;
 }
 
 .catalogue-detail-contenu {
     color: #555;
     word-break: break-word;
-    font-size: 0.58rem;
+    font-size: 0.8rem;
 }
 .aucun-resultat {
     color: #555;
@@ -825,11 +788,11 @@ body {
 /* Liste des œuvres - Plus compacte avec plusieurs par ligne */
 .oeuvres-liste {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1280px) {
     .catalogue-content {
         flex-direction: column;
         gap: 25px;
@@ -854,39 +817,5 @@ body {
     .recherche-input-catalogue,
     .recherche-btn-catalogue {
         width: 100%;
-    }
-    
-    .oeuvres-liste {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 20px;
-    }
-    
-    .catalogue-carte-oeuvre {
-        height: 320px;
-    }
-    
-    .catalogue-image {
-        height: 150px;
-    }
-    
-    .catalogue-titre {
-        font-size: 0.75rem;
-    }
-    
-    .catalogue-titre-secondaire {
-        font-size: 0.6rem;
-    }
-    
-    .catalogue-details {
-        font-size: 0.55rem;
-    }
-    
-    .catalogue-detail-titre {
-        font-size: 0.55rem;
-    }
-    
-    .catalogue-detail-contenu {
-        font-size: 0.53rem;
     }
 }
