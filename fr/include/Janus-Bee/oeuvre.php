@@ -22,7 +22,8 @@ $oeuvre = $Oeuvres[$id];
 ?>
 
 <div class="oeuvre-detail-container">
-    <a href="index.php?p=catalogue&types%5B%5D=<?php echo htmlspecialchars($oeuvre['types'][0]); ?>" class="retour-lien">← Voir d'autres œuvres du type <?php echo htmlspecialchars($oeuvre['types'][0]); ?></a>
+    <a href="index.php?p=catalogue&types%5B%5D=<?php echo htmlspecialchars($oeuvre['types'][0]); ?>" class="bouton-accueil"><img src="../../../assets/fleche_gauche.png" alt="image aléatoire" class="accueil-icones"> Voir d'autres œuvres du type <?php echo htmlspecialchars($oeuvre['types'][0]); ?></a>
+    <a href="index.php?p=oeuvre&id=<?php echo array_rand($Oeuvres); ?>" class="bouton-accueil"><img src="../../../assets/random.png" alt="image aléatoire" class="accueil-icones">Voir une autre œuvre</a>
     
     <div class="oeuvre-main-content">
         <div class="oeuvre-detail-image">

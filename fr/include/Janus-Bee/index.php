@@ -42,7 +42,7 @@
                         echo '';
                     }
                 ?>">
-                <button type="submit" name="submit-recherche" class="recherche-bouton">
+                <button type="submit" class="recherche-bouton">
                     <img src="../../../assets/loupe.png" alt="image loupe">
                 </button>
             </form>
