@@ -929,6 +929,174 @@
             "duree" => "133 minutes",
             "synopsis" => "Adapté de l'histoire vraie de Chris Kyle, tireur d'élite des SEAL de la marine américaine. Envoyé en Irak avec une mission précise : protéger ses frères d'armes. Sa précision chirurgicale sauve d'innombrables vies et lui vaut le surnom de 'La Légende'. Cependant, au fil de ses quatre missions, Kyle découvre que son engagement a un prix : il ne parvient plus à laisser la guerre derrière lui. De retour chez lui, auprès de sa femme et de ses enfants, il réalise que ce sont les ombres du combat qui le hantent le plus, rendant sa réinsertion dans la vie civile presque impossible."
         ),
+        array(
+            "titre" => "La Ligne Verte",
+            "titres_alternatifs" => array(
+                "The Green Mile"
+            ),
+            "image" => "la_ligne_verte.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Drame",
+                "Fantastique",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "1999",
+            "status" => "Terminé",
+            "duree" => "3h 09min",
+            "synopsis" => "Paul Edgecomb, gardien-chef d'un pénitencier en Louisiane dans les années 30, travaille au bloc E : le couloir de la mort, surnommé la 'Ligne Verte'. Son quotidien est bouleversé par l'arrivée de John Coffey, un géant noir accusé du viol et du meurtre de deux fillettes. Sous ses airs impressionnants, Coffey s'avère être d'une douceur extrême et doté d'un don surnaturel de guérison. Paul commence alors à douter sérieusement de la culpabilité de cet homme condamné par une société rongée par les préjugés."
+        ),
+        array(
+            "titre" => "Tu ne tueras point",
+            "titres_alternatifs" => array(
+                "Hacksaw Ridge"
+            ),
+            "image" => "tu_ne_tueras_point.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action",
+                "Drame",
+                "Guerre",
+                "Historique",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "2016",
+            "status" => "Terminé",
+            "duree" => "2h 11min",
+            "synopsis" => "Lors de la Seconde Guerre mondiale, Desmond Doss, un jeune Américain, s'enrôle dans l'armée tout en refusant catégoriquement de porter une arme ou de tuer, en raison de ses convictions religieuses. Devenu infirmier, il est envoyé sur le front sanglant d'Okinawa. Méprisé et persécuté par ses camarades et sa hiérarchie, il va pourtant prouver son héroïsme lors de la bataille d'Hacksaw Ridge, où il sauvera seul 75 blessés sous le feu ennemi, sans jamais tirer un seul coup de feu."
+        ),
+        array(
+            "titre" => "Fight Club",
+            "titres_alternatifs" => array(
+                "Club de Combat"
+            ),
+            "image" => "fight_club.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action",
+                "Drame",
+                "Politique",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "1999",
+            "status" => "Terminé",
+            "duree" => "2h 19min",
+            "synopsis" => "Un employé de bureau insomniaque et esclave de la société de consommation cherche un sens à son existence misérable. Sa rencontre avec Tyler Durden, un vendeur de savon charismatique et anarchiste, bouleverse sa vie. Ensemble, ils fondent le 'Fight Club', un lieu clandestin où des hommes évacuent leur frustration par la violence brute. Mais le club se transforme rapidement en une organisation terroriste, le Projet Chaos, visant à renverser l'ordre social établi, tandis que le protagoniste perd peu à peu le contrôle sur sa propre réalité et son identité."
+        ),
+        array(
+            "titre" => "300",
+            "titres_alternatifs" => array(
+                "Les 300 Spartiates"
+            ),
+            "image" => "300_film.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action",
+                "Combat",
+                "Guerre",
+                "Historique",
+                "Politique"
+            ),
+            "sortie" => "2006",
+            "status" => "Terminé",
+            "duree" => "1h 57min",
+            "synopsis" => "En 480 avant J.-C., le roi Léonidas de Sparte refuse de se soumettre à l'immense empire perse dirigé par Xerxès. Bravant les ordres politiques et religieux de sa cité, il part avec 300 de ses meilleurs guerriers pour bloquer l'armée ennemie au passage des Thermopyles. Ce combat désespéré se transforme en un acte de résistance légendaire, visant à unir toute la Grèce contre l'invasion. Le film explore les thèmes de l'honneur, de la liberté et du sacrifice ultime d'une élite militaire face à la tyrannie."
+        ),
+        array(
+            "titre" => "Je suis une légende",
+            "titres_alternatifs" => array(
+                "I Am Legend"
+            ),
+            "image" => "je_suis_une_legende.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action",
+                "Drame",
+                "Horreur",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "2007",
+            "status" => "Terminé",
+            "duree" => "1h 41min",
+            "synopsis" => "Robert Neville est un savant brillant qui n'a pas pu endiguer le terrible virus, d'origine humaine, qui a décimé la population mondiale. Pour une raison inconnue, Neville est immunisé. Seul survivant à New York (et peut-être dans le monde), il tente depuis trois ans d'entrer en contact par radio avec d'éventuels rescapés. Mais il n'est pas vraiment seul : des victimes infectées par le virus rôdent dans les ombres, attendant qu'il commette une erreur. Neville n'a plus qu'une mission : trouver un remède à partir de son propre sang, tout en luttant contre la folie qui le guette."
+        ),
+        array(
+            "titre" => "Limitless",
+            "titres_alternatifs" => array(
+                "Sans limites"
+            ),
+            "image" => "limitless.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action",
+                "Mystère",
+                "Politique",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "2011",
+            "status" => "Terminé",
+            "duree" => "1h 45min",
+            "synopsis" => "Eddie Morra est un écrivain raté en pleine dépression. Sa vie bascule lorsqu'un ancien ami lui fait découvrir le NZT, une drogue révolutionnaire qui permet d'utiliser 100% des capacités de son cerveau. Eddie devient soudainement capable d'apprendre des langues en quelques heures, de résoudre des équations complexes et de manipuler les marchés financiers. Mais alors qu'il gravit les échelons du pouvoir et de la finance, il découvre que les effets secondaires sont dévastateurs et que des organisations mystérieuses sont prêtes à tout pour récupérer son stock de pilules."
+        ),
+        array(
+            "titre" => "Lucy",
+            "titres_alternatifs" => array(
+                "Lucy"
+            ),
+            "image" => "lucy_film.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action",
+                "Psychologie",
+                "Science-fiction",
+                "Société",
+                "Surnaturel"
+            ),
+            "sortie" => "2014",
+            "status" => "Terminé",
+            "duree" => "1h 29min",
+            "synopsis" => "À la suite de circonstances indépendantes de sa volonté, Lucy, une jeune étudiante à Taipei, voit une drogue expérimentale se répandre dans son organisme. Elle voit alors ses capacités intellectuelles et physiques se développer à l'infini. Elle acquiert des pouvoirs de télékinésie, une connaissance illimitée et un contrôle total sur la matière. Traquée par ses anciens ravisseurs, elle se lance dans une course contre la montre pour transmettre ses connaissances avant que son humanité ne disparaisse totalement pour laisser place à une entité omnisciente."
+        ),
+        array(
+            "titre" => "Bienvenue à Gattaca",
+            "titres_alternatifs" => array(
+                "Gattaca"
+            ),
+            "image" => "gattaca.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Drame",
+                "Mystère",
+                "Politique",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "1997",
+            "status" => "Terminé",
+            "duree" => "1h 46min",
+            "synopsis" => "Dans un futur proche, la société pratique un eugénisme génétique rigoureux : la réussite sociale est déterminée par l'ADN. Vincent, né naturellement avec des 'défauts' cardiaques, est classé parmi les 'Invalides' et condamné aux tâches subalternes. Rêvant de devenir astronaute, il brave le système en empruntant l'identité génétique de Jérôme, un spécimen idéal devenu paraplégique. Alors qu'il est sur le point de partir pour Titan, un meurtre au sein de l'agence spatiale Gattaca déclenche une enquête qui menace de révéler son imposture."
+        ),
         #Court métrage
         array(
             "titre" => "El Empleo",
@@ -1259,6 +1427,150 @@
             "status" => "Terminé",
             "duree" => "221 thèses (environ 150 pages)",
             "synopsis" => "Debord analyse le monde moderne comme une mise en scène permanente où le 'vécu' a été remplacé par des images. Le 'Spectacle' n'est pas seulement un ensemble d'images (publicité, médias, cinéma), mais un rapport social entre des personnes, médiatisé par des images. Dans cette société, 'tout ce qui était directement vécu s'est éloigné dans une représentation'. L'individu n'est plus ce qu'il est, ni même ce qu'il possède, mais ce qu'il paraît. Le spectacle aliène l'homme en le transformant en spectateur passif de sa propre vie."
+        ),
+        array(
+            "titre" => "Dokkōdō",
+            "titres_alternatifs" => array(
+                "La Voie de la Solitude",
+                "Le Chemin à parcourir seul"
+            ),
+            "image" => "dokkodo.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Historique",
+                "Politique",
+                "Psychologie"
+            ),
+            "sortie" => "1645",
+            "status" => "Terminé",
+            "duree" => "21 préceptes",
+            "synopsis" => "Rédigé par le légendaire samouraï Miyamoto Musashi quelques jours avant sa mort, le Dokkōdō est un traité d'ascétisme composé de 21 préceptes courts. Ce texte condense une philosophie de vie fondée sur l'autosuffisance, le détachement des désirs matériels et l'acceptation stoïque du destin. Véritable testament spirituel, il définit une ligne de conduite rigoureuse pour quiconque cherche à rester digne et intègre dans un monde en perpétuel changement, prônant une discipline mentale absolue et une indépendance totale vis-à-vis des conventions sociales."
+        ),
+        array(
+            "titre" => "Le Prince",
+            "titres_alternatifs" => array(
+                "Il Principe",
+                "De Principatibus"
+            ),
+            "image" => "le_prince_machiavel.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Historique",
+                "Politique",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "1532",
+            "status" => "Terminé",
+            "duree" => "150 pages",
+            "synopsis" => "Véritable manuel de conquête et de conservation du pouvoir, cet ouvrage rompt avec la tradition politique chrétienne en séparant la morale de l'action d'État. Machiavel y analyse froidement les mécanismes de la souveraineté, expliquant comment un dirigeant doit naviguer entre la 'Fortune' (le sort) et la 'Virtù' (l'habileté). À travers des exemples tirés de l'Antiquité et de la Renaissance italienne, il démontre que pour garantir la stabilité et la sécurité d'une nation, un souverain doit savoir être 'renard' pour éviter les pièges et 'lion' pour effrayer les loups, quitte à sacrifier l'éthique au profit de l'efficacité."
+        ),
+        array(
+            "titre" => "L'Archipel du Goulag",
+            "titres_alternatifs" => array(
+                "Arkhipelag GOULAG"
+            ),
+            "image" => "archipel_du_goulag.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Drame",
+                "Historique",
+                "Politique",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "1973",
+            "status" => "Terminé",
+            "duree" => "1800 - 2400 pages",
+            "synopsis" => "Fruit de dix ans de travail et s'appuyant sur les témoignages de 227 rescapés ainsi que sur l'expérience personnelle de l'auteur, cette œuvre monumentale dévoile l'existence du système concentrationnaire soviétique. Soljenitsyne y décrit minutieusement l'engrenage de la terreur : de l'arrestation arbitraire aux interrogatoires brutaux, jusqu'à la vie dans les camps de travail forcé parsemant l'URSS. Plus qu'un simple récit historique, c'est une analyse profonde de la déshumanisation par l'idéologie et un hommage à la résistance de l'esprit humain face à l'oppression totale."
+        ),
+        array(
+            "titre" => "Psychologie des foules",
+            "titres_alternatifs" => array(
+                "The Crowd: A Study of the Popular Mind"
+            ),
+            "image" => "psychologie_des_foules.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Politique",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "1895",
+            "status" => "Terminé",
+            "duree" => "200 pages",
+            "synopsis" => "Dans ce traité visionnaire, Gustave Le Bon analyse comment l'individu perd son autonomie et sa capacité de raisonnement dès qu'il rejoint une foule. Il décrit les mécanismes de suggestion et de contagion mentale qui transforment une masse de personnes en une entité psychologique unique, souvent irrationnelle et impulsive. L'auteur explore le rôle des meneurs, l'importance des symboles et la manière dont les émotions collectives façonnent l'histoire et les mouvements politiques. C'est une étude pionnière sur la manipulation des masses et l'opinion publique."
+        ),
+        array(
+            "titre" => "Pensées pour moi-même",
+            "titres_alternatifs" => array(
+                "Écrits pour lui-même",
+                "Méditations"
+            ),
+            "image" => "pensees_pour_moi_meme.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Historique",
+                "Politique",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "180",
+            "status" => "Terminé",
+            "duree" => "220 pages",
+            "synopsis" => "Rédigé sous forme de notes personnelles par l'empereur romain Marc Aurèle durant ses campagnes militaires, ce recueil est l'un des piliers de la philosophie stoïcienne. L'auteur y explore la maîtrise des émotions, l'acceptation de l'impermanence et le devoir moral envers la communauté humaine. À travers un dialogue constant avec lui-même, l'empereur cherche à rester juste, serein et intègre malgré le poids immense du pouvoir et la corruption du monde. C'est un exercice de discipline mentale visant à aligner sa vie sur la raison et la nature."
+        ),
+        array(
+            "titre" => "Le Kybalion",
+            "titres_alternatifs" => array(
+                "Étude sur la philosophie hermétique de l'ancienne Égypte et de l'ancienne Grèce"
+            ),
+            "image" => "le_kybalion.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Mystère",
+                "Psychologie",
+                "Société",
+                "Surnaturel"
+            ),
+            "sortie" => "1908",
+            "status" => "Terminé",
+            "duree" => "160 pages",
+            "synopsis" => "Basé sur les enseignements d'Hermès Trismégiste, ce traité expose les sept principes hermétiques qui régissent l'univers : le mentalisme, la correspondance, la vibration, la polarité, le rythme, la cause et l'effet, et le genre. Le livre propose une vision du monde où 'Tout est Mental' et explique comment maîtriser ces lois universelles pour transformer sa propre réalité. Véritable pont entre la sagesse antique et la pensée moderne, il explore la maîtrise des énergies mentales et la compréhension des mécanismes invisibles qui influencent la vie humaine et l'ordre social."
+        ),
+        array(
+            "titre" => "L'Art de la Guerre",
+            "titres_alternatifs" => array(
+                "Sun Tzu Bing Fa",
+                "Les Treize Chapitres"
+            ),
+            "image" => "l_art_de_la_guerre.jpg",
+            "types" => array(
+                "Livre"
+            ),
+            "genres" => array(
+                "Guerre",
+                "Historique",
+                "Politique",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "-500",
+            "status" => "Terminé",
+            "duree" => "100 pages",
+            "synopsis" => "Plus ancien traité de stratégie militaire connu, cet ouvrage dépasse largement le cadre du champ de bataille pour devenir une leçon de philosophie et de gestion des conflits. Sun Tzu y enseigne l'importance de la préparation, de la flexibilité et, surtout, de la connaissance de soi et de l'ennemi. Le principe ultime reste la victoire sans combat : l'art de soumettre l'adversaire par la ruse, la psychologie et l'économie des ressources. Ses préceptes sont aujourd'hui appliqués aussi bien dans la politique que dans la psychologie sociale et le monde des affaires."
         ),
         #Jeu vidéo
         array(
