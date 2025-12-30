@@ -1380,7 +1380,7 @@
         array(
             "titre" => "Monster Hunter: World",
             "titres_alternatifs" => array(
-                "MHW",
+                "MH World",
                 "Monster Hunter World: Iceborne"
             ),
             "image" => "monster_hunter_world.jpg",
@@ -1787,5 +1787,23 @@
             "duree" => "12h - 50h+",
             "synopsis" => "Le Lieutenant Titus des Ultramarines reprend du service pour défendre l'Humanité contre les hordes insatiables de Tyranides. Dans un 41ème millénaire où il n'y a que la guerre, vous devez exterminer des armées extraterrestres pour protéger les mondes-clés de l'Imperium. Mais au-delà de la menace biologique, Titus doit naviguer au sein d'une société impériale rigide, marquée par la suspicion religieuse et les intrigues de l'Inquisition, tout en prouvant sa loyauté envers l'Empereur."
         ),
+        array(
+            "titre" => "Monster Hunter Wilds",
+            "titres_alternatifs" => array(
+                "MH Wilds"
+            ),
+            "image" => "monster_hunter_wilds.jpg",
+            "types" => array(
+                "Jeu vidéo"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure"
+            ),
+            "sortie" => "2025",
+            "status" => "En cours",
+            "duree" => "50h - 300h+",
+            "synopsis" => "En tant que Chasseur de la Commission de recherche, vous explorez les Terres Interdites, une région sauvage où le climat change radicalement, transformant des déserts arides en plaines luxuriantes. Vous devez traquer des monstres colossaux et étudier leurs comportements pour protéger les expéditions humaines. Le titre met l'accent sur l'interaction entre les espèces et la survie d'une micro-société de chercheurs et de forgerons qui dépendent entièrement des ressources prélevées sur une nature aussi magnifique que cruelle."
+        )
     );
 ?>
