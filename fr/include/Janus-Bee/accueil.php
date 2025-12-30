@@ -67,7 +67,8 @@ foreach ($typesAffichages as $type) {
 }
 ?>
 <div>
-    <a href="index.php?p=catalogue" class="bouton-accueil">Accéder à l'ensemble des œuvres</a>
+    <a href="index.php?p=catalogue" class="bouton-accueil"><img src="../../../assets/catalogue.png" alt="image catalogue" class="accueil-icones">Accéder à l'ensemble des œuvres</a>
+    <a href="index.php?p=oeuvre&id=<?php echo array_rand($Oeuvres); ?>" class="bouton-accueil"><img src="../../../assets/random.png" alt="image aléatoire" class="accueil-icones">Accéder à une œuvre au hasard</a>
 </div>
 
 <script>

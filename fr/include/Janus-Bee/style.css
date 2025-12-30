@@ -4,8 +4,10 @@
     --blanc-pur: #ffffff;
     --gris-leger: #f4f4f4;
 }
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
-/* --- STRUCTURE --- */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -17,7 +19,7 @@ body {
 }
 
 .site-content {
-    flex: 1; /* Pousse le footer vers le bas */
+    flex: 1;
     display: flex;
     flex-direction: column;
     padding: 0 40px;
@@ -28,7 +30,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.8rem 5%;
+    padding: 1rem 1.5rem;
     background: var(--blanc-pur);
     border-bottom: 3px solid var(--jaune-bee);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -52,7 +54,7 @@ body {
     color: var(--jaune-bee);
 }
 
-/* --- RECHERCHE --- */
+/* --- NAVIGATION / RECHERCHE --- */
 .zone-recherche {
     flex: 1;
     max-width: 600px;
@@ -85,7 +87,7 @@ body {
     filter: grayscale(1);
 }
 
-/* --- CATALOGUE --- */
+/* --- NAVIGATION / CATALOGUE --- */
 .catalogue-container a {
     display: flex;
     align-items: center;
@@ -108,82 +110,7 @@ body {
     width: 22px;
 }
 
-/* --- FOOTER --- */
-.site-footer {
-    background: var(--noir-pur);
-    color: var(--blanc-pur);
-    padding: 20px;
-    display: flex; 
-    justify-content: center;
-    align-items: center; /* Centre verticalement le contenu par rapport au logo */
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.f-contact, .f-info {
-    flex: 1;
-    max-width: 250px;
-    font-size: 1rem;
-}
-
-.f-contact { 
-    text-align: right; 
-    padding-right: 10px; 
-}
-
-.f-info { 
-    text-align: left; 
-    padding-left: 10px; 
-}
-
-.f-img { 
-    flex: 0 0 auto; 
-    display: flex;
-    align-items: center;
-}
-
-.f-contact div, .f-info div {
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.site-footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 5px 0 0 0; /* Réduit la marge pour un meilleur centrage visuel */
-}
-
-.site-footer a {
-    color: #bbb;
-    text-decoration: none;
-}
-
-.site-footer a:hover {
-    color: var(--jaune-bee);
-}
-
-.f-copyr {
-    width: 100%;
-    text-align: center;
-    margin-top: 15px;
-    padding-top: 20px;
-    border-top: 1px solid #333;
-    font-size: 0.8rem;
-    color: #777;
-}
-
-@media (max-width: 600px) {
-    .site-footer {
-        flex-direction: column;
-        text-align: center;
-    }
-    .f-contact, .f-info {
-        text-align: center;
-        padding: 0;
-    }
-}
-
-/* --- ACCUEIL PAGE --- */
+/* --- PAGE / ACCUEIL --- */
 .accueil-texte {
     max-width: 800px;
     line-height: 1.6;
@@ -331,8 +258,11 @@ body {
     color: var(--noir-pur);
 }
 .bouton-accueil {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     margin-bottom: 20px;
+    margin-right: 20px;
     padding: 12px 25px;
     background: var(--jaune-bee);
     color: var(--noir-pur);
@@ -340,24 +270,19 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: all 0.2s;
-    width: auto;
 }
 .bouton-accueil:hover {
     background: #e6c600;
 }
 
-@media (max-width: 768px) {
-    .slider-btn {
-        flex: 0 0 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
+.accueil-icones {
+    width: 22px;
 }
 
-/* --- PAGE OEUVRE DÉTAIL --- */
+/* --- PAGE / OEUVRE DÉTAIL --- */
 .oeuvre-detail-container {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 .retour-lien {
@@ -461,22 +386,7 @@ body {
     font-size: 1.05rem;
 }
 
-@media (max-width: 768px) {
-    .oeuvre-detail-info h1 {
-        text-align: center;
-    }
-    .oeuvre-main-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .oeuvre-detail-image {
-        flex: 0 0 auto;
-        text-align: center;
-    }
-}
-
-/* --- VIDÉO SECTION --- */
+/* --- PAGE / OEUVRE DÉTAIL / VIDÉO SECTION --- */
 .oeuvre-video-section {
     padding-top: 40px;
     margin: 40px auto;
@@ -489,22 +399,7 @@ body {
     color: var(--noir-pur);
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    .logo-text-part, .catalogue-texte {
-        display: none;
-    }
-    
-    .nav-menu {
-        padding: 0.8rem 3%;
-        gap: 10px;
-    }
-
-    .catalogue-container a {
-        padding: 10px;
-    }
-}
-/* --- CATALOGUE PAGE --- */
+/* --- PAGE / CATALOGUE --- */
 .catalogue-container-main {
     margin: 0 10px 20px 10px;
     padding: 20px;
@@ -523,7 +418,7 @@ body {
     width: 100%;
 }
 
-/* Section filtres à GAUCHE */
+/* --- PAGE / CATALOGUE / SECTION FILTRES A GAUCHE --- */
 .filtres-section {
     flex: 0 0 250px;
     background: var(--gris-leger);
@@ -622,7 +517,7 @@ body {
     border-color: #bbb;
 }
 
-/* Section résultats à DROITE */
+/* --- PAGE / CATALOGUE / SECTION RESULTAT A DROITE --- */
 .resultats-section {
     flex: 1 1 auto;
     min-width: 0;
@@ -674,8 +569,13 @@ body {
     border-bottom: 2px solid var(--jaune-bee);
     font-size: 1.1rem;
 }
+.oeuvres-liste {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
 
-/* --- STYLES SPECIFIQUES DES CARTES DU CATALOGUE --- */
+/* --- PAGE / CATALOGUE / SECTION RESULTAT A DROITE / STYLES SPECIFIQUES DES CARTES --- */
 .catalogue-lien-oeuvre {
     text-decoration: none;
     color: inherit;
@@ -766,10 +666,12 @@ body {
     word-break: break-word;
     font-size: 0.8rem;
 }
+
 .aucun-resultat {
     color: #555;
     margin: 10px 0;
 }
+
 .retour-catalogue {
     padding: 12px 25px;
     background: var(--jaune-bee);
@@ -781,18 +683,142 @@ body {
     transition: background 0.2s;
     white-space: nowrap;
 }
+
 .retour-catalogue:hover {
     background: #e6c600;
 }
 
-/* Liste des œuvres - Plus compacte avec plusieurs par ligne */
-.oeuvres-liste {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+/* --- PAGE / LEGAL + ORIGINES --- */
+.content-legal, .content-origines{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
 }
 
+.content-legal div, .content-origines div{
+    max-width: 800px;
+}
+
+.content-legal h1, .content-origines h1{
+    margin: 0.5em 1em 1em 1em;
+    padding: 0;
+}
+
+.content-legal h2, .content-origines h2{
+    font-size: 1.5em;
+    margin: 0.5em 1.4em;
+    padding: 0 0 0 0.5em;
+    border-left: 5px solid var(--jaune-bee);
+}
+
+.content-legal p, .content-origines p{
+    margin: 1em 5em;
+}
+
+.content-origines ul, .content-origines ol, .content-legal ul{
+    margin: 0em 5em;
+}
+
+/* --- PAGE / PLAN --- */
+.content-plan{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-plan div{
+    max-width: 800px;
+}
+
+.content-plan h1{
+    margin: 0.5em 1em;
+    padding: 0;
+}
+
+.content-plan a{
+    color: var(--noir-pur);
+    text-decoration: none;
+}
+
+.content-plan h2{
+    font-size: 1.5em;
+    margin: 0.5em 1.4em;
+    padding: 0 0 0 0.5em;
+}
+
+.content-plan a:hover{
+    text-decoration: underline;
+    color: var(--jaune-bee);
+}
+
+/* --- FOOTER --- */
+.site-footer {
+    background: var(--noir-pur);
+    color: var(--blanc-pur);
+    padding: 20px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.f-contact, .f-info {
+    flex: 1;
+    max-width: 250px;
+    font-size: 1rem;
+}
+
+.f-contact { 
+    text-align: right; 
+    padding-right: 10px; 
+}
+
+.f-info { 
+    text-align: left; 
+    padding-left: 10px; 
+}
+
+.f-img { 
+    flex: 0 0 auto; 
+    display: flex;
+    align-items: center;
+}
+
+.f-contact div, .f-info div {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+}
+
+.site-footer a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--jaune-bee);
+}
+
+.f-copyr {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* --- RESPONSIVE --- */
 @media (max-width: 1280px) {
+    /* --- PAGE / CATALOGUE --- */
     .catalogue-content {
         flex-direction: column;
         gap: 25px;
@@ -800,11 +826,9 @@ body {
     .filtres-section {
         width: 100%;
         flex: none;
-        order: 1;
     }
     .resultats-section {
         width: 100%;
-        order: 2;
     }
     .catalogue-container-main {
         padding: 15px;
@@ -817,5 +841,54 @@ body {
     .recherche-input-catalogue,
     .recherche-btn-catalogue {
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- NAVIGATION --- */
+    .logo-text-part, .catalogue-texte {
+        display: none;
+    }
+    
+    .nav-menu {
+        padding: 0.8rem;
+        gap: 10px;
+    }
+
+    .catalogue-container a {
+        padding: 10px;
+    }
+
+    /* --- PAGE / ACCUEIL --- */
+    .slider-btn {
+        flex: 0 0 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    /* --- PAGE / OEUVRE DÉTAIL --- */
+    .oeuvre-detail-info h1 {
+        text-align: center;
+    }
+    .oeuvre-main-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .oeuvre-detail-image {
+        flex: 0 0 auto;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    /* --- FOOTER --- */
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .f-contact, .f-info {
+        text-align: center;
+        padding: 0;
     }
 }

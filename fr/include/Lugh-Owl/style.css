@@ -60,7 +60,7 @@ header{
     background-color: var(--bg-color1);
     color: var(--heading-color);
     border-bottom: 0.4em solid var(--heading-color);
-    height: 5.6em;
+    height: auto;
     z-index: 4;
 }
 .logo-container a{
@@ -76,11 +76,11 @@ header{
     align-items: center;
 }
 .logo-container-size img{
-    width: 4.5em;
-    margin-right: 0.5em;
+    width: 4rem;
+    margin-right: 10px;
 }
 .logo-container-size div{
-    font-size: 3em;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--heading-color);  
 }
@@ -139,7 +139,7 @@ header{
     margin: auto 2em auto auto;
 }
 nav{
-    top: -70%;
+    top : -23rem;
     font-size: 1em;
     position: fixed;
     background-color: var(--bg-color1);
@@ -153,7 +153,7 @@ nav{
     overflow-y: scroll;
 }
 nav.nav-menu.mobile-menu{
-    top: 6em;
+    top: 5.4rem;
 }
 nav ul{
     padding: 0;
@@ -321,7 +321,7 @@ nav .nav-lang a:hover p{
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position-y: 5.6em;
+    background-position-y: 5.4em;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -528,7 +528,7 @@ section{
 .content-legal p, .content-origines p{
     margin: 1em 5em;
 }
-.content-origines ul, .content-origines ol{
+.content-origines ul, .content-origines ol, .content-legal ul{
     margin: 0em 5em;
 }
 
@@ -654,7 +654,6 @@ footer a:hover{
 @media screen and (max-width: 750px) {
     /*Header*/
     header{
-        height: 3.9em;
         border-bottom: 0.3em solid var(--heading-color);
     }
     .logo-container{
@@ -666,12 +665,12 @@ footer a:hover{
     /*Nav*/
     nav{
         font-size: 0.7em;
-        top: -150%;
+        top: -23rem;
         overflow-y: scroll;
         max-height: 70vh;
     }
     nav.nav-menu.mobile-menu{
-        top: 6em;
+        top: 4.8rem;
     }
     nav ul li a{
         padding-left: 1em;
@@ -769,20 +768,7 @@ footer a:hover{
 }
 
 @media screen and (max-width: 550px) {
-    /*Header*/
-    header{
-        height: 2.8em;
-    }
-    .logo-container{
-        font-size: 0.5em;
-    }
-    .menu-hamburger{
-        font-size: 0.5em;
-    }
     /*Nav*/
-    nav.nav-menu.mobile-menu{
-        top: 4.3em;
-    }
     nav form input{
         height: 30px;
     }
