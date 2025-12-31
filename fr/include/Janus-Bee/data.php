@@ -82,6 +82,28 @@
             "synopsis" => "À la surface d'une île isolée se trouve l'Abysse, une faille gigantesque et mystérieuse qui s'enfonce dans les profondeurs de la terre. Riko, une jeune orpheline, rêve de devenir une grande cavernière comme sa mère et d'explorer ses profondeurs malgré la 'Malédiction de l'Abysse'. Un jour, elle découvre Reg, un petit garçon qui semble être un robot doté de technologies oubliées. Ensemble, ils décident de descendre au fond du gouffre, un voyage sans retour rempli de merveilles magnifiques et de cruautés insoutenables."
         ),
         array(
+            "titre" => "Orb: On the Movements of the Earth",
+            "titres_alternatifs" => array(
+                "Chi: Chikyuu no Ondou ni Tsuite",
+                "Chi - Du mouvement de la Terre"
+            ),
+            "image" => "chi_movements_earth.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Drame",
+                "Historique",
+                "Psychologie",
+                "Société",
+                "Thriller"
+            ),
+            "sortie" => "2024 - 2025",
+            "status" => "Terminé",
+            "duree" => "25 épisodes",
+            "synopsis" => "Dans l'Europe du XVe siècle, toute théorie contredisant la doctrine religieuse de l'Église est considérée comme une hérésie passible du bûcher. L'astronomie est alors limitée au modèle géocentrique (la Terre est au centre de l'Univers). Rafal, un jeune prodige destiné à des études de théologie, rencontre un savant hérétique qui lui confie des recherches sur l'héliocentrisme. Fasciné par la beauté mathématique de cette vérité interdite, Rafal et d'autres individus après lui vont risquer leur vie pour prouver que la Terre tourne autour du Soleil, déclenchant une course contre la montre et l'Inquisition pour transmettre ce savoir aux générations futures."
+        ),
+        array(
             "titre" => "Vinland Saga",
             "image" => "vinland_saga.jpg",
             "types" => array(
@@ -186,23 +208,6 @@
             "synopsis" => "Dans un futur lointain, l'humanité est déchirée par une guerre civile qui dure depuis 150 ans entre l'Empire Galactique et l'Alliance des Planètes Libres. Le conflit atteint un tournant historique avec l'ascension simultanée de deux génies tactiques : Reinhard von Lohengramm, un noble ambitieux qui souhaite renverser la monarchie impériale, et Yang Wen-li, un historien malgré lui qui défend les idéaux fragiles de la démocratie. À travers leurs duels stratégiques, c'est le destin de la galaxie et la confrontation entre autocratie et liberté qui se jouent."
         ),
         array(
-            "titre" => "Kengan Ashura",
-            "image" => "kengan_ashura.jpg",
-            "types" => array(
-                "Série d'animation"
-            ),
-            "genres" => array(
-                "Action", 
-                "Combat", 
-                "Politique",
-                "Sport"
-            ),
-            "sortie" => "2019 à 2024",
-            "status" => "Terminé",
-            "duree" => "24 min pour 52 épisodes",
-            "synopsis" => "Depuis l'ère Edo, les litiges entre grandes entreprises japonaises se règlent dans des arènes de combat clandestines. Les PDG parient d'énormes sommes et des contrats stratégiques sur des combattants d'élite lors de duels sans merci appelés matchs 'Kengan'. Tokita Ohma, un guerrier mystérieux surnommé Ashura, entre dans ce monde brutal sous l'égide du groupe Nogi. Son objectif est simple : prouver qu'il est le plus fort, tout en naviguant au milieu des complots financiers et des gladiateurs aux techniques surhumaines."
-        ),
-        array(
             "titre" => "Dungeon Meshi",
             "titres_alternatifs" => array(
                 "Gloutons & Dragons",
@@ -262,6 +267,23 @@
             "status" => "En cours",
             "duree" => "24 min pour 25 épisodes",
             "synopsis" => "Fable est un tueur à gages légendaire craint par toute la pègre japonaise pour son efficacité redoutable. Cependant, son patron, estimant qu'il travaille trop, lui donne un ordre inédit : vivre une année entière à Osaka comme un civil normal, sans tuer personne, sous peine de mort. Sous le nom d'Akira Sato, ce génie du meurtre doit alors apprendre à gérer les interactions sociales, trouver un travail honnête et ignorer les provocations des yakuzas locaux qui croisent son chemin."
+        ),
+        array(
+            "titre" => "Kengan Ashura",
+            "image" => "kengan_ashura.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action", 
+                "Combat", 
+                "Politique",
+                "Sport"
+            ),
+            "sortie" => "2019 à 2024",
+            "status" => "Terminé",
+            "duree" => "24 min pour 52 épisodes",
+            "synopsis" => "Depuis l'ère Edo, les litiges entre grandes entreprises japonaises se règlent dans des arènes de combat clandestines. Les PDG parient d'énormes sommes et des contrats stratégiques sur des combattants d'élite lors de duels sans merci appelés matchs 'Kengan'. Tokita Ohma, un guerrier mystérieux surnommé Ashura, entre dans ce monde brutal sous l'égide du groupe Nogi. Son objectif est simple : prouver qu'il est le plus fort, tout en naviguant au milieu des complots financiers et des gladiateurs aux techniques surhumaines."
         ),
         array(
             "titre" => "One Piece",
@@ -381,6 +403,771 @@
             "status" => "Terminé",
             "duree" => "24 min pour 46 épisodes",
             "synopsis" => "Les Mushi sont des formes de vie primitives, situées entre le monde des vivants et celui des esprits, souvent invisibles pour le commun des mortels. Parfois, leur existence entre en conflit avec celle des humains, provoquant des phénomènes étranges ou des maladies inexpliquées. Ginko, un expert itinérant appelé 'Mushi-shi', voyage à travers le Japon rural pour étudier ces créatures et aider les personnes affectées. Au fil de ses rencontres, il cherche moins à éradiquer les Mushi qu'à trouver un moyen pour que l'homme et la nature coexistent en harmonie."
+        ),
+        array(
+            "titre" => "Hunter x Hunter",
+            "image" => "hxh_2011.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Combat",
+                "Politique",
+                "Psychologie"
+            ),
+            "sortie" => "2011",
+            "status" => "Terminé",
+            "duree" => "148 épisodes",
+            "synopsis" => "Gon Freecss est un jeune garçon qui rêve de devenir un Hunter, un aventurier d'élite, pour retrouver son père qui l'a abandonné. Pour cela, il doit passer un examen extrêmement dangereux où il se lie d'amitié avec Killua, Kurapika et Leorio. Mais derrière les épreuves de force se cache un monde d'une complexité rare, régi par le 'Nen' (l'énergie vitale). La quête de Gon l'entraînera face à des organisations criminelles, des jeux virtuels mortels et une espèce de mutants menaçant l'humanité, l'obligeant à questionner sa propre morale et les fondements politiques du monde."
+        ),
+        array(
+            "titre" => "Megalo Box",
+            "image" => "megalobox.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Combat",
+                "Psychologie",
+                "Société",
+                "Sport"
+            ),
+            "sortie" => "2018",
+            "status" => "Terminé",
+            "duree" => "26 épisodes",
+            "synopsis" => "Dans un futur proche où la société est divisée entre les citoyens riches et les non-citoyens vivant dans des bidonvilles, la boxe a évolué en 'Megalobox', une discipline où les combattants sont équipés d'exosquelettes métalliques appelés Gears. 'Junk Dog', un boxeur des bas-fonds qui survit en truquant des combats, décide de tout risquer en participant au tournoi mondial Megalonia sous le nom de 'Joe'. Pour prouver sa valeur, il choisit de combattre sans Gear, comptant uniquement sur sa force brute et sa volonté face à des adversaires technologiquement supérieurs."
+        ),
+        array(
+            "titre" => "Texhnolyze",
+            "image" => "texhnolyze.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Drame",
+                "Politique",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "2003",
+            "status" => "Terminé",
+            "duree" => "22 épisodes",
+            "synopsis" => "Dans la cité souterraine de Lukuss, une ville délabrée sans soleil, trois factions se disputent le contrôle : une organisation mafieuse, une secte de fanatiques et un groupe de rebelles. Ichise, un boxeur amputé de ses membres après un combat clandestin, reçoit des prothèses cybernétiques expérimentales (Texhnolyze). Alors qu'il tente de survivre dans cet environnement violent, il rencontre Ran, une jeune fille capable de voir l'avenir. Ensemble, ils seront les témoins impuissants de l'effondrement inévitable de leur monde et de l'extinction lente de l'humanité."
+        ),
+        array(
+            "titre" => "Death Note",
+            "image" => "death_note.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Mystère",
+                "Policier",
+                "Politique",
+                "Psychologie",
+                "Surnaturel"
+            ),
+            "sortie" => "2006",
+            "status" => "Terminé",
+            "duree" => "37 épisodes",
+            "synopsis" => "Light Yagami est un lycéen brillant qui juge le monde actuel corrompu. Sa vie bascule lorsqu'il ramasse le Death Note, un carnet perdu par un dieu de la mort. Chaque personne dont le nom est écrit dans ce carnet meurt. Light décide d'utiliser ce pouvoir pour éliminer les criminels et créer un monde parfait dont il serait le dieu. Mais ses actions attirent l'attention d'Interpol et du mystérieux détective L. Un duel intellectuel acharné s'engage alors entre les deux génies, où la moindre erreur d'identité ou de psychologie est fatale."
+        ),
+        array(
+            "titre" => "91 Days",
+            "image" => "91_days.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Drame",
+                "Historique",
+                "Policier",
+                "Psychologie"
+            ),
+            "sortie" => "2016",
+            "status" => "Terminé",
+            "duree" => "12 épisodes",
+            "synopsis" => "En pleine Prohibition aux États-Unis, la ville de Lawless est régie par la mafia et le trafic d'alcool. Sept ans après avoir vu sa famille massacrée par la famille Vanetti, Avilio Bruno reçoit une lettre mystérieuse qui ravive son désir de vengeance. Il infiltre alors l'organisation criminelle en se liant d'amitié avec Nero, le fils du parrain Vanetti. Pendant 91 jours, il va naviguer entre trahisons et meurtres de sang-froid, menant une lutte psychologique intense où sa propre humanité s'efface au profit de sa quête destructrice."
+        ),
+        array(
+            "titre" => "Babylon",
+            "image" => "babylon_anime.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Mystère",
+                "Policier",
+                "Politique",
+                "Psychologie",
+                "Thriller"
+            ),
+            "sortie" => "2019",
+            "status" => "Terminé",
+            "duree" => "12 épisodes",
+            "synopsis" => "Zen Seizaki, procureur au sein du nouveau district de Shinzen à Tokyo, enquête sur une affaire de fraude pharmaceutique. Il découvre rapidement un complot bien plus vaste lié à une élection locale et à la création d'une loi révolutionnaire visant à légaliser le suicide. Au centre de ce chaos se trouve Ai Magase, une femme mystérieuse dotée d'une capacité de manipulation terrifiante, capable de pousser n'importe qui à mettre fin à ses jours par la simple parole. La série explore la frontière ténue entre le bien et le mal, et questionne la valeur de la vie face à la liberté absolue."
+        ),
+        array(
+            "titre" => "Death Parade",
+            "image" => "death_parade.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Drame",
+                "Mystère",
+                "Psychologie",
+                "Surnaturel",
+                "Thriller"
+            ),
+            "sortie" => "2015",
+            "status" => "Terminé",
+            "duree" => "12 épisodes",
+            "synopsis" => "Après la mort, les humains arrivent au Quindecim, un bar mystérieux tenu par Decim, un arbitre dépourvu d'émotions. Les défunts, ignorant leur propre mort, sont forcés de participer à des jeux de bar (fléchettes, billard, bowling) où leurs vies sont mises en jeu. Ces jeux sont des rituels destinés à révéler la véritable nature de leur âme en les poussant dans leurs derniers retranchements psychologiques. Selon leur comportement, l'arbitre décide s'ils seront réincarnés ou envoyés dans le néant. L'arrivée d'une assistante humaine va cependant bousculer ce système de jugement froid et impartial."
+        ),
+        array(
+            "titre" => "Ergo Proxy",
+            "image" => "ergo_proxy.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Mystère",
+                "Politique",
+                "Psychologie",
+                "Science-fiction"
+            ),
+            "sortie" => "2006",
+            "status" => "Terminé",
+            "duree" => "23 épisodes",
+            "synopsis" => "Dans la cité dôme de Romdo, l'un des derniers refuges de l'humanité après une catastrophe écologique mondiale, humains et androïdes (AutoReivs) cohabitent dans un ordre social strict et aseptisé. Re-l Mayer, une inspectrice du Bureau d'Investigation, enquête sur le virus 'Cogito' qui confère une conscience aux robots. Sa rencontre avec une créature monstrueuse appelée 'Proxy' et un immigré nommé Vincent Law va la pousser à quitter la cité pour découvrir la vérité sur l'origine des dômes et la nature réelle des Proxies. Le récit explore les thèmes de l'existence, de l'identité et du créateur."
+        ),
+        array(
+            "titre" => "Kekkai Sensen",
+            "titres_alternatifs" => array(
+                "Blood Blockade Battlefront"
+            ),
+            "image" => "kekkai_sensen.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Combat",
+                "Surnaturel",
+                "Société"
+            ),
+            "sortie" => "2015",
+            "status" => "Terminé",
+            "duree" => "24 épisodes (2 saisons)",
+            "synopsis" => "Il y a trois ans, une brèche entre la Terre et l'au-delà s'est ouverte au-dessus de New York, emprisonnant les humains et des créatures monstrueuses dans une bulle impénétrable. Rebaptisée Hellsalem's Lot, la ville est devenue un joyeux chaos où le paranormal est quotidien. Leonardo Watch, un jeune photographe ayant obtenu les 'Yeux de Dieu' au prix de la vue de sa sœur, rejoint l'organisation secrète Libra. Cette force d'élite lutte pour maintenir l'équilibre dans cette ville déjantée, affrontant des vampires millénaires et des menaces terroristes interdimensionnelles."
+        ),
+        array(
+            "titre" => "L'Odyssée de Kino",
+            "titres_alternatifs" => array(
+                "Kino no Tabi",
+                "Kino's Journey"
+            ),
+            "image" => "kino_no_tabi.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Aventure",
+                "Mystère",
+                "Psychologie",
+                "Société",
+                "Tranche de vie"
+            ),
+            "sortie" => "2017",
+            "status" => "Terminé",
+            "duree" => "12 épisodes",
+            "synopsis" => "Kino est une jeune voyageuse qui parcourt un monde parsemé de pays-cités uniques, accompagnée de Hermès, une moto parlante. Sa règle d'or est de ne jamais rester plus de trois jours dans un même endroit, un laps de temps qu'elle juge suffisant pour apprendre l'essentiel sur les coutumes locales. Chaque pays visité possède ses propres lois, technologies et morales, souvent poussées à l'extrême (un pays où la douleur est partagée, un autre où le meurtre est légal, etc.). Kino observe ces sociétés sans jamais porter de jugement, témoignant de la beauté et de la cruauté inhérentes à la nature humaine."
+        ),
+        array(
+            "titre" => "Mob Psycho 100",
+            "titres_alternatifs" => array(
+                "Mobu Saiko Hyaku"
+            ),
+            "image" => "mob_psycho_100.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Combat",
+                "Psychologie",
+                "Société",
+                "Surnaturel"
+            ),
+            "sortie" => "2016 - 2022",
+            "status" => "Terminé",
+            "duree" => "37 épisodes (3 saisons)",
+            "synopsis" => "Shigeo Kageyama, surnommé 'Mob', est un collégien doté de pouvoirs psychiques dévastateurs. Convaincu que ses capacités ne le rendent pas supérieur aux autres, il mène une vie effacée et travaille pour Reigen Arataka, un mentor charismatique mais dépourvu de pouvoirs. Mob tente de réprimer ses émotions pour garder le contrôle, mais lorsqu'une jauge interne atteint 100%, une puissance incontrôlable se déchaîne. La série suit son apprentissage de la vie, entre affrontements contre des organisations secrètes et quête de maturité émotionnelle."
+        ),
+        array(
+            "titre" => "One Punch Man",
+            "image" => "one_punch_man.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Combat",
+                "Société",
+                "Super-héros"
+            ),
+            "sortie" => "2015 - En cours",
+            "status" => "En cours",
+            "duree" => "24 épisodes + OAV",
+            "synopsis" => "Saitama est un jeune homme sans emploi qui, après un entraînement rigoureux, est devenu si puissant qu'il peut terrasser n'importe quel adversaire d'un seul coup de poing. Cependant, cette force écrasante est devenue une source de frustration : il ne ressent plus aucune excitation lors de ses combats et s'ennuie profondément. En rejoignant l'Association des Héros, il découvre un système bureaucratique obsédé par les classements et l'image publique. Saitama cherche désespérément un adversaire à sa mesure tout en gérant son quotidien de héros blasé et méconnu."
+        ),
+        array(
+            "titre" => "Ranking of Kings",
+            "titres_alternatifs" => array(
+                "Ousama Ranking"
+            ),
+            "image" => "ousama_ranking.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Aventure",
+                "Drame",
+                "Fantasy",
+                "Politique"
+            ),
+            "sortie" => "2021",
+            "status" => "Terminé",
+            "duree" => "23 épisodes",
+            "synopsis" => "Bojji est le prince aîné du royaume dirigé par le roi Boss, mais il est sourd, muet et si chétif qu'il ne peut même pas soulever une épée. Malgré les moqueries de son peuple et de sa cour, il rêve de devenir le plus grand des rois. Sa rencontre avec Ombre, le dernier survivant d'un clan d'assassins, marque le début d'une aventure épique. Ensemble, ils devront naviguer au milieu des complots politiques de la famille royale et découvrir les secrets sombres qui lient le destin de son père à des forces démoniaques."
+        ),
+        array(
+            "titre" => "Saga of Tanya the Evil",
+            "titres_alternatifs" => array(
+                "Youjo Senki",
+                "Tanya la Maléfique"
+            ),
+            "image" => "tanya_the_evil.jpg",
+            "types" => array(
+                "Série d'animation",
+                "Film d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Guerre",
+                "Politique",
+                "Psychologie"
+            ),
+            "sortie" => "2017",
+            "status" => "En cours",
+            "duree" => "12 épisodes + Film",
+            "synopsis" => "Un salarié japonais froid et pragmatique, sur le point d'être tué par un employé licencié, est défié par une entité se présentant comme Dieu (l'Être X). Pour le punir de son athéisme et de son manque d'empathie, l'Être X le réincarne dans la peau de Tanya Degurechaff, une jeune orpheline dans un monde alternatif en pleine guerre mondiale, où la magie est utilisée comme arme de pointe. Conservant son esprit de logicien impitoyable, Tanya s'engage dans l'armée impériale. Son but : grimper les échelons le plus vite possible pour vivre en sécurité à l'arrière, tout en menant un bras de fer idéologique contre la divinité qui tente de briser sa volonté."
+        ),
+        array(
+            "titre" => "Overlord",
+            "image" => "overlord.jpg",
+            "types" => array(
+                "Série d'animation",
+                "Film d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Fantasy",
+                "Politique"
+            ),
+            "sortie" => "2015 - En cours",
+            "status" => "En cours",
+            "duree" => "52 épisodes (4 saisons) + Film",
+            "synopsis" => "En l'an 2138, le jeu de réalité virtuelle Yggdrasil ferme ses portes. Momonga, chef de la guilde Ainz Ooal Gown, reste connecté jusqu'à la dernière seconde. À sa surprise, il ne déconnecte pas, mais se retrouve transporté avec son quartier général, le Grand Tombeau de Nazarick, dans un nouveau monde. Les PNJ (personnages non-joueurs) ont désormais une conscience propre et lui vouent une loyauté absolue. Sous le nom de Ainz Ooal Gown, cet être aux pouvoirs divins décide de conquérir ce monde, non par simple méchanceté, mais pour asseoir la sécurité de sa guilde et retrouver d'éventuels anciens compagnons."
+        ),
+        array(
+            "titre" => "Tokyo Ghoul",
+            "image" => "tokyo_ghoul.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Drame",
+                "Horreur",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "2014",
+            "status" => "Terminé",
+            "duree" => "48 épisodes (4 saisons)",
+            "synopsis" => "À Tokyo, des créatures nommées 'Ghouls' vivent parmi les humains tout en se nourrissant de leur chair. Ken Kaneki, un étudiant timide, survit de justesse à une attaque mais devient un hybride mi-humain mi-ghoul après une transplantation d'organes d'urgence. Rejeté par les deux mondes, il doit apprendre à maîtriser ses nouveaux instincts de prédateur tout en travaillant au café l'Antique, un refuge pour ghouls pacifistes. Alors que la police spéciale (CCG) intensifie sa traque, Kaneki se retrouve au centre d'un conflit sanglant qui remet en question la définition même de l'humanité."
+        ),
+        array(
+            "titre" => "Violet Evergarden",
+            "image" => "violet_evergarden.jpg",
+            "types" => array(
+                "Série d'animation",
+                "Film d'animation"
+            ),
+            "genres" => array(
+                "Drame",
+                "Psychologie",
+                "Société",
+                "Tranche de vie"
+            ),
+            "sortie" => "2018",
+            "status" => "Terminé",
+            "duree" => "13 épisodes + Spécial + 2 Films",
+            "synopsis" => "Après quatre années de conflit sanglant, la Grande Guerre prend fin. Violet, une jeune fille élevée uniquement pour être une arme humaine, se retrouve seule et amputée de ses deux bras, remplacés par des prothèses métalliques. Incapable de comprendre les derniers mots de son supérieur, le Major Gilbert : 'Je t'aime', elle décide de devenir une 'Poupée de Souvenirs Automatiques'. Son travail consiste à rédiger des lettres pour des clients afin de retranscrire leurs sentiments les plus profonds. À travers ses rencontres, Violet entame un long chemin vers la compréhension des émotions humaines et la guérison de ses propres blessures."
+        ),
+        array(
+            "titre" => "Zankyou no Terror",
+            "titres_alternatifs" => array(
+                "Terror in Resonance"
+            ),
+            "image" => "zankyou_no_terror.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Mystère",
+                "Policier",
+                "Politique",
+                "Psychologie",
+                "Thriller"
+            ),
+            "sortie" => "2014",
+            "status" => "Terminé",
+            "duree" => "11 épisodes",
+            "synopsis" => "Un jour d'été, une explosion terroriste ravage Tokyo. Les coupables sont deux adolescents se faisant appeler 'Sphinx', qui postent des énigmes sur Internet avant chaque attentat. Nine et Twelve, deux garçons au passé mystérieux issus d'une installation secrète, ne cherchent pas à tuer, mais à réveiller une société endormie et à révéler une vérité occulte liée à l'histoire sombre du Japon. Ils croisent la route de Lisa, une lycéenne harcelée, et de Shibazaki, un détective brillant relégué aux archives, qui est le seul capable de déchiffrer leurs intentions réelles."
+        ),
+        array(
+            "titre" => "Demon Slayer",
+            "titres_alternatifs" => array(
+                "Kimetsu no Yaiba"
+            ),
+            "image" => "demon_slayer.jpg",
+            "types" => array(
+                "Série d'animation",
+                "Film d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Combat",
+                "Surnaturel"
+            ),
+            "sortie" => "2019 - En cours",
+            "status" => "En cours",
+            "duree" => "55+ épisodes (4 saisons) + Films",
+            "synopsis" => "Le Japon, au début de l'ère Taisho. Tanjirō, un jeune marchand de charbon au cœur pur, retrouve sa famille massacrée par un démon. Seule sa petite sœur Nezuko a survécu, mais elle a été transformée en démon. Pour trouver un remède et rendre son humanité à sa sœur, Tanjirō rejoint l'Armée des Pourfendeurs de Démons. Armé de sa lame du Soleil et de sa maîtrise de la respiration de l'eau, il entame un voyage périlleux pour traquer Muzan Kibutsuji, le progéniteur de tous les démons, tout en protégeant Nezuko qui refuse de dévorer les humains."
+        ),
+        array(
+            "titre" => "Shoushimin Series",
+            "titres_alternatifs" => array(
+                "How to Become Ordinary"
+            ),
+            "image" => "shoushimin_series.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Mystère",
+                "Psychologie",
+                "Société",
+                "Tranche de vie"
+            ),
+            "sortie" => "2024 - 2025",
+            "status" => "Terminé",
+            "duree" => "20 épisodes (2 saisons)",
+            "synopsis" => "Jougorou Kobato et Yuki Osanai sont deux lycéens qui partagent un secret : par le passé, ils ont tous deux souffert de leurs personnalités excessives. Pour survivre paisiblement au lycée, ils concluent un pacte : devenir des 'petits bourgeois' (shoushimin) exemplaires, discrets et sans histoires. Cependant, malgré leurs efforts, de petits mystères du quotidien ne cessent de se dresser sur leur chemin. La seconde saison approfondit la fracture entre leur désir de normalité et leur nature profonde, culminant lors d'un incident majeur durant les vacances d'été qui remet en question l'honnêteté de leur relation."
+        ),
+        array(
+            "titre" => "Jujutsu Kaisen",
+            "image" => "jujutsu_kaisen.jpg",
+            "types" => array(
+                "Série d'animation",
+                "Film d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Combat",
+                "Société",
+                "Surnaturel"
+            ),
+            "sortie" => "2020 - En cours",
+            "status" => "En cours",
+            "duree" => "47 épisodes (2 saisons) + Film",
+            "synopsis" => "Dans un monde où les émotions négatives des humains (peur, haine, regret) se matérialisent en fléaux monstrueux et meurtriers, Yuji Itadori est un lycéen à la force physique hors norme. Pour sauver ses amis d'une malédiction, il avale une relique de classe S : le doigt de Ryomen Sukuna, le Roi des Fléaux. Devenu l'hôte de cette entité maléfique, il est condamné à mort par les hautes instances de l'exorcisme. Sous la tutelle de Satoru Gojo, l'exorciste le plus puissant, il rejoint l'école d'exorcisme de Tokyo pour traquer les autres doigts de Sukuna et protéger les humains, tout en luttant contre l'obscurité qui grandit en lui."
+        ),
+        array(
+            "titre" => "Sakuna: Of Rice and Ruin",
+            "titres_alternatifs" => array(
+                "Tensui no Sakuna-hime"
+            ),
+            "image" => "sakuna_rice_and_ruin.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Comédie",
+                "Fantasy",
+                "Société"
+            ),
+            "sortie" => "2024",
+            "status" => "Terminé",
+            "duree" => "13 épisodes",
+            "synopsis" => "Sakuna est une déesse des moissons capricieuse et paresseuse qui vit dans le confort du royaume céleste. Après avoir accidentellement causé un incendie et laissé des humains s'introduire dans le domaine des dieux, elle est bannie sur l'Île des Démons. Sa mission : purifier l'île de ses monstres tout en cultivant du riz pour assurer sa survie et celle du groupe d'humains qui l'accompagne. Sa force étant directement liée à la qualité de sa récolte, elle doit apprendre l'humilité et la rigueur du travail de la terre. C'est le début d'une aventure où agriculture et combat s'entremêlent pour redonner un sens à sa divinité."
+        ),
+        array(
+            "titre" => "Negative Positive Angler",
+            "titres_alternatifs" => array(
+                "NegaPosi Angler"
+            ),
+            "image" => "negaposi_angler.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Drame",
+                "Psychologie",
+                "Société",
+                "Tranche de vie",
+                "Sport"
+            ),
+            "sortie" => "2024",
+            "status" => "Terminé",
+            "duree" => "12 épisodes",
+            "synopsis" => "Tsunehiro Sasaki est un étudiant au fond du gouffre : on lui diagnostique une maladie terminale lui laissant peu de temps à vivre, et il est harcelé par des créanciers à cause de dettes massives. Alors qu'il s'apprête à commettre l'irréparable, il tombe accidentellement à l'eau et est sauvé par un groupe de passionnés de pêche. Malgré son tempérament négatif, il se laisse entraîner dans ce loisir qu'il ne connaît pas. Entre le silence de l'eau et l'adrénaline de la prise, Tsunehiro commence à tisser des liens et à redonner une valeur à chaque minute qui lui reste, transformant son pessimisme radical en une forme de résilience."
+        ),
+        array(
+            "titre" => "The Weakest Tamer Began a Journey to Pick Up Trash",
+            "titres_alternatifs" => array(
+                "Saijaku Tamer",
+                "La dresseuse la plus faible"
+            ),
+            "image" => "saijaku_tamer.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Aventure",
+                "Fantasy",
+                "Psychologie",
+                "Société",
+                "Tranche de vie"
+            ),
+            "sortie" => "2024",
+            "status" => "Terminé",
+            "duree" => "12 épisodes",
+            "synopsis" => "Dans un monde où les compétences et les étoiles définissent la valeur d'une personne, Ivy naît 'Sans-Étoile', la classe la plus faible possible. Rejetée par son village et sa propre famille qui voient en elle un signe de malheur, elle s'enfuit dans la forêt pour survivre. Elle y apprivoise Sora, un slime si faible qu'il peut mourir au moindre choc. Ensemble, cette petite fille traumatisée et ce monstre fragile entament un voyage à travers le royaume, survivant grâce à la récupération de déchets et de ressources oubliées, tout en découvrant que la gentillesse existe encore dans les marges de la société."
+        ),
+        array(
+            "titre" => "Parasyte: The Maxim",
+            "titres_alternatifs" => array(
+                "Kiseijuu: Sei no Kakuritsu",
+                "Parasite"
+            ),
+            "image" => "parasyte.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Drame",
+                "Horreur",
+                "Psychologie",
+                "Science-fiction"
+            ),
+            "sortie" => "2014",
+            "status" => "Terminé",
+            "duree" => "24 épisodes",
+            "synopsis" => "De mystérieuses sphères tombent sur Terre, libérant des parasites qui prennent possession des cerveaux humains pour se nourrir de leurs semblables. Shinichi Izumi, un lycéen, parvient à empêcher le parasite de remonter jusqu'à son cerveau, mais celui-ci fusionne avec sa main droite. Baptisé Migi, le parasite développe une intelligence propre et une logique purement biologique. Contraints de cohabiter pour survivre, Shinichi et Migi affrontent d'autres parasites infiltrés dans la société, tout en se demandant qui, de l'humain ou du monstre, est le véritable prédateur de la planète."
+        ),
+        array(
+            "titre" => "Sengoku Youko",
+            "image" => "sengoku_youko.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Drame",
+                "Fantasy"
+            ),
+            "sortie" => "2024",
+            "status" => "Terminé",
+            "duree" => "37 épisodes (3 parties)",
+            "synopsis" => "Durant l'ère Sengoku, le monde est divisé entre les humains et les Katawara (monstres). Tama est une renarde spirituelle qui adore les humains, tandis que son frère adoptif Jinka est un humain qui les déteste et aspire à devenir un monstre. Ensemble, ils parcourent le pays pour punir ceux qui font le mal, qu'ils soient démons ou humains corrompus. Leur quête les mène à affronter l'armée des moines Dangaku, qui mène des expériences atroces pour créer des hybrides. Ce qui débute comme une simple croisade se transforme en une guerre sainte s'étendant sur plusieurs décennies, changeant le destin du Japon et la nature même des protagonistes."
+        ),
+        array(
+            "titre" => "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World",
+            "titres_alternatifs" => array(
+                "Tensei Kizoku, Kantei Skill de Nariagaru",
+                "L'Aristocrate réincarné"
+            ),
+            "image" => "tensei_kizoku.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Aventure",
+                "Fantasy",
+                "Politique",
+                "Société"
+            ),
+            "sortie" => "2024",
+            "status" => "Terminé",
+            "duree" => "24 épisodes (2 saisons)",
+            "synopsis" => "Un salarié japonais ordinaire meurt et se réincarne dans le corps d'Ars Louvent, le jeune héritier d'une petite famille noble dans un monde de fantasy. Bien qu'il n'ait aucun talent particulier pour la magie ou l'épée, il possède une compétence unique : 'Évaluation'. Cela lui permet de voir les statistiques et le potentiel caché de n'importe qui. Réalisant que son territoire est menacé par une guerre de succession imminente, Ars décide de parcourir le pays pour recruter les génies les plus méprisés par la société (étrangers, orphelins, parias) afin de transformer son petit domaine en une puissance militaire et économique incontournable."
+        ),
+        array(
+            "titre" => "Hell's Paradise",
+            "titres_alternatifs" => array(
+                "Jigokuraku",
+                "Le Paradis de l'Enfer"
+            ),
+            "image" => "jigokuraku.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Fantasy",
+                "Horreur"
+            ),
+            "sortie" => "2023 - 2025",
+            "status" => "Terminé",
+            "duree" => "26 épisodes (2 saisons)",
+            "synopsis" => "À la fin de l'ère Edo, Gabimaru 'Le Vide', ninja assassin légendaire, survit à toutes ses exécutions. Sagiri Yamada Asaemon lui offre une grâce s'il ramène l'élixir d'immortalité de l'île mystérieuse de Shinsenkyo. La seconde saison voit l'intensification des combats contre les Tensen et l'arrivée d'une nouvelle vague de bourreaux et de criminels. Gabimaru et ses alliés doivent maîtriser le 'Tao' pour espérer quitter cet enfer floral où la frontière entre la vie, la mort et la divinité s'efface totalement."
+        ),
+        array(
+            "titre" => "Solo Leveling",
+            "image" => "solo_leveling.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Fantasy"
+            ),
+            "sortie" => "2024 - 2025",
+            "status" => "En cours",
+            "duree" => "25 épisodes (2 saisons)",
+            "synopsis" => "Plus de dix ans après l'apparition de 'portails' connectant notre monde à des dimensions peuplées de monstres, certains humains ont éveillé des pouvoirs surnaturels : les Chasseurs. Sung Jinwoo est connu comme 'le plus faible de toute l'humanité'. Lors d'un raid qui tourne au massacre dans un double donjon, il est laissé pour mort. C'est alors qu'une interface mystérieuse, le 'Système', le choisit comme unique joueur. Contrairement aux autres chasseurs dont le niveau est fixe, Jinwoo peut désormais monter de niveau en accomplissant des quêtes. Mais ce pouvoir solitaire cache une vérité sombre sur l'origine des portails et le prix de sa propre humanité."
+        ),
+        array(
+            "titre" => "Ishura",
+            "image" => "ishura.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Fantasy",
+                "Politique",
+                "Guerre"
+            ),
+            "sortie" => "2024 - 2025",
+            "status" => "En cours",
+            "duree" => "24 épisodes (2 saisons)",
+            "synopsis" => "Le Roi Démon a été vaincu, mais personne ne sait par qui. Dans un monde désormais sans ennemi commun, une multitude de 'Shura' (des guerriers aux pouvoirs divins dépassant l'entendement) émergent. Pour déterminer qui est le Véritable Héros capable de stabiliser le monde, un tournoi titanesque est organisé. Entre un escrimeur venu d'un autre monde, une mercenaire capable de contrôler les wyvernes, ou un squelette assassin, les alliances se nouent et se brisent. Mais derrière cette compétition se cachent des complots politiques visant à remodeler l'ordre mondial au prix de millions de vies.",
+        ),
+        array(
+            "titre" => "The Promised Neverland",
+            "titres_alternatifs" => array(
+                "Yakusoku no Neverland"
+            ),
+            "image" => "the_promised_neverland.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Thriller",
+                "Mystère",
+                "Horreur"
+            ),
+            "sortie" => "2019 - 2021",
+            "status" => "Terminé",
+            "duree" => "23 épisodes (2 saisons)",
+            "synopsis" => "Emma, Norman et Ray sont les trois enfants les plus brillants de l'orphelinat Grace Field House. Sous l'œil bienveillant de leur 'Maman', Isabella, ils mènent une vie idyllique faite d'amour et de tests intellectuels. Cependant, leur monde s'écroule lorsqu'ils découvrent la vérité : l'orphelinat est une ferme d'élevage et ils sont du bétail destiné à être dévoré par des démons. Pour survivre, ils doivent élaborer un plan d'évasion impossible, transformant leur foyer en un échiquier mortel où l'intelligence est leur seule arme contre la trahison et les murs qui les entourent."
+        ),
+        array(
+            "titre" => "Kaiju No. 8",
+            "image" => "kaiju_no_8.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Science-fiction",
+                "Comédie"
+            ),
+            "sortie" => "2024 - 2025",
+            "status" => "En cours (Saison 2)",
+            "duree" => "24+ épisodes",
+            "synopsis" => "Le Japon est le pays au monde avec le plus haut taux d'apparition de Kaiju, des monstres géants dévastateurs. Kafka Hibino, 32 ans, a abandonné son rêve d'intégrer les Forces de Défense pour finir nettoyeur de cadavres de monstres. Alors qu'il décide de tenter sa chance une dernière fois, une petite créature s'introduit dans son corps et le transforme en un hybride homme-kaiju d'une puissance phénoménale. Désormais traqué par les forces qu'il voulait rejoindre sous le nom de 'Kaiju n°8', il doit cacher son identité tout en combattant pour protéger l'humanité aux côtés de son amie d'enfance devenue commandante."
+        ),
+        array(
+            "titre" => "Ameku Takao's Detective Karte",
+            "titres_alternatifs" => array(
+                "Ameku Takao no Suiri Karte",
+                "Les dossiers médicaux d'Ameku Takao"
+            ),
+            "image" => "ameku_takao.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Mystère",
+                "Médical",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "2025",
+            "status" => "En cours",
+            "duree" => "12 épisodes",
+            "synopsis" => "Au département de diagnostic de l'hôpital général de Tenma, la directrice Takao Ameku est un génie certifié. Dotée d'une intelligence hors norme mais d'un tempérament difficile, elle refuse de traiter les maladies ordinaires pour se concentrer sur les 'cas impossibles'. Meurtres déguisés en maladies, apparitions de fantômes dans les couloirs ou patients aux symptômes inexplicables : Ameku voit là où la science échoue et où la logique humaine vacille. Accompagnée par son assistant dévoué Katsumi Kanno, elle utilise ses connaissances encyclopédiques pour prouver que derrière chaque mystère 'surnaturel' se cache une vérité biologique ou psychologique."
+        ),
+        array(
+            "titre" => "Lazarus",
+            "image" => "lazarus.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Science-fiction",
+                "Thriller"
+            ),
+            "sortie" => "2025",
+            "status" => "En cours",
+            "duree" => "13 épisodes",
+            "synopsis" => "En 2052, le monde vit une ère de paix et de santé sans précédent grâce au 'Hapuna', un médicament miracle mis au point par le Dr Skinner, un neuroscientifique nobélisé. Mais après avoir disparu pendant trois ans, Skinner réapparaît avec une annonce terrifiante : le Hapuna a une demi-vie courte et tous ceux qui l'ont pris mourront dans 30 jours. Face à cette extinction imminente, une unité spéciale de 5 agents nommée 'Lazarus' est rassemblée pour traquer Skinner et trouver un remède avant que le compte à rebours n'atteigne zéro."
+        ),
+        array(
+            "titre" => "To Be Hero X",
+            "image" => "to_be_hero_x.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Science-fiction",
+                "Société",
+                "Super-héros"
+            ),
+            "sortie" => "2025",
+            "status" => "En cours",
+            "duree" => "24 épisodes",
+            "synopsis" => "Dans une métropole futuriste, les héros ne sont plus de simples justiciers, mais des célébrités classées selon leurs accomplissements et la ferveur de leurs fans. X est un héros mystérieux qui occupe la place de 'N°1' depuis deux ans, mais personne ne l'a jamais vu combattre. Le monde est obsédé par ce classement qui dicte la valeur sociale de chaque individu. Entre combats clandestins, manipulations médiatiques et quête d'identité, la série suit l'ascension de challengers prêts à tout pour détrôner l'élite, tout en questionnant ce que signifie réellement 'être un héros' dans un monde où tout est spectacle."
+        ),
+        array(
+            "titre" => "Kijin Gentoushou",
+            "titres_alternatifs" => array(
+                "Sword of the Demon Hunter",
+                "Chroniques du chasseur de démons"
+            ),
+            "image" => "kijin_gentoushou.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Fantasy",
+                "Historique"
+            ),
+            "sortie" => "2024 - 2025",
+            "status" => "En cours",
+            "duree" => "24 épisodes (Saison 1)",
+            "synopsis" => "Durant l'ère Edo, dans le village de Kadono, Jinta est chargé de protéger la prêtresse du sanctuaire local. Lors d'une chasse aux démons dans la forêt, il rencontre un démon mystérieux qui lui révèle une vérité terrifiante : dans un futur lointain, Jinta deviendra lui-même un démon et dévorera celle qu'il s'est juré de protéger. Commence alors un voyage temporel et spirituel s'étendant sur 170 ans, de l'époque des samouraïs jusqu'à l'ère moderne, où Jinta traque les démons tout en luttant contre sa propre nature monstrueuse et le poids des siècles qui voient ses proches disparaître les uns après les autres."
+        ),
+        array(
+            "titre" => "Takopi's Sin",
+            "titres_alternatifs" => array(
+                "Takopi no Genzai",
+                "Le Péché de Takopi"
+            ),
+            "image" => "takopi_no_genzai.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Drame",
+                "Psychologie",
+                "Société",
+                "Mystère",
+                "Horreur"
+            ),
+            "sortie" => "2025",
+            "status" => "Terminé",
+            "duree" => "12 épisodes",
+            "synopsis" => "Takopi est un petit alien joyeux venu de la planète Happy pour répandre le bonheur sur Terre. Il rencontre Shizuka, une écolière qui ne sourit jamais. Pensant qu'il s'agit d'un simple problème de communication, Takopi utilise ses gadgets futuristes pour l'aider. Mais l'alien ignore tout de la noirceur humaine : Shizuka est victime de harcèlement scolaire extrême et de violences domestiques. En tentant maladroitement de 'réparer' sa vie, Takopi déclenche une spirale de tragédies, de meurtres et de manipulations temporelles, découvrant que le bonheur ne peut pas être imposé là où la société est brisée."
+        ),
+        array(
+            "titre" => "Gachiakuta",
+            "image" => "gachiakuta.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Fantasy",
+                "Société"
+            ),
+            "sortie" => "2025",
+            "status" => "En cours",
+            "duree" => "24 épisodes (Saison 1)",
+            "synopsis" => "Dans une cité flottante, tout ce qui est considéré comme déchet est jeté dans l'Abîme. Rudo, un habitant des bidonvilles accusé à tort, survit à sa chute dans ce gouffre. Il y découvre les 'Nettoyeurs' et le pouvoir des Jinkis : des objets imprégnés d'une âme. Fort de cette découverte, il entame une ascension sanglante pour renverser le système qui l'a banni. Cette première saison de 24 épisodes suit son initiation au sein des Nettoyeurs et ses premiers affrontements majeurs contre les Vandales dans les profondeurs de l'Abîme."
+        ),
+        array(
+            "titre" => "Dorohedoro",
+            "image" => "dorohedoro.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Fantasy",
+                "Horreur"
+            ),
+            "sortie" => "2020 - 2025",
+            "status" => "En cours (Saison 2)",
+            "duree" => "24+ épisodes",
+            "synopsis" => "Dans une ville délabrée nommée 'The Hole', les mages s'entraînent sur les habitants en les transformant en cobayes pour leur magie. Caiman, un homme dont la tête a été changée en celle d'un lézard et qui a perdu la mémoire, traque ces mages avec son amie Nikaido. À l'intérieur de sa bouche se cache un autre homme qui juge les mages pour trouver celui responsable de son état. Entre combats sanglants, dégustation de gyozas et rituels magiques absurdes, Caiman plonge dans les secrets des deux mondes pour découvrir qui il est réellement."
+        ),
+        array(
+            "titre" => "Les Carnets de l'Apothicaire",
+            "titres_alternatifs" => array(
+                "Kusuriya no Hitorigoto",
+                "The Apothecary Diaries"
+            ),
+            "image" => "kusuriya_no_hitorigoto.jpg",
+            "types" => array(
+                "Série d'animation"
+            ),
+            "genres" => array(
+                "Mystère",
+                "Historique",
+                "Médical",
+                "Politique",
+                "Psychologie"
+            ),
+            "sortie" => "2023 - 2025",
+            "status" => "En cours (Saison 2)",
+            "duree" => "48 épisodes",
+            "synopsis" => "Dans une Chine impériale fictive, Maomao, une jeune apothicaire du quartier des plaisirs, est enlevée et vendue comme servante au palais impérial. Elle tente de rester discrète, mais sa curiosité et son expertise des poisons la poussent à résoudre une mystérieuse maladie frappant les héritiers du trône. Remarquée par Jinshi, un eunuque aussi beau qu'influent, elle est promue goûteuse personnelle de la favorite de l'Empereur. Entre tentatives d'assassinat, secrets de famille et épidémies, Maomao utilise la logique et la science pour naviguer dans les eaux troubles de la Cour Intérieure."
         ),
         #Film d'animation
         array(
@@ -587,6 +1374,142 @@
             "status" => "Terminé",
             "duree" => "86 minutes",
             "synopsis" => "Dans le Japon des années 50, deux petites filles, Satsuki et sa sœur Mei, s'installent avec leur père dans une vieille maison à la campagne pour se rapprocher de l'hôpital où leur mère est soignée. Elles découvrent vite que la nature environnante est habitée par des créatures mystérieuses et invisibles aux yeux des adultes, notamment Totoro, un esprit de la forêt géant et protecteur. Ensemble, elles vont vivre un été magique entre l'attente impatiente de leur mère et la découverte des merveilles cachées de la forêt."
+        ),
+        array(
+            "titre" => "Wall-E",
+            "image" => "wall_e.jpg",
+            "types" => array(
+                "Film d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "2008",
+            "status" => "Terminé",
+            "duree" => "1h 38min",
+            "synopsis" => "Dans un futur où la Terre est devenue une décharge à ciel ouvert abandonnée par les humains, un petit robot compacteur de déchets nommé Wall-E continue de remplir sa mission, seul, depuis 700 ans. Sa routine est bouleversée par l'arrivée d'Eve, une sonde robotique sophistiquée dont il tombe amoureux. En la suivant à travers la galaxie, il découvre ce qu'est devenue l'humanité : une société sédentaire, obèse et totalement dépendante de la technologie. Wall-E va alors devenir le déclencheur inattendu d'un retour aux sources et d'une prise de conscience écologique globale."
+        ),
+        array(
+            "titre" => "Le Château dans le ciel",
+            "titres_alternatifs" => array(
+                "Laputa: Castle in the Sky",
+                "Tenkuu no Shiro Laputa"
+            ),
+            "image" => "le_chateau_dans_le_ciel.jpg",
+            "types" => array(
+                "Film d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Politique",
+                "Société",
+                "Surnaturel"
+            ),
+            "sortie" => "1986",
+            "status" => "Terminé",
+            "duree" => "2h 04min",
+            "synopsis" => "Sheeta est la détentrice d'une pierre mystérieuse qui suscite la convoitise de pirates du ciel, les Dorado, mais aussi de l'armée. En tentant de leur échapper, elle fait la connaissance de Pazu, un jeune garçon travaillant dans une cité minière. Ensemble, ils se lancent dans une quête pour retrouver Laputa, une cité légendaire flottant dans les airs, vestige d'une civilisation antique à la technologie surpuissante. Entre épopée aérienne et réflexion sur la nature, ils devront empêcher que le pouvoir destructeur de Laputa ne tombe entre les mains d'un tyran cherchant à dominer le monde."
+        ),
+        array(
+            "titre" => "Ratatouille",
+            "image" => "ratatouille.jpg",
+            "types" => array(
+                "Film d'animation"
+            ),
+            "genres" => array(
+                "Aventure",
+                "Cuisine",
+                "Société"
+            ),
+            "sortie" => "2007",
+            "status" => "Terminé",
+            "duree" => "1h 51min",
+            "synopsis" => "Rémy est un jeune rat qui rêve de devenir un grand chef cuisinier français, malgré l'opposition de sa famille et le fait que la profession soit le métier le plus fermé au monde pour un rongeur. Installé dans les égouts de Paris, il finit par faire équipe avec Linguini, un jeune commis de cuisine maladroit du prestigieux restaurant de Gusteau. En manipulant les gestes de Linguini sous sa toque, Rémy exprime son génie culinaire. Le film explore le combat pour la reconnaissance du talent, le dépassement des barrières sociales et la quête d'excellence face aux préjugés."
+        ),
+        array(
+            "titre" => "Là-haut",
+            "titres_alternatifs" => array(
+                "Up"
+            ),
+            "image" => "la_haut.jpg",
+            "types" => array(
+                "Film d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Drame",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "2009",
+            "status" => "Terminé",
+            "duree" => "1h 36min",
+            "synopsis" => "Carl Fredricksen, un vendeur de ballons retraité de 78 ans, décide de réaliser le rêve de sa défunte épouse : explorer les contrées sauvages d'Amérique du Sud. Pour éviter d'être placé en maison de retraite, il attache des milliers de ballons à sa maison et s'envole vers le ciel. Mais il découvre trop tard qu'il a embarqué par erreur Russell, un jeune scout de 8 ans excessivement optimiste. Ce duo improbable va vivre une aventure extraordinaire, affrontant des chiens parlants et un explorateur déchu, tout en apprenant que l'aventure la plus importante est celle que l'on partage avec les autres."
+        ),
+        array(
+            "titre" => "Kung Fu Panda (Saga)",
+            "image" => "kung_fu_panda_saga.jpg",
+            "types" => array(
+                "Film d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Combat",
+                "Psychologie",
+                "Surnaturel"
+            ),
+            "sortie" => "2008 - 2024",
+            "status" => "En cours",
+            "duree" => "4 films (1h 35min par film)",
+            "synopsis" => "Po est un panda maladroit et passionné de kung-fu qui travaille dans le restaurant de nouilles de son père. À la surprise générale, il est désigné comme le 'Guerrier Dragon' pour accomplir une prophétie ancienne. Sous la tutelle du Maître Shifu, il doit transformer ses faiblesses en forces pour protéger la Vallée de la Paix contre des menaces redoutables. La saga explore la quête d'identité, la paix intérieure et la maîtrise du 'Chi', montrant que l'héroïsme ne dépend pas de l'apparence physique mais de l'acceptation de sa propre nature."
+        ),
+        array(
+            "titre" => "Your Name",
+            "titres_alternatifs" => array(
+                "Kimi no Na wa"
+            ),
+            "image" => "your_name.jpg",
+            "types" => array(
+                "Film d'animation"
+            ),
+            "genres" => array(
+                "Drame",
+                "Mystère",
+                "Psychologie",
+                "Société",
+                "Surnaturel"
+            ),
+            "sortie" => "2016",
+            "status" => "Terminé",
+            "duree" => "1h 46min",
+            "synopsis" => "Mitsuha, une lycéenne vivant dans un village rural ancré dans les traditions, rêve d'une vie trépidante à Tokyo. Taki, un lycéen tokyoïte, travaille à temps partiel dans un restaurant italien. Sans se connaître, ils commencent soudainement à échanger leurs corps de manière aléatoire pendant leur sommeil. À travers les notes qu'ils se laissent, un lien profond se tisse. Mais alors qu'ils tentent de se rencontrer physiquement, ils découvrent que leur connexion dépasse les simples frontières géographiques pour s'inscrire dans une faille temporelle liée au passage d'une comète, révélant un enjeu de survie pour tout un village."
+        ),
+        array(
+            "titre" => "Le Monde de Némo",
+            "titres_alternatifs" => array(
+                "Finding Nemo"
+            ),
+            "image" => "monde_de_nemo.jpg",
+            "types" => array(
+                "Film d'animation"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Drame",
+                "Psychologie",
+                "Société"
+            ),
+            "sortie" => "2003",
+            "status" => "Terminé",
+            "duree" => "1h 40min",
+            "synopsis" => "Marin est un poisson-clown extrêmement protecteur depuis la perte de sa compagne. Lorsque son fils unique, Némo, est capturé par un plongeur et emmené dans l'aquarium d'un dentiste à Sydney, Marin se lance dans un périple épique à travers l'océan pour le retrouver. Accompagné de Dory, un poisson amnésique et optimiste, il affronte des requins en rédemption, des méduses et des courants marins. Pendant ce temps, Némo et ses compagnons d'infortune organisent leur propre évasion. Ce récit explore le dépassement de la peur, le lâcher-prise parental et la force des liens familiaux."
         ),
         #Série live
         array(
@@ -1097,6 +2020,140 @@
             "duree" => "1h 46min",
             "synopsis" => "Dans un futur proche, la société pratique un eugénisme génétique rigoureux : la réussite sociale est déterminée par l'ADN. Vincent, né naturellement avec des 'défauts' cardiaques, est classé parmi les 'Invalides' et condamné aux tâches subalternes. Rêvant de devenir astronaute, il brave le système en empruntant l'identité génétique de Jérôme, un spécimen idéal devenu paraplégique. Alors qu'il est sur le point de partir pour Titan, un meurtre au sein de l'agence spatiale Gattaca déclenche une enquête qui menace de révéler son imposture."
         ),
+        array(
+            "titre" => "Avatar (Saga)",
+            "titres_alternatifs" => array(
+                "Avatar: La Voie de l'eau",
+                "Avatar: Fire and Ash"
+            ),
+            "image" => "avatar_saga.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Guerre",
+                "Politique",
+                "Société",
+                "Surnaturel"
+            ),
+            "sortie" => "2009 - En cours",
+            "status" => "En cours",
+            "duree" => "3 films (3h par film)",
+            "synopsis" => "Sur la lune luxuriante de Pandora, les Na'vi, des êtres bleus hautement évolués, vivent en harmonie avec une nature connectée par un réseau biologique complexe. La saga suit Jake Sully, un ancien marine paraplégique qui, via un corps artificiel (Avatar), finit par rejoindre la résistance indigène contre les forces coloniales terriennes de la RDA. Au-delà du conflit armé pour les ressources énergétiques, l'œuvre explore le lien sacré entre les êtres vivants, la protection des écosystèmes et le choc brutal entre une civilisation industrielle prédatrice et une culture spirituelle intégrée à son environnement."
+        ),
+        array(
+            "titre" => "Le Seigneur des Anneaux (Trilogie)",
+            "titres_alternatifs" => array(
+                "The Lord of the Rings",
+                "La Communauté de l'Anneau",
+                "Les Deux Tours",
+                "Le Retour du Roi"
+            ),
+            "image" => "seigneur_des_anneaux.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Guerre",
+                "Surnaturel"
+            ),
+            "sortie" => "2001 - 2003",
+            "status" => "Terminé",
+            "duree" => "3 films (3h - 4h par film)",
+            "synopsis" => "Dans la Terre du Milieu, le jeune hobbit Frodon Sacquet hérite de l'Anneau Unique, un artefact maléfique forgé par le Seigneur Sombre Sauron pour asservir le monde. Accompagné d'une communauté soudée composée d'hommes, d'un magicien, d'un nain et d'un elfe, il entreprend un voyage périlleux vers la Montagne du Destin pour détruire l'objet. Cette épopée explore la lutte éternelle entre le bien et le mal, la corruption du pouvoir, et la capacité d'individus ordinaires à changer le cours de l'histoire face à des forces qui les dépassent."
+        ),
+        array(
+            "titre" => "Le Hobbit (Trilogie)",
+            "titres_alternatifs" => array(
+                "Un voyage inattendu",
+                "La Désolation de Smaug",
+                "La Bataille des Cinq Armées"
+            ),
+            "image" => "le_hobbit_trilogie.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Guerre",
+                "Psychologie",
+                "Surnaturel"
+            ),
+            "sortie" => "2012 - 2014",
+            "status" => "Terminé",
+            "duree" => "3 films (2h45 par film)",
+            "synopsis" => "Soixante ans avant les événements du Seigneur des Anneaux, Bilbon Sacquet, un hobbit casanier, est entraîné par le magicien Gandalf et une compagnie de treize nains dans une quête épique pour reprendre le Royaume perdu d'Erebor au terrifiant dragon Smaug. Ce voyage les mènera à travers des terres sauvages et dangereuses, où Bilbon découvrira non seulement son propre courage, mais aussi un anneau mystérieux lié au sort de la Terre du Milieu. La saga explore la soif de pouvoir, la loyauté et la manière dont l'avidité peut corrompre les cœurs les plus nobles."
+        ),
+        array(
+            "titre" => "Star Wars (Saga)",
+            "titres_alternatifs" => array(
+                "La Guerre des Étoiles",
+                "La Prélogie",
+                "La Trilogie Originale"
+            ),
+            "image" => "star_wars_saga.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Guerre",
+                "Politique",
+                "Psychologie",
+                "Surnaturel"
+            ),
+            "sortie" => "1977 - 2019",
+            "status" => "Terminé",
+            "duree" => "9 films (2h15 par film)",
+            "synopsis" => "Dans une galaxie lointaine, très lointaine, cette épopée suit le destin de la famille Skywalker sur plusieurs générations. Alors qu'une entité mystique appelée la Force lie tous les êtres vivants, les Chevaliers Jedi et les Seigneurs Sith s'affrontent pour le contrôle de la galaxie. Entre la chute d'une République démocratique transformée en Empire tyrannique par la manipulation politique, et la lutte d'une petite Rébellion pour restaurer la liberté, la saga explore le combat interne entre l'ombre et la lumière, la rédemption et le poids de l'héritage familial."
+        ),
+        array(
+            "titre" => "Harry Potter (Saga)",
+            "titres_alternatifs" => array(
+                "Le Monde des Sorciers",
+                "Wizarding World"
+            ),
+            "image" => "harry_potter_saga.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action",
+                "Aventure",
+                "Mystère",
+                "Politique",
+                "Surnaturel"
+            ),
+            "sortie" => "2001 - 2011",
+            "status" => "Terminé",
+            "duree" => "8 films (2h30 par film)",
+            "synopsis" => "Un jeune orphelin découvre le jour de ses 11 ans qu'il possède des pouvoirs magiques et qu'il est attendu à l'école de sorcellerie Poudlard. Au fil de son éducation, il découvre la vérité sur la mort de ses parents et sur sa connexion avec Voldemort, un mage noir puissant cherchant à instaurer un régime basé sur la pureté du sang. La saga suit l'ascension de la résistance face à la montée d'un gouvernement totalitaire, tout en explorant les thèmes de l'amitié, du sacrifice et du choix entre ce qui est juste et ce qui est facile."
+        ),
+        array(
+            "titre" => "The Batman",
+            "image" => "the_batman_2022.jpg",
+            "types" => array(
+                "Film live"
+            ),
+            "genres" => array(
+                "Action",
+                "Mystère",
+                "Politique",
+                "Psychologie",
+                "Société",
+                "Super-héros"
+            ),
+            "sortie" => "2022",
+            "status" => "Terminé",
+            "duree" => "2h 56min",
+            "synopsis" => "Deux ans après avoir endossé le costume de Batman, Bruce Wayne erre dans les ténèbres de Gotham City. Lorsqu'un tueur sadique, le Sphinx, s'attaque à l'élite corrompue de la ville par des crimes rituels, le Chevalier Noir suit une piste de preuves cryptiques. Cette enquête l'entraîne dans les bas-fonds de Gotham, où il découvre que la corruption de la ville est bien plus profonde qu'il ne l'imaginait, impliquant son propre héritage familial. Bruce doit alors questionner sa propre santé mentale et la nature de sa vengeance pour devenir le symbole d'espoir dont la ville a désespérément besoin."
+        ),
         #Court métrage
         array(
             "titre" => "El Empleo",
@@ -1258,6 +2315,25 @@
             "status" => "Terminé",
             "duree" => "11 minutes",
             "synopsis" => "Dans un univers simpliste, le stickman bleu découvre un mystérieux bouton lumineux (représentant la dopamine/drogue). Ce qui commence comme une simple curiosité se transforme rapidement en une spirale infernale. On suit sa déchéance et sa lutte désespérée contre son addiction qui prend le contrôle de son environnement et de son esprit."
+        ),
+        array(
+            "titre" => "Death Billiards",
+            "image" => "death_billiards.jpg",
+            "video" => "https://youtu.be/_WgL_7raM68",
+            "types" => array(
+                "Court métrage"
+            ),
+            "genres" => array(
+                "Drame",
+                "Mystère",
+                "Psychologie",
+                "Surnaturel",
+                "Thriller"
+            ),
+            "sortie" => "2013",
+            "status" => "Terminé",
+            "duree" => "25 minutes",
+            "synopsis" => "Un jeune homme arrogant et un vieillard calme se retrouvent dans un bar étrange sans savoir comment ils sont arrivés là. Le barman les informe qu'ils doivent jouer une partie de billard où chaque bille empochée inflige une douleur physique à l'autre joueur. Alors que le jeu progresse, leurs souvenirs reviennent par bribes et leurs véritables personnalités éclatent, révélant la noirceur et la dignité cachées derrière leurs apparences. Ce huis clos intense pose les bases du système de jugement des âmes développé plus tard dans la série Death Parade."
         ),
         #Livre
         array(
