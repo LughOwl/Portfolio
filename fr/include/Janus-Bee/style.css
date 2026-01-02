@@ -865,6 +865,35 @@ body {
         height: 35px;
         font-size: 1rem;
     }
+    .slider-item {
+        flex: 0 0 210px;
+        width: 200px;
+        height: 310px;
+    }
+
+    .oeuvre-image {
+        height: 150px;
+    }
+
+    .oeuvre-info h3 {
+        font-size: 0.8rem;
+    }
+
+    .titre-secondaire {
+        font-size: 0.7rem;
+    }
+
+    .oeuvre-details {
+        gap: 5px;
+    }
+
+    .detail-titre {
+        font-size: 0.75rem;
+    }
+
+    .detail-contenu {
+        font-size: 0.7rem;
+    }
 
     /* --- PAGE / OEUVRE DÉTAIL --- */
     .oeuvre-detail-info h1 {

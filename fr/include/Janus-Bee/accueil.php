@@ -80,7 +80,7 @@ function slideCarousel(button, direction) {
     const visibleItems = Math.floor(containerWidth / itemWidth);
     
     track.scrollBy({
-        left: direction * itemWidth * visibleItems,
+        left: direction * (itemWidth * visibleItems + 15 * visibleItems),
         behavior: 'smooth'
     });
 }
