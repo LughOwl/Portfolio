@@ -8,6 +8,7 @@
         "Livre",
         "Jeu vidéo"
     );
+
     $Genres=array(
         "Action",
         "Aventure",
@@ -35,6 +36,7 @@
         "Thriller",
         "Tranche de vie"
     );
+    
     $Oeuvres=array(
         # Série d'animation (principalement)
         array(

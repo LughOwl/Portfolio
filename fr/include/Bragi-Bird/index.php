@@ -22,6 +22,16 @@
         </div>
     </header>
 
+    <!--
+        Code data.php ()
+        Page accueil, 
+        Page assiette (déjeuner (protéines, féculents, légumes)  ou diner (protéines, légumes))
+        Page catalogue (recettes avec filtres : type de recettes (protéines, féculents, légumes), ingrédient, temps de préparation)
+        Page recette (nom, nombre de personnes, ingrédients pour n personnes, temps de préparation, étapes de préparation)
+        Page origines (explications : site, nom, logo)
+        Page legale
+        Page plan
+    -->
     <nav class="nav-menu">
     </nav>
 

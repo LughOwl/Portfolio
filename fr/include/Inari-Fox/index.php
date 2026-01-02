@@ -25,6 +25,16 @@
     <nav class="nav-menu">
     </nav>
 
+    <!--
+        Code data.php ()
+        Page accueil, 
+        Page assiette (déjeuner (protéines, féculents, légumes) ou diner (protéines, légumes))
+        Page catalogue (recettes avec filtres : catégorie de recettes, ingrédient, temps de préparation)
+        Page recette (nom, nombre de personnes, ingrédients pour n personnes, temps de préparation, étapes de préparation)
+        Page origines (explications : site, nom, logo)
+        Page legale
+        Page plan
+    -->
     <main class="site-content">
         <img src="../../../assets/construction.png" alt="image en construction" width="300">
     </main>
