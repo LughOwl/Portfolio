@@ -861,9 +861,7 @@ body {
 
     /* --- PAGE / ACCUEIL --- */
     .slider-btn {
-        flex: 0 0 35px;
-        height: 35px;
-        font-size: 1rem;
+        display: none;
     }
     .slider-item {
         flex: 0 0 210px;
