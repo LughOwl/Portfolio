@@ -1,0 +1,30 @@
+name: Génération Statique PHP
+on:
+  push:
+    branches:
+      - main # Déclenche l'action à chaque push sur main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Générer le HTML
+        run: |
+          mkdir build
+          # On exécute le script PHP et on redirige la sortie vers un fichier HTML
+          php index.php > build/index.html
+          # Si vous avez d'autres pages, vous pouvez les ajouter ici
+
+      - name: Déployer sur GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
