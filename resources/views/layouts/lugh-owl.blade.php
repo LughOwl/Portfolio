@@ -102,8 +102,7 @@
             </ul>
         </div>
         <div class="lo-f-copy">
-            Tous droits réservés © Lugh-Owl | 2023 / 2026<br>
-            <small>Textes et images créés en partie avec l'IA (ChatGPT & DALL·E)</small>
+            Tous droits réservés © Lugh-Owl | 2023 / 2026
         </div>
     </footer>
 
