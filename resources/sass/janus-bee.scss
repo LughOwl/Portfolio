@@ -392,146 +392,210 @@ body {
 
 /* --- PAGE / CATALOGUE --- */
 .catalogue-container-main {
-    margin: 0 10px 20px;
-    padding: 20px;
-
-    h1 { color: var(--tx); margin: 0 auto 20px; font-size: 2.2rem; }
-}
-
-.catalogue-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
+    margin: 0 auto 40px;
+    padding: 28px 32px;
+    max-width: 1400px;
     width: 100%;
 }
 
-/* --- PAGE / CATALOGUE / FILTRES --- */
-.filtres-section {
-    flex: 0 0 250px;
-    background: var(--bg-surface);
-    border-radius: 8px;
-    padding: 20px;
-    border: 1px solid var(--bd);
+/* --- BARRE SEARCH + TOGGLE --- */
+.cat-topbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
 }
 
-.filtre-groupe {
-    margin-bottom: 25px;
+.cat-search-form { flex: 1; }
+
+.cat-search-wrap {
+    display: flex;
+    background: var(--bg-card);
     border: 1px solid var(--bd);
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
+    transition: border-color .2s;
+
+    &:focus-within { border-color: var(--jaune-bee); }
 }
 
-.filtre-titre {
-    background: var(--jaune-bee);
-    padding: 12px 15px;
-    font-weight: 600;
-    color: #111;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background .2s;
-
-    &:hover { background: #e6c600; }
-}
-
-.filtre-fleche { font-size: .9rem; }
-
-.filtre-options {
-    padding: 15px;
-    background: var(--bg-card);
-    max-height: 300px;
-    overflow-y: auto;
-
-    &::-webkit-scrollbar       { width: 6px; }
-    &::-webkit-scrollbar-track { background: var(--bg-surface); border-radius: 10px; }
-    &::-webkit-scrollbar-thumb { background: var(--jaune-bee); border-radius: 10px; }
-}
-
-.checkbox-option {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-
-    &:last-child { margin-bottom: 0; }
-
-    input[type="checkbox"] {
-        margin-right: 10px;
-        width: 16px;
-        height: 16px;
-        cursor: pointer;
-        accent-color: var(--jaune-bee);
-    }
-
-    label { cursor: pointer; font-size: .95rem; color: var(--tx-2); flex: 1; }
-}
-
-.filtre-reset {
-    display: block;
-    text-align: center;
-    color: var(--tx-2);
-    text-decoration: none;
-    font-size: .9rem;
-    padding: 10px;
-    border: 1px solid var(--bd);
-    border-radius: 8px;
-    margin-top: 15px;
-    transition: all .2s;
-
-    &:hover { color: var(--tx); background: var(--bg-card); border-color: #555; }
-}
-
-/* --- PAGE / CATALOGUE / RÉSULTATS --- */
-.resultats-section  { flex: 1 1 auto; min-width: 0; }
-.recherche-validation { margin-bottom: 25px; }
-
-.recherche-input-container {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.recherche-input-catalogue {
+.cat-search-input {
     flex: 1;
-    padding: 12px 15px;
-    border: 2px solid var(--bd);
-    border-radius: 8px;
-    font-size: 1rem;
+    background: transparent;
+    border: none;
     outline: none;
-    background: var(--bg-card);
+    padding: 12px 16px;
+    font-size: .95rem;
     color: var(--tx);
-    transition: border .2s;
 
     &::placeholder { color: var(--tx-2); }
-    &:focus        { border-color: var(--jaune-bee); }
 }
 
-.recherche-btn-catalogue {
-    padding: 12px 25px;
+.cat-search-btn {
+    background: none;
+    border: none;
+    border-left: 1px solid var(--bd);
+    padding: 0 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    opacity: .7;
+    transition: opacity .15s;
+
+    &:hover { opacity: 1; }
+}
+
+.cat-filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--bg-card);
+    border: 1px solid var(--bd);
+    border-radius: 10px;
+    color: var(--tx-2);
+    font-family: inherit;
+    font-size: .9rem;
+    padding: 11px 18px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color .2s, color .2s;
+
+    &:hover { border-color: var(--jaune-bee); color: var(--tx); }
+}
+
+.cat-filter-badge {
     background: var(--jaune-bee);
     color: #111;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background .2s;
-    white-space: nowrap;
-
-    &:hover { background: #e6c600; }
+    font-size: .72rem;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 1px 7px;
+    line-height: 1.5;
 }
 
-.nombre-resultats {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid var(--jaune-bee);
-    font-size: 1.1rem;
+.cat-filter-arrow { font-size: .7rem; color: var(--tx-2); }
+
+/* --- CHIPS FILTRES ACTIFS --- */
+.cat-active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 10px;
+}
+
+.cat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: .78rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid;
+    transition: all .15s;
+}
+
+.cat-chip-remove {
+    color: var(--jaune-bee);
+    border-color: rgba(255,220,0,.35);
+    background: rgba(255,220,0,.07);
+    &:hover { background: rgba(255,220,0,.15); }
+}
+
+.cat-chip-reset {
+    color: var(--tx-2);
+    border-color: var(--bd);
+    background: transparent;
+    &:hover { color: #ff5757; border-color: rgba(255,87,87,.35); }
+}
+
+/* --- PANNEAU FILTRES COLLAPSIBLE --- */
+.cat-filter-panel {
+    background: var(--bg-surface);
+    border: 1px solid var(--bd);
+    border-radius: 12px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height .3s ease, opacity .25s ease, margin .3s ease;
+    margin-bottom: 0;
+
+    &.open {
+        max-height: 600px;
+        opacity: 1;
+        margin-bottom: 20px;
+    }
+
+    form { padding: 20px 24px; }
+}
+
+.cat-filter-section { margin-bottom: 6px; }
+
+.cat-filter-label {
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--tx-2);
+    margin-bottom: 10px;
+}
+
+.cat-filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.cat-fchip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: .82rem;
+    padding: 5px 13px;
+    border-radius: 20px;
+    border: 1px solid var(--bd);
+    color: var(--tx-2);
+    cursor: pointer;
+    transition: all .15s;
+    user-select: none;
+
+    input[type="checkbox"] { display: none; }
+
+    &:hover { border-color: rgba(255,220,0,.5); color: var(--tx); }
+
+    &.active {
+        background: rgba(255,220,0,.12);
+        border-color: rgba(255,220,0,.6);
+        color: var(--jaune-bee);
+        font-weight: 600;
+    }
+}
+
+.cat-filter-divider {
+    border: none;
+    border-top: 1px solid var(--bd);
+    margin: 14px 0;
+}
+
+/* --- BARRE RÉSULTATS --- */
+.cat-results-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--bd);
+}
+
+.cat-results-count {
+    font-size: .88rem;
     color: var(--tx-2);
 }
 
+/* --- GRILLE OEUVRES --- */
 .oeuvres-liste {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 18px;
 }
 
 .catalogue-lien-oeuvre { text-decoration: none; color: inherit; display: block; }
@@ -539,75 +603,76 @@ body {
 .catalogue-carte-oeuvre {
     display: flex;
     flex-direction: column;
-    height: 400px;
-    border-radius: 8px;
+    height: 380px;
+    border-radius: 10px;
     overflow: hidden;
     background: var(--bg-card);
     border: 1px solid var(--bd);
     transition: transform .2s, box-shadow .2s, border-color .2s;
     cursor: pointer;
-    animation: fadeInUp .3s ease both;
 
     &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 24px rgba(0,0,0,.6);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 28px rgba(0,0,0,.6);
         border-color: var(--jaune-bee);
     }
 }
 
 .catalogue-image {
     width: 100%;
-    height: 200px;
+    height: 210px;
     overflow: hidden;
-    background: #222;
+    background: #1a1a1a;
     flex-shrink: 0;
 
-    img { width: 100%; height: 100%; object-fit: cover; }
+    img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
 }
 
+.catalogue-carte-oeuvre:hover .catalogue-image img { transform: scale(1.04); }
+
 .catalogue-info {
-    padding: 10px;
+    padding: 10px 12px;
     flex: 1;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
-.catalogue-titre          { margin: 0 0 8px; font-size: .9rem; font-weight: bold; color: var(--tx);   line-height: 1.2; text-align: center; }
-.catalogue-titre-secondaire { margin: 0 0 8px; font-size: .8rem; font-style: italic; color: var(--tx-2); line-height: 1.2; text-align: center; }
+.catalogue-titre            { margin: 0 0 5px; font-size: .85rem; font-weight: 700; color: var(--tx);  line-height: 1.2; text-align: center; }
+.catalogue-titre-secondaire { margin: 0 0 8px; font-size: .75rem; font-style: italic; color: var(--tx-2); line-height: 1.2; text-align: center; }
 
 .catalogue-details {
     display: flex;
     flex-direction: column;
     border-top: 1px solid var(--bd);
-    padding-top: 6px;
-    gap: 6px;
+    padding-top: 7px;
+    gap: 5px;
     flex: 1;
     overflow: hidden;
 }
 
-.catalogue-detail-section { display: flex; flex-direction: column; gap: 3px; }
-.catalogue-detail-titre   { font-weight: bold; color: var(--tx);   font-size: .9rem; }
-.catalogue-detail-contenu { color: var(--tx-2); word-break: break-word; font-size: .8rem; }
+.catalogue-detail-section  { display: flex; flex-direction: column; gap: 2px; }
+.catalogue-detail-titre    { font-weight: 700; color: var(--tx-2); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; }
+.catalogue-detail-contenu  { color: var(--tx-2); word-break: break-word; font-size: .78rem; }
 
-.aucun-resultat { color: var(--tx-2); margin: 10px 0; }
+.aucun-resultat { color: var(--tx-2); margin: 40px 0; text-align: center; }
 
 .retour-catalogue {
-    padding: 12px 25px;
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 22px;
     background: var(--jaune-bee);
     color: #111;
-    border: none;
     border-radius: 8px;
     font-weight: 600;
-    cursor: pointer;
+    text-decoration: none;
     transition: background .2s;
-    white-space: nowrap;
 
     &:hover { background: #e6c600; }
 }
 
 /* --- PAGINATION --- */
-.pagination-container { margin-top: 30px; padding-bottom: 20px; }
+.pagination-container { margin-top: 32px; padding-bottom: 20px; }
 
 .pagination {
     display: flex;
@@ -736,14 +801,13 @@ body {
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 1280px) {
-    .catalogue-content    { flex-direction: column; gap: 25px; }
-    .filtres-section      { width: 100%; flex: none; }
-    .resultats-section    { width: 100%; }
-    .catalogue-container-main { padding: 15px; }
-    .recherche-input-container { flex-direction: column; }
-    .recherche-input-catalogue,
-    .recherche-btn-catalogue   { width: 100%; }
+@media (max-width: 768px) {
+    .catalogue-container-main { padding: 16px; }
+    .cat-topbar { flex-direction: column; align-items: stretch; }
+    .cat-filter-toggle { justify-content: center; }
+    .oeuvres-liste { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+    .catalogue-carte-oeuvre { height: 320px; }
+    .catalogue-image { height: 170px; }
 }
 
 @media (max-width: 768px) {
