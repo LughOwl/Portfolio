@@ -166,6 +166,21 @@ a { text-decoration: none; color: inherit; }
     &::-webkit-scrollbar-thumb { background: rgba(255,255,255,.1); border-radius: 2px; }
 }
 
+.sidebar-collapse-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px 14px 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--tx-3);
+    transition: color .15s;
+    &:hover { color: var(--tx-2); }
+    svg { display: block; transition: transform .2s; }
+}
+
 .sidebar-section-title {
     font-size: 0.72em;
     font-weight: 600;
@@ -173,6 +188,9 @@ a { text-decoration: none; color: inherit; }
     letter-spacing: 0.12em;
     color: var(--tx-3);
     padding: 22px 20px 9px;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity .2s, padding .2s;
 }
 
 .sidebar-link {
@@ -184,10 +202,12 @@ a { text-decoration: none; color: inherit; }
     font-weight: 500;
     color: var(--tx-2);
     border-left: 2px solid transparent;
-    transition: color 0.15s, background 0.15s, border-color 0.15s;
+    transition: color 0.15s, background 0.15s, border-color 0.15s, padding 0.2s;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    position: relative;
+
+    .sidebar-label { transition: opacity .2s; }
 
     &:hover {
         color: var(--tx);
@@ -656,6 +676,63 @@ code {
     padding: 1px 6px;
     font-size: .85em;
     color: var(--tx);
+}
+
+/* ============================
+   SIDEBAR COLLAPSED
+   ============================ */
+
+body.sidebar-collapsed {
+    --aw: 52px;
+
+    .sidebar-collapse-btn {
+        justify-content: center;
+        padding: 10px 0 6px;
+    }
+
+    .sidebar-section-title {
+        opacity: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .sidebar-link {
+        padding: 10px 0;
+        justify-content: center;
+        border-left-color: transparent !important;
+
+        .sidebar-label { opacity: 0; width: 0; overflow: hidden; }
+
+        .sidebar-dot { flex-shrink: 0; }
+
+        // Tooltip au survol
+        &::after {
+            content: attr(data-label);
+            position: fixed;
+            left: calc(var(--aw) + 10px);
+            background: #1c2128;
+            color: #e4e4e4;
+            padding: 5px 12px;
+            border-radius: 7px;
+            border: 1px solid rgba(255,255,255,.1);
+            font-size: 0.82em;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .12s;
+            z-index: 500;
+            box-shadow: 0 4px 16px rgba(0,0,0,.4);
+        }
+        &:hover::after { opacity: 1; }
+
+        &.active {
+            background: rgba(0,255,136,.05);
+            .sidebar-dot { box-shadow: 0 0 0 3px rgba(0,255,136,.15); }
+        }
+    }
 }
 
 /* ============================

@@ -65,26 +65,32 @@
             ];
             @endphp
 
-            <a href="{{ route('admin.dashboard') }}" class="sidebar-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+            <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Réduire le menu">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+
+            <a href="{{ route('admin.dashboard') }}" data-label="Tableau de bord"
+               class="sidebar-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                 <span class="sidebar-dot" style="background:#888;"></span>
-                Tableau de bord
+                <span class="sidebar-label">Tableau de bord</span>
             </a>
 
-            <div class="sidebar-section-title">Portfolio</div>
+            <div class="sidebar-section-title"><span class="sidebar-label">Portfolio</span></div>
             @foreach($portfolioSections as $key => $label)
             @php $rn = $portfolioRoutes[$key] ?? 'admin.dashboard'; @endphp
-            <a href="{{ route($rn) }}" class="sidebar-link {{ request()->routeIs($rn.'*') ? 'active' : '' }}">
+            <a href="{{ route($rn) }}" data-label="{{ $label }}"
+               class="sidebar-link {{ request()->routeIs($rn.'*') ? 'active' : '' }}">
                 <span class="sidebar-dot" style="background:#00ff88;"></span>
-                {{ $label }}
+                <span class="sidebar-label">{{ $label }}</span>
             </a>
             @endforeach
 
-            <div class="sidebar-section-title">Sites web</div>
+            <div class="sidebar-section-title"><span class="sidebar-label">Sites web</span></div>
             @foreach($sites as $key => $info)
-            <a href="{{ route('admin.site', $key) }}"
-               class="sidebar-link {{ request()->route('site') === $key ? 'active' : '' }}">
+            <a href="{{ route('admin.site', $key) }}" data-label="{{ $info['label'] }}"
+               class="sidebar-link {{ request()->route('site') === $key || request()->routeIs('admin.'.$key.'.*') ? 'active' : '' }}">
                 <span class="sidebar-dot" style="background:{{ $info['color'] }};"></span>
-                {{ $info['label'] }}
+                <span class="sidebar-label">{{ $info['label'] }}</span>
             </a>
             @endforeach
         </aside>
@@ -112,18 +118,32 @@
         });
     })();
 
-    const toggle  = document.getElementById('sidebarToggle');
-    const sidebar = document.getElementById('adminSidebar');
-    const overlay = document.getElementById('sidebarOverlay');
+    const toggle       = document.getElementById('sidebarToggle');
+    const sidebar      = document.getElementById('adminSidebar');
+    const overlay      = document.getElementById('sidebarOverlay');
+    const collapseBtn  = document.getElementById('sidebarCollapseBtn');
 
+    // --- Mobile open/close ---
     function openSidebar()  { sidebar.classList.add('open'); overlay.classList.add('open'); toggle.classList.add('open'); }
     function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('open'); toggle.classList.remove('open'); }
 
     toggle.addEventListener('click', () => sidebar.classList.contains('open') ? closeSidebar() : openSidebar());
     overlay.addEventListener('click', closeSidebar);
-
-    // Fermer sur clic lien (mobile)
     sidebar.querySelectorAll('.sidebar-link').forEach(l => l.addEventListener('click', closeSidebar));
+
+    // --- Collapse desktop ---
+    function setCollapsed(collapsed) {
+        document.body.classList.toggle('sidebar-collapsed', collapsed);
+        const icon = collapseBtn.querySelector('svg polyline');
+        icon.setAttribute('points', collapsed ? '9 18 15 12 9 6' : '15 18 9 12 15 6');
+        collapseBtn.title = collapsed ? 'Agrandir le menu' : 'Réduire le menu';
+        localStorage.setItem('admin_sidebar_collapsed', collapsed ? '1' : '0');
+    }
+
+    // Restaure l'état au chargement
+    if (localStorage.getItem('admin_sidebar_collapsed') === '1') setCollapsed(true);
+
+    collapseBtn.addEventListener('click', () => setCollapsed(!document.body.classList.contains('sidebar-collapsed')));
     </script>
 
 </body>
