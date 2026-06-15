@@ -95,8 +95,6 @@
         @yield('content')
     </main>
 
-    <button id="back-to-top" aria-label="Retour en haut">↑</button>
-
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-brand">
