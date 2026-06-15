@@ -215,6 +215,27 @@
     align-items: center;
     margin-bottom: 8px;
 }
+/* Dans un bloc two-col, l'espace est réduit : nom sur sa propre ligne */
+.comp-col-block .comp-item-row {
+    grid-template-columns: 1fr 32px;
+    grid-template-rows: auto auto;
+}
+.comp-col-block .comp-item-nom {
+    grid-column: 1;
+    grid-row: 1;
+}
+.comp-col-block .comp-item-row > button {
+    grid-column: 2;
+    grid-row: 1;
+}
+.comp-col-block .comp-item-niveau {
+    grid-column: 1;
+    grid-row: 2;
+}
+.comp-col-block .comp-item-row > select {
+    grid-column: 2;
+    grid-row: 2;
+}
 .comp-item-nom { font-size: .86em; }
 .comp-item-niveau {
     display: flex;
