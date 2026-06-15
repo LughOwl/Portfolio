@@ -56,9 +56,6 @@
             <a href="{{ route('fr.lugh-owl.vie') }}" class="{{ request()->routeIs('fr.lugh-owl.vie') ? 'active' : '' }}">
                 La Vie est [...]
             </a>
-            <a href="{{ route('fr.lugh-owl.origines') }}" class="{{ request()->routeIs('fr.lugh-owl.origines') ? 'active' : '' }}">
-                Origines
-            </a>
         </nav>
 
         <form class="lo-search" method="get" action="{{ route('fr.lugh-owl.recherche') }}">
