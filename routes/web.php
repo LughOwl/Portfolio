@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminJanusBeeController;
 use App\Http\Controllers\AdminPortfolioController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\JanusBeeController;
@@ -101,7 +102,21 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
 
-    // Sites (placeholder pour l'instant)
+    // Janus-Bee — CRUD oeuvres
+    Route::prefix('sites/janus-bee')->name('janus-bee.')->group(function () {
+        Route::get('/',              [AdminJanusBeeController::class, 'index'])->name('index');
+        Route::get('/create',        [AdminJanusBeeController::class, 'create'])->name('create');
+        Route::post('/',             [AdminJanusBeeController::class, 'store'])->name('store');
+        Route::get('/{id}/edit',     [AdminJanusBeeController::class, 'edit'])->name('edit');
+        Route::put('/{id}',          [AdminJanusBeeController::class, 'update'])->name('update');
+        Route::delete('/{id}',       [AdminJanusBeeController::class, 'destroy'])->name('destroy');
+        Route::post('/types',        [AdminJanusBeeController::class, 'typeStore'])->name('type.store');
+        Route::delete('/types/{id}', [AdminJanusBeeController::class, 'typeDestroy'])->name('type.destroy');
+        Route::post('/genres',       [AdminJanusBeeController::class, 'genreStore'])->name('genre.store');
+        Route::delete('/genres/{id}',[AdminJanusBeeController::class, 'genreDestroy'])->name('genre.destroy');
+    });
+
+    // Autres sites (placeholder)
     Route::get('/sites/{site}', [AdminController::class, 'site'])->name('site');
 
     // Portfolio CRUD
