@@ -24,48 +24,70 @@ class AdminPortfolioController extends Controller
         ];
     }
 
+    private function locale(Request $request): string
+    {
+        $l = $request->query('locale') ?? $request->input('locale', 'fr');
+        return in_array($l, ['fr', 'en']) ? $l : 'fr';
+    }
+
+    private function redirectWithLocale(string $route, string $locale, string $msg): RedirectResponse
+    {
+        return redirect()->route($route, ['locale' => $locale])->with('success', $msg);
+    }
+
     /* -------------------------------------------------------
      | PRÉSENTATION
      * ----------------------------------------------------- */
 
-    public function presentation(): View
+    public function presentation(Request $request): View
     {
-        $hero = Presentation::firstOrNew([]);
-        return view('admin.portfolio.presentation', array_merge($this->shared(), ['hero' => $hero]));
+        $locale = $this->locale($request);
+        $hero   = Presentation::firstOrNew(['locale' => $locale]);
+        return view('admin.portfolio.presentation', array_merge($this->shared(), [
+            'hero'   => $hero,
+            'locale' => $locale,
+        ]));
     }
 
     public function presentationSave(Request $request): RedirectResponse
     {
+        $locale = $request->input('locale', 'fr');
         $r = $request->validate([
             'subtitle'     => 'required|string|max:300',
             'availability' => 'required|string|max:300',
             'phrases'      => 'required|string',
         ]);
 
-        $phrases = array_filter(array_map('trim', explode("\n", $r['phrases'])));
+        $phrases = array_values(array_filter(array_map('trim', explode("\n", $r['phrases']))));
 
-        $hero = Presentation::firstOrNew([]);
+        $hero = Presentation::firstOrNew(['locale' => $locale]);
         $hero->fill([
+            'locale'             => $locale,
             'subtitle'           => $r['subtitle'],
             'availability'       => $r['availability'],
-            'typewriter_phrases' => array_values($phrases),
+            'typewriter_phrases' => $phrases,
         ])->save();
 
-        return back()->with('success', 'Présentation mise à jour.');
+        return $this->redirectWithLocale('admin.portfolio.presentation', $locale, 'Présentation mise à jour.');
     }
 
     /* -------------------------------------------------------
      | PROFIL
      * ----------------------------------------------------- */
 
-    public function profil(): View
+    public function profil(Request $request): View
     {
-        $profil = Profil::firstOrNew([]);
-        return view('admin.portfolio.profil', array_merge($this->shared(), ['profil' => $profil]));
+        $locale = $this->locale($request);
+        $profil = Profil::firstOrNew(['locale' => $locale]);
+        return view('admin.portfolio.profil', array_merge($this->shared(), [
+            'profil' => $profil,
+            'locale' => $locale,
+        ]));
     }
 
     public function profilSave(Request $request): RedirectResponse
     {
+        $locale = $request->input('locale', 'fr');
         $r = $request->validate([
             'objectif'       => 'required|string',
             'infos.*.cle'    => 'required|string|max:100',
@@ -86,24 +108,29 @@ class AdminPortfolioController extends Controller
             $infos[] = $item;
         }
 
-        $profil = Profil::firstOrNew([]);
-        $profil->fill(['objectif' => $r['objectif'], 'infos' => $infos])->save();
+        $profil = Profil::firstOrNew(['locale' => $locale]);
+        $profil->fill(['locale' => $locale, 'objectif' => $r['objectif'], 'infos' => $infos])->save();
 
-        return back()->with('success', 'Profil mis à jour.');
+        return $this->redirectWithLocale('admin.portfolio.profil', $locale, 'Profil mis à jour.');
     }
 
     /* -------------------------------------------------------
      | OBJECTIFS
      * ----------------------------------------------------- */
 
-    public function objectifs(): View
+    public function objectifs(Request $request): View
     {
-        $objectifs = Objectif::orderBy('priorite')->get();
-        return view('admin.portfolio.objectifs', array_merge($this->shared(), ['objectifs' => $objectifs]));
+        $locale    = $this->locale($request);
+        $objectifs = Objectif::where('locale', $locale)->orderBy('priorite')->get();
+        return view('admin.portfolio.objectifs', array_merge($this->shared(), [
+            'objectifs' => $objectifs,
+            'locale'    => $locale,
+        ]));
     }
 
     public function objectifSave(Request $request, int $id): RedirectResponse
     {
+        $locale = $request->input('locale', 'fr');
         $r = $request->validate([
             'label_terme'     => 'required|string|max:100',
             'type'            => 'required|string|max:50',
@@ -126,178 +153,275 @@ class AdminPortfolioController extends Controller
             'details'     => $details,
         ]);
 
-        return back()->with('success', 'Objectif mis à jour.');
+        return $this->redirectWithLocale('admin.portfolio.objectifs', $locale, 'Objectif mis à jour.');
     }
 
     /* -------------------------------------------------------
      | FORMATIONS
      * ----------------------------------------------------- */
 
-    public function formations(): View
+    public function formations(Request $request): View
     {
-        $formations    = Formation::orderBy('ordre')->get();
-        $certifications = Certification::orderBy('ordre')->get();
+        $locale         = $this->locale($request);
+        $formations     = Formation::where('locale', $locale)->orderBy('ordre')->get();
+        $certifications = Certification::where('locale', $locale)->orderBy('ordre')->get();
         return view('admin.portfolio.formations', array_merge($this->shared(), [
             'formations'     => $formations,
             'certifications' => $certifications,
+            'locale'         => $locale,
         ]));
     }
 
     public function formationStore(Request $request): RedirectResponse
     {
+        $locale = $request->input('locale', 'fr');
         $r = $this->validateTimeline($request);
-        Formation::create(array_merge($r, ['ordre' => Formation::max('ordre') + 1]));
-        return redirect()->route('admin.portfolio.formations')->with('success', 'Formation ajoutée.');
+        Formation::create(array_merge($r, [
+            'locale' => $locale,
+            'ordre'  => Formation::where('locale', $locale)->max('ordre') + 1,
+        ]));
+        return $this->redirectWithLocale('admin.portfolio.formations', $locale, 'Formation ajoutée.');
     }
 
-    public function formationEdit(int $id): View
+    public function formationEdit(Request $request, int $id): View
     {
-        $item = Formation::findOrFail($id);
+        $locale = $this->locale($request);
+        $item   = Formation::findOrFail($id);
         return view('admin.portfolio.formation-form', array_merge($this->shared(), [
-            'item' => $item, 'type' => 'formation',
+            'item'   => $item,
+            'type'   => 'formation',
+            'locale' => $locale,
         ]));
     }
 
     public function formationUpdate(Request $request, int $id): RedirectResponse
     {
+        $locale = $request->input('locale', 'fr');
         $r = $this->validateTimeline($request);
         Formation::findOrFail($id)->update($r);
-        return redirect()->route('admin.portfolio.formations')->with('success', 'Formation mise à jour.');
+        return $this->redirectWithLocale('admin.portfolio.formations', $locale, 'Formation mise à jour.');
     }
 
-    public function formationDestroy(int $id): RedirectResponse
+    public function formationDestroy(Request $request, int $id): RedirectResponse
     {
+        $locale = $this->locale($request);
         Formation::findOrFail($id)->delete();
-        return redirect()->route('admin.portfolio.formations')->with('success', 'Formation supprimée.');
+        return $this->redirectWithLocale('admin.portfolio.formations', $locale, 'Formation supprimée.');
     }
 
     public function certificationStore(Request $request): RedirectResponse
     {
+        $locale = $request->input('locale', 'fr');
         $r = $request->validate([
             'nom'     => 'required|string|max:100',
             'couleur' => 'required|string|max:50',
             'desc'    => 'required|string|max:500',
         ]);
-        Certification::create(array_merge($r, ['ordre' => Certification::max('ordre') + 1]));
-        return redirect()->route('admin.portfolio.formations')->with('success', 'Certification ajoutée.');
+        Certification::create(array_merge($r, [
+            'locale' => $locale,
+            'ordre'  => Certification::where('locale', $locale)->max('ordre') + 1,
+        ]));
+        return $this->redirectWithLocale('admin.portfolio.formations', $locale, 'Certification ajoutée.');
     }
 
     public function certificationUpdate(Request $request, int $id): RedirectResponse
     {
+        $locale = $request->input('locale', 'fr');
         $r = $request->validate([
             'nom'     => 'required|string|max:100',
             'couleur' => 'required|string|max:50',
             'desc'    => 'required|string|max:500',
         ]);
         Certification::findOrFail($id)->update($r);
-        return redirect()->route('admin.portfolio.formations')->with('success', 'Certification mise à jour.');
+        return $this->redirectWithLocale('admin.portfolio.formations', $locale, 'Certification mise à jour.');
     }
 
-    public function certificationDestroy(int $id): RedirectResponse
+    public function certificationDestroy(Request $request, int $id): RedirectResponse
     {
+        $locale = $this->locale($request);
         Certification::findOrFail($id)->delete();
-        return redirect()->route('admin.portfolio.formations')->with('success', 'Certification supprimée.');
+        return $this->redirectWithLocale('admin.portfolio.formations', $locale, 'Certification supprimée.');
     }
 
     /* -------------------------------------------------------
      | EXPÉRIENCES
      * ----------------------------------------------------- */
 
-    public function experiences(): View
+    public function experiences(Request $request): View
     {
-        $experiences = Experience::orderBy('ordre')->get();
-        return view('admin.portfolio.experiences', array_merge($this->shared(), ['experiences' => $experiences]));
+        $locale      = $this->locale($request);
+        $experiences = Experience::where('locale', $locale)->orderBy('ordre')->get();
+        return view('admin.portfolio.experiences', array_merge($this->shared(), [
+            'experiences' => $experiences,
+            'locale'      => $locale,
+        ]));
     }
 
     public function experienceStore(Request $request): RedirectResponse
     {
+        $locale = $request->input('locale', 'fr');
         $r = $this->validateTimeline($request);
-        Experience::create(array_merge($r, ['ordre' => Experience::max('ordre') + 1]));
-        return redirect()->route('admin.portfolio.experiences')->with('success', 'Expérience ajoutée.');
+        Experience::create(array_merge($r, [
+            'locale' => $locale,
+            'ordre'  => Experience::where('locale', $locale)->max('ordre') + 1,
+        ]));
+        return $this->redirectWithLocale('admin.portfolio.experiences', $locale, 'Expérience ajoutée.');
     }
 
-    public function experienceEdit(int $id): View
+    public function experienceEdit(Request $request, int $id): View
     {
-        $item = Experience::findOrFail($id);
+        $locale = $this->locale($request);
+        $item   = Experience::findOrFail($id);
         return view('admin.portfolio.experience-form', array_merge($this->shared(), [
-            'item' => $item, 'type' => 'experience',
+            'item'   => $item,
+            'type'   => 'experience',
+            'locale' => $locale,
         ]));
     }
 
     public function experienceUpdate(Request $request, int $id): RedirectResponse
     {
+        $locale = $request->input('locale', 'fr');
         $r = $this->validateTimeline($request);
         Experience::findOrFail($id)->update($r);
-        return redirect()->route('admin.portfolio.experiences')->with('success', 'Expérience mise à jour.');
+        return $this->redirectWithLocale('admin.portfolio.experiences', $locale, 'Expérience mise à jour.');
     }
 
-    public function experienceDestroy(int $id): RedirectResponse
+    public function experienceDestroy(Request $request, int $id): RedirectResponse
     {
+        $locale = $this->locale($request);
         Experience::findOrFail($id)->delete();
-        return redirect()->route('admin.portfolio.experiences')->with('success', 'Expérience supprimée.');
+        return $this->redirectWithLocale('admin.portfolio.experiences', $locale, 'Expérience supprimée.');
     }
 
     /* -------------------------------------------------------
      | COMPÉTENCES
      * ----------------------------------------------------- */
 
-    public function competences(): View
+    public function competences(Request $request): View
     {
-        $competence = Competence::first();
-        $json = $competence ? json_encode($competence->data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) : '[]';
-        return view('admin.portfolio.competences', array_merge($this->shared(), ['json' => $json]));
+        $locale     = $this->locale($request);
+        $competence = Competence::where('locale', $locale)->first();
+        $data       = $competence ? $competence->data : [];
+        return view('admin.portfolio.competences', array_merge($this->shared(), [
+            'categories' => $data,
+            'locale'     => $locale,
+        ]));
     }
 
     public function competencesSave(Request $request): RedirectResponse
     {
-        $r = $request->validate(['data' => 'required|string']);
+        $locale = $request->input('locale', 'fr');
+        $cats   = $request->input('cats', []);
+        $data   = [];
 
-        $decoded = json_decode($r['data'], true);
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            return back()->withErrors(['data' => 'JSON invalide : ' . json_last_error_msg()])->withInput();
+        foreach ($cats as $cat) {
+            if (empty($cat['id'])) {
+                continue;
+            }
+            $entry = [
+                'id'   => $cat['id'],
+                'type' => $cat['type'] ?? 'bars',
+            ];
+            if (!empty($cat['titre'])) {
+                $entry['titre'] = $cat['titre'];
+            }
+            if (!empty($cat['highlight'])) {
+                $entry['highlight'] = true;
+            }
+
+            if ($entry['type'] === 'two-col') {
+                $entry['cols'] = [];
+                foreach ($cat['cols'] ?? [] as $col) {
+                    $colEntry = [
+                        'titre' => $col['titre'] ?? '',
+                        'type'  => $col['type'] ?? 'tags',
+                    ];
+                    if ($colEntry['type'] === 'tags') {
+                        $colEntry['tags'] = array_values(array_filter(
+                            $col['tags'] ?? [],
+                            fn($t) => !empty($t['label'])
+                        ));
+                    } else {
+                        $colEntry['items'] = array_values(array_filter(
+                            $col['items'] ?? [],
+                            fn($i) => !empty($i['nom'])
+                        ));
+                    }
+                    $entry['cols'][] = $colEntry;
+                }
+            } else {
+                $entry['items'] = array_values(array_filter(
+                    $cat['items'] ?? [],
+                    fn($i) => !empty($i['nom'])
+                ));
+                if ($entry['type'] === 'bars_and_tags') {
+                    $entry['tags'] = array_values(array_filter(
+                        $cat['tags'] ?? [],
+                        fn($t) => !empty($t['label'])
+                    ));
+                }
+            }
+
+            $data[] = $entry;
         }
 
-        $competence = Competence::firstOrNew([]);
-        $competence->data = $decoded;
+        $competence = Competence::firstOrNew(['locale' => $locale]);
+        $competence->locale = $locale;
+        $competence->data   = $data;
         $competence->save();
 
-        return back()->with('success', 'Compétences mises à jour.');
+        return $this->redirectWithLocale('admin.portfolio.competences', $locale, 'Compétences mises à jour.');
     }
 
     /* -------------------------------------------------------
      | PROJETS & SITES
      * ----------------------------------------------------- */
 
-    public function projets(): View
+    public function projets(Request $request): View
     {
-        $projets = Projet::orderBy('ordre')->get();
-        return view('admin.portfolio.sites', array_merge($this->shared(), ['projets' => $projets]));
+        $locale  = $this->locale($request);
+        $projets = Projet::where('locale', $locale)->orderBy('ordre')->get();
+        return view('admin.portfolio.sites', array_merge($this->shared(), [
+            'projets' => $projets,
+            'locale'  => $locale,
+        ]));
     }
 
     public function projetStore(Request $request): RedirectResponse
     {
+        $locale = $request->input('locale', 'fr');
         $r = $this->validateProjet($request);
-        Projet::create(array_merge($r, ['ordre' => Projet::max('ordre') + 1]));
-        return redirect()->route('admin.portfolio.sites')->with('success', 'Projet ajouté.');
+        Projet::create(array_merge($r, [
+            'locale' => $locale,
+            'ordre'  => Projet::where('locale', $locale)->max('ordre') + 1,
+        ]));
+        return $this->redirectWithLocale('admin.portfolio.sites', $locale, 'Projet ajouté.');
     }
 
-    public function projetEdit(int $id): View
+    public function projetEdit(Request $request, int $id): View
     {
+        $locale = $this->locale($request);
         $projet = Projet::findOrFail($id);
-        return view('admin.portfolio.projet-form', array_merge($this->shared(), ['projet' => $projet]));
+        return view('admin.portfolio.projet-form', array_merge($this->shared(), [
+            'projet'  => $projet,
+            'locale'  => $locale,
+        ]));
     }
 
     public function projetUpdate(Request $request, int $id): RedirectResponse
     {
+        $locale = $request->input('locale', 'fr');
         $r = $this->validateProjet($request);
         Projet::findOrFail($id)->update($r);
-        return redirect()->route('admin.portfolio.sites')->with('success', 'Projet mis à jour.');
+        return $this->redirectWithLocale('admin.portfolio.sites', $locale, 'Projet mis à jour.');
     }
 
-    public function projetDestroy(int $id): RedirectResponse
+    public function projetDestroy(Request $request, int $id): RedirectResponse
     {
+        $locale = $this->locale($request);
         Projet::findOrFail($id)->delete();
-        return redirect()->route('admin.portfolio.sites')->with('success', 'Projet supprimé.');
+        return $this->redirectWithLocale('admin.portfolio.sites', $locale, 'Projet supprimé.');
     }
 
     /* -------------------------------------------------------
@@ -307,12 +431,12 @@ class AdminPortfolioController extends Controller
     private function validateTimeline(Request $request): array
     {
         $r = $request->validate([
-            'periode'      => 'required|string|max:100',
-            'titre'        => 'required|string|max:200',
-            'org'          => 'required|string|max:200',
-            'desc'         => 'required|string',
-            'dot'          => 'nullable|in:,blue,future',
-            'tags.*.label' => 'nullable|string|max:100',
+            'periode'        => 'required|string|max:100',
+            'titre'          => 'required|string|max:200',
+            'org'            => 'required|string|max:200',
+            'desc'           => 'required|string',
+            'dot'            => 'nullable|in:,blue,future',
+            'tags.*.label'   => 'nullable|string|max:100',
             'tags.*.couleur' => 'nullable|string|max:50',
         ]);
 

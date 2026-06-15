@@ -5,6 +5,7 @@
 <div class="admin-page-title"><span class="prefix">//</span> Projets & Sites</div>
 <p class="admin-page-sub">$ edit portfolio/sites</p>
 
+@include('admin.portfolio._locale-tabs')
 @if(session('success'))<div class="admin-alert success">✓ {{ session('success') }}</div>@endif
 
 <div class="admin-form-card" style="margin-top:24px; max-width:none;">
@@ -32,9 +33,10 @@
                 </td>
                 <td>
                     <div class="td-actions">
-                        <a href="{{ route('admin.portfolio.projet.edit', $p->id) }}" class="btn-admin btn-outline btn-sm">Modifier</a>
+                        <a href="{{ route('admin.portfolio.projet.edit', [$p->id, 'locale' => $locale]) }}" class="btn-admin btn-outline btn-sm">Modifier</a>
                         <form method="POST" action="{{ route('admin.portfolio.projet.destroy', $p->id) }}" onsubmit="return confirm('Supprimer ce projet ?')">
                             @csrf @method('DELETE')
+                            <input type="hidden" name="locale" value="{{ $locale }}">
                             <button class="btn-admin btn-delete btn-sm">Supprimer</button>
                         </form>
                     </div>
@@ -50,6 +52,7 @@
     <div class="section-label" style="margin-bottom:18px;">Ajouter un projet</div>
     <form method="POST" action="{{ route('admin.portfolio.projet.store') }}">
         @csrf
+        <input type="hidden" name="locale" value="{{ $locale }}">
         @include('admin.portfolio._projet-form', ['projet' => null])
         <div class="form-actions">
             <button type="submit" class="btn-admin btn-save">Ajouter</button>

@@ -5,6 +5,7 @@
 <div class="admin-page-title"><span class="prefix">//</span> Formations</div>
 <p class="admin-page-sub">$ edit portfolio/formations</p>
 
+@include('admin.portfolio._locale-tabs')
 @if(session('success'))<div class="admin-alert success">✓ {{ session('success') }}</div>@endif
 
 {{-- Tableau formations --}}
@@ -32,9 +33,10 @@
                 </td>
                 <td>
                     <div class="td-actions">
-                        <a href="{{ route('admin.portfolio.formation.edit', $f->id) }}" class="btn-admin btn-outline btn-sm">Modifier</a>
+                        <a href="{{ route('admin.portfolio.formation.edit', [$f->id, 'locale' => $locale]) }}" class="btn-admin btn-outline btn-sm">Modifier</a>
                         <form method="POST" action="{{ route('admin.portfolio.formation.destroy', $f->id) }}" onsubmit="return confirm('Supprimer ?')">
                             @csrf @method('DELETE')
+                            <input type="hidden" name="locale" value="{{ $locale }}">
                             <button class="btn-admin btn-delete btn-sm">Supprimer</button>
                         </form>
                     </div>
@@ -51,6 +53,7 @@
     <div class="section-label" style="margin-bottom:18px;">Ajouter une formation</div>
     <form method="POST" action="{{ route('admin.portfolio.formation.store') }}">
         @csrf
+        <input type="hidden" name="locale" value="{{ $locale }}">
         @include('admin.portfolio._timeline-form', ['item' => null])
         <div class="form-actions">
             <button type="submit" class="btn-admin btn-save">Ajouter</button>
@@ -69,6 +72,7 @@
             <tr>
                 <form method="POST" action="{{ route('admin.portfolio.certification.update', $c->id) }}">
                     @csrf @method('PUT')
+                    <input type="hidden" name="locale" value="{{ $locale }}">
                     <td><input class="cell-input" type="text" name="nom" value="{{ $c->nom }}" required></td>
                     <td>
                         <select name="couleur" style="background:var(--bg); border:1px solid var(--bd); border-radius:6px; color:var(--tx); padding:4px 28px 4px 8px; font-size:.82em;">
@@ -84,6 +88,7 @@
                 </form>
                         <form method="POST" action="{{ route('admin.portfolio.certification.destroy', $c->id) }}" onsubmit="return confirm('Supprimer ?')">
                             @csrf @method('DELETE')
+                            <input type="hidden" name="locale" value="{{ $locale }}">
                             <button class="btn-admin btn-delete btn-sm">✕</button>
                         </form>
                         </div>
@@ -95,6 +100,7 @@
     </div>
     <form method="POST" action="{{ route('admin.portfolio.certification.store') }}">
         @csrf
+        <input type="hidden" name="locale" value="{{ $locale }}">
         <div class="form-grid-3">
             <div class="form-group">
                 <label>Nom</label>

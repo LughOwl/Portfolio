@@ -48,6 +48,11 @@
             ];
             @endphp
 
+            <a href="{{ route('admin.dashboard') }}" class="sidebar-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                <span class="sidebar-dot" style="background:#888;"></span>
+                Tableau de bord
+            </a>
+
             <div class="sidebar-section-title">Portfolio</div>
             @foreach($portfolioSections as $key => $label)
             @php $rn = $portfolioRoutes[$key] ?? 'admin.dashboard'; @endphp

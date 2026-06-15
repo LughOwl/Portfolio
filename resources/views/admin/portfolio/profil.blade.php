@@ -5,10 +5,12 @@
 <div class="admin-page-title"><span class="prefix">//</span> Profil</div>
 <p class="admin-page-sub">$ edit portfolio/profil</p>
 
+@include('admin.portfolio._locale-tabs')
 @if(session('success'))<div class="admin-alert success">✓ {{ session('success') }}</div>@endif
 
 <form method="POST" action="{{ route('admin.portfolio.profil.save') }}" id="profilForm">
     @csrf
+    <input type="hidden" name="locale" value="{{ $locale }}">
 
     <div class="admin-form-card" style="margin-top:24px; margin-bottom:20px;">
         <div class="section-label">// Objectif professionnel</div>

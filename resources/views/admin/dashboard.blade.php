@@ -32,7 +32,7 @@
 </div>
 <div class="admin-cards-grid" style="margin-bottom: 36px;">
     @foreach($portfolioSections as $key => $label)
-    <a href="{{ route('admin.portfolio', $key) }}" class="admin-section-card">
+    <a href="{{ route('admin.portfolio.' . $key) }}" class="admin-section-card">
         <span class="asc-dot" style="background: #00ff88;"></span>
         <span class="asc-label">{{ $label }}</span>
         <span class="asc-arrow">→</span>

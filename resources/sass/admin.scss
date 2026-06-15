@@ -601,6 +601,41 @@ textarea { min-height: 96px; line-height: 1.6; }
     margin-top: 5px;
 }
 
+/* Locale tabs */
+.locale-tabs {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0 20px;
+}
+.locale-tab {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--bd);
+    color: var(--tx-3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .82em;
+    text-decoration: none;
+    transition: all .18s;
+    background: transparent;
+
+    &:hover { border-color: rgba(255,255,255,.2); color: var(--tx); }
+
+    &.active {
+        border-color: var(--accent-green);
+        color: var(--accent-green);
+        background: rgba(0,255,136,.07);
+    }
+
+    .locale-flag {
+        font-size: .9em;
+        font-weight: 700;
+        letter-spacing: .04em;
+    }
+}
+
 .badge-mini {
     display: inline-block;
     font-family: 'JetBrains Mono', monospace;

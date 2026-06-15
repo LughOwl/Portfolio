@@ -5,6 +5,7 @@
 <div class="admin-page-title"><span class="prefix">//</span> Objectifs & Parcours</div>
 <p class="admin-page-sub">$ edit portfolio/objectifs</p>
 
+@include('admin.portfolio._locale-tabs')
 @if(session('success'))<div class="admin-alert success">✓ {{ session('success') }}</div>@endif
 
 @foreach($objectifs as $obj)
@@ -13,6 +14,7 @@
 
     <form method="POST" action="{{ route('admin.portfolio.objectif.save', $obj->id) }}">
         @csrf
+        <input type="hidden" name="locale" value="{{ $locale }}">
         <div class="form-grid-2">
             <div class="form-group">
                 <label>Titre</label>
