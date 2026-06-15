@@ -12,7 +12,7 @@ class JanusBeeController extends Controller
 {
     public function accueil(): View
     {
-        $types = Type::with(['oeuvres' => fn($q) => $q->where('en_vedette', true)->with('types', 'genres')])
+        $types = Type::with(['oeuvres' => fn($q) => $q->where('en_vedette', true)->orderBy('ordre')->with('types', 'genres')])
             ->whereIn('nom', ["Série d'animation", "Film d'animation", "Film live", "Court métrage", "Livre", "Jeu vidéo"])
             ->get();
 

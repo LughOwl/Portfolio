@@ -53,9 +53,10 @@ class AdminJanusBeeController extends Controller
         $types   = Type::orderBy('nom')->get();
         $genres  = Genre::orderBy('nom')->get();
         $statuts = Oeuvre::distinct()->orderBy('status')->pluck('status');
+        $vedette = Oeuvre::where('en_vedette', true)->with('types')->orderBy('ordre')->orderBy('titre')->get();
 
         return view('admin.sites.janus-bee', array_merge($this->shared(), compact(
-            'oeuvres', 'types', 'genres', 'statuts', 'search', 'typeF', 'genreF', 'statusF'
+            'oeuvres', 'types', 'genres', 'statuts', 'search', 'typeF', 'genreF', 'statusF', 'vedette'
         )));
     }
 
@@ -132,6 +133,15 @@ class AdminJanusBeeController extends Controller
         $oeuvre = Oeuvre::findOrFail($id);
         $oeuvre->update(['en_vedette' => !$oeuvre->en_vedette]);
         return back();
+    }
+
+    public function reorder(Request $request): RedirectResponse
+    {
+        $request->validate(['ordre' => 'required|array', 'ordre.*' => 'integer|min:0']);
+        foreach ($request->input('ordre') as $id => $pos) {
+            Oeuvre::where('id', $id)->update(['ordre' => $pos]);
+        }
+        return back()->with('success', 'Ordre mis à jour.');
     }
 
     /* -------------------------------------------------------

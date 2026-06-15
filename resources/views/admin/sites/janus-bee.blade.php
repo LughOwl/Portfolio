@@ -154,6 +154,31 @@
 </div>
 @endif
 
+{{-- ORDRE ACCUEIL --}}
+@if($vedette->isNotEmpty())
+<div class="admin-form-card" style="margin-top:32px;">
+    <div class="section-label" style="margin-bottom:4px;">// Ordre d'affichage — accueil</div>
+    <p style="font-size:.8em; color:var(--tx-3); margin-bottom:16px;">Attribue un numéro à chaque œuvre en vedette. L'ordre s'applique par type de carousel.</p>
+    <form method="POST" action="{{ route('admin.janus-bee.reorder') }}">
+        @csrf
+        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:16px;">
+            @foreach($vedette as $o)
+            <div style="display:flex; align-items:center; gap:12px;">
+                <input type="number" name="ordre[{{ $o->id }}]" value="{{ $o->ordre }}" min="0" max="999"
+                       style="width:70px; text-align:center; padding:6px 8px; font-family:'JetBrains Mono',monospace;">
+                @if($o->image)
+                <img src="/assets/Janus-Bee/{{ $o->image }}" style="width:28px; height:38px; object-fit:cover; border-radius:3px; flex-shrink:0;">
+                @endif
+                <span style="font-size:.88em; color:var(--tx);">{{ $o->titre }}</span>
+                <span style="font-size:.75em; color:var(--tx-3); margin-left:auto;">{{ $o->types->pluck('nom')->implode(', ') }}</span>
+            </div>
+            @endforeach
+        </div>
+        <button type="submit" class="btn-admin btn-save btn-sm">Sauvegarder l'ordre</button>
+    </form>
+</div>
+@endif
+
 {{-- TYPES & GENRES --}}
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:32px;">
     <div class="admin-form-card">

@@ -9,7 +9,7 @@ class Oeuvre extends Model
 {
     protected $fillable = [
         'titre', 'titres_alternatifs', 'image',
-        'sortie', 'status', 'duree', 'synopsis', 'video', 'en_vedette',
+        'sortie', 'status', 'duree', 'synopsis', 'video', 'en_vedette', 'ordre',
     ];
 
     protected $casts = [
