@@ -75,10 +75,6 @@
                 </div>
             </div>
 
-            @foreach($genresSelectionnes as $g)
-                <input type="hidden" name="genres_pass[]" value="{{ $g }}">
-            @endforeach
-
             <div class="cat-filter-divider"></div>
 
             <div class="cat-filter-section">
@@ -95,11 +91,6 @@
                     @endforeach
                 </div>
             </div>
-
-            {{-- Preserve types when changing genres --}}
-            @foreach($typesSelectionnes as $t)
-                <input type="hidden" name="types[]" value="{{ $t }}">
-            @endforeach
         </form>
     </div>
 
