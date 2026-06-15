@@ -95,7 +95,7 @@
                     <label>Uploader un nouveau fichier</label>
                     <input type="file" name="image_file" accept="image/*"
                            style="background:var(--bg); border:1px solid var(--bd); border-radius:6px; padding:6px 10px; width:100%; color:var(--tx); font-size:.82em;">
-                    <span style="font-size:.72em; color:var(--tx-3); display:block; margin-top:4px;">PNG, JPG, WEBP — max 4 Mo. Remplace le nom ci-dessus si uploadé.</span>
+                    <span style="font-size:.72em; color:var(--tx-3); display:block; margin-top:4px;">PNG, JPG, WEBP — max 10 Mo. Remplace le nom ci-dessus si uploadé.</span>
                 </div>
             </div>
 

@@ -169,7 +169,7 @@ class AdminJanusBeeController extends Controller
             'titre'              => 'required|string|max:200',
             'titres_alternatifs' => 'nullable|string',
             'image'              => 'nullable|string|max:200',
-            'image_file'         => 'nullable|image|max:4096',
+            'image_file'         => 'nullable|image|max:10240',
             'sortie'             => 'nullable|string|max:100',
             'status'             => 'nullable|string|max:50',
             'duree'              => 'nullable|string|max:300',
