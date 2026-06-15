@@ -121,31 +121,64 @@
 {{ $articles->links('vendor.pagination.admin') }}
 
 {{-- ORDRE PAR CATEGORIE --}}
-@php $catLabelsOrdre = ['modeles' => 'Modeles philosophiques', 'idees' => 'Idees immuables', 'vie' => 'La Vie est [...]']; @endphp
-@foreach($catLabelsOrdre as $cat => $catLabel)
-@if($parCategorie->has($cat))
+@php
+$catConfig = [
+    'modeles' => ['label' => 'Modeles philosophiques', 'color' => '#0078ff'],
+    'idees'   => ['label' => 'Idees immuables',        'color' => '#9b59b6'],
+    'vie'     => ['label' => 'La Vie est [...]',        'color' => '#27ae60'],
+];
+@endphp
+
 <div style="margin-top:36px;">
-    <div class="section-label" style="margin-bottom:12px;">Ordre — {{ $catLabel }}</div>
-    <div style="display:flex; flex-wrap:wrap; gap:8px;">
-        @foreach($parCategorie[$cat] as $art)
-        <div class="admin-form-card" style="padding:10px 14px; display:flex; align-items:center; gap:10px; min-width:260px; max-width:340px;">
-            <span style="font-family:'JetBrains Mono',monospace; font-size:0.78em; color:var(--tx-3); min-width:22px; text-align:center;">{{ $art->ordre }}</span>
-            <span style="font-size:0.88em; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--tx);">{{ $art->titre }}</span>
-            <div style="display:flex; gap:4px;">
-                <form method="POST" action="{{ route('admin.lugh-owl.move', $art->id) }}" style="margin:0;">
-                    @csrf<input type="hidden" name="direction" value="up">
-                    <button class="btn-admin btn-outline btn-icon" style="padding:3px 7px;">&#9650;</button>
-                </form>
-                <form method="POST" action="{{ route('admin.lugh-owl.move', $art->id) }}" style="margin:0;">
-                    @csrf<input type="hidden" name="direction" value="down">
-                    <button class="btn-admin btn-outline btn-icon" style="padding:3px 7px;">&#9660;</button>
-                </form>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:.76em; font-weight:600; text-transform:uppercase; letter-spacing:.1em; color:var(--tx-3); margin-bottom:16px;">
+        // Ordre d'affichage par categorie
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:16px;">
+        @foreach($catConfig as $cat => $cfg)
+        @if($parCategorie->has($cat))
+        <div class="admin-form-card" style="padding:20px 24px;">
+            <div style="font-size:.78em; font-weight:700; color:{{ $cfg['color'] }}; font-family:'JetBrains Mono',monospace; margin-bottom:14px; border-bottom:1px solid {{ $cfg['color'] }}26; padding-bottom:10px;">
+                {{ $cfg['label'] }} <span style="color:var(--tx-3); font-weight:400;">({{ $parCategorie[$cat]->count() }})</span>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:6px;">
+                @foreach($parCategorie[$cat] as $i => $art)
+                <div style="display:flex; align-items:center; gap:8px; padding:6px 8px; background:rgba(255,255,255,.025); border-radius:7px;">
+                    {{-- Boutons haut/bas empilés --}}
+                    <div style="display:flex; flex-direction:column; gap:2px; flex-shrink:0;">
+                        @if($i > 0)
+                        <form method="POST" action="{{ route('admin.lugh-owl.move', $art->id) }}" style="margin:0;">
+                            @csrf<input type="hidden" name="direction" value="up">
+                            <button title="Monter" style="background:rgba(255,255,255,.07); border:1px solid var(--bd); border-radius:4px; color:var(--tx-2); cursor:pointer; font-size:.7em; padding:1px 5px; line-height:1.6; display:block; width:100%;">▲</button>
+                        </form>
+                        @else
+                        <span style="display:block; width:24px; height:16px;"></span>
+                        @endif
+                        @if(!$loop->last)
+                        <form method="POST" action="{{ route('admin.lugh-owl.move', $art->id) }}" style="margin:0;">
+                            @csrf<input type="hidden" name="direction" value="down">
+                            <button title="Descendre" style="background:rgba(255,255,255,.07); border:1px solid var(--bd); border-radius:4px; color:var(--tx-2); cursor:pointer; font-size:.7em; padding:1px 5px; line-height:1.6; display:block; width:100%;">▼</button>
+                        </form>
+                        @else
+                        <span style="display:block; width:24px; height:16px;"></span>
+                        @endif
+                    </div>
+                    {{-- Numéro de position --}}
+                    <span style="font-family:'JetBrains Mono',monospace; font-size:.75em; color:var(--tx-3); width:18px; text-align:center; flex-shrink:0;">{{ $i + 1 }}</span>
+                    {{-- Miniature --}}
+                    @if($art->image)
+                    <img src="/assets/Lugh-Owl/{{ $art->image }}" style="width:28px; height:28px; object-fit:cover; border-radius:4px; flex-shrink:0;">
+                    @else
+                    <div style="width:28px; height:28px; background:var(--bg); border:1px solid var(--bd); border-radius:4px; flex-shrink:0;"></div>
+                    @endif
+                    {{-- Titre --}}
+                    <span style="font-size:.85em; color:var(--tx); flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ $art->titre }}</span>
+                </div>
+                @endforeach
             </div>
         </div>
+        @endif
         @endforeach
     </div>
 </div>
-@endif
-@endforeach
 
 @endsection
