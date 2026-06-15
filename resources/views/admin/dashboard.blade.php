@@ -9,20 +9,28 @@
 
 <div class="admin-stat-grid">
     <div class="admin-stat-card">
-        <div class="stat-value">7</div>
+        <div class="stat-value">{{ $stats['pages_portfolio'] }}</div>
         <div class="stat-label">Pages portfolio</div>
     </div>
     <div class="admin-stat-card">
-        <div class="stat-value">7</div>
-        <div class="stat-label">Sites web</div>
+        <div class="stat-value">{{ $stats['projets_total'] }}</div>
+        <div class="stat-label">Projets & Sites</div>
     </div>
     <div class="admin-stat-card">
-        <div class="stat-value">2</div>
-        <div class="stat-label">Sites en ligne</div>
+        <div class="stat-value">{{ $stats['projets_enligne'] }}</div>
+        <div class="stat-label">En ligne</div>
     </div>
     <div class="admin-stat-card">
-        <div class="stat-value">5</div>
+        <div class="stat-value">{{ $stats['projets_constr'] }}</div>
         <div class="stat-label">En construction</div>
+    </div>
+    <div class="admin-stat-card">
+        <div class="stat-value">{{ $stats['formations_fr'] }}</div>
+        <div class="stat-label">Formations (FR)</div>
+    </div>
+    <div class="admin-stat-card">
+        <div class="stat-value">{{ $stats['experiences_fr'] }}</div>
+        <div class="stat-label">Expériences (FR)</div>
     </div>
 </div>
 

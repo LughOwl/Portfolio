@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Data\PortfolioData;
+use App\Models\Formation;
+use App\Models\Experience;
+use App\Models\Projet;
 use Illuminate\View\View;
 
 class AdminController extends Controller
@@ -29,9 +31,21 @@ class AdminController extends Controller
 
     public function dashboard(): View
     {
+        $projets     = Projet::where('locale', 'fr')->get();
+        $enligne     = $projets->where('etat', 'ligne')->count();
+        $constr      = $projets->where('etat', 'construction')->count();
+
         return view('admin.dashboard', [
             'portfolioSections' => self::PORTFOLIO_SECTIONS,
             'sites'             => self::SITES,
+            'stats' => [
+                'pages_portfolio' => count(self::PORTFOLIO_SECTIONS),
+                'projets_total'   => $projets->count(),
+                'projets_enligne' => $enligne,
+                'projets_constr'  => $constr,
+                'formations_fr'   => Formation::where('locale', 'fr')->count(),
+                'experiences_fr'  => Experience::where('locale', 'fr')->count(),
+            ],
         ]);
     }
 
