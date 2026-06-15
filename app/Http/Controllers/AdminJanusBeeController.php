@@ -53,10 +53,19 @@ class AdminJanusBeeController extends Controller
         $types   = Type::orderBy('nom')->get();
         $genres  = Genre::orderBy('nom')->get();
         $statuts = Oeuvre::distinct()->orderBy('status')->pluck('status');
+        $typesOrdre = ["Série d'animation", "Film d'animation", "Film live", "Court métrage", "Livre", "Jeu vidéo"];
+        $vedetteParType = collect($typesOrdre)->mapWithKeys(function ($nom) {
+            $oeuvres = Oeuvre::where('en_vedette', true)
+                ->whereHas('types', fn($q) => $q->where('nom', $nom))
+                ->with('types')
+                ->orderBy('ordre')->orderBy('titre')
+                ->get();
+            return [$nom => $oeuvres];
+        })->filter(fn($c) => $c->isNotEmpty());
         $vedette = Oeuvre::where('en_vedette', true)->with('types')->orderBy('ordre')->orderBy('titre')->get();
 
         return view('admin.sites.janus-bee', array_merge($this->shared(), compact(
-            'oeuvres', 'types', 'genres', 'statuts', 'search', 'typeF', 'genreF', 'statusF', 'vedette'
+            'oeuvres', 'types', 'genres', 'statuts', 'search', 'typeF', 'genreF', 'statusF', 'vedette', 'vedetteParType'
         )));
     }
 
@@ -131,7 +140,47 @@ class AdminJanusBeeController extends Controller
     public function toggleVedette(int $id): RedirectResponse
     {
         $oeuvre = Oeuvre::findOrFail($id);
-        $oeuvre->update(['en_vedette' => !$oeuvre->en_vedette]);
+        if (!$oeuvre->en_vedette) {
+            $max = Oeuvre::where('en_vedette', true)->max('ordre') ?? 0;
+            $oeuvre->update(['en_vedette' => true, 'ordre' => $max + 1]);
+        } else {
+            $oeuvre->update(['en_vedette' => false, 'ordre' => 0]);
+        }
+        return back();
+    }
+
+    public function move(Request $request, int $id): RedirectResponse
+    {
+        $r = $request->validate([
+            'direction' => 'required|in:up,down',
+            'type'      => 'required|string',
+        ]);
+
+        $peers = Oeuvre::where('en_vedette', true)
+            ->whereHas('types', fn($q) => $q->where('nom', $r['type']))
+            ->orderBy('ordre')->orderBy('id')
+            ->get();
+
+        // Normalise les positions au cas où il y aurait des ex aequo
+        foreach ($peers->values() as $i => $o) {
+            $o->timestamps = false;
+            $o->ordre = $i;
+            $o->save();
+        }
+        $peers = $peers->values();
+
+        $index = $peers->search(fn($o) => $o->id === $id);
+        if ($index === false) return back();
+
+        $swapIndex = $r['direction'] === 'up' ? $index - 1 : $index + 1;
+        if ($swapIndex < 0 || $swapIndex >= $peers->count()) return back();
+
+        $a = $peers[$index];
+        $b = $peers[$swapIndex];
+        [$a->ordre, $b->ordre] = [$b->ordre, $a->ordre];
+        $a->timestamps = false; $b->timestamps = false;
+        $a->save(); $b->save();
+
         return back();
     }
 

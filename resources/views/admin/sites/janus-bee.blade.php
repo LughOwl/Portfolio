@@ -155,27 +155,63 @@
 @endif
 
 {{-- ORDRE ACCUEIL --}}
-@if($vedette->isNotEmpty())
-<div class="admin-form-card" style="margin-top:32px;">
-    <div class="section-label" style="margin-bottom:4px;">// Ordre d'affichage — accueil</div>
-    <p style="font-size:.8em; color:var(--tx-3); margin-bottom:16px;">Attribue un numéro à chaque œuvre en vedette. L'ordre s'applique par type de carousel.</p>
-    <form method="POST" action="{{ route('admin.janus-bee.reorder') }}">
-        @csrf
-        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:16px;">
-            @foreach($vedette as $o)
-            <div style="display:flex; align-items:center; gap:12px;">
-                <input type="number" name="ordre[{{ $o->id }}]" value="{{ $o->ordre }}" min="0" max="999"
-                       style="width:70px; text-align:center; padding:6px 8px; font-family:'JetBrains Mono',monospace;">
-                @if($o->image)
-                <img src="/assets/Janus-Bee/{{ $o->image }}" style="width:28px; height:38px; object-fit:cover; border-radius:3px; flex-shrink:0;">
-                @endif
-                <span style="font-size:.88em; color:var(--tx);">{{ $o->titre }}</span>
-                <span style="font-size:.75em; color:var(--tx-3); margin-left:auto;">{{ $o->types->pluck('nom')->implode(', ') }}</span>
+@if($vedetteParType->isNotEmpty())
+<div style="margin-top:32px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:.76em; font-weight:600; text-transform:uppercase; letter-spacing:.1em; color:var(--tx-3); margin-bottom:16px;">
+        // Ordre d'affichage — accueil
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:16px;">
+        @foreach($vedetteParType as $typeNom => $oeuvresType)
+        <div class="admin-form-card" style="padding:20px 24px;">
+            <div style="font-size:.78em; font-weight:700; color:#ffdc00; font-family:'JetBrains Mono',monospace; margin-bottom:14px; border-bottom:1px solid rgba(255,220,0,.15); padding-bottom:10px;">
+                {{ $typeNom }} <span style="color:var(--tx-3); font-weight:400;">({{ $oeuvresType->count() }})</span>
             </div>
-            @endforeach
+            <div style="display:flex; flex-direction:column; gap:6px;">
+                @foreach($oeuvresType as $i => $o)
+                <div style="display:flex; align-items:center; gap:8px; padding:6px 8px; background:rgba(255,255,255,.025); border-radius:7px;">
+                    {{-- Boutons haut/bas --}}
+                    <div style="display:flex; flex-direction:column; gap:2px; flex-shrink:0;">
+                        @if($i > 0)
+                        <form method="POST" action="{{ route('admin.janus-bee.move', $o->id) }}">
+                            @csrf
+                            <input type="hidden" name="direction" value="up">
+                            <input type="hidden" name="type" value="{{ $typeNom }}">
+                            <button title="Monter" style="background:rgba(255,255,255,.07); border:1px solid var(--bd); border-radius:4px; color:var(--tx-2); cursor:pointer; font-size:.7em; padding:1px 5px; line-height:1.6; display:block; width:100%;">▲</button>
+                        </form>
+                        @else
+                        <span style="display:block; width:24px; height:16px;"></span>
+                        @endif
+
+                        @if(!$loop->last)
+                        <form method="POST" action="{{ route('admin.janus-bee.move', $o->id) }}">
+                            @csrf
+                            <input type="hidden" name="direction" value="down">
+                            <input type="hidden" name="type" value="{{ $typeNom }}">
+                            <button title="Descendre" style="background:rgba(255,255,255,.07); border:1px solid var(--bd); border-radius:4px; color:var(--tx-2); cursor:pointer; font-size:.7em; padding:1px 5px; line-height:1.6; display:block; width:100%;">▼</button>
+                        </form>
+                        @else
+                        <span style="display:block; width:24px; height:16px;"></span>
+                        @endif
+                    </div>
+
+                    {{-- Position --}}
+                    <span style="font-family:'JetBrains Mono',monospace; font-size:.75em; color:var(--tx-3); width:18px; text-align:center; flex-shrink:0;">{{ $i + 1 }}</span>
+
+                    {{-- Image --}}
+                    @if($o->image)
+                    <img src="/assets/Janus-Bee/{{ $o->image }}" style="width:26px; height:36px; object-fit:cover; border-radius:3px; flex-shrink:0;">
+                    @else
+                    <div style="width:26px; height:36px; background:var(--bg); border:1px solid var(--bd); border-radius:3px; flex-shrink:0;"></div>
+                    @endif
+
+                    {{-- Titre --}}
+                    <span style="font-size:.85em; color:var(--tx); flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ $o->titre }}</span>
+                </div>
+                @endforeach
+            </div>
         </div>
-        <button type="submit" class="btn-admin btn-save btn-sm">Sauvegarder l'ordre</button>
-    </form>
+        @endforeach
+    </div>
 </div>
 @endif
 
