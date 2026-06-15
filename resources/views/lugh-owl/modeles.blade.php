@@ -1,80 +1,28 @@
-﻿@extends('layouts.lugh-owl')
+@extends('layouts.lugh-owl')
 
-@section('title', 'Modèles Philosophiques - Lugh-Owl')
+@section('title', 'Modèles philosophiques — Lugh-Owl')
+@section('meta_description', 'Découvrez les modèles philosophiques de Lugh-Owl : La Balance, La Boussole, La Lanterne et bien d\'autres constructions intellectuelles.')
 
 @section('content')
-<div class="h1-container">
-    <h1 class="h1-pr"><span>Modèles Philosphiques</span></h1>
+
+<div class="lo-hero">
+    <h1>Modèles philosophiques</h1>
+    <p>Des constructions intellectuelles originales invitant à la réflexion sur l'existence, la sagesse et l'équilibre intérieur, alliant la pensée du passé à des perspectives contemporaines.</p>
 </div>
-<p class="p-presentation">
-    Dans cette section, nous explorons des modèles
-    philosophiques originaux. Ces constructions
-    intellectuelles invitent à la réflexion sur une
-    variété de questions philosophiques, alliant la
-    sagesse du passé à des perspectives contemporaines.
-</p>
-<section>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'balance') }}">
-        <img class="img" src="/assets/Lugh-Owl/mdl-balance_lugh.jpg" width="200" alt="Image Modèle">
-        <div class="catego">Modèle Philosophique</div>
-        <div class="titre">La Balance de Lugh</div>
-        <div class="descri">La Balance de Lugh illustre l'équilibre entre le bien et le mal dans
-            nos actions. Elle met en lumière le poids de chaque geste et son impact, en fonction
-            de la sagesse des individus.</div>
+
+<div class="lo-grid lo-grid-full">
+    @foreach($articles as $article)
+    <a href="{{ route('fr.lugh-owl.article', $article->slug) }}" class="lo-card">
+        @if($article->image)
+        <img src="/assets/Lugh-Owl/{{ $article->image }}" alt="{{ $article->titre }}" class="lo-card-img" loading="lazy">
+        @endif
+        <div class="lo-card-body">
+            <div class="lo-card-cat">Modèle philosophique</div>
+            <div class="lo-card-title">{{ $article->titre }}</div>
+            <div class="lo-card-desc">{{ $article->description }}</div>
+        </div>
     </a>
-    <hr>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'boussole') }}">
-        <img class="img" src="/assets/Lugh-Owl/mdl-boussole_lugh.jpg" width="200" alt="Image Modèle">
-        <div class="catego">Modèle Philosophique</div>
-        <div class="titre">La Boussole de Lugh</div>
-        <div class="descri">Un concept métaphysique qui guide l'être humain vers la sagesse et
-            l'unité divine, en distinguant les vertus et les vices à travers une boussole
-            spirituelle orientée vers le bien.</div>
-    </a>
-    <hr>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'lanterne') }}">
-        <img class="img" src="/assets/Lugh-Owl/mdl-lanterne_lugh.jpg" width="200" alt="Image Modèle">
-        <div class="catego">Modèle Philosophique</div>
-        <div class="titre">La Lanterne de Lugh</div>
-        <div class="descri">Une métaphore lumineuse pour explorer la sagesse, l'équilibre
-            intérieur et les défis liés à notre rayonnement personnel, qu'il soit discret ou
-            éclatant.</div>
-    </a>
-    <hr>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'lunettes') }}">
-        <img class="img" src="/assets/Lugh-Owl/mdl-lunettes_lugh.jpg" width="200" alt="Image Modèle">
-        <div class="catego">Modèle Philosophique</div>
-        <div class="titre">Les Lunettes de Lugh</div>
-        <div class="descri">Une métaphore pour comprendre l'importance d'observer le passé,
-            d'analyser le présent et de se préparer à l'avenir avec sagesse, clairvoyance
-            et résilience.</div>
-    </a>
-    <hr>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'pendule') }}">
-        <img class="img" src="/assets/Lugh-Owl/mdl-pendule_lugh.jpg" width="200" alt="Image Modèle">
-        <div class="catego">Modèle Philosophique</div>
-        <div class="titre">Le Pendule de Lugh</div>
-        <div class="descri">Une métaphore pour comprendre les oscillations naturelles de la
-            vie entre force et faiblesse, et apprendre à naviguer avec équilibre et efficacité
-            malgré ces mouvements.</div>
-    </a>
-    <hr>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'pont') }}">
-        <img class="img" src="/assets/Lugh-Owl/mdl-pont_lugh.jpg" width="200" alt="Image Modèle">
-        <div class="catego">Modèle Philosophique</div>
-        <div class="titre">Le Pont de Lugh</div>
-        <div class="descri">Une allégorie pour illustrer le cheminement entre ignorance et
-            sagesse, un équilibre entre connaissance intérieure et extérieure pour avancer
-            avec harmonie et lucidité.</div>
-    </a>
-    <hr>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'reservoir') }}">
-        <img class="img" src="/assets/Lugh-Owl/mdl-reservoir_lugh.jpg" width="200" alt="Image Modèle">
-        <div class="catego">Modèle Philosophique</div>
-        <div class="titre">Le Réservoir de Lugh</div>
-        <div class="descri">Une métaphore du processus de transformation du savoir en sagesse,
-            où l'eau représente la connaissance et le feu l'assimilation, conduisant à un
-            enrichissement spirituel et intellectuel.</div>
-    </a>
-</section>
+    @endforeach
+</div>
+
 @endsection

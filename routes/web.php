@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminJanusBeeController;
+use App\Http\Controllers\AdminLughOwlController;
 use App\Http\Controllers\AdminPortfolioController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\JanusBeeController;
@@ -117,6 +118,18 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         Route::delete('/types/{id}', [AdminJanusBeeController::class, 'typeDestroy'])->name('type.destroy');
         Route::post('/genres',       [AdminJanusBeeController::class, 'genreStore'])->name('genre.store');
         Route::delete('/genres/{id}',[AdminJanusBeeController::class, 'genreDestroy'])->name('genre.destroy');
+    });
+
+    // Lugh-Owl — CRUD articles
+    Route::prefix('sites/lugh-owl')->name('lugh-owl.')->group(function () {
+        Route::get('/',              [AdminLughOwlController::class, 'index'])->name('index');
+        Route::get('/create',        [AdminLughOwlController::class, 'create'])->name('create');
+        Route::post('/',             [AdminLughOwlController::class, 'store'])->name('store');
+        Route::get('/{id}/edit',     [AdminLughOwlController::class, 'edit'])->name('edit');
+        Route::put('/{id}',          [AdminLughOwlController::class, 'update'])->name('update');
+        Route::delete('/{id}',       [AdminLughOwlController::class, 'destroy'])->name('destroy');
+        Route::post('/{id}/publie',  [AdminLughOwlController::class, 'togglePublie'])->name('publie');
+        Route::post('/{id}/move',    [AdminLughOwlController::class, 'move'])->name('move');
     });
 
     // Autres sites (placeholder)

@@ -3,7 +3,7 @@
 @section('title', 'Mentions Légales - Lugh-Owl')
 
 @section('content')
-<div class="content-legal">
+<div class="lo-static-wrap">
     <div>
         <h1>Mentions Légales</h1>
 

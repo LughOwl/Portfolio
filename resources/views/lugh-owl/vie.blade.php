@@ -1,66 +1,28 @@
 ﻿@extends('layouts.lugh-owl')
 
-@section('title', 'La Vie est [...] - Lugh-Owl')
+@section('title', 'La Vie est [...] — Lugh-Owl')
+@section('meta_description', 'Découvrez les articles "La Vie est [...]" de Lugh-Owl : des métaphores philosophiques pour explorer et comprendre l existence humaine.')
 
 @section('content')
-<div class="h1-container">
-    <h1 class="h1-pr"><span>La Vie est [...]</span></h1>
+
+<div class="lo-hero">
+    <h1>La Vie est [...]</h1>
+    <p>Des métaphores et allégories pour explorer les multiples facettes de l existence : un champ de bataille, un orchestre, une pièce de théâtre et bien plus encore.</p>
 </div>
-<p class="p-presentation">
-    La vie est un mystère, une aventure, un défi.
-    Dans cette section, nous nous plongeons dans la
-    nature de l'existence, cherchant à comprendre les
-    diverses facettes de la vie, son sens et ses
-    implications.
-</p>
-<section>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'champ-de-bataille') }}">
-        <img class="img" src="/assets/Lugh-Owl/vie-champ_bataille.jpg" width="200" alt="Image Modèle">
-        <div class="catego">La Vie est [...]</div>
-        <div class="titre">La Vie est un Champ de Bataille</div>
-        <div class="descri">Une métaphore puissante qui illustre les luttes, les défis et les victoires de l'existence. Chaque jour, nous sommes appelés à combattre pour avancer, évoluer et triompher de nous-mêmes.</div>
+
+<div class="lo-grid lo-grid-full">
+    @foreach($articles as $article)
+    <a href="{{ route('fr.lugh-owl.article', $article->slug) }}" class="lo-card">
+        @if($article->image)
+        <img src="/assets/Lugh-Owl/{{ $article->image }}" alt="{{ $article->titre }}" class="lo-card-img" loading="lazy">
+        @endif
+        <div class="lo-card-body">
+            <div class="lo-card-cat">La Vie est [...]</div>
+            <div class="lo-card-title">{{ $article->titre }}</div>
+            <div class="lo-card-desc">{{ $article->description }}</div>
+        </div>
     </a>
-    <hr>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'dialogue-chaos') }}">
-        <img class="img" src="/assets/Lugh-Owl/vie-dialogue_chaos.jpg" width="200" alt="Image Modèle">
-        <div class="catego">La Vie est [...]</div>
-        <div class="titre">La Vie est un Dialogue avec le Chaos</div>
-        <div class="descri">Une exploration des interactions constantes entre l'ordre et le chaos, où l'être humain apprend à naviguer dans l'imprévu pour trouver un équilibre et construire un sens à son existence.</div>
-    </a>
-    <hr>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'enfer-necessaire') }}">
-        <img class="img" src="/assets/Lugh-Owl/vie-enfer_necessaire.jpg" width="200" alt="Image Modèle">
-        <div class="catego">La Vie est [...]</div>
-        <div class="titre">La Vie est un Enfer Nécessaire</div>
-        <div class="descri">La vie, malgré ses épreuves et ses douleurs, est une forge essentielle où l'âme se renforce, apprend et évolue. Les souffrances y sont nécessaires pour atteindre la sagesse et l'accomplissement.</div>
-    </a>
-    <hr>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'jeu-video-realiste') }}">
-        <img class="img" src="/assets/Lugh-Owl/vie-jeu_video_realiste.jpg" width="200" alt="Image Modèle">
-        <div class="catego">La Vie est [...]</div>
-        <div class="titre">La Vie est un Jeu Vidéo Réaliste</div>
-        <div class="descri">La vie peut être perçue comme un immense jeu vidéo, où chaque individu incarne un personnage évoluant dans un monde complexe, confronté à des défis, des choix, et des quêtes multiples.</div>
-    </a>
-    <hr>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'orchestre-symphonique') }}">
-        <img class="img" src="/assets/Lugh-Owl/vie-orchestre_symphonique.jpg" width="200" alt="Image Modèle">
-        <div class="catego">La Vie est [...]</div>
-        <div class="titre">La Vie est un Orchestre Symphonique</div>
-        <div class="descri">La vie ressemble à un orchestre symphonique où chaque élément joue un rôle unique. Pour créer une harmonie, il faut coordonner les talents, surmonter les discordances et suivre la mélodie de l'existence.</div>
-    </a>
-    <hr>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'paradis-precaire') }}">
-        <img class="img" src="/assets/Lugh-Owl/vie-paradis_precaire.jpg" width="200" alt="Image Modèle">
-        <div class="catego">La Vie est [...]</div>
-        <div class="titre">La Vie est un Paradis Précaire</div>
-        <div class="descri">La vie est un équilibre fragile entre bonheur et incertitude. Ce paradis peut basculer à tout moment, exigeant vigilance et gratitude pour préserver sa beauté et sa sérénité.</div>
-    </a>
-    <hr>
-    <a class="content" href="{{ route('fr.lugh-owl.article', 'piece-theatre') }}">
-        <img class="img" src="/assets/Lugh-Owl/vie-piece_theatre.jpg" width="200" alt="Image Modèle">
-        <div class="catego">La Vie est [...]</div>
-        <div class="titre">La Vie est une Pièce de Théâtre</div>
-        <div class="descri">La vie est une mise en scène où chacun joue un rôle. Entre masques et improvisations, nous apprenons à naviguer dans cette grande comédie humaine pour donner un sens à notre existence.</div>
-    </a>
-</section>
+    @endforeach
+</div>
+
 @endsection

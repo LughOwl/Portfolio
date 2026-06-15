@@ -3,7 +3,7 @@
 @section('title', 'Plan du Site - Lugh-Owl')
 
 @section('content')
-<div class="content-plan">
+<div class="lo-static-wrap">
     <div>
         <h1>Plan du Site</h1>
 

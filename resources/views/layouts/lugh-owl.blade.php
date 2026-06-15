@@ -22,86 +22,84 @@
     @vite(['resources/sass/lugh-owl.scss', 'resources/js/lugh-owl.js'])
     @yield('head')
 </head>
-<body>
-    <header class="site-header">
-        <div class="logo-container">
-            <a href="{{ route('fr.lugh-owl.accueil') }}">
-                <div class="logo-container-size">
-                    <img src="/assets/Lugh-Owl/1.logo.png" width="50" alt="logo-LO">
-                    <div>Lugh-<span>Owl</span></div>
-                </div>
-            </a>
-        </div>
-        <div class="menu-hamburger">
-            <span></span>
-        </div>
-    </header>
+<body class="{{ auth()->check() ? 'has-admin-bar' : '' }}">
 
-    <nav class="nav-menu">
-        <ul>
-            <li><a href="{{ route('fr.lugh-owl.modeles') }}">Modèles philosophiques</a></li>
-            <li><a href="{{ route('fr.lugh-owl.vie') }}">La vie est [...]</a></li>
-            <li><a href="{{ route('fr.lugh-owl.idees') }}">Idées immuables</a></li>
-        </ul>
-        <div>
-            <form role="search" method="get" class="search-form" action="{{ route('fr.lugh-owl.recherche') }}">
-                <label for="Recherche"><p>Trouver un article&nbsp;:</p></label>
-                <div>
-                    <input type="search" class="search-field" name="q"
-                        placeholder="Rechercher..." id="Recherche" value="{{ request('q', '') }}">
-                    <button type="submit" aria-label="Rechercher">
-                        <img src="/assets/loupe.png" width="40" alt="loupe">
-                    </button>
-                </div>
+    @auth
+    <div class="lo-admin-bar">
+        <div class="lo-admin-left">
+            <span class="lo-admin-label">// Admin</span>
+            <a href="{{ route('admin.dashboard') }}" class="lo-admin-link">Tableau de bord</a>
+            <a href="{{ route('admin.lugh-owl.index') }}" class="lo-admin-link">Gérer Lugh-Owl</a>
+        </div>
+        <div class="lo-admin-right">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="lo-admin-logout">Déconnexion</button>
             </form>
         </div>
-        <div class="nav-switch-container">
-            <p>Mode clair/sombre :</p>
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox"/>
-                    <div class="slider round"></div>
-                </label>
-            </div>
-        </div>
-        <div class="nav-lang-container">
-            <p>Autre langue :</p>
-            <div class="nav-lang">
-                <a href="#">
-                    <img src="/assets/flag-gb.png" width="40" alt="drapeau anglais">
-                    <p>EN</p>
-                </a>
-            </div>
-        </div>
-    </nav>
+    </div>
+    @endauth
 
-    <main class="site-content">
+    <header class="lo-header">
+        <a href="{{ route('fr.lugh-owl.accueil') }}" class="lo-brand">
+            <img src="/assets/Lugh-Owl/1.logo.png" width="36" alt="logo" class="lo-logo">
+            <span>Lugh-<em>Owl</em></span>
+        </a>
+
+        <nav class="lo-nav" id="loNav">
+            <a href="{{ route('fr.lugh-owl.modeles') }}" class="{{ request()->routeIs('fr.lugh-owl.modeles') ? 'active' : '' }}">
+                Modèles philosophiques
+            </a>
+            <a href="{{ route('fr.lugh-owl.idees') }}" class="{{ request()->routeIs('fr.lugh-owl.idees') ? 'active' : '' }}">
+                Idées immuables
+            </a>
+            <a href="{{ route('fr.lugh-owl.vie') }}" class="{{ request()->routeIs('fr.lugh-owl.vie') ? 'active' : '' }}">
+                La Vie est [...]
+            </a>
+            <a href="{{ route('fr.lugh-owl.origines') }}" class="{{ request()->routeIs('fr.lugh-owl.origines') ? 'active' : '' }}">
+                Origines
+            </a>
+        </nav>
+
+        <form class="lo-search" method="get" action="{{ route('fr.lugh-owl.recherche') }}">
+            <input type="search" name="q" placeholder="Rechercher…" value="{{ request('q', '') }}" class="lo-search-input">
+            <button type="submit" class="lo-search-btn" aria-label="Rechercher">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+        </form>
+
+        <button class="lo-hamburger" id="loHamburger" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main class="lo-main">
         @yield('content')
     </main>
 
     <button id="back-to-top" aria-label="Retour en haut">↑</button>
 
-    <footer class="site-footer">
-        <div class="f-contact">
-            <div>Présentation et Contact :</div>
-            <ul>
-                <li><a href="{{ route('fr.lugh-owl.origines') }}">Origines et Objectifs</a></li>
-                <li><a href="{{ route('fr.sites') }}">Site web principal</a></li>
-            </ul>
+    <footer class="lo-footer">
+        <div class="lo-footer-brand">
+            <img src="/assets/Lugh-Owl/1.logo.png" width="48" alt="Logo Lugh-Owl">
+            <span>Lugh-<em>Owl</em></span>
         </div>
-        <div class="f-img">
-            <img src="/assets/Lugh-Owl/1.logo.png" width="100" alt="Logo">
+        <div class="lo-footer-links">
+            <a href="{{ route('fr.lugh-owl.modeles') }}">Modèles philosophiques</a>
+            <a href="{{ route('fr.lugh-owl.idees') }}">Idées immuables</a>
+            <a href="{{ route('fr.lugh-owl.vie') }}">La Vie est [...]</a>
+            <a href="{{ route('fr.lugh-owl.origines') }}">Origines & Objectifs</a>
+            <a href="{{ route('fr.sites') }}">Portfolio</a>
         </div>
-        <div class="f-info">
-            <div>Informations utiles :</div>
-            <ul>
-                <li><a href="{{ route('fr.lugh-owl.legal') }}">Mentions Légales</a></li>
-                <li><a href="{{ route('fr.lugh-owl.plan') }}">Plan du site</a></li>
-            </ul>
+        <div class="lo-footer-legal">
+            <a href="{{ route('fr.lugh-owl.legal') }}">Mentions légales</a>
+            <a href="{{ route('fr.lugh-owl.plan') }}">Plan du site</a>
         </div>
-        <div class="f-copyr">
-            Tous Droits Réservés © Lugh-Owl | 2023 / 2026
+        <div class="lo-footer-copy">
+            Tous droits réservés © Lugh-Owl | 2023 / 2026<br>
+            <small>Textes et images créés en partie avec l'IA (ChatGPT & DALL·E)</small>
         </div>
     </footer>
+
 </body>
 </html>

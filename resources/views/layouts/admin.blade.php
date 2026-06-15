@@ -27,6 +27,10 @@
                 $siteUrl   = route('fr.janus-bee.accueil');
                 $siteColor = '#ffdc00';
                 $siteLabel = 'Janus-Bee';
+            } elseif (request()->routeIs('admin.lugh-owl.*')) {
+                $siteUrl   = route('fr.lugh-owl.accueil');
+                $siteColor = '#0078ff';
+                $siteLabel = 'Lugh-Owl';
             } elseif ($routeSite && isset($allSites[$routeSite])) {
                 $siteUrl   = route('fr.sites');
                 $siteColor = $allSites[$routeSite]['color'];
@@ -87,8 +91,20 @@
 
             <div class="sidebar-section-title"><span class="sidebar-label">Sites web</span></div>
             @foreach($sites as $key => $info)
-            <a href="{{ route('admin.site', $key) }}" data-label="{{ $info['label'] }}"
-               class="sidebar-link {{ request()->route('site') === $key || request()->routeIs('admin.'.$key.'.*') ? 'active' : '' }}">
+            @php
+            $sidebarHref = match($key) {
+                'janus-bee' => route('admin.janus-bee.index'),
+                'lugh-owl'  => route('admin.lugh-owl.index'),
+                default     => route('admin.site', $key),
+            };
+            $sidebarActive = match($key) {
+                'janus-bee' => request()->routeIs('admin.janus-bee.*'),
+                'lugh-owl'  => request()->routeIs('admin.lugh-owl.*'),
+                default     => request()->route('site') === $key,
+            };
+            @endphp
+            <a href="{{ $sidebarHref }}" data-label="{{ $info['label'] }}"
+               class="sidebar-link {{ $sidebarActive ? 'active' : '' }}">
                 <span class="sidebar-dot" style="background:{{ $info['color'] }};"></span>
                 <span class="sidebar-label">{{ $info['label'] }}</span>
             </a>

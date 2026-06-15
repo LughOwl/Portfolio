@@ -3,7 +3,7 @@
 @section('title', 'Origines et Objectifs - Lugh-Owl')
 
 @section('content')
-<div class="content-origines">
+<div class="lo-static-wrap">
     <div>
         <h1>Origines et Objectifs</h1>
 
