@@ -124,13 +124,13 @@ a { text-decoration: none; color: inherit; }
     display: flex;
     align-items: center;
     gap: 6px;
-    color: var(--green);
     padding: 6px 13px;
-    border: 1px solid rgba(0,255,136,.18);
+    border: 1px solid rgba(255,255,255,.1);
     border-radius: 7px;
     font-size: 0.85em;
-    transition: background 0.15s;
-    &:hover { background: rgba(0,255,136,.06); }
+    transition: background 0.15s, opacity 0.15s;
+    opacity: .85;
+    &:hover { opacity: 1; background: rgba(255,255,255,.05); }
 }
 
 .topbar-logout {

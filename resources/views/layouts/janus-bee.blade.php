@@ -22,7 +22,25 @@
     @vite(['resources/sass/janus-bee.scss'])
     @yield('head')
 </head>
-<body>
+<body class="{{ auth()->check() ? 'has-admin-bar' : '' }}">
+
+    @auth
+    <div class="jb-admin-bar">
+        <div class="jb-admin-left">
+            <span class="jb-admin-label">// Admin</span>
+            <a href="{{ route('admin.dashboard') }}" class="jb-admin-link">Tableau de bord</a>
+            <a href="{{ route('admin.janus-bee.index') }}" class="jb-admin-link">Gérer Janus-Bee</a>
+        </div>
+        <div class="jb-admin-right">
+            <span class="jb-admin-user">{{ auth()->user()->name }}</span>
+            <form method="POST" action="{{ route('logout') }}" style="display:inline">
+                @csrf
+                <button type="submit" class="jb-admin-logout">Déconnexion</button>
+            </form>
+        </div>
+    </div>
+    @endauth
+
     <nav class="nav-menu">
         <div class="logo-container">
             <a href="{{ route('fr.janus-bee.accueil') }}">
