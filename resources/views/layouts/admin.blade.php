@@ -96,6 +96,22 @@
     </div>
 
     <script>
+    // Restaure la position de scroll après un submit de formulaire
+    (function () {
+        const key = 'admin_scroll_' + location.pathname;
+        const saved = sessionStorage.getItem(key);
+        if (saved !== null) {
+            requestAnimationFrame(() => window.scrollTo(0, +saved));
+            sessionStorage.removeItem(key);
+        }
+        document.addEventListener('submit', function (e) {
+            // Ne sauvegarde pas pour les formulaires qui naviguent vers une autre page (ex: filtres GET)
+            const form = e.target;
+            if (form.method.toLowerCase() === 'get') return;
+            sessionStorage.setItem(key, window.scrollY);
+        });
+    })();
+
     const toggle  = document.getElementById('sidebarToggle');
     const sidebar = document.getElementById('adminSidebar');
     const overlay = document.getElementById('sidebarOverlay');
