@@ -118,9 +118,7 @@
     </div>
 </div>
 
-@if($articles->hasPages())
-<div style="margin-top:16px;">{{ $articles->links() }}</div>
-@endif
+{{ $articles->links('vendor.pagination.admin') }}
 
 {{-- ORDRE PAR CATEGORIE --}}
 @php $catLabelsOrdre = ['modeles' => 'Modeles philosophiques', 'idees' => 'Idees immuables', 'vie' => 'La Vie est [...]']; @endphp
