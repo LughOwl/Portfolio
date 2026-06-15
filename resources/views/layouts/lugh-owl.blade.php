@@ -80,22 +80,28 @@
     <button id="back-to-top" aria-label="Retour en haut">↑</button>
 
     <footer class="lo-footer">
-        <div class="lo-footer-brand">
-            <img src="/assets/Lugh-Owl/1.logo.png" width="48" alt="Logo Lugh-Owl">
-            <span>Lugh-<em>Owl</em></span>
+        <div class="lo-f-nav">
+            <div class="lo-f-nav-title">Articles :</div>
+            <ul>
+                <li><a href="{{ route('fr.lugh-owl.modeles') }}">Modèles philosophiques</a></li>
+                <li><a href="{{ route('fr.lugh-owl.idees') }}">Idées immuables</a></li>
+                <li><a href="{{ route('fr.lugh-owl.vie') }}">La Vie est [...]</a></li>
+            </ul>
         </div>
-        <div class="lo-footer-links">
-            <a href="{{ route('fr.lugh-owl.modeles') }}">Modèles philosophiques</a>
-            <a href="{{ route('fr.lugh-owl.idees') }}">Idées immuables</a>
-            <a href="{{ route('fr.lugh-owl.vie') }}">La Vie est [...]</a>
-            <a href="{{ route('fr.lugh-owl.origines') }}">Origines & Objectifs</a>
-            <a href="{{ route('fr.sites') }}">Portfolio</a>
+        <div class="lo-f-brand">
+            <img src="/assets/Lugh-Owl/1.logo.png" width="80" alt="Logo Lugh-Owl">
+            <div class="lo-f-brand-name">Lugh-<span>Owl</span></div>
         </div>
-        <div class="lo-footer-legal">
-            <a href="{{ route('fr.lugh-owl.legal') }}">Mentions légales</a>
-            <a href="{{ route('fr.lugh-owl.plan') }}">Plan du site</a>
+        <div class="lo-f-info">
+            <div class="lo-f-info-title">Informations :</div>
+            <ul>
+                <li><a href="{{ route('fr.lugh-owl.origines') }}">Origines et Objectifs</a></li>
+                <li><a href="{{ route('fr.lugh-owl.legal') }}">Mentions légales</a></li>
+                <li><a href="{{ route('fr.lugh-owl.plan') }}">Plan du site</a></li>
+                <li><a href="{{ route('fr.sites') }}">Site web principal</a></li>
+            </ul>
         </div>
-        <div class="lo-footer-copy">
+        <div class="lo-f-copy">
             Tous droits réservés © Lugh-Owl | 2023 / 2026<br>
             <small>Textes et images créés en partie avec l'IA (ChatGPT & DALL·E)</small>
         </div>

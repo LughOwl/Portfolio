@@ -501,57 +501,64 @@ h1, h2, h3 { color: $lo-heading; margin: 0 0 0.5em; }
 }
 
 // ============================================================
-// Footer
+// Footer (structure inspirée Janus-Bee)
 // ============================================================
 
 .lo-footer {
     background: $lo-bg2;
     border-top: 1px solid $lo-border;
-    padding: 36px 24px 24px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto auto;
-    gap: 16px 32px;
-    font-size: 0.88em;
+    padding: 24px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.92em;
+    color: $lo-muted;
 }
 
-.lo-footer-brand {
+.lo-f-nav, .lo-f-info {
+    flex: 1;
+    max-width: 240px;
+
+    ul { list-style: none; padding: 0; margin: 6px 0 0; }
+    li { margin-bottom: 3px; }
+    a  { color: $lo-muted; &:hover { color: $lo-blue; } }
+}
+
+.lo-f-nav-title, .lo-f-info-title {
+    font-weight: 700;
+    color: $lo-heading;
+    text-decoration: underline;
+}
+
+.lo-f-nav  { text-align: right; padding-right: 12px; }
+.lo-f-info { text-align: left;  padding-left: 12px; }
+
+.lo-f-brand {
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    font-size: 1.1em;
+    gap: 8px;
+    padding: 0 12px;
+}
+
+.lo-f-brand-name {
+    font-size: 1.2em;
     font-weight: 700;
     color: $lo-heading;
-    em { color: $lo-blue; font-style: normal; }
+    span { color: $lo-blue; }
 }
 
-.lo-footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 20px;
-    align-items: flex-start;
-    padding-top: 4px;
-
-    a { color: $lo-muted; &:hover { color: $lo-blue; } }
-}
-
-.lo-footer-legal {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    text-align: right;
-
-    a { color: $lo-muted; font-size: 0.9em; &:hover { color: $lo-blue; } }
-}
-
-.lo-footer-copy {
-    grid-column: 1 / -1;
-    color: color.adjust($lo-muted, $lightness: -15%);
-    font-size: 0.82em;
+.lo-f-copy {
+    width: 100%;
     text-align: center;
+    margin-top: 8px;
+    padding-top: 16px;
     border-top: 1px solid $lo-border;
-    padding-top: 14px;
+    font-size: 0.82em;
+    color: color.adjust($lo-muted, $lightness: -15%);
 }
 
 // ============================================================
@@ -608,8 +615,10 @@ h1, h2, h3 { color: $lo-heading; margin: 0 0 0.5em; }
     .lo-section-header { padding: 28px 16px 12px; }
     .lo-article-wrap, .lo-search-wrap { padding: 24px 16px 48px; }
     .lo-article-title { font-size: 1.5rem; }
-    .lo-footer { grid-template-columns: 1fr; text-align: center; }
-    .lo-footer-legal { text-align: center; }
-    .lo-footer-links { justify-content: center; }
+    .lo-footer { flex-direction: column; align-items: center; }
+    .lo-f-nav, .lo-f-info { text-align: center; padding: 0; max-width: 100%; }
+    .lo-f-nav { order: 2; }
+    .lo-f-brand { order: 1; }
+    .lo-f-info { order: 3; }
     .lo-search-input { width: 100px; &:focus { width: 130px; } }
 }
