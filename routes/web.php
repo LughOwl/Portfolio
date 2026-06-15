@@ -129,6 +129,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         Route::put('/{id}',          [AdminLughOwlController::class, 'update'])->name('update');
         Route::delete('/{id}',       [AdminLughOwlController::class, 'destroy'])->name('destroy');
         Route::post('/{id}/publie',  [AdminLughOwlController::class, 'togglePublie'])->name('publie');
+        Route::post('/{id}/vedette', [AdminLughOwlController::class, 'toggleVedette'])->name('vedette');
         Route::post('/{id}/move',    [AdminLughOwlController::class, 'move'])->name('move');
     });
 

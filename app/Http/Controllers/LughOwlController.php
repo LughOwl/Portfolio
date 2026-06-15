@@ -10,27 +10,27 @@ class LughOwlController extends Controller
 {
     public function accueil(): View
     {
-        $modeles = LughOwlArticle::where('categorie', 'modeles')->where('publie', true)->orderBy('ordre')->limit(3)->get();
-        $idees   = LughOwlArticle::where('categorie', 'idees')->where('publie', true)->orderBy('ordre')->limit(4)->get();
-        $vie     = LughOwlArticle::where('categorie', 'vie')->where('publie', true)->orderBy('ordre')->limit(4)->get();
+        $modeles = LughOwlArticle::where('categorie', 'modeles')->where('publie', true)->where('en_vedette', true)->orderBy('ordre')->get();
+        $idees   = LughOwlArticle::where('categorie', 'idees')->where('publie', true)->where('en_vedette', true)->orderBy('ordre')->get();
+        $vie     = LughOwlArticle::where('categorie', 'vie')->where('publie', true)->where('en_vedette', true)->orderBy('ordre')->get();
         return view('lugh-owl.accueil', compact('modeles', 'idees', 'vie'));
     }
 
     public function modeles(): View
     {
-        $articles = LughOwlArticle::where('categorie', 'modeles')->where('publie', true)->orderBy('ordre')->get();
+        $articles = LughOwlArticle::where('categorie', 'modeles')->where('publie', true)->orderBy('titre')->get();
         return view('lugh-owl.modeles', compact('articles'));
     }
 
     public function idees(): View
     {
-        $articles = LughOwlArticle::where('categorie', 'idees')->where('publie', true)->orderBy('ordre')->get();
+        $articles = LughOwlArticle::where('categorie', 'idees')->where('publie', true)->orderBy('titre')->get();
         return view('lugh-owl.idees', compact('articles'));
     }
 
     public function vie(): View
     {
-        $articles = LughOwlArticle::where('categorie', 'vie')->where('publie', true)->orderBy('ordre')->get();
+        $articles = LughOwlArticle::where('categorie', 'vie')->where('publie', true)->orderBy('titre')->get();
         return view('lugh-owl.vie', compact('articles'));
     }
 
@@ -51,8 +51,7 @@ class LughOwlController extends Controller
                     $query->where('titre', 'LIKE', "%{$q}%")
                           ->orWhere('description', 'LIKE', "%{$q}%");
                 })
-                ->orderBy('categorie')
-                ->orderBy('ordre')
+                ->orderBy('titre')
                 ->get();
         }
 

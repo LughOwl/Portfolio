@@ -47,7 +47,7 @@
                     <th style="width:56px;">Image</th>
                     <th>Titre</th>
                     <th style="width:150px;">Categorie</th>
-                    <th style="width:90px;">Ordre</th>
+                    <th style="width:56px; text-align:center;" title="En vedette sur l'accueil">★</th>
                     <th style="width:90px;">Statut</th>
                     <th style="width:140px;">Actions</th>
                 </tr>
@@ -77,18 +77,14 @@
                         {{ $catLabels[$article->categorie] ?? $article->categorie }}
                     </span>
                 </td>
-                <td>
-                    <div style="display:flex; gap:4px; align-items:center;">
-                        <form method="POST" action="{{ route('admin.lugh-owl.move', $article->id) }}" style="margin:0;">
-                            @csrf<input type="hidden" name="direction" value="up">
-                            <button type="submit" class="btn-admin btn-outline btn-icon" style="padding:4px 8px;" title="Monter">&#9650;</button>
-                        </form>
-                        <span style="font-family:'JetBrains Mono',monospace; font-size:0.82em; color:var(--tx-2); min-width:20px; text-align:center;">{{ $article->ordre }}</span>
-                        <form method="POST" action="{{ route('admin.lugh-owl.move', $article->id) }}" style="margin:0;">
-                            @csrf<input type="hidden" name="direction" value="down">
-                            <button type="submit" class="btn-admin btn-outline btn-icon" style="padding:4px 8px;" title="Descendre">&#9660;</button>
-                        </form>
-                    </div>
+                <td style="text-align:center;">
+                    <form method="POST" action="{{ route('admin.lugh-owl.vedette', $article->id) }}" style="margin:0;">
+                        @csrf
+                        <button type="submit" title="{{ $article->en_vedette ? 'Retirer de la vedette' : 'Mettre en vedette' }}"
+                                style="background:none; border:none; cursor:pointer; font-size:1.2em; line-height:1; color:{{ $article->en_vedette ? '#f0b429' : 'var(--tx-3)' }};">
+                            ★
+                        </button>
+                    </form>
                 </td>
                 <td>
                     <form method="POST" action="{{ route('admin.lugh-owl.publie', $article->id) }}" style="margin:0;">
@@ -111,7 +107,7 @@
                 </td>
             </tr>
             @empty
-            <tr><td colspan="6" style="text-align:center; color:var(--tx-3); padding:32px;">Aucun article trouve.</td></tr>
+            <tr><td colspan="7" style="text-align:center; color:var(--tx-3); padding:32px;">Aucun article trouve.</td></tr>
             @endforelse
             </tbody>
         </table>
@@ -135,17 +131,19 @@ $catConfig = [
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:16px;">
         @foreach($catConfig as $cat => $cfg)
-        @if($parCategorie->has($cat))
         <div class="admin-form-card" style="padding:20px 24px;">
             <div style="font-size:.78em; font-weight:700; color:{{ $cfg['color'] }}; font-family:'JetBrains Mono',monospace; margin-bottom:14px; border-bottom:1px solid {{ $cfg['color'] }}26; padding-bottom:10px;">
-                {{ $cfg['label'] }} <span style="color:var(--tx-3); font-weight:400;">({{ $parCategorie[$cat]->count() }})</span>
+                ★ {{ $cfg['label'] }} <span style="color:var(--tx-3); font-weight:400;">({{ isset($vedetteParCategorie[$cat]) ? $vedetteParCategorie[$cat]->count() : 0 }})</span>
             </div>
+            @if(!isset($vedetteParCategorie[$cat]) || $vedetteParCategorie[$cat]->isEmpty())
+            <div style="color:var(--tx-3); font-size:.83em; font-family:'JetBrains Mono',monospace; padding:8px 0;">Aucun article en vedette.</div>
+            @else
             <div style="display:flex; flex-direction:column; gap:6px;">
-                @foreach($parCategorie[$cat] as $i => $art)
+                @foreach($vedetteParCategorie[$cat] as $i => $art)
                 <div style="display:flex; align-items:center; gap:8px; padding:6px 8px; background:rgba(255,255,255,.025); border-radius:7px;">
                     {{-- Boutons haut/bas empilés --}}
                     <div style="display:flex; flex-direction:column; gap:2px; flex-shrink:0;">
-                        @if($i > 0)
+                        @if(!$loop->first)
                         <form method="POST" action="{{ route('admin.lugh-owl.move', $art->id) }}" style="margin:0;">
                             @csrf<input type="hidden" name="direction" value="up">
                             <button title="Monter" style="background:rgba(255,255,255,.07); border:1px solid var(--bd); border-radius:4px; color:var(--tx-2); cursor:pointer; font-size:.7em; padding:1px 5px; line-height:1.6; display:block; width:100%;">▲</button>
@@ -163,7 +161,7 @@ $catConfig = [
                         @endif
                     </div>
                     {{-- Numéro de position --}}
-                    <span style="font-family:'JetBrains Mono',monospace; font-size:.75em; color:var(--tx-3); width:18px; text-align:center; flex-shrink:0;">{{ $i + 1 }}</span>
+                    <span style="font-family:'JetBrains Mono',monospace; font-size:.75em; color:var(--tx-3); width:18px; text-align:center; flex-shrink:0;">{{ $loop->iteration }}</span>
                     {{-- Miniature --}}
                     @if($art->image)
                     <img src="/assets/Lugh-Owl/{{ $art->image }}" style="width:28px; height:28px; object-fit:cover; border-radius:4px; flex-shrink:0;">
@@ -175,8 +173,8 @@ $catConfig = [
                 </div>
                 @endforeach
             </div>
+            @endif
         </div>
-        @endif
         @endforeach
     </div>
 </div>

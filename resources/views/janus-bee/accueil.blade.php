@@ -3,7 +3,25 @@
 @section('title', 'Accueil - Janus-Bee')
 
 @section('content')
-<h1>Accueil</h1>
+
+<div class="accueil-hero">
+    <div class="accueil-hero-inner">
+        <h1>Janus-<span>Bee</span></h1>
+        <p>Catalogue personnel de films, séries d'animation, livres et jeux vidéo.</p>
+        <div class="accueil-hero-btns">
+            <a href="{{ route('fr.janus-bee.catalogue') }}" class="accueil-btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                Parcourir le catalogue
+            </a>
+            @if($oeuvreAleatoire)
+            <a href="{{ route('fr.janus-bee.oeuvre', $oeuvreAleatoire) }}" class="accueil-btn-secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                Œuvre aléatoire
+            </a>
+            @endif
+        </div>
+    </div>
+</div>
 
 @php
     $typesOrdre = ["Série d'animation", "Film d'animation", "Film live", "Court métrage", "Livre", "Jeu vidéo"];
@@ -12,78 +30,50 @@
         ->filter();
 @endphp
 
-@foreach($typesOrdonnes as $type)
-    @if($type->oeuvres->count() > 0)
-    <h2>{{ $type->nom }}</h2>
-    <div class="slider-wrapper">
-        <button class="slider-btn slider-prev" onclick="slideCarousel(this, -1)">❮</button>
-        <div class="slider-container">
-            <div class="slider-track">
-                @foreach($type->oeuvres as $oeuvre)
-                <a href="{{ route('fr.janus-bee.oeuvre', $oeuvre) }}" style="text-decoration: none; color: inherit;">
-                    <div class="slider-item">
-                        <div class="oeuvre-card">
-                            <div class="oeuvre-image">
+<div class="accueil-sections-wrap">
+    @foreach($typesOrdonnes as $type)
+        @if($type->oeuvres->count() > 0)
+        <div class="accueil-section">
+            <div class="accueil-section-header">
+                <h2>{{ $type->nom }}</h2>
+                <a href="{{ route('fr.janus-bee.catalogue', ['types[]' => $type->nom]) }}" class="accueil-voir-plus">Voir tout →</a>
+            </div>
+            <div class="carousel-wrap">
+                <button class="carousel-btn carousel-prev" aria-label="Précédent">&#8249;</button>
+                <div class="carousel-track-wrap">
+                    <div class="carousel-track">
+                        @foreach($type->oeuvres as $oeuvre)
+                        <a href="{{ route('fr.janus-bee.oeuvre', $oeuvre) }}" class="carousel-card">
+                            <div class="carousel-img">
                                 <img src="/assets/Janus-Bee/{{ $oeuvre->image }}" alt="{{ $oeuvre->titre }}" loading="lazy">
                             </div>
-                            <div class="oeuvre-info">
-                                <h3>{{ mb_strtoupper(mb_strlen($oeuvre->titre) > 23 ? mb_substr($oeuvre->titre, 0, 20) . '...' : $oeuvre->titre) }}</h3>
+                            <div class="carousel-info">
+                                <div class="carousel-titre">{{ $oeuvre->titre }}</div>
                                 @if(!empty($oeuvre->titres_alternatifs[0]))
-                                    <p class="titre-secondaire">{{ mb_strlen($oeuvre->titres_alternatifs[0]) > 30 ? mb_substr($oeuvre->titres_alternatifs[0], 0, 27) . '...' : $oeuvre->titres_alternatifs[0] }}</p>
+                                <div class="carousel-sous-titre">{{ $oeuvre->titres_alternatifs[0] }}</div>
                                 @endif
-                                <div class="oeuvre-details">
-                                    <div class="detail-section">
-                                        <div class="detail-titre">GENRES</div>
-                                        <div class="detail-contenu">
-                                            @php $genresText = $oeuvre->genres->pluck('nom')->implode(', '); @endphp
-                                            {{ mb_strlen($genresText) > 60 ? mb_substr($genresText, 0, 57) . '...' : $genresText }}
-                                        </div>
-                                    </div>
-                                    <div class="detail-section">
-                                        <div class="detail-titre">TYPES</div>
-                                        <div class="detail-contenu">
-                                            @php $typesText = $oeuvre->types->pluck('nom')->implode(', '); @endphp
-                                            {{ mb_strlen($typesText) > 40 ? mb_substr($typesText, 0, 37) . '...' : $typesText }}
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
+                        </a>
+                        @endforeach
                     </div>
-                </a>
-                @endforeach
+                </div>
+                <button class="carousel-btn carousel-next" aria-label="Suivant">&#8250;</button>
             </div>
         </div>
-        <button class="slider-btn slider-next" onclick="slideCarousel(this, 1)">❯</button>
-    </div>
-    @endif
-@endforeach
-
-<div>
-    <a href="{{ route('fr.janus-bee.catalogue') }}" class="bouton-accueil">
-        <img src="/assets/catalogue.png" alt="image catalogue" class="accueil-icones">
-        Accéder à l'ensemble des œuvres
-    </a>
-    @if($oeuvreAleatoire)
-    <a href="{{ route('fr.janus-bee.oeuvre', $oeuvreAleatoire) }}" class="bouton-accueil">
-        <img src="/assets/random.png" alt="image aléatoire" class="accueil-icones">
-        Accéder à une œuvre au hasard
-    </a>
-    @endif
+        @endif
+    @endforeach
 </div>
 
 <script>
-function slideCarousel(button, direction) {
-    const wrapper = button.closest('.slider-wrapper');
-    const track = wrapper.querySelector('.slider-track');
-    const itemWidth = wrapper.querySelector('.slider-item').offsetWidth;
-    const containerWidth = wrapper.querySelector('.slider-container').offsetWidth;
-    const visibleItems = Math.floor(containerWidth / itemWidth);
-
-    track.scrollBy({
-        left: direction * (itemWidth * visibleItems + 15 * visibleItems),
-        behavior: 'smooth'
+document.querySelectorAll('.carousel-wrap').forEach(wrap => {
+    const scroller = wrap.querySelector('.carousel-track-wrap');
+    wrap.querySelector('.carousel-prev').addEventListener('click', () => {
+        scroller.scrollBy({ left: -scroller.offsetWidth * 0.75, behavior: 'smooth' });
     });
-}
+    wrap.querySelector('.carousel-next').addEventListener('click', () => {
+        scroller.scrollBy({ left: scroller.offsetWidth * 0.75, behavior: 'smooth' });
+    });
+});
 </script>
+
 @endsection

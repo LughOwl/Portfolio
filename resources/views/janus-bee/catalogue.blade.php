@@ -105,30 +105,15 @@
             <div class="catalogue-carte-oeuvre">
                 <div class="catalogue-image">
                     <img src="/assets/Janus-Bee/{{ $oeuvre->image }}" alt="{{ $oeuvre->titre }}" loading="lazy">
+                    @if($oeuvre->types->isNotEmpty())
+                    <span class="cat-type-badge">{{ $oeuvre->types->first()->nom }}</span>
+                    @endif
                 </div>
                 <div class="catalogue-info">
-                    <h3 class="catalogue-titre">{{ mb_strtoupper(mb_strlen($oeuvre->titre) > 23 ? mb_substr($oeuvre->titre, 0, 20) . '...' : $oeuvre->titre) }}</h3>
+                    <h3 class="catalogue-titre">{{ $oeuvre->titre }}</h3>
                     @if(!empty($oeuvre->titres_alternatifs[0]))
-                    <p class="catalogue-titre-secondaire">
-                        {{ mb_strlen($oeuvre->titres_alternatifs[0]) > 30 ? mb_substr($oeuvre->titres_alternatifs[0], 0, 27) . '...' : $oeuvre->titres_alternatifs[0] }}
-                    </p>
+                    <p class="catalogue-titre-secondaire">{{ $oeuvre->titres_alternatifs[0] }}</p>
                     @endif
-                    <div class="catalogue-details">
-                        <div class="catalogue-detail-section">
-                            <div class="catalogue-detail-titre">GENRES</div>
-                            <div class="catalogue-detail-contenu">
-                                @php $genresText = $oeuvre->genres->pluck('nom')->implode(', '); @endphp
-                                {{ mb_strlen($genresText) > 60 ? mb_substr($genresText, 0, 57) . '...' : $genresText }}
-                            </div>
-                        </div>
-                        <div class="catalogue-detail-section">
-                            <div class="catalogue-detail-titre">TYPES</div>
-                            <div class="catalogue-detail-contenu">
-                                @php $typesText = $oeuvre->types->pluck('nom')->implode(', '); @endphp
-                                {{ mb_strlen($typesText) > 40 ? mb_substr($typesText, 0, 37) . '...' : $typesText }}
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </a>

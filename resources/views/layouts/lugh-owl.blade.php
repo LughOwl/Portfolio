@@ -28,10 +28,11 @@
     <div class="lo-admin-bar">
         <div class="lo-admin-left">
             <span class="lo-admin-label">// Admin</span>
-            <a href="{{ route('admin.dashboard') }}" class="lo-admin-link">Tableau de bord</a>
+            <a href="{{ route('admin.dashboard') }}" class="lo-admin-link lo-admin-hide-sm">Tableau de bord</a>
             <a href="{{ route('admin.lugh-owl.index') }}" class="lo-admin-link">Gérer Lugh-Owl</a>
         </div>
         <div class="lo-admin-right">
+            <span class="lo-admin-user lo-admin-hide-sm">{{ auth()->user()->name }}</span>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="lo-admin-logout">Déconnexion</button>
@@ -65,6 +66,12 @@
             </button>
         </form>
 
+        <div class="lo-lang" title="Version anglaise à venir">
+            <span class="lo-lang-active">FR</span>
+            <span class="lo-lang-sep">|</span>
+            <span class="lo-lang-off">EN</span>
+        </div>
+
         <button class="lo-hamburger" id="loHamburger" aria-label="Menu" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
@@ -77,30 +84,20 @@
     <button id="back-to-top" aria-label="Retour en haut">↑</button>
 
     <footer class="lo-footer">
-        <div class="lo-f-nav">
-            <div class="lo-f-nav-title">Articles :</div>
-            <ul>
-                <li><a href="{{ route('fr.lugh-owl.modeles') }}">Modèles philosophiques</a></li>
-                <li><a href="{{ route('fr.lugh-owl.idees') }}">Idées immuables</a></li>
-                <li><a href="{{ route('fr.lugh-owl.vie') }}">La Vie est [...]</a></li>
-            </ul>
+        <div class="lo-f-identity">
+            <img src="/assets/Lugh-Owl/1.logo.png" width="64" alt="Logo Lugh-Owl">
+            <div class="lo-f-name">Lugh-<span>Owl</span></div>
+            <div class="lo-f-sep">✦</div>
         </div>
-        <div class="lo-f-brand">
-            <img src="/assets/Lugh-Owl/1.logo.png" width="80" alt="Logo Lugh-Owl">
-            <div class="lo-f-brand-name">Lugh-<span>Owl</span></div>
-        </div>
-        <div class="lo-f-info">
-            <div class="lo-f-info-title">Informations :</div>
-            <ul>
-                <li><a href="{{ route('fr.lugh-owl.origines') }}">Origines et Objectifs</a></li>
-                <li><a href="{{ route('fr.lugh-owl.legal') }}">Mentions légales</a></li>
-                <li><a href="{{ route('fr.lugh-owl.plan') }}">Plan du site</a></li>
-                <li><a href="{{ route('fr.sites') }}">Site web principal</a></li>
-            </ul>
-        </div>
-        <div class="lo-f-copy">
-            Tous droits réservés © Lugh-Owl | 2023 / 2026
-        </div>
+        <nav class="lo-f-links">
+            <a href="{{ route('fr.lugh-owl.modeles') }}">Modèles philosophiques</a>
+            <a href="{{ route('fr.lugh-owl.idees') }}">Idées immuables</a>
+            <a href="{{ route('fr.lugh-owl.vie') }}">La Vie est [...]</a>
+            <a href="{{ route('fr.lugh-owl.origines') }}">Origines</a>
+            <a href="{{ route('fr.lugh-owl.legal') }}">Mentions légales</a>
+            <a href="{{ route('fr.sites') }}">Site principal</a>
+        </nav>
+        <div class="lo-f-copy">Tous droits réservés © Lugh-Owl &nbsp;·&nbsp; 2023 – 2026</div>
     </footer>
 
 </body>

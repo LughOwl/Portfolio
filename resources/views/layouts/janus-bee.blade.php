@@ -28,11 +28,11 @@
     <div class="jb-admin-bar">
         <div class="jb-admin-left">
             <span class="jb-admin-label">// Admin</span>
-            <a href="{{ route('admin.dashboard') }}" class="jb-admin-link">Tableau de bord</a>
+            <a href="{{ route('admin.dashboard') }}" class="jb-admin-link jb-admin-hide-sm">Tableau de bord</a>
             <a href="{{ route('admin.janus-bee.index') }}" class="jb-admin-link">Gérer Janus-Bee</a>
         </div>
         <div class="jb-admin-right">
-            <span class="jb-admin-user">{{ auth()->user()->name }}</span>
+            <span class="jb-admin-user jb-admin-hide-sm">{{ auth()->user()->name }}</span>
             <form method="POST" action="{{ route('logout') }}" style="display:inline">
                 @csrf
                 <button type="submit" class="jb-admin-logout">Déconnexion</button>
@@ -59,13 +59,20 @@
                 </button>
             </form>
         </div>
-        <div class="catalogue-container">
-            <a href="{{ route('fr.janus-bee.catalogue') }}">
-                <div class="catalogue-texte">Catalogue</div>
-                <div class="catalogue-icone">
-                    <img src="/assets/catalogue.png" alt="icone catalogue">
-                </div>
-            </a>
+        <div class="nav-right">
+            <div class="catalogue-container">
+                <a href="{{ route('fr.janus-bee.catalogue') }}">
+                    <div class="catalogue-texte">Catalogue</div>
+                    <div class="catalogue-icone">
+                        <img src="/assets/catalogue.png" alt="icone catalogue">
+                    </div>
+                </a>
+            </div>
+            <div class="jb-lang" title="Version anglaise à venir">
+                <span class="jb-lang-active">FR</span>
+                <span class="jb-lang-sep">|</span>
+                <span class="jb-lang-off">EN</span>
+            </div>
         </div>
     </nav>
 
@@ -76,26 +83,19 @@
     <button id="back-to-top" aria-label="Retour en haut">↑</button>
 
     <footer class="site-footer">
-        <div class="f-contact">
-            <div>Présentation et Contact :</div>
-            <ul>
-                <li><a href="{{ route('fr.janus-bee.origines') }}">Origines et Objectifs</a></li>
-                <li><a href="{{ route('fr.sites') }}">Site web principal</a></li>
-            </ul>
+        <div class="jb-f-identity">
+            <img src="/assets/Janus-Bee/1.logo.png" width="60" alt="Logo Janus-Bee">
+            <div class="jb-f-name">Janus-<span>Bee</span></div>
+            <div class="jb-f-sep">✦</div>
         </div>
-        <div class="f-img">
-            <img src="/assets/Janus-Bee/1.logo.png" width="100" alt="Logo">
-        </div>
-        <div class="f-info">
-            <div>Informations utiles :</div>
-            <ul>
-                <li><a href="{{ route('fr.janus-bee.legal') }}">Mentions Légales</a></li>
-                <li><a href="{{ route('fr.janus-bee.plan') }}">Plan du site</a></li>
-            </ul>
-        </div>
-        <div class="f-copyr">
-            Tous Droits Réservés © Janus-Bee | 2026 / 2026
-        </div>
+        <nav class="jb-f-links">
+            <a href="{{ route('fr.janus-bee.catalogue') }}">Catalogue</a>
+            <a href="{{ route('fr.janus-bee.origines') }}">Origines</a>
+            <a href="{{ route('fr.janus-bee.legal') }}">Mentions légales</a>
+            <a href="{{ route('fr.janus-bee.plan') }}">Plan du site</a>
+            <a href="{{ route('fr.sites') }}">Site principal</a>
+        </nav>
+        <div class="jb-f-copy">Tous droits réservés © Janus-Bee &nbsp;·&nbsp; 2026</div>
     </footer>
     <script>
     (function () {

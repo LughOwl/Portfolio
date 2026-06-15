@@ -794,7 +794,7 @@ body.sidebar-collapsed {
 
     .admin-stat-grid  { grid-template-columns: 1fr 1fr; gap: 10px; }
     .admin-cards-grid { grid-template-columns: 1fr; }
-    .topbar-site      { display: none; }
+    .topbar-site      { padding: 5px 9px; font-size: 0; gap: 0; svg { width: 16px; height: 16px; } }
 
     .admin-table {
         font-size: 0.8em;

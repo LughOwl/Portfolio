@@ -8,9 +8,9 @@ class LughOwlArticle extends Model
 {
     protected $table = 'lugh_owl_articles';
 
-    protected $fillable = ['slug', 'categorie', 'titre', 'description', 'contenu', 'image', 'ordre', 'publie'];
+    protected $fillable = ['slug', 'categorie', 'titre', 'description', 'contenu', 'image', 'ordre', 'publie', 'en_vedette'];
 
-    protected $casts = ['publie' => 'boolean'];
+    protected $casts = ['publie' => 'boolean', 'en_vedette' => 'boolean'];
 
     public function getRouteKeyName(): string
     {

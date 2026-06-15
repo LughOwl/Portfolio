@@ -17,7 +17,7 @@ class AdminLughOwlController extends Controller
         $categorie = $request->get('categorie');
         $search    = trim($request->get('search', ''));
 
-        $query = LughOwlArticle::query()->orderBy('categorie')->orderBy('ordre');
+        $query = LughOwlArticle::query()->orderBy('categorie')->orderBy('titre');
 
         if ($categorie && in_array($categorie, self::CATEGORIES)) {
             $query->where('categorie', $categorie);
@@ -30,9 +30,9 @@ class AdminLughOwlController extends Controller
         }
 
         $articles = $query->paginate(30)->withQueryString();
-        $parCategorie = LughOwlArticle::orderBy('ordre')->get()->groupBy('categorie');
+        $vedetteParCategorie = LughOwlArticle::where('en_vedette', true)->orderBy('ordre')->get()->groupBy('categorie');
 
-        return view('admin.sites.lugh-owl', compact('articles', 'parCategorie', 'categorie', 'search') + [
+        return view('admin.sites.lugh-owl', compact('articles', 'vedetteParCategorie', 'categorie', 'search') + [
             'portfolioSections' => AdminController::PORTFOLIO_SECTIONS,
             'sites'             => AdminController::SITES,
         ]);
@@ -101,12 +101,25 @@ class AdminLughOwlController extends Controller
         return back()->with('success', $article->publie ? 'Article publié.' : 'Article masqué.');
     }
 
+    public function toggleVedette(int $id): RedirectResponse
+    {
+        $article = LughOwlArticle::findOrFail($id);
+        if ($article->en_vedette) {
+            $article->update(['en_vedette' => false, 'ordre' => 0]);
+        } else {
+            $maxOrdre = LughOwlArticle::where('categorie', $article->categorie)->where('en_vedette', true)->max('ordre') ?? -1;
+            $article->update(['en_vedette' => true, 'ordre' => $maxOrdre + 1]);
+        }
+        return back();
+    }
+
     public function move(Request $request, int $id): RedirectResponse
     {
         $direction = $request->input('direction');
         $article   = LughOwlArticle::findOrFail($id);
 
         $peers = LughOwlArticle::where('categorie', $article->categorie)
+            ->where('en_vedette', true)
             ->orderBy('ordre')
             ->get()
             ->values();
@@ -128,6 +141,7 @@ class AdminLughOwlController extends Controller
 
         // Reload after normalize
         $peers = LughOwlArticle::where('categorie', $article->categorie)
+            ->where('en_vedette', true)
             ->orderBy('ordre')
             ->get()
             ->values();
