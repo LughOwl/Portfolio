@@ -67,6 +67,7 @@
                     <th>Genres</th>
                     <th>Sortie</th>
                     <th>Statut</th>
+                    <th style="width:44px;" title="Affiché sur l'accueil">★</th>
                     <th style="width:130px;">Actions</th>
                 </tr>
             </thead>
@@ -99,6 +100,15 @@
                     @else
                         <span class="badge-mini" style="color:var(--tx-3); border-color:rgba(255,255,255,.1);">{{ $o->status ?? '—' }}</span>
                     @endif
+                </td>
+                <td style="text-align:center; padding:0;">
+                    <form method="POST" action="{{ route('admin.janus-bee.vedette', $o->id) }}">
+                        @csrf
+                        <button title="{{ $o->en_vedette ? 'Retirer de l\'accueil' : 'Afficher sur l\'accueil' }}"
+                                style="background:none; border:none; cursor:pointer; font-size:1.2em; padding:10px 12px; line-height:1;
+                                       color:{{ $o->en_vedette ? '#ffdc00' : 'var(--tx-3)' }};
+                                       transition:color .15s;">★</button>
+                    </form>
                 </td>
                 <td>
                     <div class="td-actions">

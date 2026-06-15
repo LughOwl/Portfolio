@@ -9,12 +9,14 @@ class Oeuvre extends Model
 {
     protected $fillable = [
         'titre', 'titres_alternatifs', 'image',
-        'sortie', 'status', 'duree', 'synopsis', 'video',
+        'sortie', 'status', 'duree', 'synopsis', 'video', 'en_vedette',
     ];
 
     protected $casts = [
         'titres_alternatifs' => 'array',
+        'en_vedette'         => 'boolean',
     ];
+
 
     public function types(): BelongsToMany
     {

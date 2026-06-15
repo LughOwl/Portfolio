@@ -127,6 +127,13 @@ class AdminJanusBeeController extends Controller
         return redirect()->route('admin.janus-bee.index')->with('success', "« {$titre} » supprimé.");
     }
 
+    public function toggleVedette(int $id): RedirectResponse
+    {
+        $oeuvre = Oeuvre::findOrFail($id);
+        $oeuvre->update(['en_vedette' => !$oeuvre->en_vedette]);
+        return back();
+    }
+
     /* -------------------------------------------------------
      | TYPES & GENRES
      * ----------------------------------------------------- */

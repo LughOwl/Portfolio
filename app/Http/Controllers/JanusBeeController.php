@@ -12,11 +12,12 @@ class JanusBeeController extends Controller
 {
     public function accueil(): View
     {
-        $types = Type::with(['oeuvres.types', 'oeuvres.genres'])
+        $types = Type::with(['oeuvres' => fn($q) => $q->where('en_vedette', true)->with('types', 'genres')])
             ->whereIn('nom', ["Série d'animation", "Film d'animation", "Film live", "Court métrage", "Livre", "Jeu vidéo"])
             ->get();
 
-        $oeuvreAleatoire = Oeuvre::inRandomOrder()->first();
+        $oeuvreAleatoire = Oeuvre::where('en_vedette', true)->inRandomOrder()->first()
+            ?? Oeuvre::inRandomOrder()->first();
 
         return view('janus-bee.accueil', compact('types', 'oeuvreAleatoire'));
     }

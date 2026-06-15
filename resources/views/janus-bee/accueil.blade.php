@@ -19,7 +19,7 @@
         <button class="slider-btn slider-prev" onclick="slideCarousel(this, -1)">❮</button>
         <div class="slider-container">
             <div class="slider-track">
-                @foreach($type->oeuvres->take(10) as $oeuvre)
+                @foreach($type->oeuvres as $oeuvre)
                 <a href="{{ route('fr.janus-bee.oeuvre', $oeuvre) }}" style="text-decoration: none; color: inherit;">
                     <div class="slider-item">
                         <div class="oeuvre-card">

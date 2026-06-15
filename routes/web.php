@@ -110,6 +110,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/{id}/edit',     [AdminJanusBeeController::class, 'edit'])->name('edit');
         Route::put('/{id}',          [AdminJanusBeeController::class, 'update'])->name('update');
         Route::delete('/{id}',       [AdminJanusBeeController::class, 'destroy'])->name('destroy');
+        Route::post('/{id}/vedette', [AdminJanusBeeController::class, 'toggleVedette'])->name('vedette');
         Route::post('/types',        [AdminJanusBeeController::class, 'typeStore'])->name('type.store');
         Route::delete('/types/{id}', [AdminJanusBeeController::class, 'typeDestroy'])->name('type.destroy');
         Route::post('/genres',       [AdminJanusBeeController::class, 'genreStore'])->name('genre.store');
