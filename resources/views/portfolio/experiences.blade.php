@@ -1,13 +1,13 @@
 @extends('layouts.portfolio')
 
-@section('title', 'Expériences — Nicolas BISAGA')
-@section('meta_description', 'Expériences professionnelles de Nicolas BISAGA : emplois étudiants, CDD administratif, bénévolat.')
+@section('title', __('experiences.page_title'))
+@section('meta_description', __('experiences.meta_desc'))
 
 @section('content')
 <div class="container">
     <div class="page-header">
-        <h1 class="page-title"><span class="prefix">//</span> Expériences</h1>
-        <p class="page-subtitle">$ git log --oneline career.txt — Du plus récent au plus ancien</p>
+        <h1 class="page-title"><span class="prefix">//</span> {{ __('experiences.title') }}</h1>
+        <p class="page-subtitle">{{ __('experiences.subtitle') }}</p>
     </div>
 
     <div class="timeline" style="padding-bottom: 60px;">
@@ -18,7 +18,7 @@
                 :org="$e['org']"
                 :desc="$e['desc']"
                 :dot="$e['dot']"
-                :tags="$e['tags']"
+                :tags="$e['tags'] ?? []"
             />
         @endforeach
     </div>

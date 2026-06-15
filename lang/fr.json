@@ -1,0 +1,52 @@
+{
+    "routes.sites":         "fr.sites",
+    "routes.contact":       "fr.contact",
+    "routes.competences":   "fr.competences",
+    "routes.contact_send":  "fr.contact.send",
+
+    "presentation.page_title":    "Nicolas BISAGA — Portfolio Cybersécurité",
+    "presentation.meta_desc":     "Portfolio de Nicolas BISAGA, futur analyste SOC et architecte cybersécurité. Master Cybersécurité — UFR MIM Metz, septembre 2026.",
+    "presentation.cta_projects":  "Voir mes projets",
+    "presentation.cta_contact":   "Me contacter",
+    "presentation.cta_skills":    "Mes compétences",
+
+    "formations.page_title":      "Formations — Nicolas BISAGA",
+    "formations.meta_desc":       "Parcours académique de Nicolas BISAGA : licence informatique, TryHackMe, certifications cybersécurité visées.",
+    "formations.title":           "Formations",
+    "formations.subtitle":        "$ cat education.log — Parcours académique du plus récent au plus ancien",
+    "formations.thm_badge":       "Actif",
+    "formations.thm_desc":        "Plateforme d'apprentissage pratique en cybersécurité : labs guidés, rooms SIEM, analyse Wireshark, CTF, cryptographie, exploitation web, etc.",
+    "formations.thm_link":        "Voir le profil TryHackMe →",
+    "formations.certs_title":     "Certifications visées",
+    "formations.cert_badge":      "Objectif",
+
+    "experiences.page_title":     "Expériences — Nicolas BISAGA",
+    "experiences.meta_desc":      "Expériences professionnelles de Nicolas BISAGA : emplois étudiants, CDD administratif, bénévolat.",
+    "experiences.title":          "Expériences",
+    "experiences.subtitle":       "$ git log --oneline career.txt — Du plus récent au plus ancien",
+
+    "competences.page_title":     "Compétences — Nicolas BISAGA",
+    "competences.meta_desc":      "Compétences techniques de Nicolas BISAGA : cybersécurité, réseaux, développement, systèmes Linux/Windows, bases de données.",
+    "competences.title":          "Compétences",
+    "competences.subtitle":       "$ nmap --skills nicolas-bisaga — Cartographie technique complète",
+
+    "sites.page_title":           "Projets — Nicolas BISAGA",
+    "sites.meta_desc":            "Projets et sites web loisirs de Nicolas BISAGA : Janus-Bee, Lugh-Owl, Inari-Fox, Bragi-Bird, Gaïa-Deer, Zeus-Bug, Ouranos-Taurus.",
+    "sites.title":                "Projets & Sites",
+    "sites.subtitle":             "$ ls -la ~/projects/ — Sites web développés en loisirs",
+
+    "contact.page_title":         "Contact — Nicolas BISAGA",
+    "contact.meta_desc":          "Contacter Nicolas BISAGA pour un stage, une alternance ou toute opportunité en cybersécurité.",
+    "contact.subtitle":           "$ ssh nicolas@bisaga.dev — Prenons contact",
+    "contact.links_title":        "// Liens & disponibilité",
+    "contact.status_title":       "// Statut",
+    "contact.status_body":        "🎓 Admis en <strong style=\"color: var(--text-primary);\">Master Cybersécurité</strong><br>📍 UFR MIM — Université de Lorraine, Metz · <strong style=\"color: var(--text-primary);\">Sept. 2026</strong>",
+    "contact.form_title":         "// Envoyer un message",
+    "contact.success":            "✓ Message envoyé avec succès ! Je vous répondrai dès que possible.",
+    "contact.label_name":         "Nom",
+    "contact.placeholder_name":   "Jean Dupont",
+    "contact.label_subject":      "Sujet",
+    "contact.placeholder_subject":"Proposition de stage / alternance",
+    "contact.placeholder_message":"Bonjour Nicolas, ...",
+    "contact.btn_send":           "Envoyer le message →"
+}

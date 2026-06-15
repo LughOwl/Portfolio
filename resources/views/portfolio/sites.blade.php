@@ -1,13 +1,13 @@
 @extends('layouts.portfolio')
 
-@section('title', 'Projets — Nicolas BISAGA')
-@section('meta_description', 'Projets et sites web loisirs de Nicolas BISAGA : Janus-Bee, Lugh-Owl, Inari-Fox, Bragi-Bird, Gaïa-Deer, Zeus-Bug, Ouranos-Taurus.')
+@section('title', __('sites.page_title'))
+@section('meta_description', __('sites.meta_desc'))
 
 @section('content')
 <div class="container">
     <div class="page-header">
-        <h1 class="page-title"><span class="prefix">//</span> Projets & Sites</h1>
-        <p class="page-subtitle">$ ls -la ~/projects/ — Sites web développés en loisirs</p>
+        <h1 class="page-title"><span class="prefix">//</span> {{ __('sites.title') }}</h1>
+        <p class="page-subtitle">{{ __('sites.subtitle') }}</p>
     </div>
 
     <div class="projects-grid">

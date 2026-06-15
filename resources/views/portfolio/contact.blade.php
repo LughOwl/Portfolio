@@ -1,19 +1,19 @@
 @extends('layouts.portfolio')
 
-@section('title', 'Contact — Nicolas BISAGA')
-@section('meta_description', 'Contacter Nicolas BISAGA pour un stage, une alternance ou toute opportunité en cybersécurité.')
+@section('title', __('contact.page_title'))
+@section('meta_description', __('contact.meta_desc'))
 
 @section('content')
 <div class="container">
     <div class="page-header">
         <h1 class="page-title"><span class="prefix">//</span> Contact</h1>
-        <p class="page-subtitle">$ ssh nicolas@bisaga.dev — Prenons contact</p>
+        <p class="page-subtitle">{{ __('contact.subtitle') }}</p>
     </div>
 
     <div class="contact-layout">
         <div>
             <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.78em; color: var(--accent-green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">
-                // Liens & disponibilité
+                {{ __('contact.links_title') }}
             </div>
 
             <div class="contact-links">
@@ -48,24 +48,21 @@
 
             <div style="margin-top: 24px; padding: 18px; background: rgba(0, 255, 136, 0.05); border: 1px solid rgba(0, 255, 136, 0.2); border-radius: 10px;">
                 <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75em; color: var(--accent-green); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.08em;">
-                    // Statut
+                    {{ __('contact.status_title') }}
                 </div>
                 <p style="color: var(--text-secondary); font-size: 0.87em; line-height: 1.6;">
-                    🎓 Admis en <strong style="color: var(--text-primary);">Master Cybersécurité</strong><br>
-                    📍 UFR MIM — Université de Lorraine, Metz · <strong style="color: var(--text-primary);">Sept. 2026</strong>
+                    {!! __('contact.status_body') !!}
                 </p>
             </div>
         </div>
 
         <div class="contact-form-card">
             <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.78em; color: var(--accent-green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">
-                // Envoyer un message
+                {{ __('contact.form_title') }}
             </div>
 
             @if(session('success'))
-            <div class="alert alert-success">
-                ✓ Message envoyé avec succès ! Je vous répondrai dès que possible.
-            </div>
+            <div class="alert alert-success">{{ __('contact.success') }}</div>
             @endif
 
             @if($errors->any())
@@ -78,32 +75,32 @@
             </div>
             @endif
 
-            <form method="POST" action="{{ route('fr.contact.send') }}">
+            <form method="POST" action="{{ route(__('routes.contact_send')) }}">
                 @csrf
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                     <div class="form-group">
-                        <label for="nom">Nom <span class="required">*</span></label>
+                        <label for="nom">{{ __('contact.label_name') }} <span class="required">*</span></label>
                         <input type="text" id="nom" name="nom"
-                            value="{{ old('nom') }}" placeholder="Jean Dupont" required>
+                            value="{{ old('nom') }}" placeholder="{{ __('contact.placeholder_name') }}" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email <span class="required">*</span></label>
                         <input type="email" id="email" name="email"
-                            value="{{ old('email') }}" placeholder="jean@exemple.com" required>
+                            value="{{ old('email') }}" placeholder="email@example.com" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="sujet">Sujet <span class="required">*</span></label>
+                    <label for="sujet">{{ __('contact.label_subject') }} <span class="required">*</span></label>
                     <input type="text" id="sujet" name="sujet"
-                        value="{{ old('sujet') }}" placeholder="Proposition de stage / alternance" required>
+                        value="{{ old('sujet') }}" placeholder="{{ __('contact.placeholder_subject') }}" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Message <span class="required">*</span></label>
                     <textarea id="message" name="message" required
-                        placeholder="Bonjour Nicolas, ...">{{ old('message') }}</textarea>
+                        placeholder="{{ __('contact.placeholder_message') }}">{{ old('message') }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                    Envoyer le message →
+                    {{ __('contact.btn_send') }}
                 </button>
             </form>
         </div>

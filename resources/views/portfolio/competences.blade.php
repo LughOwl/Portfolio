@@ -1,13 +1,13 @@
 @extends('layouts.portfolio')
 
-@section('title', 'Compétences — Nicolas BISAGA')
-@section('meta_description', 'Compétences techniques de Nicolas BISAGA : cybersécurité, réseaux, développement, systèmes Linux/Windows, bases de données.')
+@section('title', __('competences.page_title'))
+@section('meta_description', __('competences.meta_desc'))
 
 @section('content')
 <div class="container">
     <div class="page-header">
-        <h1 class="page-title"><span class="prefix">//</span> Compétences</h1>
-        <p class="page-subtitle">$ nmap --skills nicolas-bisaga — Cartographie technique complète</p>
+        <h1 class="page-title"><span class="prefix">//</span> {{ __('competences.title') }}</h1>
+        <p class="page-subtitle">{{ __('competences.subtitle') }}</p>
     </div>
 
     @foreach($competences as $cat)

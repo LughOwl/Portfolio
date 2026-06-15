@@ -1,0 +1,52 @@
+{
+    "routes.sites":         "en.websites",
+    "routes.contact":       "en.contact",
+    "routes.competences":   "en.skills",
+    "routes.contact_send":  "en.contact.send",
+
+    "presentation.page_title":    "Nicolas BISAGA — Cybersecurity Portfolio",
+    "presentation.meta_desc":     "Portfolio of Nicolas BISAGA, future SOC Analyst and Cybersecurity Architect. Master in Cybersecurity — UFR MIM Metz, September 2026.",
+    "presentation.cta_projects":  "View my projects",
+    "presentation.cta_contact":   "Contact me",
+    "presentation.cta_skills":    "My skills",
+
+    "formations.page_title":      "Training — Nicolas BISAGA",
+    "formations.meta_desc":       "Academic background of Nicolas BISAGA: computer science degree, Master in Cybersecurity confirmed, TryHackMe, target certifications.",
+    "formations.title":           "Training",
+    "formations.subtitle":        "$ cat education.log — Academic background, most recent first",
+    "formations.thm_badge":       "Active",
+    "formations.thm_desc":        "Practical cybersecurity learning platform: guided labs, SIEM rooms, Wireshark analysis, CTF, cryptography, web exploitation, etc.",
+    "formations.thm_link":        "View TryHackMe profile →",
+    "formations.certs_title":     "Target Certifications",
+    "formations.cert_badge":      "Goal",
+
+    "experiences.page_title":     "Experiences — Nicolas BISAGA",
+    "experiences.meta_desc":      "Professional experience of Nicolas BISAGA: student jobs, administrative contract, volunteering.",
+    "experiences.title":          "Experiences",
+    "experiences.subtitle":       "$ git log --oneline career.txt — Most recent first",
+
+    "competences.page_title":     "Skills — Nicolas BISAGA",
+    "competences.meta_desc":      "Technical skills of Nicolas BISAGA: cybersecurity, networks, development, Linux/Windows systems, databases.",
+    "competences.title":          "Skills",
+    "competences.subtitle":       "$ nmap --skills nicolas-bisaga — Full technical map",
+
+    "sites.page_title":           "Projects — Nicolas BISAGA",
+    "sites.meta_desc":            "Hobby websites of Nicolas BISAGA: Janus-Bee, Lugh-Owl, Inari-Fox, Bragi-Bird, Gaïa-Deer, Zeus-Bug, Ouranos-Taurus.",
+    "sites.title":                "Projects & Websites",
+    "sites.subtitle":             "$ ls -la ~/projects/ — Hobby websites",
+
+    "contact.page_title":         "Contact — Nicolas BISAGA",
+    "contact.meta_desc":          "Contact Nicolas BISAGA for any opportunity in cybersecurity.",
+    "contact.subtitle":           "$ ssh nicolas@bisaga.dev — Get in touch",
+    "contact.links_title":        "// Links & availability",
+    "contact.status_title":       "// Status",
+    "contact.status_body":        "🎓 Admitted to <strong style=\"color: var(--text-primary);\">Master's in Cybersecurity</strong><br>📍 UFR MIM — Université de Lorraine, Metz · <strong style=\"color: var(--text-primary);\">Sept. 2026</strong>",
+    "contact.form_title":         "// Send a message",
+    "contact.success":            "✓ Message sent successfully! I will get back to you as soon as possible.",
+    "contact.label_name":         "Name",
+    "contact.placeholder_name":   "Jane Smith",
+    "contact.label_subject":      "Subject",
+    "contact.placeholder_subject":"Subject of your message",
+    "contact.placeholder_message":"Hello Nicolas, ...",
+    "contact.btn_send":           "Send message →"
+}
