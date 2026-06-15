@@ -24,7 +24,7 @@
             <div style="font-family:'JetBrains Mono',monospace; font-size:0.78em; color:var(--accent-green); text-transform:uppercase; letter-spacing:.1em; margin-bottom:12px;">2. Hosting</div>
             <p style="color:var(--text-secondary); font-size:0.9em; line-height:1.7;">
                 Host: OVH — 2 rue Kellermann, 59100 Roubaix, France<br>
-                <a href="https://www.ovh.com/" target="_blank" rel="noopener" style="color:var(--accent-green);">ovh.com</a>
+                <a href="https://www.ovh.com/" style="color:var(--accent-green);">ovh.com</a>
             </p>
         </div>
 

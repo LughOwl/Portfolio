@@ -34,7 +34,7 @@
         <p style="color: var(--text-secondary); font-size: 0.9em; line-height: 1.7; margin-bottom: 16px;">
             {{ __('formations.thm_desc') }}
         </p>
-        <a href="https://tryhackme.com/p/NewGateFR" target="_blank" rel="noopener"
+        <a href="https://tryhackme.com/p/NewGateFR"
            class="btn btn-outline" style="font-size: 0.85em;">
             {{ __('formations.thm_link') }}
         </a>

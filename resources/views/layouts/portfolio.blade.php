@@ -104,15 +104,15 @@
                 @if(($locale ?? 'fr') === 'fr')
                 <a href="{{ route('fr.plan') }}">Plan du site</a>
                 <a href="{{ route('fr.legal') }}">Mentions légales</a>
-                <a href="https://github.com/lughowl" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://www.linkedin.com/in/nicolasbisaga" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://tryhackme.com/p/NewGateFR" target="_blank" rel="noopener">TryHackMe</a>
+                <a href="https://github.com/lughowl">GitHub</a>
+                <a href="https://www.linkedin.com/in/nicolasbisaga">LinkedIn</a>
+                <a href="https://tryhackme.com/p/NewGateFR">TryHackMe</a>
                 @else
                 <a href="{{ route('en.sitemap') }}">Sitemap</a>
                 <a href="{{ route('en.termsofuse') }}">Terms of use</a>
-                <a href="https://github.com/lughowl" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://www.linkedin.com/in/nicolasbisaga" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://tryhackme.com/p/NewGateFR" target="_blank" rel="noopener">TryHackMe</a>
+                <a href="https://github.com/lughowl">GitHub</a>
+                <a href="https://www.linkedin.com/in/nicolasbisaga">LinkedIn</a>
+                <a href="https://tryhackme.com/p/NewGateFR">TryHackMe</a>
                 @endif
             </div>
         </div>

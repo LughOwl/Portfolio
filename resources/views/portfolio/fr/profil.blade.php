@@ -25,10 +25,10 @@
                 <a href="{{ route('fr.contact') }}" class="btn btn-outline" style="justify-content: center; font-size: 0.82em;">
                     Me contacter
                 </a>
-                <a href="https://github.com/lughowl" target="_blank" rel="noopener" class="btn btn-outline" style="justify-content: center; font-size: 0.82em;">
+                <a href="https://github.com/lughowl" class="btn btn-outline" style="justify-content: center; font-size: 0.82em;">
                     GitHub
                 </a>
-                <a href="https://www.linkedin.com/in/nicolasbisaga" target="_blank" rel="noopener" class="btn btn-outline" style="justify-content: center; font-size: 0.82em;">
+                <a href="https://www.linkedin.com/in/nicolasbisaga" class="btn btn-outline" style="justify-content: center; font-size: 0.82em;">
                     LinkedIn
                 </a>
             </div>
@@ -45,7 +45,7 @@
                         <td>{{ strtoupper($row['cle']) }}</td>
                         <td>
                             @if(isset($row['lien']))
-                                <a href="{{ $row['lien']['href'] }}" target="_blank" rel="noopener">
+                                <a href="{{ $row['lien']['href'] }}">
                                     {{ $row['lien']['label'] }}
                                 </a>
                             @else

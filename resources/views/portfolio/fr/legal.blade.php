@@ -18,7 +18,7 @@
         <h2>2. Hébergement</h2>
         <p>Hébergeur : OVH</p>
         <p>Adresse : 2 rue Kellermann, 59100 Roubaix, France</p>
-        <p>Site web : <a href="https://www.ovh.com/" target="_blank" rel="noopener">ovh.com</a></p>
+        <p>Site web : <a href="https://www.ovh.com/">ovh.com</a></p>
 
         <h2>3. Propriété intellectuelle</h2>
         <p>Tout le contenu présent sur ce site (textes, images, graphismes, logos, etc.) est protégé par le
