@@ -85,7 +85,7 @@ Route::prefix('en')->name('en.')->group(function () {
             ->name($page);
     }
 
-    Route::post('/contact', [ContactController::class, 'sendFr'])->name('contact.send');
+    Route::post('/contact', [ContactController::class, 'sendEn'])->name('contact.send');
 
     // Entrée admin EN
     Route::get('/nico-admin', fn() => auth()->check()
