@@ -1,17 +1,38 @@
+@php
+    $loc        = $locale ?? 'fr';
+    $isEn       = $loc === 'en';
+    $loAccueil  = $isEn ? route('en.lugh-owl.accueil')  : route('fr.lugh-owl.accueil');
+    $loCatalogue= $isEn ? route('en.lugh-owl.catalogue') : route('fr.lugh-owl.catalogue');
+    $loOrigines = $isEn ? route('en.lugh-owl.origines')  : route('fr.lugh-owl.origines');
+    $loLegal    = $isEn ? route('en.lugh-owl.legal')     : route('fr.lugh-owl.legal');
+    $loSearch   = $isEn ? route('en.lugh-owl.recherche') : route('fr.lugh-owl.recherche');
+    $mainSite   = $isEn ? route('en.websites')           : route('fr.sites');
+
+    // Switcher : même page, autre locale
+    $otherLocale      = $isEn ? 'fr' : 'en';
+    $currentRouteName = request()->route()?->getName() ?? '';
+    $baseRoute        = preg_replace('/^(fr|en)\./', '', $currentRouteName);
+    $routeParams      = request()->route()?->parameters() ?? [];
+    try {
+        $switchUrl = route($otherLocale . '.' . $baseRoute, $routeParams);
+    } catch (\Throwable $e) {
+        $switchUrl = $isEn ? route('fr.lugh-owl.accueil') : route('en.lugh-owl.accueil');
+    }
+@endphp
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ $loc }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Lugh-Owl')</title>
-    <meta name="description" content="@yield('meta_description', 'Lugh-Owl — Articles philosophiques sur les modèles de pensée, les idées immuables et la vie.')">
+    <meta name="description" content="@yield('meta_description', $isEn ? 'Lugh-Owl — Philosophical articles on thought models, timeless ideas and life.' : 'Lugh-Owl — Articles philosophiques sur les modèles de pensée, les idées immuables et la vie.')">
     <meta name="author" content="Nicolas BISAGA">
     <link rel="icon" href="/assets/Lugh-Owl/1.logo.png" type="image/png">
     <link rel="canonical" href="{{ request()->url() }}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Lugh-Owl">
     <meta property="og:title" content="@yield('title', 'Lugh-Owl')">
-    <meta property="og:description" content="@yield('meta_description', 'Lugh-Owl — Articles philosophiques sur les modèles de pensée, les idées immuables et la vie.')">
+    <meta property="og:description" content="@yield('meta_description', $isEn ? 'Lugh-Owl — Philosophical articles on thought models, timeless ideas and life.' : 'Lugh-Owl — Articles philosophiques sur les modèles de pensée, les idées immuables et la vie.')">
     @hasSection('meta_image')
     <meta property="og:image" content="@yield('meta_image')">
     @else
@@ -42,46 +63,42 @@
     @endauth
 
     <header class="lo-header">
-        <a href="{{ route('fr.lugh-owl.accueil') }}" class="lo-brand">
+        <a href="{{ $loAccueil }}" class="lo-brand">
             <img src="/assets/Lugh-Owl/1.logo.png" width="36" alt="logo" class="lo-logo">
-            <span>Lugh-<em>Owl</em></span>
+            <span class="lo-brand-text">Lugh-<em>Owl</em></span>
         </a>
 
-        <nav class="lo-nav" id="loNav">
-            <a href="{{ route('fr.lugh-owl.modeles') }}" class="{{ request()->routeIs('fr.lugh-owl.modeles') ? 'active' : '' }}">
-                Modèles philosophiques
-            </a>
-            <a href="{{ route('fr.lugh-owl.idees') }}" class="{{ request()->routeIs('fr.lugh-owl.idees') ? 'active' : '' }}">
-                Idées immuables
-            </a>
-            <a href="{{ route('fr.lugh-owl.vie') }}" class="{{ request()->routeIs('fr.lugh-owl.vie') ? 'active' : '' }}">
-                La Vie est [...]
-            </a>
-        </nav>
-
-        <form class="lo-search" method="get" action="{{ route('fr.lugh-owl.recherche') }}">
-            <input type="search" name="q" placeholder="Rechercher…" value="{{ request('q', '') }}" class="lo-search-input">
-            <button type="submit" class="lo-search-btn" aria-label="Rechercher">
+        <form class="lo-search" method="get" action="{{ $loCatalogue }}">
+            <input type="search" name="q" placeholder="{{ $isEn ? 'Search…' : 'Rechercher…' }}" value="{{ request('q', '') }}" class="lo-search-input">
+            <button type="submit" class="lo-search-btn" aria-label="{{ $isEn ? 'Search' : 'Rechercher' }}">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </button>
         </form>
 
-        <div class="lo-lang" title="Version anglaise à venir">
-            <span class="lo-lang-active">FR</span>
-            <span class="lo-lang-sep">|</span>
-            <span class="lo-lang-off">EN</span>
+        <div class="lo-nav-right">
+            <a href="{{ $loCatalogue }}" class="lo-catalogue-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                <span class="lo-catalogue-text">{{ $isEn ? 'Catalogue' : 'Catalogue' }}</span>
+            </a>
+            <div class="lo-lang">
+                @if($isEn)
+                    <a href="{{ $switchUrl }}" class="lo-lang-off">FR</a>
+                    <span class="lo-lang-sep">|</span>
+                    <span class="lo-lang-active">EN</span>
+                @else
+                    <span class="lo-lang-active">FR</span>
+                    <span class="lo-lang-sep">|</span>
+                    <a href="{{ $switchUrl }}" class="lo-lang-off">EN</a>
+                @endif
+            </div>
         </div>
-
-        <button class="lo-hamburger" id="loHamburger" aria-label="Menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-        </button>
     </header>
 
     <main class="lo-main">
         @yield('content')
     </main>
 
-    <button id="back-to-top" aria-label="Retour en haut">↑</button>
+    <button id="back-to-top" aria-label="{{ $isEn ? 'Back to top' : 'Retour en haut' }}">↑</button>
 
     <footer class="lo-footer">
         <div class="lo-f-identity">
@@ -90,14 +107,12 @@
             <div class="lo-f-sep">✦</div>
         </div>
         <nav class="lo-f-links">
-            <a href="{{ route('fr.lugh-owl.modeles') }}">Modèles philosophiques</a>
-            <a href="{{ route('fr.lugh-owl.idees') }}">Idées immuables</a>
-            <a href="{{ route('fr.lugh-owl.vie') }}">La Vie est [...]</a>
-            <a href="{{ route('fr.lugh-owl.origines') }}">Origines</a>
-            <a href="{{ route('fr.lugh-owl.legal') }}">Mentions légales</a>
-            <a href="{{ route('fr.sites') }}">Site principal</a>
+            <a href="{{ $loCatalogue }}">{{ $isEn ? 'Catalogue' : 'Catalogue' }}</a>
+            <a href="{{ $loOrigines }}">{{ $isEn ? 'Origins' : 'Origines' }}</a>
+            <a href="{{ $loLegal }}">{{ $isEn ? 'Legal Notice' : 'Mentions légales' }}</a>
+            <a href="{{ $mainSite }}">{{ $isEn ? 'Main website' : 'Site principal' }}</a>
         </nav>
-        <div class="lo-f-copy">Tous droits réservés © Lugh-Owl &nbsp;·&nbsp; 2023 – 2026</div>
+        <div class="lo-f-copy">{{ $isEn ? 'All rights reserved' : 'Tous droits réservés' }} © Lugh-Owl &nbsp;·&nbsp; 2023 – 2026</div>
     </footer>
 
 </body>

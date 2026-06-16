@@ -8,7 +8,7 @@
 <p class="admin-page-sub">$ manage sites/lugh-owl — {{ $articles->total() }} article{{ $articles->total() > 1 ? 's' : '' }}</p>
 
 @if(session('success'))
-<div class="admin-alert success">&#10003; {{ session('success') }}</div>
+<div class="admin-alert success">✓ {{ session('success') }}</div>
 @endif
 
 {{-- FILTRES --}}
@@ -18,18 +18,18 @@
         <input type="text" name="search" value="{{ $search }}" placeholder="Titre, slug...">
     </div>
     <div class="form-group" style="flex:1; min-width:180px; margin:0;">
-        <label>Categorie</label>
+        <label>Catégorie</label>
         <select name="categorie" onchange="this.form.submit()">
-            <option value="">Toutes les categories</option>
-            <option value="modeles" {{ $categorie === 'modeles' ? 'selected' : '' }}>Modeles philosophiques</option>
-            <option value="idees"   {{ $categorie === 'idees'   ? 'selected' : '' }}>Idees immuables</option>
+            <option value="">Toutes les catégories</option>
+            <option value="modeles" {{ $categorie === 'modeles' ? 'selected' : '' }}>Modèles philosophiques</option>
+            <option value="idees"   {{ $categorie === 'idees'   ? 'selected' : '' }}>Idées immuables</option>
             <option value="vie"     {{ $categorie === 'vie'     ? 'selected' : '' }}>La Vie est [...]</option>
         </select>
     </div>
     <div style="display:flex; gap:8px; padding-bottom:1px;">
         <button type="submit" class="btn-admin btn-save btn-sm">Filtrer</button>
         @if($search || $categorie)
-        <a href="{{ route('admin.lugh-owl.index') }}" class="btn-admin btn-outline btn-sm">Reinitialiser</a>
+        <a href="{{ route('admin.lugh-owl.index') }}" class="btn-admin btn-outline btn-sm">Réinitialiser</a>
         @endif
     </div>
 </form>
@@ -56,7 +56,7 @@
             @forelse($articles as $article)
             @php
                 $catColors  = ['modeles' => 'blue', 'idees' => 'future', 'vie' => 'green'];
-                $catLabels  = ['modeles' => 'Modele', 'idees' => 'Idee', 'vie' => 'Vie'];
+                $catLabels  = ['modeles' => 'Modèle', 'idees' => 'Idée', 'vie' => 'Vie'];
             @endphp
             <tr>
                 <td style="padding:6px 10px;">
@@ -69,7 +69,8 @@
                 </td>
                 <td>
                     <a href="{{ route('fr.lugh-owl.article', $article->slug) }}" target="_blank"
-                       style="font-weight:600; color:var(--tx);">{{ $article->titre }}</a>
+                       title="{{ $article->titre }}"
+                       style="font-weight:600; color:var(--tx); display:block; max-width:280px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ $article->titre }}</a>
                     <div class="td-code">{{ $article->slug }}</div>
                 </td>
                 <td>
@@ -91,7 +92,7 @@
                         @csrf
                         <button type="submit" class="badge-mini {{ $article->publie ? 'green' : 'future' }}"
                                 style="border:1px solid; cursor:pointer; background:inherit; font-family:'JetBrains Mono',monospace;">
-                            {{ $article->publie ? 'Publie' : 'Masque' }}
+                            {{ $article->publie ? 'Publié' : 'Masqué' }}
                         </button>
                     </form>
                 </td>
@@ -119,8 +120,8 @@
 {{-- ORDRE PAR CATEGORIE --}}
 @php
 $catConfig = [
-    'modeles' => ['label' => 'Modeles philosophiques', 'color' => '#0078ff'],
-    'idees'   => ['label' => 'Idees immuables',        'color' => '#9b59b6'],
+    'modeles' => ['label' => 'Modèles philosophiques', 'color' => '#0078ff'],
+    'idees'   => ['label' => 'Idées immuables',        'color' => '#9b59b6'],
     'vie'     => ['label' => 'La Vie est [...]',        'color' => '#27ae60'],
 ];
 @endphp
