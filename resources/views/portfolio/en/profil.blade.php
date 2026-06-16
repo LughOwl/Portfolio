@@ -1,26 +1,26 @@
 @extends('layouts.portfolio')
 
-@section('title', 'Profil — Nicolas BISAGA')
-@section('meta_description', 'Profil de Nicolas BISAGA — étudiant en informatique, futur SOC Analyst, passionné de cybersécurité.')
+@section('title', 'Profile — Nicolas BISAGA')
+@section('meta_description', 'Profile of Nicolas BISAGA — computer science student, future SOC Analyst, passionate about cybersecurity.')
 
 @section('content')
 <div class="container">
     <div class="page-header">
-        <h1 class="page-title"><span class="prefix">//</span> Profil</h1>
-        <p class="page-subtitle">$ whoami — Informations personnelles, objectifs et compétences</p>
+        <h1 class="page-title"><span class="prefix">//</span> Profile</h1>
+        <p class="page-subtitle">$ whoami — Personal information, goals and skills</p>
     </div>
 
     <div class="profil-layout">
         <aside class="profil-sidebar">
-            <img src="/assets/photo.png" alt="Photo de Nicolas BISAGA">
+            <img src="/assets/photo.png" alt="Photo of Nicolas BISAGA">
             <div class="profil-name">Nicolas BISAGA</div>
-            <div class="profil-role">Futur SOC Analyst<br>Architecte Cybersécurité</div>
+            <div class="profil-role">Future SOC Analyst<br>Cybersecurity Architect</div>
             <div style="margin-bottom: 12px;">
-                <span class="badge badge-green">Cybersécurité</span>
+                <span class="badge badge-green">Cybersecurity</span>
             </div>
             <div class="profil-btns">
-                <a href="#" class="btn btn-primary" style="justify-content: center; font-size: 0.82em;">Télécharger CV</a>
-                <a href="{{ route('fr.contact') }}" class="btn btn-outline" style="justify-content: center; font-size: 0.82em;">Me contacter</a>
+                <a href="#" class="btn btn-primary" style="justify-content: center; font-size: 0.82em;">Download CV</a>
+                <a href="{{ route('en.contact') }}" class="btn btn-outline" style="justify-content: center; font-size: 0.82em;">Contact me</a>
                 <a href="{{ $settings['github_url'] }}" class="btn btn-outline" style="justify-content: center; font-size: 0.82em;">GitHub</a>
                 <a href="{{ $settings['linkedin_url'] }}" class="btn btn-outline" style="justify-content: center; font-size: 0.82em;">LinkedIn</a>
             </div>
@@ -29,7 +29,7 @@
         <div>
             <div class="cyber-card" style="margin-bottom: 24px;">
                 <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.78em; color: var(--accent-green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">
-                    // Informations
+                    // Information
                 </div>
                 <table class="info-table">
                     @foreach($profil['infos'] as $row)
@@ -49,15 +49,16 @@
 
             <div class="objectif-block" style="margin-bottom: 32px;">
                 <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.72em; color: var(--accent-green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;">
-                    // Objectif professionnel
+                    // Professional goal
                 </div>
                 {{ $profil['objectif'] }}
             </div>
 
-            {{-- Objectifs / Recherches --}}
+            {{-- Goals --}}
+            @if(!empty($recherches))
             <div style="margin-bottom: 12px;">
                 <div class="hero-availability" style="display: inline-flex;">
-                    Admis en Master Cybersécurité · UFR MIM Metz · Sept. 2026
+                    Admitted to Master's in Cybersecurity · UFR MIM Metz · Sept. 2026
                 </div>
             </div>
             <div class="recherches-grid" style="margin-bottom: 32px;">
@@ -75,10 +76,11 @@
                 </div>
                 @endforeach
             </div>
+            @endif
 
-            {{-- Compétences --}}
+            {{-- Skills --}}
             <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.78em; color: var(--accent-green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px;">
-                // Compétences
+                // Skills
             </div>
             @foreach($competences as $cat)
                 @if($cat['type'] === 'two-col')
@@ -131,7 +133,7 @@
             @endforeach
 
             <div style="margin-top: 8px; padding-bottom: 60px;">
-                <a href="{{ route('fr.contact') }}" class="btn btn-primary" style="font-size: 0.85em;">Me contacter</a>
+                <a href="{{ route('en.contact') }}" class="btn btn-primary" style="font-size: 0.85em;">Contact me</a>
             </div>
         </div>
     </div>

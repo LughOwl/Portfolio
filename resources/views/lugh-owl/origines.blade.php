@@ -1,10 +1,87 @@
 @extends('layouts.lugh-owl')
 
-@section('title', 'Origines et Objectifs - Lugh-Owl')
+@section('title', ($locale === 'en') ? 'Origins & Goals - Lugh-Owl' : 'Origines et Objectifs - Lugh-Owl')
 
 @section('content')
+@php $isEn = ($locale ?? 'fr') === 'en'; @endphp
 <div class="lo-static-wrap">
     <div>
+@if($isEn)
+        <h1>Origins & Goals</h1>
+
+        <h2>Welcome to my website</h2>
+        <p>
+            This site is dedicated to the exploration of philosophy and metaphysics.
+            I hope it will spark your curiosity and offer you interesting perspectives
+            on these great subjects. This project is the result of a blend between my
+            personal ideas and modern technologies, designed to be both informative and
+            enjoyable to browse.
+        </p>
+
+        <h2>Origins of the name Lugh-Owl</h2>
+        <p>
+            The name Lugh-Owl draws its inspiration from the symbolism of wisdom.
+            Lugh, a major figure in Celtic mythology, is the god of light, craftsmanship
+            and knowledge, embodying intelligence and ingenuity. The owl, for its part,
+            is a universal symbol of wisdom and clear-sightedness, often associated with
+            reflection and the pursuit of truth.
+        </p>
+        <p>
+            By combining these two elements, Lugh-Owl becomes an invitation to explore the
+            philosophical and metaphysical dimensions of existence — a space where the light
+            of reason and the depth of thought meet.
+        </p>
+
+        <h2>About the content</h2>
+        <p>
+            A large portion of the articles and images on this site were created with the
+            help of artificial intelligence. This reflects my desire to experiment and explore
+            the possibilities offered by these tools. However, some elements are entirely personal:
+        </p>
+        <ul>
+            <li>The article titles, which I crafted carefully to reflect a particular intention.</li>
+            <li>The "Models" section, where the content is based on personal reflection.</li>
+        </ul>
+        <p>
+            This blend of my creativity and digital tools is at the heart of my approach.
+        </p>
+
+        <h2>A passion and learning project</h2>
+        <p>
+            This site is above all an opportunity for me to put into practice and share my
+            technical expertise in web development. Every detail has been worked on, even if
+            not everything is perfect. I used various languages and technologies to build it, including:
+        </p>
+        <ul>
+            <li>HTML, CSS and JavaScript for structure and design</li>
+            <li>PHP (Laravel) and MySQL for data management</li>
+        </ul>
+
+        <h2>Why this project?</h2>
+        <p>
+            I created this site with two main ideas in mind:
+        </p>
+        <ol>
+            <li>Share philosophical ideas</li>
+            <li>Experiment with web creation, trying to balance technique, content and design.</li>
+        </ol>
+        <p>
+            This project is a step in my learning journey, and I am aware there is always room
+            for improvement. I am simply happy to be able to share this work with you.
+        </p>
+
+        <h2>A comment or a question?</h2>
+        <p>
+            You can contact me:
+        </p>
+        <ul>
+            <li>nicolas.bisaga@gmail.com</li>
+            <li><a href="{{ route('en.websites') }}">Main website</a></li>
+        </ul>
+        <p>
+            Thank you for taking the time to visit my site, and I hope it will inspire you.
+        </p>
+@else
         <h1>Origines et Objectifs</h1>
 
         <h2>Bienvenue sur mon site</h2>
@@ -82,6 +159,7 @@
         <p>
             Merci de prendre le temps de visiter mon site, et j'espère qu'il saura vous inspirer.
         </p>
+@endif
     </div>
 </div>
 @endsection

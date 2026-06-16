@@ -8,7 +8,13 @@ class LughOwlArticle extends Model
 {
     protected $table = 'lugh_owl_articles';
 
-    protected $fillable = ['slug', 'categorie', 'titre', 'description', 'contenu', 'image', 'ordre', 'publie', 'en_vedette'];
+    protected $fillable = [
+        'slug', 'categorie',
+        'titre', 'titre_en',
+        'description', 'description_en',
+        'contenu', 'contenu_en',
+        'image', 'ordre', 'publie', 'en_vedette',
+    ];
 
     protected $casts = ['publie' => 'boolean', 'en_vedette' => 'boolean'];
 
@@ -17,8 +23,16 @@ class LughOwlArticle extends Model
         return 'slug';
     }
 
-    public function categorieLabel(): string
+    public function categorieLabel(string $locale = 'fr'): string
     {
+        if ($locale === 'en') {
+            return match($this->categorie) {
+                'modeles' => 'Philosophical Models',
+                'idees'   => 'Timeless Ideas',
+                'vie'     => 'Life is [...]',
+                default   => $this->categorie,
+            };
+        }
         return match($this->categorie) {
             'modeles' => 'Modèles philosophiques',
             'idees'   => 'Idées immuables',
@@ -27,13 +41,12 @@ class LughOwlArticle extends Model
         };
     }
 
-    public function categorieRoute(): string
+    public function categorieUrl(string $locale = 'fr'): string
     {
+        $prefix = $locale === 'en' ? 'en' : 'fr';
         return match($this->categorie) {
-            'modeles' => 'fr.lugh-owl.modeles',
-            'idees'   => 'fr.lugh-owl.idees',
-            'vie'     => 'fr.lugh-owl.vie',
-            default   => 'fr.lugh-owl.accueil',
+            'modeles', 'idees', 'vie' => route("{$prefix}.lugh-owl.catalogue", ['cat' => $this->categorie]),
+            default                   => route("{$prefix}.lugh-owl.accueil"),
         };
     }
 }

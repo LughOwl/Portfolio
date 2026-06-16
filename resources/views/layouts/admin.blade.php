@@ -19,7 +19,6 @@
             </div>
         </div>
         <div class="topbar-right">
-            <span class="topbar-user">{{ auth()->user()->name }}</span>
             @php
             $allSites = App\Http\Controllers\AdminController::SITES;
             $routeSite = request()->route('site');
@@ -45,6 +44,7 @@
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                 {{ $siteLabel }}
             </a>
+            <span class="topbar-user">{{ auth()->user()->name }}</span>
             <form method="POST" action="{{ route('logout') }}" style="display:inline">
                 @csrf
                 <button type="submit" class="topbar-logout">Déconnexion</button>
@@ -57,17 +57,6 @@
     <div class="admin-layout">
 
         <aside class="admin-sidebar" id="adminSidebar">
-            @php
-            $portfolioRoutes = [
-                'presentation' => 'admin.portfolio.presentation',
-                'profil'       => 'admin.portfolio.profil',
-                'objectifs'    => 'admin.portfolio.objectifs',
-                'formations'   => 'admin.portfolio.formations',
-                'experiences'  => 'admin.portfolio.experiences',
-                'competences'  => 'admin.portfolio.competences',
-                'sites'        => 'admin.portfolio.sites',
-            ];
-            @endphp
 
             <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Réduire le menu">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -79,36 +68,59 @@
                 <span class="sidebar-label">Tableau de bord</span>
             </a>
 
+            {{-- Portfolio --}}
             <div class="sidebar-section-title"><span class="sidebar-label">Portfolio</span></div>
-            @foreach($portfolioSections as $key => $label)
-            @php $rn = $portfolioRoutes[$key] ?? 'admin.dashboard'; @endphp
-            <a href="{{ route($rn) }}" data-label="{{ $label }}"
-               class="sidebar-link {{ request()->routeIs($rn.'*') ? 'active' : '' }}">
+            @php
+            $pfLinks = [
+                ['route' => 'admin.portfolio.presentation', 'label' => 'Présentation'],
+                ['route' => 'admin.portfolio.profil',       'label' => 'Profil'],
+                ['route' => 'admin.portfolio.objectifs',    'label' => 'Objectifs'],
+                ['route' => 'admin.portfolio.formations',   'label' => 'Formations'],
+                ['route' => 'admin.portfolio.experiences',  'label' => 'Expériences'],
+                ['route' => 'admin.portfolio.competences',  'label' => 'Compétences'],
+                ['route' => 'admin.portfolio.sites',        'label' => 'Projets & Sites'],
+            ];
+            @endphp
+            @foreach($pfLinks as $lk)
+            <a href="{{ route($lk['route']) }}" data-label="{{ $lk['label'] }}"
+               class="sidebar-link {{ request()->routeIs($lk['route'].'*') ? 'active' : '' }}">
                 <span class="sidebar-dot" style="background:#00ff88;"></span>
-                <span class="sidebar-label">{{ $label }}</span>
+                <span class="sidebar-label">{{ $lk['label'] }}</span>
             </a>
             @endforeach
 
-            <div class="sidebar-section-title"><span class="sidebar-label">Sites web</span></div>
-            @foreach($sites as $key => $info)
+            {{-- Sites actifs --}}
+            <div class="sidebar-section-title"><span class="sidebar-label">Sites actifs</span></div>
+            @foreach(['janus-bee' => ['label'=>'Janus-Bee','color'=>'#ffdc00'], 'lugh-owl' => ['label'=>'Lugh-Owl','color'=>'#0078ff']] as $key => $info)
             @php
-            $sidebarHref = match($key) {
-                'janus-bee' => route('admin.janus-bee.index'),
-                'lugh-owl'  => route('admin.lugh-owl.index'),
-                default     => route('admin.site', $key),
-            };
-            $sidebarActive = match($key) {
-                'janus-bee' => request()->routeIs('admin.janus-bee.*'),
-                'lugh-owl'  => request()->routeIs('admin.lugh-owl.*'),
-                default     => request()->route('site') === $key,
-            };
+            $href   = $key === 'janus-bee' ? route('admin.janus-bee.index') : route('admin.lugh-owl.index');
+            $active = $key === 'janus-bee' ? request()->routeIs('admin.janus-bee.*') : request()->routeIs('admin.lugh-owl.*');
             @endphp
-            <a href="{{ $sidebarHref }}" data-label="{{ $info['label'] }}"
-               class="sidebar-link {{ $sidebarActive ? 'active' : '' }}">
+            <a href="{{ $href }}" data-label="{{ $info['label'] }}"
+               class="sidebar-link {{ $active ? 'active' : '' }}">
                 <span class="sidebar-dot" style="background:{{ $info['color'] }};"></span>
                 <span class="sidebar-label">{{ $info['label'] }}</span>
             </a>
             @endforeach
+
+            {{-- Sites en construction --}}
+            <div class="sidebar-section-title"><span class="sidebar-label">En construction</span></div>
+            @foreach(['inari-fox'=>['label'=>'Inari-Fox','color'=>'#c80000'],'bragi-bird'=>['label'=>'Bragi-Bird','color'=>'#ff8c00'],'gaia-deer'=>['label'=>'Gaïa-Deer','color'=>'#00af00'],'zeus-bug'=>['label'=>'Zeus-Bug','color'=>'#00f0d2'],'ouranos-taurus'=>['label'=>'Ouranos-Taurus','color'=>'#7d00b4']] as $key => $info)
+            <a href="{{ route('admin.site', $key) }}" data-label="{{ $info['label'] }}"
+               class="sidebar-link {{ request()->route('site') === $key ? 'active' : '' }}">
+                <span class="sidebar-dot" style="background:{{ $info['color'] }};"></span>
+                <span class="sidebar-label">{{ $info['label'] }}</span>
+            </a>
+            @endforeach
+
+            {{-- Paramètres --}}
+            <div class="sidebar-section-title"><span class="sidebar-label">Paramètres</span></div>
+            <a href="{{ route('admin.portfolio.parametres') }}" data-label="Paramètres globaux"
+               class="sidebar-link {{ request()->routeIs('admin.portfolio.parametres*') ? 'active' : '' }}">
+                <span class="sidebar-dot" style="background:#888;"></span>
+                <span class="sidebar-label">Paramètres globaux</span>
+            </a>
+
         </aside>
 
         <main class="admin-main">

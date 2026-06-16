@@ -83,7 +83,7 @@
                     @endif
                 </td>
                 <td>
-                    <span style="font-weight:600; font-size:.9em;">{{ $o->titre }}</span>
+                    <span style="font-weight:600; font-size:.9em; display:block; max-width:280px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="{{ $o->titre }}">{{ $o->titre }}</span>
                     @if($o->titres_alternatifs)
                     <span style="display:block; font-size:.72em; color:var(--tx-3); margin-top:2px;">
                         {{ implode(' · ', $o->titres_alternatifs) }}
@@ -217,44 +217,89 @@
 
 {{-- TYPES & GENRES --}}
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:32px;">
+
+    {{-- TYPES --}}
     <div class="admin-form-card">
         <div class="section-label" style="margin-bottom:14px;">// Types</div>
-        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;">
-            @foreach($types as $t)
-            <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,220,0,.1); border:1px solid rgba(255,220,0,.3); border-radius:6px; padding:4px 10px; font-size:.8em; color:#ffdc00;">
-                {{ $t->nom }}
-                <form method="POST" action="{{ route('admin.janus-bee.type.destroy', $t->id) }}" onsubmit="return confirm('Supprimer ce type ?')" style="display:inline;">
-                    @csrf @method('DELETE')
-                    <button style="background:none; border:none; color:#ff5757; cursor:pointer; padding:0; font-size:.85em;">✕</button>
-                </form>
-            </span>
-            @endforeach
-        </div>
-        <form method="POST" action="{{ route('admin.janus-bee.type.store') }}" style="display:flex; gap:8px;">
+        <table style="width:100%; border-collapse:collapse; font-size:.82em; margin-bottom:16px;">
+            <thead>
+                <tr style="color:var(--tx-3); text-align:left; border-bottom:1px solid var(--bd);">
+                    <th style="padding:4px 8px;">FR</th>
+                    <th style="padding:4px 8px;">EN</th>
+                    <th style="padding:4px 8px; width:32px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($types as $t)
+                <tr style="border-bottom:1px solid rgba(255,255,255,.04);">
+                    <td style="padding:6px 8px; color:#ffdc00;">{{ $t->nom }}</td>
+                    <td style="padding:4px 8px;">
+                        <form method="POST" action="{{ route('admin.janus-bee.type.update', $t->id) }}" style="display:flex; gap:6px;">
+                            @csrf @method('PUT')
+                            <input type="text" name="nom_en" value="{{ $t->nom_en }}" placeholder="English name…"
+                                style="flex:1; font-size:.85em; padding:3px 7px; background:var(--bg); border:1px solid var(--bd); border-radius:4px; color:var(--tx);">
+                            <button class="btn-admin btn-save btn-sm" style="padding:2px 8px; font-size:.75em;">✓</button>
+                        </form>
+                    </td>
+                    <td style="padding:4px 8px;">
+                        <form method="POST" action="{{ route('admin.janus-bee.type.destroy', $t->id) }}" onsubmit="return confirm('Supprimer ce type ?')">
+                            @csrf @method('DELETE')
+                            <button style="background:none; border:none; color:#ff5757; cursor:pointer; font-size:.85em;">✕</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        <form method="POST" action="{{ route('admin.janus-bee.type.store') }}" style="display:grid; grid-template-columns:1fr 1fr auto; gap:8px;">
             @csrf
-            <input type="text" name="nom" placeholder="Nouveau type…" style="flex:1;">
+            <input type="text" name="nom" placeholder="Nouveau type (FR)…">
+            <input type="text" name="nom_en" placeholder="New type (EN)…">
             <button class="btn-admin btn-save btn-sm">Ajouter</button>
         </form>
     </div>
+
+    {{-- GENRES --}}
     <div class="admin-form-card">
         <div class="section-label" style="margin-bottom:14px;">// Genres</div>
-        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;">
-            @foreach($genres as $g)
-            <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(77,150,255,.1); border:1px solid rgba(77,150,255,.3); border-radius:6px; padding:4px 10px; font-size:.8em; color:#4d96ff;">
-                {{ $g->nom }}
-                <form method="POST" action="{{ route('admin.janus-bee.genre.destroy', $g->id) }}" onsubmit="return confirm('Supprimer ce genre ?')" style="display:inline;">
-                    @csrf @method('DELETE')
-                    <button style="background:none; border:none; color:#ff5757; cursor:pointer; padding:0; font-size:.85em;">✕</button>
-                </form>
-            </span>
-            @endforeach
-        </div>
-        <form method="POST" action="{{ route('admin.janus-bee.genre.store') }}" style="display:flex; gap:8px;">
+        <table style="width:100%; border-collapse:collapse; font-size:.82em; margin-bottom:16px;">
+            <thead>
+                <tr style="color:var(--tx-3); text-align:left; border-bottom:1px solid var(--bd);">
+                    <th style="padding:4px 8px;">FR</th>
+                    <th style="padding:4px 8px;">EN</th>
+                    <th style="padding:4px 8px; width:32px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($genres as $g)
+                <tr style="border-bottom:1px solid rgba(255,255,255,.04);">
+                    <td style="padding:6px 8px; color:#4d96ff;">{{ $g->nom }}</td>
+                    <td style="padding:4px 8px;">
+                        <form method="POST" action="{{ route('admin.janus-bee.genre.update', $g->id) }}" style="display:flex; gap:6px;">
+                            @csrf @method('PUT')
+                            <input type="text" name="nom_en" value="{{ $g->nom_en }}" placeholder="English name…"
+                                style="flex:1; font-size:.85em; padding:3px 7px; background:var(--bg); border:1px solid var(--bd); border-radius:4px; color:var(--tx);">
+                            <button class="btn-admin btn-save btn-sm" style="padding:2px 8px; font-size:.75em;">✓</button>
+                        </form>
+                    </td>
+                    <td style="padding:4px 8px;">
+                        <form method="POST" action="{{ route('admin.janus-bee.genre.destroy', $g->id) }}" onsubmit="return confirm('Supprimer ce genre ?')">
+                            @csrf @method('DELETE')
+                            <button style="background:none; border:none; color:#ff5757; cursor:pointer; font-size:.85em;">✕</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        <form method="POST" action="{{ route('admin.janus-bee.genre.store') }}" style="display:grid; grid-template-columns:1fr 1fr auto; gap:8px;">
             @csrf
-            <input type="text" name="nom" placeholder="Nouveau genre…" style="flex:1;">
+            <input type="text" name="nom" placeholder="Nouveau genre (FR)…">
+            <input type="text" name="nom_en" placeholder="New genre (EN)…">
             <button class="btn-admin btn-save btn-sm">Ajouter</button>
         </form>
     </div>
+
 </div>
 
 @endsection

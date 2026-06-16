@@ -29,7 +29,7 @@ Route::prefix('fr')->name('fr.')->group(function () {
 
     Route::get('/', [PortfolioController::class, 'fr'])->name('home');
 
-    foreach (['presentation','profil','recherches','formations','experiences','competences','sites','contact','plan','legal'] as $page) {
+    foreach (['presentation','profil','parcours','sites','contact','plan','legal'] as $page) {
         Route::get("/{$page}", [PortfolioController::class, 'fr'])
             ->defaults('page', $page)
             ->name($page);
@@ -50,9 +50,7 @@ Route::prefix('fr')->name('fr.')->group(function () {
     // Lugh-Owl
     Route::prefix('lugh-owl')->name('lugh-owl.')->group(function () {
         Route::get('/',          [LughOwlController::class, 'accueil'])->name('accueil');
-        Route::get('/modeles',   [LughOwlController::class, 'modeles'])->name('modeles');
-        Route::get('/idees',     [LughOwlController::class, 'idees'])->name('idees');
-        Route::get('/vie',       [LughOwlController::class, 'vie'])->name('vie');
+        Route::get('/catalogue', [LughOwlController::class, 'catalogue'])->name('catalogue');
         Route::get('/recherche', [LughOwlController::class, 'recherche'])->name('recherche');
         Route::get('/origines',  [LughOwlController::class, 'origines'])->name('origines');
         Route::get('/plan',      [LughOwlController::class, 'plan'])->name('plan');
@@ -81,13 +79,42 @@ Route::prefix('en')->name('en.')->group(function () {
 
     Route::get('/', [PortfolioController::class, 'en'])->name('home');
 
-    foreach (['presentation','training','experiences','skills','websites','contact','sitemap','termsofuse'] as $page) {
+    foreach (['presentation','profil','parcours','websites','contact','sitemap','termsofuse'] as $page) {
         Route::get("/{$page}", [PortfolioController::class, 'en'])
             ->defaults('page', $page)
             ->name($page);
     }
 
     Route::post('/contact', [ContactController::class, 'sendEn'])->name('contact.send');
+
+    // Janus-Bee EN
+    Route::prefix('janus-bee')->name('janus-bee.')->group(function () {
+        Route::get('/',           [JanusBeeController::class, 'accueil'])->name('accueil');
+        Route::get('/catalogue',  [JanusBeeController::class, 'catalogue'])->name('catalogue');
+        Route::get('/origins',    [JanusBeeController::class, 'origines'])->name('origines');
+        Route::get('/sitemap',    [JanusBeeController::class, 'plan'])->name('plan');
+        Route::get('/legal',      [JanusBeeController::class, 'legal'])->name('legal');
+        Route::get('/{oeuvre}',   [JanusBeeController::class, 'oeuvre'])->name('oeuvre');
+    });
+
+    // Lugh-Owl EN
+    Route::prefix('lugh-owl')->name('lugh-owl.')->group(function () {
+        Route::get('/',          [LughOwlController::class, 'accueil'])->name('accueil');
+        Route::get('/catalogue', [LughOwlController::class, 'catalogue'])->name('catalogue');
+        Route::get('/search',    [LughOwlController::class, 'recherche'])->name('recherche');
+        Route::get('/origins',   [LughOwlController::class, 'origines'])->name('origines');
+        Route::get('/sitemap',   [LughOwlController::class, 'plan'])->name('plan');
+        Route::get('/legal',     [LughOwlController::class, 'legal'])->name('legal');
+        Route::get('/{slug}',    [LughOwlController::class, 'article'])->name('article');
+    });
+
+    // Sites en construction
+    foreach (['inari-fox','bragi-bird','gaia-deer','zeus-bug','ouranos-taurus'] as $project) {
+        Route::get("/{$project}", [PortfolioController::class, 'construction'])
+            ->defaults('project', $project)
+            ->defaults('locale', 'en')
+            ->name($project);
+    }
 
     // Entrée admin EN
     Route::get('/nico-admin', fn() => auth()->check()
@@ -114,10 +141,12 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         Route::post('/{id}/vedette', [AdminJanusBeeController::class, 'toggleVedette'])->name('vedette');
         Route::post('/reorder',      [AdminJanusBeeController::class, 'reorder'])->name('reorder');
         Route::post('/{id}/move',    [AdminJanusBeeController::class, 'move'])->name('move');
-        Route::post('/types',        [AdminJanusBeeController::class, 'typeStore'])->name('type.store');
-        Route::delete('/types/{id}', [AdminJanusBeeController::class, 'typeDestroy'])->name('type.destroy');
-        Route::post('/genres',       [AdminJanusBeeController::class, 'genreStore'])->name('genre.store');
-        Route::delete('/genres/{id}',[AdminJanusBeeController::class, 'genreDestroy'])->name('genre.destroy');
+        Route::post('/types',          [AdminJanusBeeController::class, 'typeStore'])->name('type.store');
+        Route::put('/types/{id}',      [AdminJanusBeeController::class, 'typeUpdate'])->name('type.update');
+        Route::delete('/types/{id}',   [AdminJanusBeeController::class, 'typeDestroy'])->name('type.destroy');
+        Route::post('/genres',         [AdminJanusBeeController::class, 'genreStore'])->name('genre.store');
+        Route::put('/genres/{id}',     [AdminJanusBeeController::class, 'genreUpdate'])->name('genre.update');
+        Route::delete('/genres/{id}',  [AdminJanusBeeController::class, 'genreDestroy'])->name('genre.destroy');
     });
 
     // Lugh-Owl — CRUD articles
@@ -180,6 +209,10 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/sites/{id}',          [AdminPortfolioController::class, 'projetEdit'])->name('projet.edit');
         Route::put('/sites/{id}',          [AdminPortfolioController::class, 'projetUpdate'])->name('projet.update');
         Route::delete('/sites/{id}',       [AdminPortfolioController::class, 'projetDestroy'])->name('projet.destroy');
+
+        // Paramètres globaux
+        Route::get('/parametres',  [AdminPortfolioController::class, 'parametres'])->name('parametres');
+        Route::post('/parametres', [AdminPortfolioController::class, 'parametresSave'])->name('parametres.save');
     });
 });
 

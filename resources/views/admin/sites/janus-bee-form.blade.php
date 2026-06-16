@@ -31,42 +31,89 @@
         {{-- COLONNE GAUCHE --}}
         <div>
             <div class="admin-form-card">
-                <div class="section-label" style="margin-bottom:16px;">// Informations</div>
 
-                <div class="form-group">
-                    <label>Titre <span style="color:#ff5757;">*</span></label>
-                    <input type="text" name="titre" value="{{ old('titre', $oeuvre?->titre) }}" required>
+                {{-- Onglets FR / EN --}}
+                <div class="jb-tabs" style="display:flex; gap:0; margin-bottom:20px; border-bottom:1px solid var(--bd);">
+                    <button type="button" class="jb-tab active" data-tab="tab-fr"
+                            style="padding:8px 20px; background:none; border:none; border-bottom:2px solid #ffdc00; color:#ffdc00; font-weight:700; cursor:pointer; font-size:.85em; margin-bottom:-1px;">
+                        🇫🇷 Français
+                    </button>
+                    <button type="button" class="jb-tab" data-tab="tab-en"
+                            style="padding:8px 20px; background:none; border:none; border-bottom:2px solid transparent; color:var(--tx-3); cursor:pointer; font-size:.85em; margin-bottom:-1px;">
+                        🇬🇧 English
+                    </button>
                 </div>
 
-                <div class="form-group">
-                    <label>Titres alternatifs <span style="color:var(--tx-3); font-weight:400; font-size:.8em;">(un par ligne)</span></label>
-                    <textarea name="titres_alternatifs" rows="4" placeholder="Titre alternatif 1&#10;Titre alternatif 2">{{ old('titres_alternatifs', $oeuvre ? implode("\n", $oeuvre->titres_alternatifs ?? []) : '') }}</textarea>
-                </div>
+                {{-- PANNEAU FR --}}
+                <div id="tab-fr" class="jb-tab-panel">
 
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
                     <div class="form-group">
-                        <label>Date de sortie</label>
-                        <input type="text" name="sortie" value="{{ old('sortie', $oeuvre?->sortie) }}" placeholder="ex: 2020">
+                        <label>Titre (FR) <span style="color:#ff5757;">*</span></label>
+                        <input type="text" name="titre" value="{{ old('titre', $oeuvre?->titre) }}" required>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                        <div class="form-group">
+                            <label>Date de sortie</label>
+                            <input type="text" name="sortie" value="{{ old('sortie', $oeuvre?->sortie) }}" placeholder="ex: 2020">
+                        </div>
+                        <div class="form-group">
+                            <label>Statut</label>
+                            <input type="text" name="status" value="{{ old('status', $oeuvre?->status) }}" placeholder="ex: Terminé">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Durée</label>
+                        <input type="text" name="duree" value="{{ old('duree', $oeuvre?->duree) }}" placeholder="ex: 24 min pour 13 épisodes">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Synopsis (FR)</label>
+                        <textarea name="synopsis" rows="6">{{ old('synopsis', $oeuvre?->synopsis) }}</textarea>
+                    </div>
+                </div>
+
+                {{-- PANNEAU EN --}}
+                <div id="tab-en" class="jb-tab-panel" style="display:none;">
+
+                    <div class="form-group">
+                        <label>Title (EN)</label>
+                        <input type="text" name="titre_en" value="{{ old('titre_en', $oeuvre?->titre_en) }}" placeholder="English title">
+                    </div>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                        <div class="form-group">
+                            <label>Release date</label>
+                            <input type="text" name="sortie_en" value="{{ old('sortie_en', $oeuvre?->sortie_en) }}" placeholder="e.g. 2020">
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <input type="text" name="status_en" value="{{ old('status_en', $oeuvre?->status_en) }}" placeholder="e.g. Completed">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Duration</label>
+                        <input type="text" name="duree_en" value="{{ old('duree_en', $oeuvre?->duree_en) }}" placeholder="e.g. 24 min for 13 episodes">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Synopsis (EN)</label>
+                        <textarea name="synopsis_en" rows="6" placeholder="English synopsis…">{{ old('synopsis_en', $oeuvre?->synopsis_en) }}</textarea>
+                    </div>
+                </div>
+
+                {{-- CHAMPS COMMUNS --}}
+                <div style="border-top:1px solid var(--bd); margin-top:16px; padding-top:16px;">
+                    <div class="form-group">
+                        <label>Titres alternatifs <span style="color:var(--tx-3); font-weight:400; font-size:.8em;">(un par ligne)</span></label>
+                        <textarea name="titres_alternatifs" rows="3" placeholder="Titre alternatif 1&#10;Titre alternatif 2">{{ old('titres_alternatifs', $oeuvre ? implode("\n", $oeuvre->titres_alternatifs ?? []) : '') }}</textarea>
                     </div>
                     <div class="form-group">
-                        <label>Statut</label>
-                        <input type="text" name="status" value="{{ old('status', $oeuvre?->status) }}" placeholder="ex: Terminé">
+                        <label>Vidéo</label>
+                        <input type="text" name="video" value="{{ old('video', $oeuvre?->video) }}" placeholder="ex: URL YouTube">
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Durée</label>
-                    <input type="text" name="duree" value="{{ old('duree', $oeuvre?->duree) }}" placeholder="ex: 1h30 · 3 épisodes">
-                </div>
-
-                <div class="form-group">
-                    <label>Vidéo</label>
-                    <input type="text" name="video" value="{{ old('video', $oeuvre?->video) }}" placeholder="ex: /assets/Janus-Bee/video.mp4 ou URL">
-                </div>
-
-                <div class="form-group">
-                    <label>Synopsis</label>
-                    <textarea name="synopsis" rows="6">{{ old('synopsis', $oeuvre?->synopsis) }}</textarea>
                 </div>
             </div>
         </div>
@@ -95,7 +142,7 @@
                     <label>Uploader un nouveau fichier</label>
                     <input type="file" name="image_file" accept="image/*"
                            style="background:var(--bg); border:1px solid var(--bd); border-radius:6px; padding:6px 10px; width:100%; color:var(--tx); font-size:.82em;">
-                    <span style="font-size:.72em; color:var(--tx-3); display:block; margin-top:4px;">PNG, JPG, WEBP — max 10 Mo. Remplace le nom ci-dessus si uploadé.</span>
+                    <span style="font-size:.72em; color:var(--tx-3); display:block; margin-top:4px;">PNG, JPG, WEBP — max 10 Mo.</span>
                 </div>
             </div>
 
@@ -145,5 +192,25 @@
         </button>
     </div>
 </form>
+
+<script>
+document.querySelectorAll('.jb-tab').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        var target = this.dataset.tab;
+        document.querySelectorAll('.jb-tab').forEach(function(b) {
+            b.style.borderBottomColor = 'transparent';
+            b.style.color = 'var(--tx-3)';
+            b.classList.remove('active');
+        });
+        document.querySelectorAll('.jb-tab-panel').forEach(function(p) {
+            p.style.display = 'none';
+        });
+        this.style.borderBottomColor = '#ffdc00';
+        this.style.color = '#ffdc00';
+        this.classList.add('active');
+        document.getElementById(target).style.display = 'block';
+    });
+});
+</script>
 
 @endsection

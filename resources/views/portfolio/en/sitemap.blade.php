@@ -15,10 +15,9 @@
                 // Portfolio (EN)
             </div>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.88em;">
-                <li><a href="{{ route('en.presentation') }}" style="color: var(--accent-green);">→ Presentation</a></li>
-                <li><a href="{{ route('en.training') }}" style="color: var(--accent-green);">→ Training</a></li>
-                <li><a href="{{ route('en.experiences') }}" style="color: var(--accent-green);">→ Experiences</a></li>
-                <li><a href="{{ route('en.skills') }}" style="color: var(--accent-green);">→ Skills</a></li>
+                <li><a href="{{ route('en.presentation') }}" style="color: var(--accent-green);">→ Home</a></li>
+                <li><a href="{{ route('en.profil') }}" style="color: var(--accent-green);">→ Profile</a></li>
+                <li><a href="{{ route('en.parcours') }}" style="color: var(--accent-green);">→ Career</a></li>
                 <li><a href="{{ route('en.websites') }}" style="color: var(--accent-green);">→ Projects & Websites</a></li>
                 <li><a href="{{ route('en.contact') }}" style="color: var(--accent-green);">→ Contact</a></li>
                 <li><a href="{{ route('en.termsofuse') }}" style="color: var(--text-muted);">→ Terms of use</a></li>

@@ -14,10 +14,7 @@
         <ul>
             <li><a href="{{ route('fr.presentation') }}">Accueil</a></li>
             <li><a href="{{ route('fr.profil') }}">Profil</a></li>
-            <li><a href="{{ route('fr.recherches') }}">Recherches</a></li>
-            <li><a href="{{ route('fr.formations') }}">Formations</a></li>
-            <li><a href="{{ route('fr.experiences') }}">Expériences</a></li>
-            <li><a href="{{ route('fr.competences') }}">Compétences</a></li>
+            <li><a href="{{ route('fr.parcours') }}">Parcours</a></li>
             <li><a href="{{ route('fr.sites') }}">Projets &amp; Sites</a></li>
             <li><a href="{{ route('fr.contact') }}">Contact</a></li>
             <li><a href="{{ route('fr.legal') }}">Mentions légales</a></li>
@@ -35,9 +32,9 @@
         <h2>Lugh-Owl</h2>
         <ul>
             <li><a href="{{ route('fr.lugh-owl.accueil') }}">Accueil Lugh-Owl</a></li>
-            <li><a href="{{ route('fr.lugh-owl.modeles') }}">Modèles philosophiques</a></li>
-            <li><a href="{{ route('fr.lugh-owl.idees') }}">Idées immuables</a></li>
-            <li><a href="{{ route('fr.lugh-owl.vie') }}">La vie est [...]</a></li>
+            <li><a href="{{ route('fr.lugh-owl.catalogue', ['cat' => 'modeles']) }}">Modèles philosophiques</a></li>
+            <li><a href="{{ route('fr.lugh-owl.catalogue', ['cat' => 'idees']) }}">Idées immuables</a></li>
+            <li><a href="{{ route('fr.lugh-owl.catalogue', ['cat' => 'vie']) }}">La vie est [...]</a></li>
             <li><a href="{{ route('fr.lugh-owl.origines') }}">Origines &amp; Objectifs</a></li>
             <li><a href="{{ route('fr.lugh-owl.plan') }}">Plan du site Lugh-Owl</a></li>
             <li><a href="{{ route('fr.lugh-owl.legal') }}">Mentions légales Lugh-Owl</a></li>

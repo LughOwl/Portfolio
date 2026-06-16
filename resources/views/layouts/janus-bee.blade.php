@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ $locale ?? 'fr' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Janus-Bee')</title>
-    <meta name="description" content="@yield('meta_description', 'Janus-Bee — Catalogue de films, séries d\'animation, livres et jeux vidéo.')">
+    <meta name="description" content="@yield('meta_description', ($locale ?? 'fr') === 'en' ? 'Janus-Bee — Personal catalogue of animated films, series, books and video games.' : 'Janus-Bee — Catalogue de films, séries d\'animation, livres et jeux vidéo.')">
     <meta name="author" content="Nicolas BISAGA">
     <link rel="icon" href="/assets/Janus-Bee/1.logo.png" type="image/png">
     <link rel="canonical" href="{{ request()->url() }}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Janus-Bee">
     <meta property="og:title" content="@yield('title', 'Janus-Bee')">
-    <meta property="og:description" content="@yield('meta_description', 'Janus-Bee — Catalogue de films, séries d\'animation, livres et jeux vidéo.')">
+    <meta property="og:description" content="@yield('meta_description', 'Janus-Bee')">
     @hasSection('meta_image')
     <meta property="og:image" content="@yield('meta_image')">
     @else
@@ -41,9 +41,42 @@
     </div>
     @endauth
 
+    @php
+    $loc      = $locale ?? 'fr';
+    $jbRoutes = [
+        'accueil'  => ['fr' => 'fr.janus-bee.accueil',  'en' => 'en.janus-bee.accueil'],
+        'catalogue'=> ['fr' => 'fr.janus-bee.catalogue', 'en' => 'en.janus-bee.catalogue'],
+        'origines' => ['fr' => 'fr.janus-bee.origines',  'en' => 'en.janus-bee.origines'],
+        'plan'     => ['fr' => 'fr.janus-bee.plan',      'en' => 'en.janus-bee.plan'],
+        'legal'    => ['fr' => 'fr.janus-bee.legal',     'en' => 'en.janus-bee.legal'],
+    ];
+    $langMap = [
+        'fr.janus-bee.accueil'   => 'en.janus-bee.accueil',
+        'fr.janus-bee.catalogue' => 'en.janus-bee.catalogue',
+        'fr.janus-bee.origines'  => 'en.janus-bee.origines',
+        'fr.janus-bee.plan'      => 'en.janus-bee.plan',
+        'fr.janus-bee.legal'     => 'en.janus-bee.legal',
+        'fr.janus-bee.oeuvre'    => 'en.janus-bee.oeuvre',
+        'en.janus-bee.accueil'   => 'fr.janus-bee.accueil',
+        'en.janus-bee.catalogue' => 'fr.janus-bee.catalogue',
+        'en.janus-bee.origines'  => 'fr.janus-bee.origines',
+        'en.janus-bee.plan'      => 'fr.janus-bee.plan',
+        'en.janus-bee.legal'     => 'fr.janus-bee.legal',
+        'en.janus-bee.oeuvre'    => 'fr.janus-bee.oeuvre',
+    ];
+    $currentRoute = request()->route()->getName() ?? '';
+    $altRouteName = $langMap[$currentRoute] ?? ($loc === 'fr' ? 'en.janus-bee.accueil' : 'fr.janus-bee.accueil');
+    // For oeuvre pages, keep the same oeuvre slug
+    if (str_ends_with($currentRoute, '.oeuvre') && isset($oeuvre)) {
+        $altUrl = route($altRouteName, $oeuvre);
+    } else {
+        $altUrl = route($altRouteName);
+    }
+    @endphp
+
     <nav class="nav-menu">
         <div class="logo-container">
-            <a href="{{ route('fr.janus-bee.accueil') }}">
+            <a href="{{ route($jbRoutes['accueil'][$loc]) }}">
                 <div class="logo-container-size">
                     <img src="/assets/Janus-Bee/1.logo.png" width="50" alt="logo-JB">
                     <div class="logo-text-part">Janus-<span>Bee</span></div>
@@ -51,27 +84,33 @@
             </a>
         </div>
         <div class="zone-recherche">
-            <form action="{{ route('fr.janus-bee.catalogue') }}" method="GET">
-                <input type="search" name="q" placeholder="Rechercher..." class="recherche-input"
+            <form action="{{ route($jbRoutes['catalogue'][$loc]) }}" method="GET">
+                <input type="search" name="q" placeholder="{{ $loc === 'en' ? 'Search...' : 'Rechercher...' }}" class="recherche-input"
                     value="{{ request('q', '') }}">
                 <button type="submit" class="recherche-bouton">
-                    <img src="/assets/loupe.png" alt="image loupe">
+                    <img src="/assets/loupe.png" alt="{{ $loc === 'en' ? 'Search' : 'Rechercher' }}">
                 </button>
             </form>
         </div>
         <div class="nav-right">
             <div class="catalogue-container">
-                <a href="{{ route('fr.janus-bee.catalogue') }}">
-                    <div class="catalogue-texte">Catalogue</div>
+                <a href="{{ route($jbRoutes['catalogue'][$loc]) }}">
+                    <div class="catalogue-texte">{{ $loc === 'en' ? 'Catalogue' : 'Catalogue' }}</div>
                     <div class="catalogue-icone">
-                        <img src="/assets/catalogue.png" alt="icone catalogue">
+                        <img src="/assets/catalogue.png" alt="{{ $loc === 'en' ? 'Catalogue icon' : 'icone catalogue' }}">
                     </div>
                 </a>
             </div>
-            <div class="jb-lang" title="Version anglaise à venir">
+            <div class="jb-lang">
+                @if($loc === 'fr')
                 <span class="jb-lang-active">FR</span>
                 <span class="jb-lang-sep">|</span>
-                <span class="jb-lang-off">EN</span>
+                <a href="{{ $altUrl }}" class="jb-lang-link">EN</a>
+                @else
+                <a href="{{ $altUrl }}" class="jb-lang-link">FR</a>
+                <span class="jb-lang-sep">|</span>
+                <span class="jb-lang-active">EN</span>
+                @endif
             </div>
         </div>
     </nav>
@@ -80,7 +119,7 @@
         @yield('content')
     </main>
 
-    <button id="back-to-top" aria-label="Retour en haut">↑</button>
+    <button id="back-to-top" aria-label="{{ $loc === 'en' ? 'Back to top' : 'Retour en haut' }}">↑</button>
 
     <footer class="site-footer">
         <div class="jb-f-identity">
@@ -89,13 +128,13 @@
             <div class="jb-f-sep">✦</div>
         </div>
         <nav class="jb-f-links">
-            <a href="{{ route('fr.janus-bee.catalogue') }}">Catalogue</a>
-            <a href="{{ route('fr.janus-bee.origines') }}">Origines</a>
-            <a href="{{ route('fr.janus-bee.legal') }}">Mentions légales</a>
-            <a href="{{ route('fr.janus-bee.plan') }}">Plan du site</a>
-            <a href="{{ route('fr.sites') }}">Site principal</a>
+            <a href="{{ route($jbRoutes['catalogue'][$loc]) }}">{{ $loc === 'en' ? 'Catalogue' : 'Catalogue' }}</a>
+            <a href="{{ route($jbRoutes['origines'][$loc]) }}">{{ $loc === 'en' ? 'Origins' : 'Origines' }}</a>
+            <a href="{{ route($jbRoutes['legal'][$loc]) }}">{{ $loc === 'en' ? 'Legal notice' : 'Mentions légales' }}</a>
+            <a href="{{ route($jbRoutes['plan'][$loc]) }}">{{ $loc === 'en' ? 'Sitemap' : 'Plan du site' }}</a>
+            <a href="{{ $loc === 'en' ? route('en.websites') : route('fr.sites') }}">{{ $loc === 'en' ? 'Main website' : 'Site principal' }}</a>
         </nav>
-        <div class="jb-f-copy">Tous droits réservés © Janus-Bee &nbsp;·&nbsp; 2026</div>
+        <div class="jb-f-copy">{{ $loc === 'en' ? 'All rights reserved' : 'Tous droits réservés' }} © Janus-Bee &nbsp;·&nbsp; 2026</div>
     </footer>
     <script>
     (function () {

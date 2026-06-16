@@ -199,29 +199,47 @@ class AdminJanusBeeController extends Controller
 
     public function typeStore(Request $request): RedirectResponse
     {
-        $r = $request->validate(['nom' => 'required|string|max:100|unique:types,nom']);
-        Type::create(['nom' => $r['nom']]);
+        $r = $request->validate([
+            'nom'    => 'required|string|max:100|unique:types,nom',
+            'nom_en' => 'nullable|string|max:100',
+        ]);
+        Type::create(['nom' => $r['nom'], 'nom_en' => $r['nom_en'] ?? null]);
         return back()->with('success', "Type « {$r['nom']} » ajouté.");
+    }
+
+    public function typeUpdate(Request $request, int $id): RedirectResponse
+    {
+        $r = $request->validate(['nom_en' => 'nullable|string|max:100']);
+        Type::findOrFail($id)->update(['nom_en' => $r['nom_en'] ?: null]);
+        return back()->with('success', "Traduction EN du type mise à jour.");
     }
 
     public function typeDestroy(int $id): RedirectResponse
     {
-        $type = Type::findOrFail($id);
-        $type->delete();
+        Type::findOrFail($id)->delete();
         return back()->with('success', "Type supprimé.");
     }
 
     public function genreStore(Request $request): RedirectResponse
     {
-        $r = $request->validate(['nom' => 'required|string|max:100|unique:genres,nom']);
-        Genre::create(['nom' => $r['nom']]);
+        $r = $request->validate([
+            'nom'    => 'required|string|max:100|unique:genres,nom',
+            'nom_en' => 'nullable|string|max:100',
+        ]);
+        Genre::create(['nom' => $r['nom'], 'nom_en' => $r['nom_en'] ?? null]);
         return back()->with('success', "Genre « {$r['nom']} » ajouté.");
+    }
+
+    public function genreUpdate(Request $request, int $id): RedirectResponse
+    {
+        $r = $request->validate(['nom_en' => 'nullable|string|max:100']);
+        Genre::findOrFail($id)->update(['nom_en' => $r['nom_en'] ?: null]);
+        return back()->with('success', "Traduction EN du genre mise à jour.");
     }
 
     public function genreDestroy(int $id): RedirectResponse
     {
-        $genre = Genre::findOrFail($id);
-        $genre->delete();
+        Genre::findOrFail($id)->delete();
         return back()->with('success', "Genre supprimé.");
     }
 
@@ -233,13 +251,18 @@ class AdminJanusBeeController extends Controller
     {
         $r = $request->validate([
             'titre'              => 'required|string|max:200',
+            'titre_en'           => 'nullable|string|max:200',
             'titres_alternatifs' => 'nullable|string',
             'image'              => 'nullable|string|max:200',
             'image_file'         => 'nullable|image|max:10240',
             'sortie'             => 'nullable|string|max:100',
+            'sortie_en'          => 'nullable|string|max:100',
             'status'             => 'nullable|string|max:50',
+            'status_en'          => 'nullable|string|max:50',
             'duree'              => 'nullable|string|max:300',
+            'duree_en'           => 'nullable|string|max:300',
             'synopsis'           => 'nullable|string',
+            'synopsis_en'        => 'nullable|string',
             'video'              => 'nullable|string|max:300',
             'types'              => 'nullable|array',
             'types.*'            => 'integer|exists:types,id',
@@ -255,12 +278,17 @@ class AdminJanusBeeController extends Controller
         return [
             'fields' => [
                 'titre'              => $r['titre'],
+                'titre_en'           => $r['titre_en'] ?: null,
                 'titres_alternatifs' => $altTitres ?: null,
                 'image'              => $r['image'] ?? null,
                 'sortie'             => $r['sortie'] ?? null,
+                'sortie_en'          => $r['sortie_en'] ?: null,
                 'status'             => $r['status'] ?? null,
+                'status_en'          => $r['status_en'] ?: null,
                 'duree'              => $r['duree'] ?? null,
+                'duree_en'           => $r['duree_en'] ?: null,
                 'synopsis'           => $r['synopsis'] ?? null,
+                'synopsis_en'        => $r['synopsis_en'] ?: null,
                 'video'              => $r['video'] ?? null,
             ],
             'types'  => $r['types'] ?? [],

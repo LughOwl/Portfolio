@@ -17,7 +17,7 @@
         <div class="hero-cta">
             <a href="{{ route(__('routes.sites')) }}" class="btn btn-primary">{{ __('presentation.cta_projects') }}</a>
             <a href="{{ route(__('routes.contact')) }}" class="btn btn-outline">{{ __('presentation.cta_contact') }}</a>
-            <a href="{{ route(__('routes.competences')) }}" class="btn btn-outline">{{ __('presentation.cta_skills') }}</a>
+            <a href="{{ route(__('routes.profil')) }}" class="btn btn-outline">{{ __('presentation.cta_profil') }}</a>
         </div>
     </div>
 </section>

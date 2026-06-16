@@ -17,6 +17,7 @@ class AdminController extends Controller
         'experiences'  => 'Expériences',
         'competences'  => 'Compétences',
         'sites'        => 'Projets & Sites',
+        'parametres'   => 'Paramètres globaux',
     ];
 
     public const SITES = [

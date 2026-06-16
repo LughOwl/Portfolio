@@ -160,13 +160,16 @@ class AdminLughOwlController extends Controller
     private function validated(Request $request, ?int $excludeId = null): array
     {
         return $request->validate([
-            'categorie'   => 'required|in:modeles,idees,vie',
-            'titre'       => 'required|string|max:255',
-            'description' => 'required|string|max:1000',
-            'contenu'     => 'nullable|string',
-            'image'       => 'nullable|string|max:255',
-            'image_file'  => 'nullable|image|max:10240',
-            'publie'      => 'nullable|boolean',
+            'categorie'      => 'required|in:modeles,idees,vie',
+            'titre'          => 'required|string|max:255',
+            'titre_en'       => 'nullable|string|max:255',
+            'description'    => 'required|string|max:1000',
+            'description_en' => 'nullable|string|max:1000',
+            'contenu'        => 'nullable|string',
+            'contenu_en'     => 'nullable|string',
+            'image'          => 'nullable|string|max:255',
+            'image_file'     => 'nullable|image|max:10240',
+            'publie'         => 'nullable|boolean',
         ]);
     }
 

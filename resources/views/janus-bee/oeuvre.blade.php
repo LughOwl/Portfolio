@@ -1,70 +1,85 @@
 @extends('layouts.janus-bee')
 
-@section('title', $oeuvre->titre . ' - Janus-Bee')
+@php
+$titre    = ($locale === 'en' && $oeuvre->titre_en)    ? $oeuvre->titre_en    : $oeuvre->titre;
+$synopsis = ($locale === 'en' && $oeuvre->synopsis_en) ? $oeuvre->synopsis_en : $oeuvre->synopsis;
+$displaySortie = ($locale === 'en' && $oeuvre->sortie_en) ? $oeuvre->sortie_en : $oeuvre->sortie;
+$displayStatus = ($locale === 'en' && $oeuvre->status_en) ? $oeuvre->status_en : $oeuvre->status;
+$displayDuree  = ($locale === 'en' && $oeuvre->duree_en)  ? $oeuvre->duree_en  : $oeuvre->duree;
+$catRoute = $locale === 'en' ? 'en.janus-bee.catalogue' : 'fr.janus-bee.catalogue';
+$ouvRoute = $locale === 'en' ? 'en.janus-bee.oeuvre'   : 'fr.janus-bee.oeuvre';
+@endphp
 
+@section('title', $titre . ' - Janus-Bee')
 @section('meta_description', $metaDescription)
-
 @section('meta_image', url('/assets/Janus-Bee/' . $oeuvre->image))
 
 @section('content')
 <div class="oeuvre-detail-container">
-    <a href="{{ route('fr.janus-bee.catalogue', ['types[]' => $oeuvre->types->first()?->nom]) }}" class="bouton-accueil">
-        <img src="/assets/fleche_gauche.png" alt="retour" class="accueil-icones">
-        Voir d'autres œuvres du type {{ $oeuvre->types->first()?->nom }}
+    @php $firstType = $oeuvre->types->first(); @endphp
+    <a href="{{ route($catRoute, ['types[]' => $firstType?->nom]) }}" class="bouton-accueil">
+        <img src="/assets/fleche_gauche.png" alt="{{ $locale === 'en' ? 'back' : 'retour' }}" class="accueil-icones">
+        @if($locale === 'en')
+            See other {{ ($firstType?->nom_en ?: $firstType?->nom) }} works
+        @else
+            Voir d'autres œuvres du type {{ $firstType?->nom }}
+        @endif
     </a>
     @if($oeuvreAleatoire)
-    <a href="{{ route('fr.janus-bee.oeuvre', $oeuvreAleatoire) }}" class="bouton-accueil">
-        <img src="/assets/random.png" alt="image aléatoire" class="accueil-icones">
-        Voir une autre œuvre
+    <a href="{{ route($ouvRoute, $oeuvreAleatoire) }}" class="bouton-accueil">
+        <img src="/assets/random.png" alt="{{ $locale === 'en' ? 'random' : 'aléatoire' }}" class="accueil-icones">
+        {{ $locale === 'en' ? 'See another work' : 'Voir une autre œuvre' }}
     </a>
     @endif
 
     <div class="oeuvre-main-content">
         <div class="oeuvre-detail-image">
-            <img src="/assets/Janus-Bee/{{ $oeuvre->image }}" alt="{{ $oeuvre->titre }}">
+            <img src="/assets/Janus-Bee/{{ $oeuvre->image }}" alt="{{ $titre }}">
         </div>
 
         <div class="oeuvre-detail-info">
-            <h1>{{ $oeuvre->titre }}</h1>
+            <h1>{{ $titre }}</h1>
 
             @if(!empty($oeuvre->titres_alternatifs))
             <div class="titres-alternatifs">
-                <strong>Titres alternatifs :</strong>
+                <strong>{{ $locale === 'en' ? 'Alternative titles:' : 'Titres alternatifs :' }}</strong>
                 <span>{{ implode(', ', $oeuvre->titres_alternatifs) }}</span>
             </div>
             @endif
 
             <div class="info-item-vertical">
-                <strong>Types :</strong>
-                <span>{{ $oeuvre->types->pluck('nom')->implode(', ') }}</span>
+                <strong>{{ $locale === 'en' ? 'Types:' : 'Types :' }}</strong>
+                <span>{{ $oeuvre->types->map(fn($t) => ($locale === 'en' && $t->nom_en) ? $t->nom_en : $t->nom)->implode(', ') }}</span>
             </div>
 
             <div class="info-item-vertical">
-                <strong>Genres :</strong>
-                <span>{{ $oeuvre->genres->pluck('nom')->implode(', ') }}</span>
+                <strong>{{ $locale === 'en' ? 'Genres:' : 'Genres :' }}</strong>
+                <span>{{ $oeuvre->genres->map(fn($g) => ($locale === 'en' && $g->nom_en) ? $g->nom_en : $g->nom)->implode(', ') }}</span>
             </div>
 
             <div class="info-item-vertical">
-                <strong>Sortie :</strong>
-                <span>{{ $oeuvre->sortie }}</span>
+                <strong>{{ $locale === 'en' ? 'Release:' : 'Sortie :' }}</strong>
+                <span>{{ $displaySortie }}</span>
             </div>
 
             <div class="info-item-vertical">
-                <strong>Statut :</strong>
-                <span>{{ $oeuvre->status }}</span>
+                <strong>{{ $locale === 'en' ? 'Status:' : 'Statut :' }}</strong>
+                <span>{{ $displayStatus }}</span>
             </div>
 
             <div class="info-item-vertical">
-                <strong>Durée :</strong>
-                <span>{{ $oeuvre->duree }}</span>
+                <strong>{{ $locale === 'en' ? 'Duration:' : 'Durée :' }}</strong>
+                <span>{{ $displayDuree }}</span>
             </div>
         </div>
     </div>
 
+    @if($synopsis)
     <div class="synopsis-full-width">
-        <strong>Synopsis :</strong>
-        <p>{{ $oeuvre->synopsis }}</p>
+        <strong>{{ $locale === 'en' ? 'Synopsis:' : 'Synopsis :' }}</strong>
+        <p>{{ $synopsis }}</p>
     </div>
+    @endif
 
     @if($oeuvre->types->contains('nom', 'Court métrage') && !empty($oeuvre->video))
         @php
@@ -73,7 +88,7 @@
         @endphp
         @if($videoId)
         <div class="oeuvre-video-section">
-            <h2>Vidéo</h2>
+            <h2>{{ $locale === 'en' ? 'Video' : 'Vidéo' }}</h2>
             <iframe width="100%" height="600"
                 src="https://www.youtube.com/embed/{{ $videoId }}"
                 frameborder="0"

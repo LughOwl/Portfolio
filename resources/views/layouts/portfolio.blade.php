@@ -34,10 +34,7 @@
             $adminRouteMap = [
                 'fr.presentation' => 'admin.portfolio.presentation',
                 'fr.profil'       => 'admin.portfolio.profil',
-                'fr.recherches'   => 'admin.portfolio.objectifs',
-                'fr.formations'   => 'admin.portfolio.formations',
-                'fr.experiences'  => 'admin.portfolio.experiences',
-                'fr.competences'  => 'admin.portfolio.competences',
+                'fr.parcours'     => 'admin.portfolio.formations',
                 'fr.sites'        => 'admin.portfolio.sites',
             ];
             $currentName   = request()->route()->getName() ?? '';
@@ -59,29 +56,51 @@
 
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="{{ ($locale ?? 'fr') === 'fr' ? route('fr.presentation') : route('en.presentation') }}" class="nav-logo">
-                <span class="lb">[</span><span class="ln">NB</span><span class="lb">]</span>
+            <a href="{{ ($locale ?? 'fr') === 'fr' ? route('fr.presentation') : route('en.presentation') }}" class="nav-logo" aria-label="Nicolas BISAGA — Accueil">
+                <span class="logo-box">
+                    <span class="logo-n">N</span><span class="logo-b">B</span>
+                    <span class="logo-dot"></span>
+                </span>
             </a>
 
+            @php
+            $langMap = [
+                'fr.presentation' => 'en.presentation',
+                'fr.home'         => 'en.presentation',
+                'fr.profil'       => 'en.profil',
+                'fr.parcours'     => 'en.parcours',
+                'fr.sites'        => 'en.websites',
+                'fr.contact'      => 'en.contact',
+                'fr.plan'         => 'en.sitemap',
+                'fr.legal'        => 'en.termsofuse',
+                'en.presentation' => 'fr.presentation',
+                'en.home'         => 'fr.presentation',
+                'en.profil'       => 'fr.profil',
+                'en.parcours'     => 'fr.parcours',
+                'en.websites'     => 'fr.sites',
+                'en.contact'      => 'fr.contact',
+                'en.sitemap'      => 'fr.plan',
+                'en.termsofuse'   => 'fr.legal',
+            ];
+            $currentRoute = request()->route()->getName() ?? '';
+            $altRoute     = $langMap[$currentRoute] ?? (($locale ?? 'fr') === 'fr' ? 'en.presentation' : 'fr.presentation');
+            $altUrl       = route($altRoute);
+            @endphp
             <div class="nav-links" id="navLinks">
                 @if(($locale ?? 'fr') === 'fr')
-                <a href="{{ route('fr.presentation') }}"  class="{{ request()->routeIs('fr.presentation', 'fr.home') ? 'active' : '' }}">Accueil</a>
-                <a href="{{ route('fr.profil') }}"        class="{{ request()->routeIs('fr.profil') ? 'active' : '' }}">Profil</a>
-                <a href="{{ route('fr.recherches') }}"    class="{{ request()->routeIs('fr.recherches') ? 'active' : '' }}">Objectifs</a>
-                <a href="{{ route('fr.formations') }}"    class="{{ request()->routeIs('fr.formations') ? 'active' : '' }}">Formations</a>
-                <a href="{{ route('fr.experiences') }}"   class="{{ request()->routeIs('fr.experiences') ? 'active' : '' }}">Expériences</a>
-                <a href="{{ route('fr.competences') }}"   class="{{ request()->routeIs('fr.competences') ? 'active' : '' }}">Compétences</a>
-                <a href="{{ route('fr.sites') }}"         class="{{ request()->routeIs('fr.sites') ? 'active' : '' }}">Projets</a>
-                <a href="{{ route('fr.contact') }}"       class="{{ request()->routeIs('fr.contact') ? 'active' : '' }}">Contact</a>
-                <a href="{{ route('en.presentation') }}" class="nav-lang-btn">EN 🇬🇧</a>
+                <a href="{{ route('fr.presentation') }}" class="{{ request()->routeIs('fr.presentation', 'fr.home') ? 'active' : '' }}">Accueil</a>
+                <a href="{{ route('fr.profil') }}"       class="{{ request()->routeIs('fr.profil') ? 'active' : '' }}">Profil</a>
+                <a href="{{ route('fr.parcours') }}"     class="{{ request()->routeIs('fr.parcours') ? 'active' : '' }}">Parcours</a>
+                <a href="{{ route('fr.sites') }}"        class="{{ request()->routeIs('fr.sites') ? 'active' : '' }}">Projets</a>
+                <a href="{{ route('fr.contact') }}"      class="{{ request()->routeIs('fr.contact') ? 'active' : '' }}">Contact</a>
+                <a href="{{ $altUrl }}" class="nav-lang-btn">EN 🇬🇧</a>
                 @else
-                <a href="{{ route('en.presentation') }}"  class="{{ request()->routeIs('en.presentation', 'en.home') ? 'active' : '' }}">Home</a>
-                <a href="{{ route('en.training') }}"      class="{{ request()->routeIs('en.training') ? 'active' : '' }}">Training</a>
-                <a href="{{ route('en.experiences') }}"   class="{{ request()->routeIs('en.experiences') ? 'active' : '' }}">Experience</a>
-                <a href="{{ route('en.skills') }}"        class="{{ request()->routeIs('en.skills') ? 'active' : '' }}">Skills</a>
-                <a href="{{ route('en.websites') }}"      class="{{ request()->routeIs('en.websites') ? 'active' : '' }}">Projects</a>
-                <a href="{{ route('en.contact') }}"       class="{{ request()->routeIs('en.contact') ? 'active' : '' }}">Contact</a>
-                <a href="{{ route('fr.presentation') }}" class="nav-lang-btn">FR 🇫🇷</a>
+                <a href="{{ route('en.presentation') }}" class="{{ request()->routeIs('en.presentation', 'en.home') ? 'active' : '' }}">Home</a>
+                <a href="{{ route('en.profil') }}"       class="{{ request()->routeIs('en.profil') ? 'active' : '' }}">Profile</a>
+                <a href="{{ route('en.parcours') }}"     class="{{ request()->routeIs('en.parcours') ? 'active' : '' }}">Career</a>
+                <a href="{{ route('en.websites') }}"     class="{{ request()->routeIs('en.websites') ? 'active' : '' }}">Projects</a>
+                <a href="{{ route('en.contact') }}"      class="{{ request()->routeIs('en.contact') ? 'active' : '' }}">Contact</a>
+                <a href="{{ $altUrl }}" class="nav-lang-btn">FR 🇫🇷</a>
                 @endif
             </div>
 
@@ -104,15 +123,15 @@
                 @if(($locale ?? 'fr') === 'fr')
                 <a href="{{ route('fr.plan') }}">Plan du site</a>
                 <a href="{{ route('fr.legal') }}">Mentions légales</a>
-                <a href="https://github.com/lughowl">GitHub</a>
-                <a href="https://www.linkedin.com/in/nicolasbisaga">LinkedIn</a>
-                <a href="https://tryhackme.com/p/NewGateFR">TryHackMe</a>
+                <a href="{{ $settings['github_url'] }}">GitHub</a>
+                <a href="{{ $settings['linkedin_url'] }}">LinkedIn</a>
+                <a href="{{ $settings['tryhackme_url'] }}">TryHackMe</a>
                 @else
                 <a href="{{ route('en.sitemap') }}">Sitemap</a>
                 <a href="{{ route('en.termsofuse') }}">Terms of use</a>
-                <a href="https://github.com/lughowl">GitHub</a>
-                <a href="https://www.linkedin.com/in/nicolasbisaga">LinkedIn</a>
-                <a href="https://tryhackme.com/p/NewGateFR">TryHackMe</a>
+                <a href="{{ $settings['github_url'] }}">GitHub</a>
+                <a href="{{ $settings['linkedin_url'] }}">LinkedIn</a>
+                <a href="{{ $settings['tryhackme_url'] }}">TryHackMe</a>
                 @endif
             </div>
         </div>

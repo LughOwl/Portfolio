@@ -1,10 +1,62 @@
 @extends('layouts.lugh-owl')
 
-@section('title', 'Mentions Légales - Lugh-Owl')
+@section('title', ($locale === 'en') ? 'Legal Notice - Lugh-Owl' : 'Mentions Légales - Lugh-Owl')
 
 @section('content')
+@php $isEn = ($locale ?? 'fr') === 'en'; @endphp
 <div class="lo-static-wrap">
     <div>
+@if($isEn)
+        <h1>Legal Notice</h1>
+
+        <h2>Publisher and Site Manager:</h2>
+        <p>
+            Name: Bisaga Nicolas<br>
+            Email: nicolas.bisaga@gmail.com
+        </p>
+
+        <h2>Hosting:</h2>
+        <p>This website is hosted on a personal VPS managed by myself.</p>
+        <ul>
+            <li>Host name: OVH</li>
+            <li>Address: 2 rue Kellermann, 59100 Roubaix, France</li>
+            <li>Website: <a href="https://www.ovh.com/">https://www.ovh.com/</a></li>
+        </ul>
+
+        <h2>Intellectual Property:</h2>
+        <p>
+            All content published on this website, including texts, images, videos and other media,
+            is protected by copyright and is the property of Nicolas Bisaga. You are permitted to use,
+            reproduce, distribute and share this content for personal, educational and non-commercial purposes.
+            Any commercial use is strictly prohibited.
+        </p>
+
+        <h2>Liability:</h2>
+        <p>
+            While I strive to provide accurate information, I cannot guarantee the accuracy, completeness
+            or relevance of the information provided on this website. Use of the information available on
+            this site is at your own risk. I cannot be held responsible for any direct or indirect damage
+            resulting from the use of this website.
+        </p>
+
+        <h2>Hyperlinks:</h2>
+        <p>
+            This site may contain links to other websites. I am not responsible for the content of these
+            third-party sites and cannot be held liable for any damage resulting from their use.
+        </p>
+
+        <h2>Applicable Law:</h2>
+        <p>
+            This website is governed by French law. Any dispute relating to the use of this website shall
+            be subject to the jurisdiction of the French courts.
+        </p>
+
+        <h2>Contact:</h2>
+        <p>
+            If you have any questions or concerns regarding this legal notice, please contact me at:
+            <em>nicolas.bisaga@gmail.com</em>.
+        </p>
+@else
         <h1>Mentions Légales</h1>
 
         <h2>Éditeur et Responsable du Site :</h2>
@@ -65,6 +117,7 @@
             ces mentions légales, veuillez me contacter à l'adresse
             e-mail suivante : <em>nicolas.bisaga@gmail.com</em>.
         </p>
+@endif
     </div>
 </div>
 @endsection

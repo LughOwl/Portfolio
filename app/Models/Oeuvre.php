@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Oeuvre extends Model
 {
     protected $fillable = [
-        'titre', 'titres_alternatifs', 'image',
-        'sortie', 'status', 'duree', 'synopsis', 'video', 'en_vedette', 'ordre',
+        'titre', 'titre_en', 'titres_alternatifs', 'image',
+        'sortie', 'sortie_en', 'status', 'status_en', 'duree', 'duree_en',
+        'synopsis', 'synopsis_en', 'video', 'en_vedette', 'ordre',
     ];
 
     protected $casts = [

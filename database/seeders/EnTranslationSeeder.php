@@ -347,7 +347,7 @@ class EnTranslationSeeder extends Seeder
                 'desc'  => 'Culinary recipe website: organised by ingredients, categories and filters. User-friendly interface for food enthusiasts.',
                 'logo'  => '/assets/Inari-Fox/1.logo.png',
                 'color' => '#c80000',
-                'route' => 'en.inari-fox',
+                'route' => 'fr.inari-fox',
                 'etat'  => 'construction',
             ],
             [
@@ -357,7 +357,7 @@ class EnTranslationSeeder extends Seeder
                 'desc'  => 'Catalogue of inspiring piano pieces, sheet music, musical resources and composer discovery.',
                 'logo'  => '/assets/Bragi-Bird/1.logo.png',
                 'color' => '#ff8c00',
-                'route' => 'en.bragi-bird',
+                'route' => 'fr.bragi-bird',
                 'etat'  => 'construction',
             ],
             [
@@ -377,7 +377,7 @@ class EnTranslationSeeder extends Seeder
                 'desc'  => 'Resources on hiking, healthy lifestyle strategies and physical and mental wellbeing.',
                 'logo'  => '/assets/Gaia-Deer/1.logo.png',
                 'color' => '#00af00',
-                'route' => 'en.gaia-deer',
+                'route' => 'fr.gaia-deer',
                 'etat'  => 'construction',
             ],
             [
@@ -387,7 +387,7 @@ class EnTranslationSeeder extends Seeder
                 'desc'  => 'Technical blog on IT, cybersecurity, digital projects and learning resources.',
                 'logo'  => '/assets/Zeus-Bug/1.logo.png',
                 'color' => '#00f0d2',
-                'route' => 'en.zeus-bug',
+                'route' => 'fr.zeus-bug',
                 'etat'  => 'construction',
             ],
             [
@@ -407,7 +407,7 @@ class EnTranslationSeeder extends Seeder
                 'desc'  => 'Exploration of astronomy, fundamental physics and mythology related to stars and constellations.',
                 'logo'  => '/assets/Ouranos-Taurus/1.logo.png',
                 'color' => '#7d00b4',
-                'route' => 'en.ouranos-taurus',
+                'route' => 'fr.ouranos-taurus',
                 'etat'  => 'construction',
             ],
         ];

@@ -7,6 +7,7 @@ use App\Models\Competence;
 use App\Models\Experience;
 use App\Models\Formation;
 use App\Models\Objectif;
+use App\Models\Parametre;
 use App\Models\Presentation;
 use App\Models\Profil;
 use App\Models\Projet;
@@ -468,5 +469,36 @@ class AdminPortfolioController extends Controller
             'route' => 'required|string|max:100',
             'etat'  => 'required|in:ligne,construction',
         ]);
+    }
+
+    /* -------------------------------------------------------
+     | PARAMÈTRES GLOBAUX
+     * ----------------------------------------------------- */
+
+    public function parametres(): View
+    {
+        return view('admin.portfolio.parametres', array_merge($this->shared(), [
+            'p' => Parametre::all_settings(),
+        ]));
+    }
+
+    public function parametresSave(Request $request): RedirectResponse
+    {
+        $r = $request->validate([
+            'github_url'        => 'required|url|max:300',
+            'linkedin_url'      => 'required|url|max:300',
+            'tryhackme_url'     => 'required|url|max:300',
+            'contact_ouvert'    => 'nullable|in:0,1',
+            'contact_statut_fr' => 'required|string|max:600',
+            'contact_statut_en' => 'required|string|max:600',
+        ]);
+
+        $r['contact_ouvert'] = $request->has('contact_ouvert') ? '1' : '0';
+
+        foreach ($r as $cle => $valeur) {
+            Parametre::set($cle, $valeur);
+        }
+
+        return redirect()->route('admin.portfolio.parametres')->with('success', 'Paramètres enregistrés.');
     }
 }

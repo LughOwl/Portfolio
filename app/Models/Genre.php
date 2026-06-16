@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Genre extends Model
 {
-    protected $fillable = ['nom'];
+    protected $fillable = ['nom', 'nom_en'];
 
     public function oeuvres(): BelongsToMany
     {

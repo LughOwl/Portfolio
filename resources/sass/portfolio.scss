@@ -147,17 +147,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-logo {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.3em;
-    font-weight: 700;
-    color: var(--text-primary) !important;
     text-decoration: none;
     flex-shrink: 0;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
 
-    .lb { color: var(--accent-green); }
-    .ln { color: var(--accent-blue); }
-    &:hover { color: var(--text-primary) !important; }
+.logo-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 255, 136, 0.06);
+    border: 1.5px solid var(--accent-green);
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 1em;
+    letter-spacing: -0.04em;
+    transition: background 0.2s, box-shadow 0.2s;
+
+    .nav-logo:hover & {
+        background: rgba(0, 255, 136, 0.12);
+        box-shadow: 0 0 12px rgba(0, 255, 136, 0.2);
+    }
+}
+
+.logo-n { color: var(--text-primary); }
+.logo-b { color: var(--accent-green); }
+
+.logo-dot {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 4px;
+    height: 4px;
+    background: var(--accent-green);
+    border-radius: 50%;
 }
 
 .nav-links {
@@ -238,6 +266,8 @@ h1, h2, h3, h4, h5, h6 {
 .main-content {
     flex: 1;
     padding-top: var(--navbar-height);
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -274,7 +304,7 @@ h1, h2, h3, h4, h5, h6 {
    ============================ */
 
 .hero {
-    min-height: calc(100vh - var(--navbar-height));
+    flex: 1;
     display: flex;
     align-items: center;
     position: relative;
@@ -494,6 +524,24 @@ h1, h2, h3, h4, h5, h6 {
 /* ============================
    TIMELINE
    ============================ */
+
+.parcours-section {
+    margin-bottom: 16px;
+}
+
+.parcours-section-header {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 28px 0 18px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+
+    .prefix { opacity: 0.5; margin-right: 4px; }
+}
 
 .timeline {
     position: relative;
@@ -1345,7 +1393,7 @@ h1, h2, h3, h4, h5, h6 {
         a { padding: 12px 16px; font-size: 0.9em; border-radius: 8px; }
     }
 
-    .nav-lang-btn { display: none; }
+    .nav-lang-btn { margin-left: 0; }
 
     .hero-content { padding: 60px 16px; }
     .hero-name { font-size: 2.1em; }

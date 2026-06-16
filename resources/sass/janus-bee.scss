@@ -195,12 +195,15 @@ body {
 .jb-lang-active { color: var(--jaune-bee); }
 .jb-lang-sep    { color: rgba(255,255,255,.15); }
 .jb-lang-off    { color: #444; cursor: default; }
+.jb-lang-link   { color: rgba(255,255,255,.45); text-decoration: none; transition: color .15s;
+                   &:hover { color: var(--jaune-bee); } }
 
 /* --- PAGE / ACCUEIL --- */
 .accueil-hero {
     background: linear-gradient(180deg, rgba(255,220,0,.04) 0%, transparent 100%);
     border-bottom: 1px solid var(--bd);
-    padding: 52px 24px 44px;
+    padding: 52px 64px 44px;
+    margin: 0 -40px;
     text-align: center;
 }
 
@@ -320,20 +323,17 @@ body {
     &:hover { color: var(--jaune-bee); }
 }
 
-.carousel-wrap {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
 .carousel-track-wrap {
     flex: 1;
     min-width: 0;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    &::-webkit-scrollbar { display: none; }
+    scrollbar-color: var(--jaune-bee) transparent;
+    padding-bottom: 6px;
+    &::-webkit-scrollbar { height: 8px; }
+    &::-webkit-scrollbar-track { background: transparent; }
+    &::-webkit-scrollbar-thumb { background: var(--jaune-bee); border-radius: 4px; }
 }
 
 .carousel-track {
@@ -404,27 +404,6 @@ body {
     overflow: hidden;
 }
 
-.carousel-btn {
-    flex: 0 0 36px;
-    height: 36px;
-    border: 1px solid var(--bd);
-    background: var(--bg-card);
-    color: var(--tx-2);
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.4rem;
-    line-height: 1;
-    transition: all .2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
-        background: var(--jaune-bee);
-        border-color: var(--jaune-bee);
-        color: #111;
-    }
-}
 
 .bouton-accueil {
     display: inline-flex;
@@ -1027,7 +1006,6 @@ body {
     .slider-btn { display: none; }
     .carousel-card { flex: 0 0 160px; width: 160px; }
     .carousel-img  { height: 220px; }
-    .carousel-btn  { display: none; }
     .oeuvre-image { height: 190px; }
     .oeuvre-info h3   { font-size: .8rem; }
     .titre-secondaire { font-size: .7rem; }
@@ -1051,6 +1029,7 @@ body {
 
 @media (max-width: 600px) {
     .site-content { padding: 0 16px; }
+    .accueil-hero { margin: 0 -16px; padding-left: 32px; padding-right: 32px; }
     .content-legal > div,
     .content-origines > div,
     .content-plan > div { padding: 0 4px; }

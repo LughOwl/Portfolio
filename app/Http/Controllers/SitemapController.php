@@ -36,10 +36,8 @@ class SitemapController extends Controller
         }
 
         // Lugh-Owl
-        $urls[] = ['loc' => route('fr.lugh-owl.accueil'),  'priority' => '0.9'];
-        $urls[] = ['loc' => route('fr.lugh-owl.modeles'),  'priority' => '0.8'];
-        $urls[] = ['loc' => route('fr.lugh-owl.idees'),    'priority' => '0.8'];
-        $urls[] = ['loc' => route('fr.lugh-owl.vie'),      'priority' => '0.8'];
+        $urls[] = ['loc' => route('fr.lugh-owl.accueil'),   'priority' => '0.9'];
+        $urls[] = ['loc' => route('fr.lugh-owl.catalogue'), 'priority' => '0.8'];
         $urls[] = ['loc' => route('fr.lugh-owl.origines'), 'priority' => '0.5'];
         $urls[] = ['loc' => route('fr.lugh-owl.plan'),     'priority' => '0.3'];
         $urls[] = ['loc' => route('fr.lugh-owl.legal'),    'priority' => '0.3'];
