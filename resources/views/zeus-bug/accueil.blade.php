@@ -21,35 +21,30 @@
 <div class="zb-content">
 
     @php
-        $total    = ZeusBugArticle::where('publie', true)->count();
-        $nbCats   = ZeusBugArticle::where('publie', true)->distinct('categorie')->count('categorie');
-        $nbLangs  = ZeusBugArticle::where('publie', true)->whereNotNull('titre_en')->count();
+        $total  = ZeusBugArticle::where('publie', true)->count();
+        $nbCats = ZeusBugArticle::where('publie', true)->distinct('categorie')->count('categorie');
     @endphp
     <div class="zb-stats-bar">
         <div class="zb-stat-item">
             <div class="zb-stat-val">{{ $total }}</div>
-            <div class="zb-stat-lbl">{{ $locale === 'en' ? 'Articles' : 'Articles' }}</div>
+            <div class="zb-stat-lbl">Articles</div>
         </div>
         <div class="zb-stat-item">
             <div class="zb-stat-val">{{ $nbCats }}</div>
             <div class="zb-stat-lbl">{{ $locale === 'en' ? 'Categories' : 'Catégories' }}</div>
-        </div>
-        <div class="zb-stat-item">
-            <div class="zb-stat-val">{{ $nbLangs }}</div>
-            <div class="zb-stat-lbl">{{ $locale === 'en' ? 'Bilingual' : 'Bilingues' }}</div>
         </div>
     </div>
 
     {{-- Filtre catégories --}}
     <div class="zb-cat-filter">
         <a href="{{ route($pre.'.zeus-bug.accueil') }}"
-           class="zb-cat-btn {{ !isset($categorieActive) ? 'active' : '' }}">
+           class="zb-cat-btn systeme {{ !isset($categorieActive) ? 'active' : '' }}">
             {{ $locale === 'en' ? 'All' : 'Tous' }}
         </a>
         @foreach($categories as $slug => $label)
         @if(ZeusBugArticle::where('publie', true)->where('categorie', $slug)->exists())
         <a href="{{ route($pre.'.zeus-bug.categorie', $slug) }}"
-           class="zb-cat-btn {{ (isset($categorieActive) && $categorieActive === $slug) ? 'active' : '' }}">
+           class="zb-cat-btn {{ $slug }} {{ (isset($categorieActive) && $categorieActive === $slug) ? 'active' : '' }}">
             {{ $label }}
         </a>
         @endif

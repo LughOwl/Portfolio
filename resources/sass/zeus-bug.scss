@@ -234,8 +234,24 @@ body.has-admin-bar .zb-header { top: 36px; }
     color: $zb-muted;
     text-decoration: none;
     transition: color .15s, border-color .15s, background .15s;
-    &:hover { color: $zb-text; border-color: rgba($zb-teal, .35); }
-    &.active { color: $zb-teal; border-color: rgba($zb-teal, .5); background: rgba($zb-teal, .07); }
+
+    &:hover  { color: $zb-text; }
+
+    @mixin cat-btn($c) {
+        &:hover  { border-color: rgba($c, .4); color: $c; }
+        &.active { color: $c; border-color: rgba($c, .55); background: rgba($c, .08); }
+    }
+
+    &.web            { @include cat-btn(#3b82f6); }
+    &.algorithme     { @include cat-btn(#a855f7); }
+    &.jeu            { @include cat-btn(#f59e0b); }
+    &.bdd            { @include cat-btn(#ef4444); }
+    &.data           { @include cat-btn(#22c55e); }
+    &.reseau         { @include cat-btn(#f97316); }
+    &.cybersecurite  { @include cat-btn(#4f46e5); }
+    &.systeme        { @include cat-btn($zb-teal); }
+    &.infrastructure { @include cat-btn($zb-teal-h); }
+    &.autre          { @include cat-btn(#94a3b8); }
 }
 
 // ============================================================
@@ -377,6 +393,7 @@ body.has-admin-bar .zb-header { top: 36px; }
     &.bdd            { background: rgba(#ef4444, .12); color: #f87171; border: 1px solid rgba(#ef4444, .25); }
     &.data           { background: rgba(#22c55e, .12); color: #4ade80; border: 1px solid rgba(#22c55e, .25); }
     &.reseau         { background: rgba(#f97316, .12); color: #fb923c; border: 1px solid rgba(#f97316, .25); }
+    &.cybersecurite  { background: rgba(#4f46e5, .12); color: #818cf8; border: 1px solid rgba(#4f46e5, .25); }
     &.systeme        { background: rgba($zb-teal, .10); color: $zb-teal; border: 1px solid rgba($zb-teal, .22); }
     &.infrastructure { background: rgba($zb-teal-h, .10); color: $zb-teal-h; border: 1px solid rgba($zb-teal-h, .22); }
     &.autre          { background: rgba(#94a3b8, .10); color: #94a3b8; border: 1px solid rgba(#94a3b8, .2); }

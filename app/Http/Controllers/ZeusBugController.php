@@ -15,7 +15,8 @@ class ZeusBugController extends Controller
     public function accueil(): View
     {
         $articles = ZeusBugArticle::where('publie', true)
-            ->orderBy('ordre')
+            ->orderByRaw('date_projet IS NULL ASC')
+            ->orderBy('date_projet', 'desc')
             ->get();
 
         return view('zeus-bug.accueil', [
@@ -38,7 +39,8 @@ class ZeusBugController extends Controller
     {
         $articles = ZeusBugArticle::where('publie', true)
             ->where('categorie', $slug)
-            ->orderBy('ordre')
+            ->orderByRaw('date_projet IS NULL ASC')
+            ->orderBy('date_projet', 'desc')
             ->get();
 
         return view('zeus-bug.accueil', [

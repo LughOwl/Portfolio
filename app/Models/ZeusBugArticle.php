@@ -22,14 +22,15 @@ class ZeusBugArticle extends Model
     ];
 
     public static $categories = [
-        'web'            => 'Web',
         'algorithme'     => 'Algorithme',
-        'jeu'            => 'Jeu',
+        'autre'          => 'Autre',
         'bdd'            => 'Base de données',
+        'cybersecurite'  => 'Cybersécurité',
         'data'           => 'Data Science',
+        'infrastructure' => 'Infrastructure / Serveur',
+        'jeu'            => 'Jeu',
         'reseau'         => 'Réseau',
         'systeme'        => 'Système / Linux',
-        'infrastructure' => 'Infrastructure / Serveur',
-        'autre'          => 'Autre',
+        'web'            => 'Web',
     ];
 }
