@@ -113,11 +113,11 @@ body.has-admin-bar .zb-header { top: 36px; }
     background: rgba($zb-bg, .92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid $zb-border;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
     padding: 0 32px;
-    gap: 24px;
+    gap: 20px;
 }
 
 .zb-brand {
@@ -142,8 +142,8 @@ body.has-admin-bar .zb-header { top: 36px; }
 .zb-nav-right {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 16px;
-    flex-shrink: 0;
 }
 
 .zb-lang {
@@ -158,6 +158,63 @@ body.has-admin-bar .zb-header { top: 36px; }
 .zb-lang-active { color: $zb-teal; }
 .zb-lang-sep    { color: rgba($zb-muted, .4); }
 .zb-lang-off    { color: $zb-muted; transition: color .15s; &:hover { color: $zb-text; } }
+
+.zb-search {
+    display: flex;
+    width: 100%;
+}
+
+.zb-search-input {
+    background: $zb-bg2;
+    border: 1px solid $zb-border;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    color: $zb-text;
+    padding: 6px 12px;
+    font-size: 0.85em;
+    font-family: $zb-mono;
+    width: 100%;
+    outline: none;
+    transition: border-color .2s;
+    &::placeholder { color: $zb-muted; }
+    &:focus { border-color: rgba($zb-teal, 0.5); }
+}
+
+.zb-search-btn {
+    background: $zb-teal;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    color: $zb-bg;
+    padding: 7px 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    transition: background .2s;
+    &:hover { background: color.adjust($zb-teal, $lightness: 8%); }
+}
+
+.zb-search-results-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-family: $zb-mono;
+    font-size: 0.85em;
+    color: $zb-muted;
+    strong { color: $zb-text; }
+}
+
+.zb-search-clear {
+    color: $zb-muted;
+    text-decoration: none;
+    padding: 2px 6px;
+    border: 1px solid $zb-border;
+    border-radius: 4px;
+    font-size: 0.8em;
+    transition: color .15s, border-color .15s;
+    &:hover { color: $zb-text; border-color: $zb-muted; }
+}
 
 // ============================================================
 // Main
@@ -187,7 +244,7 @@ body.has-admin-bar .zb-header { top: 36px; }
 }
 
 .zb-page-title {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
     font-weight: 800;
     color: $zb-text;
     line-height: 1.15;
@@ -242,15 +299,15 @@ body.has-admin-bar .zb-header { top: 36px; }
         &.active { color: $c; border-color: rgba($c, .55); background: rgba($c, .08); }
     }
 
-    &.web            { @include cat-btn(#3b82f6); }
-    &.algorithme     { @include cat-btn(#a855f7); }
-    &.jeu            { @include cat-btn(#f59e0b); }
-    &.bdd            { @include cat-btn(#ef4444); }
-    &.data           { @include cat-btn(#22c55e); }
-    &.reseau         { @include cat-btn(#f97316); }
-    &.cybersecurite  { @include cat-btn(#4f46e5); }
-    &.systeme        { @include cat-btn($zb-teal); }
-    &.infrastructure { @include cat-btn($zb-teal-h); }
+    &.web            { @include cat-btn(#38bdf8); }
+    &.algorithme     { @include cat-btn(#c084fc); }
+    &.jeu            { @include cat-btn(#fbbf24); }
+    &.bdd            { @include cat-btn(#f87171); }
+    &.data           { @include cat-btn(#a3e635); }
+    &.reseau         { @include cat-btn(#f472b6); }
+    &.cybersecurite  { @include cat-btn(#818cf8); }
+    &.systeme        { @include cat-btn(#2dd4bf); }
+    &.infrastructure { @include cat-btn(#fb923c); }
     &.autre          { @include cat-btn(#94a3b8); }
 }
 
@@ -308,6 +365,17 @@ body.has-admin-bar .zb-header { top: 36px; }
     border-left: 3px solid $zb-teal-d;
     border-radius: 12px;
     padding: 24px;
+
+    &.web            { border-left-color: #38bdf8; }
+    &.algorithme     { border-left-color: #c084fc; }
+    &.jeu            { border-left-color: #fbbf24; }
+    &.bdd            { border-left-color: #f87171; }
+    &.data           { border-left-color: #a3e635; }
+    &.reseau         { border-left-color: #f472b6; }
+    &.cybersecurite  { border-left-color: #818cf8; }
+    &.systeme        { border-left-color: #2dd4bf; }
+    &.infrastructure { border-left-color: #fb923c; }
+    &.autre          { border-left-color: #94a3b8; }
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -387,15 +455,15 @@ body.has-admin-bar .zb-header { top: 36px; }
     white-space: nowrap;
     flex-shrink: 0;
 
-    &.web            { background: rgba(#3b82f6, .12); color: #60a5fa; border: 1px solid rgba(#3b82f6, .25); }
-    &.algorithme     { background: rgba(#a855f7, .12); color: #c084fc; border: 1px solid rgba(#a855f7, .25); }
-    &.jeu            { background: rgba(#f59e0b, .12); color: #fbbf24; border: 1px solid rgba(#f59e0b, .25); }
-    &.bdd            { background: rgba(#ef4444, .12); color: #f87171; border: 1px solid rgba(#ef4444, .25); }
-    &.data           { background: rgba(#22c55e, .12); color: #4ade80; border: 1px solid rgba(#22c55e, .25); }
-    &.reseau         { background: rgba(#f97316, .12); color: #fb923c; border: 1px solid rgba(#f97316, .25); }
-    &.cybersecurite  { background: rgba(#4f46e5, .12); color: #818cf8; border: 1px solid rgba(#4f46e5, .25); }
-    &.systeme        { background: rgba($zb-teal, .10); color: $zb-teal; border: 1px solid rgba($zb-teal, .22); }
-    &.infrastructure { background: rgba($zb-teal-h, .10); color: $zb-teal-h; border: 1px solid rgba($zb-teal-h, .22); }
+    &.web            { background: rgba(#38bdf8, .12); color: #38bdf8; border: 1px solid rgba(#38bdf8, .25); }
+    &.algorithme     { background: rgba(#c084fc, .12); color: #c084fc; border: 1px solid rgba(#c084fc, .25); }
+    &.jeu            { background: rgba(#fbbf24, .12); color: #fbbf24; border: 1px solid rgba(#fbbf24, .25); }
+    &.bdd            { background: rgba(#f87171, .12); color: #f87171; border: 1px solid rgba(#f87171, .25); }
+    &.data           { background: rgba(#a3e635, .12); color: #a3e635; border: 1px solid rgba(#a3e635, .25); }
+    &.reseau         { background: rgba(#f472b6, .12); color: #f472b6; border: 1px solid rgba(#f472b6, .25); }
+    &.cybersecurite  { background: rgba(#818cf8, .12); color: #818cf8; border: 1px solid rgba(#818cf8, .25); }
+    &.systeme        { background: rgba(#2dd4bf, .10); color: #2dd4bf; border: 1px solid rgba(#2dd4bf, .22); }
+    &.infrastructure { background: rgba(#fb923c, .12); color: #fb923c; border: 1px solid rgba(#fb923c, .25); }
     &.autre          { background: rgba(#94a3b8, .10); color: #94a3b8; border: 1px solid rgba(#94a3b8, .2); }
 }
 

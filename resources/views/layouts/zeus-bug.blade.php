@@ -61,6 +61,15 @@
             <span class="zb-brand-text">Zeus-<em>Bug</em></span>
         </a>
 
+        <form class="zb-search" method="get" action="{{ $zbAccueil }}">
+            <input type="search" name="q" class="zb-search-input"
+                   placeholder="{{ $isEn ? 'Search articles…' : 'Rechercher des articles…' }}"
+                   value="{{ request('q', '') }}">
+            <button type="submit" class="zb-search-btn" aria-label="{{ $isEn ? 'Search' : 'Rechercher' }}">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+        </form>
+
         <div class="zb-nav-right">
             <div class="zb-lang">
                 @if($isEn)

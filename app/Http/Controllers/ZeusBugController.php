@@ -14,14 +14,27 @@ class ZeusBugController extends Controller
 
     public function accueil(): View
     {
-        $articles = ZeusBugArticle::where('publie', true)
-            ->orderByRaw('date_projet IS NULL ASC')
+        $q     = trim(request('q', ''));
+        $query = ZeusBugArticle::where('publie', true);
+
+        if ($q) {
+            $query->where(function ($sub) use ($q) {
+                $sub->where('titre',    'like', "%{$q}%")
+                    ->orWhere('titre_en', 'like', "%{$q}%")
+                    ->orWhere('intro',    'like', "%{$q}%")
+                    ->orWhere('intro_en', 'like', "%{$q}%")
+                    ->orWhere('tags',     'like', "%{$q}%");
+            });
+        }
+
+        $articles = $query->orderByRaw('date_projet IS NULL ASC')
             ->orderBy('date_projet', 'desc')
             ->get();
 
         return view('zeus-bug.accueil', [
             'locale'   => $this->locale(),
             'articles' => $articles,
+            'q'        => $q,
         ]);
     }
 

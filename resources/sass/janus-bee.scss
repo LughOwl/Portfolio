@@ -98,7 +98,8 @@ body.has-admin-bar .nav-menu { top: 36px; }
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    padding: .8rem 1.5rem;
+    height: 60px;
+    padding: 0 1.5rem;
     background: var(--bg-surface);
     border-bottom: 1px solid var(--bd);
     box-shadow: 0 1px 0 0 var(--jaune-bee);
@@ -121,8 +122,8 @@ body.has-admin-bar .nav-menu { top: 36px; }
 .logo-container a {
     text-decoration: none;
     color: var(--tx);
-    font-weight: bold;
-    font-size: 1.8rem;
+    font-weight: 700;
+    font-size: 1.15rem;
 }
 
 .logo-text-part span { color: var(--jaune-bee); }
@@ -218,7 +219,7 @@ body.has-admin-bar .nav-menu { top: 36px; }
 }
 
 .accueil-hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 900;
     letter-spacing: .06em;
     margin: 0 0 12px;

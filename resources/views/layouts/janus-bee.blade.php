@@ -78,7 +78,7 @@
         <div class="logo-container">
             <a href="{{ route($jbRoutes['accueil'][$loc]) }}">
                 <div class="logo-container-size">
-                    <img src="/assets/Janus-Bee/1.logo.png" width="50" alt="logo-JB">
+                    <img src="/assets/Janus-Bee/1.logo.png" width="36" alt="logo-JB">
                     <div class="logo-text-part">Janus-<span>Bee</span></div>
                 </div>
             </a>

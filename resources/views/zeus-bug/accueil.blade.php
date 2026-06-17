@@ -35,6 +35,14 @@
         </div>
     </div>
 
+    {{-- Résultats de recherche --}}
+    @if(!empty($q))
+    <div class="zb-search-results-bar">
+        <span>{{ $isEn ?? false ? count($articles).' result'.(count($articles) !== 1 ? 's' : '').' for' : count($articles).' résultat'.(count($articles) !== 1 ? 's' : '').' pour' }}</span>
+        <strong>«&nbsp;{{ $q }}&nbsp;»</strong>
+        <a href="{{ route(($locale === 'en' ? 'en' : 'fr').'.zeus-bug.accueil') }}" class="zb-search-clear">✕</a>
+    </div>
+    @else
     {{-- Filtre catégories --}}
     <div class="zb-cat-filter">
         <a href="{{ route($pre.'.zeus-bug.accueil') }}"
@@ -50,6 +58,7 @@
         @endif
         @endforeach
     </div>
+    @endif
 
     {{-- Liste articles --}}
     @forelse($articles as $article)
@@ -62,7 +71,7 @@
     <div class="zb-article-grid">
     @endif
 
-    <a href="{{ $articleUrl }}" class="zb-article-card">
+    <a href="{{ $articleUrl }}" class="zb-article-card {{ $article->categorie }}">
         <div class="zb-article-top">
             <div class="zb-article-title">{{ $titre }}</div>
             <span class="zb-badge {{ $article->categorie }}">

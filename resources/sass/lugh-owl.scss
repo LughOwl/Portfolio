@@ -237,7 +237,7 @@ h1, h2, h3 { color: $lo-heading; margin: 0 0 0.5em; }
 }
 
 .lo-hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 900;
     letter-spacing: .06em;
     margin: 0 0 14px;
