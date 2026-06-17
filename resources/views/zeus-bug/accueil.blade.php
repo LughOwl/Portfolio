@@ -13,8 +13,8 @@
     <h1 class="zb-page-title">Zeus-Bug</h1>
     <p class="zb-page-intro">
         {{ $locale === 'en'
-            ? 'Articles, project write-ups and technical notes — everything I\'ve built, coded or configured.'
-            : 'Articles, compte-rendus de projets et notes techniques — tout ce que j\'ai construit, codé ou configuré.' }}
+            ? 'Articles, project write-ups and technical notes : everything I\'ve built, coded or configured.'
+            : 'Articles, compte-rendus de projets et notes techniques : tout ce que j\'ai construit, codé ou configuré.' }}
     </p>
 </div>
 

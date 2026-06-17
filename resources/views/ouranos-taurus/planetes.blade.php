@@ -9,8 +9,8 @@
     <h1 class="ot-page-title">{{ $locale === 'en' ? 'The 8 planets' : 'Les 8 planètes' }}</h1>
     <p class="ot-page-intro">
         {{ $locale === 'en'
-            ? 'From Mercury, closest to the Sun, to Neptune at the edge of the solar system — key data for each world.'
-            : 'De Mercure, la plus proche du Soleil, à Neptune aux confins du système solaire — données clés pour chaque monde.' }}
+            ? 'From Mercury, closest to the Sun, to Neptune at the edge of the solar system : key data for each world.'
+            : 'De Mercure, la plus proche du Soleil, à Neptune aux confins du système solaire : données clés pour chaque monde.' }}
     </p>
 </div>
 
@@ -46,7 +46,7 @@ $planets = [
             [$locale === 'en' ? 'Known moons' : 'Lunes connues', '0'],
             [$locale === 'en' ? 'Avg. temperature' : 'Temp. moy.', '+465 °C'],
         ],
-        'note' => $locale === 'en' ? 'Hottest planet — runaway greenhouse effect' : 'Planète la plus chaude — effet de serre incontrôlé',
+        'note' => $locale === 'en' ? 'Hottest planet (runaway greenhouse effect)' : 'Planète la plus chaude (effet de serre incontrôlé)',
     ],
     [
         'name'     => 'Terre', 'name_en' => 'Earth',
@@ -76,7 +76,7 @@ $planets = [
             [$locale === 'en' ? 'Known moons' : 'Lunes connues', '2'],
             [$locale === 'en' ? 'Avg. temperature' : 'Temp. moy.', '-60 °C'],
         ],
-        'note' => $locale === 'en' ? 'Olympus Mons — tallest volcano in the solar system' : 'Olympus Mons — plus grand volcan du système solaire',
+        'note' => $locale === 'en' ? 'Olympus Mons, tallest volcano in the solar system' : 'Olympus Mons, plus grand volcan du système solaire',
     ],
     [
         'name'     => 'Jupiter', 'name_en' => 'Jupiter',
@@ -91,7 +91,7 @@ $planets = [
             [$locale === 'en' ? 'Known moons' : 'Lunes connues', '95'],
             [$locale === 'en' ? 'Avg. temperature' : 'Temp. moy.', '-110 °C'],
         ],
-        'note' => $locale === 'en' ? 'Great Red Spot — storm raging for 350+ years' : 'Grande Tache Rouge — tempête active depuis 350+ ans',
+        'note' => $locale === 'en' ? 'Great Red Spot, a storm raging for 350+ years' : 'Grande Tache Rouge, tempête active depuis plus de 350 ans',
     ],
     [
         'name'     => 'Saturne', 'name_en' => 'Saturn',
@@ -106,7 +106,7 @@ $planets = [
             [$locale === 'en' ? 'Known moons' : 'Lunes connues', '146'],
             [$locale === 'en' ? 'Avg. temperature' : 'Temp. moy.', '-140 °C'],
         ],
-        'note' => $locale === 'en' ? 'Rings made of ice and rock — less dense than water' : 'Anneaux de glace et roche — moins dense que l\'eau',
+        'note' => $locale === 'en' ? 'Rings made of ice and rock, less dense than water' : 'Anneaux de glace et de roche, moins dense que l\'eau',
     ],
     [
         'name'     => 'Uranus', 'name_en' => 'Uranus',
@@ -121,7 +121,7 @@ $planets = [
             [$locale === 'en' ? 'Known moons' : 'Lunes connues', '28'],
             [$locale === 'en' ? 'Avg. temperature' : 'Temp. moy.', '-195 °C'],
         ],
-        'note' => $locale === 'en' ? 'Axial tilt of 98° — rotates on its side' : 'Inclinaison axiale de 98° — tourne sur le côté',
+        'note' => $locale === 'en' ? 'Axial tilt of 98°, rotates on its side' : 'Inclinaison axiale de 98°, tourne sur le côté',
     ],
     [
         'name'     => 'Neptune', 'name_en' => 'Neptune',
@@ -136,7 +136,7 @@ $planets = [
             [$locale === 'en' ? 'Known moons' : 'Lunes connues', '16'],
             [$locale === 'en' ? 'Avg. temperature' : 'Temp. moy.', '-200 °C'],
         ],
-        'note' => $locale === 'en' ? 'Fastest winds in the solar system — 2 100 km/h' : 'Vents les plus rapides du système solaire — 2 100 km/h',
+        'note' => $locale === 'en' ? 'Fastest winds in the solar system (2 100 km/h)' : 'Vents les plus rapides du système solaire (2 100 km/h)',
     ],
 ];
 @endphp
@@ -174,8 +174,8 @@ $planets = [
         <div class="ot-section-title">{{ $locale === 'en' ? 'Key: astronomical unit (AU)' : 'Repère : l\'unité astronomique (UA)' }}</div>
         <div class="ot-text">
             <p>{{ $locale === 'en'
-                ? 'One astronomical unit (AU) equals the average distance between the Earth and the Sun — approximately 149.6 million kilometres. It is the reference unit for measuring distances within the solar system.'
-                : 'Une unité astronomique (UA) correspond à la distance moyenne entre la Terre et le Soleil — environ 149,6 millions de kilomètres. C\'est l\'unité de référence pour mesurer les distances dans le système solaire.' }}
+                ? 'One astronomical unit (AU) equals the average distance between the Earth and the Sun, approximately 149.6 million kilometres. It is the reference unit for measuring distances within the solar system.'
+                : 'Une unité astronomique (UA) correspond à la distance moyenne entre la Terre et le Soleil, soit environ 149,6 millions de kilomètres. C\'est l\'unité de référence pour mesurer les distances dans le système solaire.' }}
             </p>
         </div>
     </div>

@@ -43,8 +43,8 @@
             <div class="gd-card-title">{{ $locale === 'en' ? 'Train. Recover. Repeat.' : 'S\'entraîner. Récupérer. Recommencer.' }}</div>
             <div class="gd-card-desc">
                 {{ $locale === 'en'
-                    ? 'My approach to strength training, cardio and recovery — and why physical health is the foundation of mental health.'
-                    : 'Mon approche de la musculation, du cardio et de la récupération — et pourquoi la santé physique est le socle de la santé mentale.' }}
+                    ? 'My approach to strength training, cardio and recovery, and why physical health is the foundation of mental health.'
+                    : 'Mon approche de la musculation, du cardio et de la récupération, et pourquoi la santé physique est le socle de la santé mentale.' }}
             </div>
             <span class="gd-card-cta">{{ $locale === 'en' ? 'Read →' : 'Lire →' }}</span>
         </div>

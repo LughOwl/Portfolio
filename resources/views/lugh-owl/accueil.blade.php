@@ -26,7 +26,7 @@ $sections = $isEn
 <div class="lo-hero">
     <div class="lo-hero-inner">
         <h1>Lugh-<span>Owl</span></h1>
-        <p>{{ $isEn ? 'Philosophical and metaphysical exploration — thought models, meditations on life and timeless ideas.' : 'Exploration philosophique et métaphysique — modèles de pensée, méditations sur la vie et idées immuables.' }}</p>
+        <p>{{ $isEn ? 'Philosophical and metaphysical exploration : thought models, meditations on life and timeless ideas.' : 'Exploration philosophique et métaphysique : modèles de pensée, méditations sur la vie et idées immuables.' }}</p>
         <div class="lo-hero-btns">
             <a href="{{ route($routePfx . '.lugh-owl.catalogue') }}" class="lo-btn-primary">{{ $isEn ? 'Browse articles' : 'Parcourir les articles' }}</a>
             @if($articleAleatoire)

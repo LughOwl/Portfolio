@@ -1,8 +1,8 @@
 @extends('layouts.ouranos-taurus')
 @section('title', $locale === 'en' ? 'Ouranos-Taurus — Astronomy' : 'Ouranos-Taurus — Astronomie')
 @section('meta_description', $locale === 'en'
-    ? 'Planets, constellations, celestial phenomena and mythology — a personal reference site on astronomy.'
-    : 'Planètes, constellations, phénomènes célestes et mythologie — un site de référence personnel sur l\'astronomie.')
+    ? 'Planets, constellations, celestial phenomena and mythology : a personal reference site on astronomy.'
+    : 'Planètes, constellations, phénomènes célestes et mythologie : un site de référence personnel sur l\'astronomie.')
 
 @section('content')
 
@@ -11,13 +11,13 @@
     @if($locale === 'en')
     <h1 class="ot-page-title">The sky above us.</h1>
     <p class="ot-page-intro">
-        A personal reference on the cosmos — planets, constellations, phenomena and the myths that gave them their names.
+        A personal reference on the cosmos : planets, constellations, phenomena and the myths that gave them their names.
         Everything that has captivated humanity since the first clear night.
     </p>
     @else
     <h1 class="ot-page-title">Le ciel au-dessus de nous.</h1>
     <p class="ot-page-intro">
-        Une référence personnelle sur le cosmos — planètes, constellations, phénomènes et les mythes qui leur ont donné
+        Une référence personnelle sur le cosmos : planètes, constellations, phénomènes et les mythes qui leur ont donné
         leurs noms. Tout ce qui fascine l'humanité depuis la première nuit claire.
     </p>
     @endif
@@ -56,8 +56,8 @@
                 <div class="ot-home-card-title">{{ $locale === 'en' ? 'Planets' : 'Planètes' }}</div>
                 <div class="ot-home-card-desc">
                     {{ $locale === 'en'
-                        ? 'The 8 planets of the solar system — key data, distances, moons and distinctive features.'
-                        : 'Les 8 planètes du système solaire — données clés, distances, lunes et particularités.' }}
+                        ? 'The 8 planets of the solar system : key data, distances, moons and distinctive features.'
+                        : 'Les 8 planètes du système solaire : données clés, distances, lunes et particularités.' }}
                 </div>
             </div>
             <div class="ot-home-card-arrow">{{ $locale === 'en' ? 'Explore →' : 'Explorer →' }}</div>
@@ -79,8 +79,8 @@
                 <div class="ot-home-card-title">Constellations</div>
                 <div class="ot-home-card-desc">
                     {{ $locale === 'en'
-                        ? 'The major constellations visible to the naked eye — best season, main stars and myths.'
-                        : 'Les grandes constellations visibles à l\'œil nu — saison d\'observation, étoiles principales et mythes.' }}
+                        ? 'The major constellations visible to the naked eye : best season, main stars and myths.'
+                        : 'Les grandes constellations visibles à l\'œil nu : saison d\'observation, étoiles principales et mythes.' }}
                 </div>
             </div>
             <div class="ot-home-card-arrow">{{ $locale === 'en' ? 'Explore →' : 'Explorer →' }}</div>
@@ -97,8 +97,8 @@
                 <div class="ot-home-card-title">{{ $locale === 'en' ? 'Phenomena' : 'Phénomènes' }}</div>
                 <div class="ot-home-card-desc">
                     {{ $locale === 'en'
-                        ? 'Eclipses, meteor showers, solstices, equinoxes — the annual calendar of celestial events.'
-                        : 'Éclipses, pluies de météores, solstices, équinoxes — le calendrier annuel des événements célestes.' }}
+                        ? 'Eclipses, meteor showers, solstices, equinoxes : the annual calendar of celestial events.'
+                        : 'Éclipses, pluies de météores, solstices, équinoxes : le calendrier annuel des événements célestes.' }}
                 </div>
             </div>
             <div class="ot-home-card-arrow">{{ $locale === 'en' ? 'Explore →' : 'Explorer →' }}</div>
@@ -114,8 +114,8 @@
                 <div class="ot-home-card-title">{{ $locale === 'en' ? 'Mythology' : 'Mythologie' }}</div>
                 <div class="ot-home-card-desc">
                     {{ $locale === 'en'
-                        ? 'The gods and heroes behind the names of planets and constellations — Greek and Roman mythology.'
-                        : 'Les dieux et héros derrière les noms des planètes et constellations — mythologie grecque et romaine.' }}
+                        ? 'The gods and heroes behind the names of planets and constellations, drawn from Greek and Roman mythology.'
+                        : 'Les dieux et héros derrière les noms des planètes et constellations, issus de la mythologie grecque et romaine.' }}
                 </div>
             </div>
             <div class="ot-home-card-arrow">{{ $locale === 'en' ? 'Explore →' : 'Explorer →' }}</div>
@@ -134,8 +134,8 @@
                 <div class="ot-home-card-title">{{ $locale === 'en' ? 'Observe' : 'Observer' }}</div>
                 <div class="ot-home-card-desc">
                     {{ $locale === 'en'
-                        ? 'Practical guide for sky observation — naked eye, binoculars, telescope, apps and light pollution.'
-                        : 'Guide pratique pour observer le ciel — œil nu, jumelles, télescope, applications et pollution lumineuse.' }}
+                        ? 'Practical guide for sky observation : naked eye, binoculars, telescope, apps and light pollution.'
+                        : 'Guide pratique pour observer le ciel : œil nu, jumelles, télescope, applications et pollution lumineuse.' }}
                 </div>
             </div>
             <div class="ot-home-card-arrow">{{ $locale === 'en' ? 'Explore →' : 'Explorer →' }}</div>

@@ -17,7 +17,7 @@
 <div class="ot-content">
 
     <div class="ot-section">
-        <div class="ot-section-title">{{ $locale === 'en' ? 'Equipment — what you can see' : 'Équipement — ce que vous pouvez voir' }}</div>
+        <div class="ot-section-title">{{ $locale === 'en' ? 'Equipment : what you can see' : 'Équipement : ce que vous pouvez voir' }}</div>
         <div class="ot-observe-grid">
             <div class="ot-observe-card">
                 <div class="ot-observe-card-title">{{ $locale === 'en' ? 'Naked eye' : 'Œil nu' }}</div>
@@ -55,7 +55,7 @@
     </div>
 
     <div class="ot-section">
-        <div class="ot-section-title">{{ $locale === 'en' ? 'Light pollution — the Bortle scale' : 'Pollution lumineuse — l\'échelle de Bortle' }}</div>
+        <div class="ot-section-title">{{ $locale === 'en' ? 'Light pollution : the Bortle scale' : 'Pollution lumineuse : l\'échelle de Bortle' }}</div>
         <div class="ot-text" style="margin-bottom:16px;">
             <p>{{ $locale === 'en'
                 ? 'The Bortle scale rates sky darkness from 1 (perfect dark sky) to 9 (inner city). Most people live under Bortle 5–7. To see the Milky Way, you need at least Bortle 4.'
@@ -67,13 +67,13 @@
             $bortle = [
                 ['1', $locale === 'en' ? 'Zodiacal light visible, M33 direct' : 'Lumière zodiacale visible, M33 direct'],
                 ['2', $locale === 'en' ? 'Zodiacal light obvious, airglow faint' : 'Lumière zodiacale évidente, airglow faible'],
-                ['3', $locale === 'en' ? 'Rural sky — Milky Way complex structure' : 'Ciel rural — structure complexe Voie Lactée'],
-                ['4', $locale === 'en' ? 'Rural/suburban — Milky Way visible' : 'Rural/périurbain — Voie Lactée visible'],
-                ['5', $locale === 'en' ? 'Suburban — zodiacal light barely' : 'Banlieue — lumière zodiacale à peine'],
-                ['6', $locale === 'en' ? 'Bright suburban — no Milky Way' : 'Banlieue lumineuse — pas de Voie Lactée'],
+                ['3', $locale === 'en' ? 'Rural sky, Milky Way complex structure' : 'Ciel rural, structure complexe Voie Lactée'],
+                ['4', $locale === 'en' ? 'Rural/suburban, Milky Way visible' : 'Rural/périurbain, Voie Lactée visible'],
+                ['5', $locale === 'en' ? 'Suburban, zodiacal light barely' : 'Banlieue, lumière zodiacale à peine'],
+                ['6', $locale === 'en' ? 'Bright suburban, no Milky Way' : 'Banlieue lumineuse, pas de Voie Lactée'],
                 ['7', $locale === 'en' ? 'Suburban/urban transition' : 'Transition banlieue/ville'],
                 ['8', $locale === 'en' ? 'City sky' : 'Ciel de ville'],
-                ['9', $locale === 'en' ? 'Inner city — only Moon and planets' : 'Centre-ville — Lune et planètes seulement'],
+                ['9', $locale === 'en' ? 'Inner city, only Moon and planets' : 'Centre-ville, Lune et planètes seulement'],
             ];
             @endphp
             @foreach($bortle as [$num, $desc])
@@ -100,7 +100,7 @@
             <div class="ot-observe-card">
                 <div class="ot-observe-card-title">SkySafari</div>
                 <ul class="ot-observe-list">
-                    <li>{{ $locale === 'en' ? 'iOS & Android — augmented reality' : 'iOS & Android — réalité augmentée' }}</li>
+                    <li>{{ $locale === 'en' ? 'iOS & Android, augmented reality' : 'iOS & Android, réalité augmentée' }}</li>
                     <li>{{ $locale === 'en' ? 'Point phone at sky to identify objects' : 'Pointer le téléphone vers le ciel' }}</li>
                     <li>{{ $locale === 'en' ? 'ISS & satellite tracking' : 'Suivi ISS & satellites' }}</li>
                     <li>{{ $locale === 'en' ? 'Night mode (red screen)' : 'Mode nuit (écran rouge)' }}</li>
@@ -128,13 +128,13 @@
             </p>
             <p><strong>{{ $locale === 'en' ? 'Best conditions' : 'Meilleures conditions' }} :</strong>
             {{ $locale === 'en'
-                ? 'New moon nights, clear skies, low humidity, no wind (less atmospheric turbulence). Avoid nights just after rain — wait for the sky to settle. Winter skies are generally more transparent than summer ones.'
-                : 'Nuits de nouvelle lune, ciel dégagé, faible humidité, pas de vent (moins de turbulence atmosphérique). Évitez les nuits juste après la pluie — attendez que le ciel se stabilise. Les ciels d\'hiver sont généralement plus transparents que ceux d\'été.' }}
+                ? 'New moon nights, clear skies, low humidity, no wind (less atmospheric turbulence). Avoid nights just after rain and wait for the sky to settle. Winter skies are generally more transparent than summer ones.'
+                : 'Nuits de nouvelle lune, ciel dégagé, faible humidité, pas de vent (moins de turbulence atmosphérique). Évitez les nuits juste après la pluie et attendez que le ciel se stabilise. Les ciels d\'hiver sont généralement plus transparents que ceux d\'été.' }}
             </p>
             <p><strong>{{ $locale === 'en' ? 'Start simple' : 'Commencer simple' }} :</strong>
             {{ $locale === 'en'
-                ? 'Begin with the Moon, then find Venus and Jupiter — they are the brightest objects and easy to locate. Then learn 3–5 constellations. Orion in winter and the Big Dipper year-round are the best starting points.'
-                : 'Commencez par la Lune, puis repérez Vénus et Jupiter — ce sont les objets les plus brillants et faciles à localiser. Puis apprenez 3–5 constellations. Orion en hiver et la Grande Ourse toute l\'année sont les meilleurs points de départ.' }}
+                ? 'Begin with the Moon, then find Venus and Jupiter : they are the brightest objects and easy to locate. Then learn 3–5 constellations. Orion in winter and the Big Dipper year-round are the best starting points.'
+                : 'Commencez par la Lune, puis repérez Vénus et Jupiter : ce sont les objets les plus brillants et faciles à localiser. Puis apprenez 3 à 5 constellations. Orion en hiver et la Grande Ourse toute l\'année sont les meilleurs points de départ.' }}
             </p>
         </div>
     </div>

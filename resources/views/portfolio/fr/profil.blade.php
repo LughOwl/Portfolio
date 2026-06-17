@@ -1,7 +1,7 @@
 @extends('layouts.portfolio')
 
 @section('title', 'Profil — Nicolas BISAGA')
-@section('meta_description', 'Profil de Nicolas BISAGA — étudiant en informatique, futur SOC Analyst, passionné de cybersécurité.')
+@section('meta_description', 'Profil de Nicolas BISAGA : étudiant en informatique, futur SOC Analyst, passionné de cybersécurité.')
 
 @section('content')
 <div class="container">

@@ -28,7 +28,7 @@
         </p>
         <p>
             By combining these two elements, Lugh-Owl becomes an invitation to explore the
-            philosophical and metaphysical dimensions of existence — a space where the light
+            philosophical and metaphysical dimensions of existence, a space where the light
             of reason and the depth of thought meet.
         </p>
 

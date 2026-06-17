@@ -35,8 +35,8 @@ $constellations = [
         'season_class' => 'hiver',
         'stars' => 'Rigel (β), Bételgeuse (α), Bellatrix (γ)',
         'myth' => $locale === 'en'
-            ? 'The great hunter of Greek mythology, placed in the sky by Zeus after his death. His belt of three stars — Alnitak, Alnilam, Mintaka — is one of the most recognisable patterns in the sky.'
-            : 'Le grand chasseur de la mythologie grecque, placé dans le ciel par Zeus après sa mort. Sa ceinture de trois étoiles — Alnitak, Alnilam, Mintaka — est l\'un des motifs les plus reconnaissables du ciel.',
+            ? 'The great hunter of Greek mythology, placed in the sky by Zeus after his death. His belt of three stars (Alnitak, Alnilam, Mintaka) is one of the most recognisable patterns in the sky.'
+            : 'Le grand chasseur de la mythologie grecque, placé dans le ciel par Zeus après sa mort. Sa ceinture de trois étoiles (Alnitak, Alnilam, Mintaka) est l\'un des motifs les plus reconnaissables du ciel.',
         'featured' => false,
     ],
     [
@@ -55,8 +55,8 @@ $constellations = [
         'season_class' => 'circompolaire',
         'stars' => 'Polaris (α) — Étoile polaire',
         'myth' => $locale === 'en'
-            ? 'Son of Callisto, Arcas was also transformed into a bear and placed beside his mother in the sky. Polaris, at the tip of its tail, marks the North Pole — it barely moves in the sky.'
-            : 'Fils de Callisto, Arcas fut également transformé en ours et placé près de sa mère dans le ciel. Polaris, à l\'extrémité de sa queue, marque le pôle Nord — elle bouge à peine dans le ciel.',
+            ? 'Son of Callisto, Arcas was also transformed into a bear and placed beside his mother in the sky. Polaris, at the tip of its tail, marks the North Pole and barely moves in the sky.'
+            : 'Fils de Callisto, Arcas fut également transformé en ours et placé près de sa mère dans le ciel. Polaris, à l\'extrémité de sa queue, marque le pôle Nord et bouge à peine dans le ciel.',
         'featured' => false,
     ],
     [
@@ -75,8 +75,8 @@ $constellations = [
         'season_class' => 'ete',
         'stars' => 'Antarès (α), Shaula (λ), Graffias (β)',
         'myth' => $locale === 'en'
-            ? 'The scorpion sent by Gaia to kill Orion. The two are placed on opposite sides of the sky so they never appear together — when Scorpius rises, Orion sets.'
-            : 'Le scorpion envoyé par Gaïa pour tuer Orion. Les deux sont placés de part et d\'autre du ciel pour ne jamais apparaître ensemble — quand le Scorpion se lève, Orion se couche.',
+            ? 'The scorpion sent by Gaia to kill Orion. The two are placed on opposite sides of the sky so they never appear together : when Scorpius rises, Orion sets.'
+            : 'Le scorpion envoyé par Gaïa pour tuer Orion. Les deux sont placés de part et d\'autre du ciel pour ne jamais apparaître ensemble : quand le Scorpion se lève, Orion se couche.',
         'featured' => false,
     ],
     [
@@ -85,8 +85,8 @@ $constellations = [
         'season_class' => 'printemps',
         'stars' => 'Régulus (α), Dénébola (β), Algieba (γ)',
         'myth' => $locale === 'en'
-            ? 'The Nemean Lion, first labour of Heracles. Its hide was impervious to mortal weapons — Heracles strangled it and wore its skin as armour. Zeus placed it in the sky to honour its strength.'
-            : 'Le lion de Némée, premier travail d\'Héraclès. Sa peau était invulnérable aux armes mortelles — Héraclès l\'étrangla et porta sa peau comme armure. Zeus le plaça dans le ciel en hommage à sa force.',
+            ? 'The Nemean Lion, first labour of Heracles. Its hide was impervious to mortal weapons : Heracles strangled it and wore its skin as armour. Zeus placed it in the sky to honour its strength.'
+            : 'Le lion de Némée, premier travail d\'Héraclès. Sa peau était invulnérable aux armes mortelles : Héraclès l\'étrangla et porta sa peau comme armure. Zeus le plaça dans le ciel en hommage à sa force.',
         'featured' => false,
     ],
     [
@@ -105,8 +105,8 @@ $constellations = [
         'season_class' => 'ete',
         'stars' => 'Déneb (α), Sadr (γ), Albireo (β)',
         'myth' => $locale === 'en'
-            ? 'Zeus transformed into a swan to seduce Leda, or alternatively Orpheus metamorphosed into a swan after his death. Deneb is one of the most luminous stars visible to the naked eye — 200,000 times the Sun.'
-            : 'Zeus transformé en cygne pour séduire Léda, ou Orphée métamorphosé en cygne après sa mort. Déneb est l\'une des étoiles les plus lumineuses visibles à l\'œil nu — 200 000 fois le Soleil.',
+            ? 'Zeus transformed into a swan to seduce Leda, or alternatively Orpheus metamorphosed into a swan after his death. Deneb is one of the most luminous stars visible to the naked eye, some 200,000 times the luminosity of the Sun.'
+            : 'Zeus transformé en cygne pour séduire Léda, ou Orphée métamorphosé en cygne après sa mort. Déneb est l\'une des étoiles les plus lumineuses visibles à l\'œil nu, environ 200 000 fois plus lumineuse que le Soleil.',
         'featured' => false,
     ],
     [
@@ -135,8 +135,8 @@ $constellations = [
         'season_class' => 'hiver',
         'stars' => 'Mirfak (α), Algol (β)',
         'myth' => $locale === 'en'
-            ? 'Hero who slew Medusa and freed Andromeda. Algol, "the Demon Star", represents the blinking eye of Medusa — it is an eclipsing binary that dims regularly, frightening ancient observers.'
-            : 'Héros qui tua Méduse et libéra Andromède. Algol, "l\'étoile du démon", représente l\'œil clignotant de Méduse — c\'est une binaire à éclipses qui s\'assombrit régulièrement, effrayant les anciens observateurs.',
+            ? 'Hero who slew Medusa and freed Andromeda. Algol, "the Demon Star", represents the blinking eye of Medusa. It is an eclipsing binary that dims regularly, which frightened ancient observers.'
+            : 'Héros qui tua Méduse et libéra Andromède. Algol, "l\'étoile du démon", représente l\'œil clignotant de Méduse. C\'est une binaire à éclipses qui s\'assombrit régulièrement, ce qui effrayait les anciens observateurs.',
         'featured' => false,
     ],
 ];
