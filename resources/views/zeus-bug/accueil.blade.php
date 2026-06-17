@@ -9,7 +9,7 @@
 @endphp
 
 <div class="zb-page-hero">
-    <div class="zb-page-cat">{{ $locale === 'en' ? 'Tech — Coding — Projects' : 'Tech — Code — Projets' }}</div>
+    <div class="zb-page-cat">{{ $locale === 'en' ? 'Tech · Coding · Projects' : 'Tech · Code · Projets' }}</div>
     <h1 class="zb-page-title">Zeus-Bug</h1>
     <p class="zb-page-intro">
         {{ $locale === 'en'

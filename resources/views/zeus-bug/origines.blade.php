@@ -20,8 +20,8 @@
         <div class="zb-section-title">{{ $locale === 'en' ? 'Before computers' : 'Avant les ordinateurs' }}</div>
         <div class="zb-text">
             <p>{{ $locale === 'en'
-                ? 'The word "bug" to describe a technical defect is older than computing itself. As early as 1878, Thomas Edison wrote in a letter: "It has been just so in all of my inventions. The first step is an intuition, and comes with a burst, then difficulties arise — this thing gives out and [it is] then that Bugs — as such little faults and difficulties are called — show themselves." The word was already in common use among 19th-century engineers to mean a hidden fault in a machine.'
-                : 'Le mot « bug » pour désigner un défaut technique est antérieur à l\'informatique. Dès 1878, Thomas Edison écrivait dans une lettre : « Il en a toujours été ainsi dans toutes mes inventions. La première étape est une intuition, et vient en un élan, puis les difficultés surgissent — et c\'est alors que les Bugs — comme on appelle ces petites pannes et difficultés — se manifestent. » Le mot était déjà d\'usage courant chez les ingénieurs du XIXe siècle pour désigner une défaillance cachée dans une machine.' }}
+                ? 'The word "bug" to describe a technical defect is older than computing itself. As early as 1878, Thomas Edison described in a letter how, once an invention seemed to come together, difficulties would arise and Bugs, as he called these little faults and failures, would show themselves. The word was already in common use among 19th-century engineers to mean a hidden fault in a machine.'
+                : 'Le mot « bug » pour désigner un défaut technique est antérieur à l\'informatique. Dès 1878, Thomas Edison décrivait dans une lettre comment, une fois qu\'une invention semblait aboutir, les difficultés surgissaient et les Bugs, comme il appelait ces petites pannes et difficultés, se manifestaient. Le mot était déjà d\'usage courant chez les ingénieurs du XIXe siècle pour désigner une défaillance cachée dans une machine.' }}
             </p>
         </div>
     </div>

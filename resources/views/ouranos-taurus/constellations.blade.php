@@ -53,7 +53,7 @@ $constellations = [
         'name' => 'Petite Ourse', 'name_en' => 'Ursa Minor', 'latin' => 'Ursa Minor',
         'season' => 'circompolaire', 'season_en' => 'circumpolar',
         'season_class' => 'circompolaire',
-        'stars' => 'Polaris (α) — Étoile polaire',
+        'stars' => 'Polaris (α), étoile polaire',
         'myth' => $locale === 'en'
             ? 'Son of Callisto, Arcas was also transformed into a bear and placed beside his mother in the sky. Polaris, at the tip of its tail, marks the North Pole and barely moves in the sky.'
             : 'Fils de Callisto, Arcas fut également transformé en ours et placé près de sa mère dans le ciel. Polaris, à l\'extrémité de sa queue, marque le pôle Nord et bouge à peine dans le ciel.',

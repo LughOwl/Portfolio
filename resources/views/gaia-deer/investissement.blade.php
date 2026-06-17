@@ -14,12 +14,12 @@
         @if($locale === 'en')
         <h1 class="gd-page-title">Make your money work.</h1>
         <p class="gd-page-intro">
-            Money that sits idle in a bank account loses value every year to inflation. Investing is not speculation — it is the rational decision to put your savings to work over time. Here is how I think about it, and what I actually do.
+            Money that sits idle in a bank account loses value every year to inflation. Investing is not speculation: it is the rational decision to put your savings to work over time. Here is how I think about it, and what I actually do.
         </p>
         @else
         <h1 class="gd-page-title">Faire travailler son argent.</h1>
         <p class="gd-page-intro">
-            L'argent qui dort sur un compte bancaire perd de la valeur chaque année à cause de l'inflation. Investir n'est pas spéculer — c'est la décision rationnelle de mettre ses économies au travail dans le temps. Voici comment j'y pense, et ce que je fais concrètement.
+            L'argent qui dort sur un compte bancaire perd de la valeur chaque année à cause de l'inflation. Investir n'est pas spéculer : c'est la décision rationnelle de mettre ses économies au travail dans le temps. Voici comment j'y pense, et ce que je fais concrètement.
         </p>
         @endif
         <p class="gd-disclaimer">
