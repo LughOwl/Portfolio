@@ -84,17 +84,19 @@
 
     <footer class="zb-footer">
         <div class="zb-f-identity">
-            <img src="/assets/Zeus-Bug/1.logo.png" width="48" alt="Logo Zeus-Bug"
+            <img src="/assets/Zeus-Bug/1.logo.png" width="56" alt="Logo Zeus-Bug"
                  onerror="this.style.display='none'">
             <div class="zb-f-name">Zeus-<span>Bug</span></div>
+            <div class="zb-f-sep">✦</div>
         </div>
         <nav class="zb-f-links">
-            <a href="{{ $zbAccueil }}">{{ $isEn ? 'Articles' : 'Articles' }}</a>
+            <a href="{{ $zbAccueil }}">Articles</a>
             <a href="{{ $zbOrigines }}">{{ $isEn ? 'Origins' : 'Origines' }}</a>
-            <a href="{{ $zbLegal }}">{{ $isEn ? 'Legal Notice' : 'Mentions légales' }}</a>
+            <a href="{{ $zbLegal }}">{{ $isEn ? 'Legal notice' : 'Mentions légales' }}</a>
+            <a href="{{ route($isEn ? 'en.zeus-bug.plan' : 'fr.zeus-bug.plan') }}">{{ $isEn ? 'Sitemap' : 'Plan du site' }}</a>
             <a href="{{ $mainSite }}">{{ $isEn ? 'Main website' : 'Site principal' }}</a>
         </nav>
-        <div class="zb-f-copy">© Zeus-Bug · Nicolas BISAGA</div>
+        <div class="zb-f-copy">{{ $isEn ? 'All rights reserved' : 'Tous droits réservés' }} © Zeus-Bug &nbsp;·&nbsp; 2025 – 2026</div>
     </footer>
 
 </body>

@@ -97,9 +97,10 @@
 
     <footer class="ot-footer">
         <div class="ot-f-identity">
-            <img src="/assets/Ouranos-Taurus/1.logo.png" width="48" alt="Logo Ouranos-Taurus"
+            <img src="/assets/Ouranos-Taurus/1.logo.png" width="56" alt="Logo Ouranos-Taurus"
                  onerror="this.style.display='none'">
             <div class="ot-f-name">Ouranos-<span>Taurus</span></div>
+            <div class="ot-f-sep">✦</div>
         </div>
         <nav class="ot-f-links">
             <a href="{{ $otPlanetes }}">{{ $isEn ? 'Planets' : 'Planètes' }}</a>
@@ -108,10 +109,10 @@
             <a href="{{ $otMyth }}">{{ $isEn ? 'Mythology' : 'Mythologie' }}</a>
             <a href="{{ $otObserve }}">{{ $isEn ? 'Observe' : 'Observer' }}</a>
             <a href="{{ $otOrigines }}">{{ $isEn ? 'Origins' : 'Origines' }}</a>
-            <a href="{{ $otLegal }}">{{ $isEn ? 'Legal Notice' : 'Mentions légales' }}</a>
+            <a href="{{ $otLegal }}">{{ $isEn ? 'Legal notice' : 'Mentions légales' }}</a>
             <a href="{{ $mainSite }}">{{ $isEn ? 'Main website' : 'Site principal' }}</a>
         </nav>
-        <div class="ot-f-copy">© Ouranos-Taurus · 2024 – 2026</div>
+        <div class="ot-f-copy">{{ $isEn ? 'All rights reserved' : 'Tous droits réservés' }} © Ouranos-Taurus &nbsp;·&nbsp; 2024 – 2026</div>
     </footer>
 
 </body>

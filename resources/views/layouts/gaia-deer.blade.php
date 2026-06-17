@@ -98,13 +98,14 @@
             <img src="/assets/Gaia-Deer/1.logo.png" width="56" alt="Logo Gaïa-Deer"
                  onerror="this.style.display='none'">
             <div class="gd-f-name">Gaïa-<span>Deer</span></div>
+            <div class="gd-f-sep">✦</div>
         </div>
         <nav class="gd-f-links">
             <a href="{{ $gdSante }}">{{ $isEn ? 'Health' : 'Santé physique' }}</a>
-            <a href="{{ $gdNutr }}">{{ $isEn ? 'Nutrition' : 'Nutrition' }}</a>
+            <a href="{{ $gdNutr }}">Nutrition</a>
             <a href="{{ $gdInvest }}">{{ $isEn ? 'Investing' : 'Investissement' }}</a>
             <a href="{{ $gdOrigines }}">{{ $isEn ? 'Origins' : 'Origines' }}</a>
-            <a href="{{ $gdLegal }}">{{ $isEn ? 'Legal Notice' : 'Mentions légales' }}</a>
+            <a href="{{ $gdLegal }}">{{ $isEn ? 'Legal notice' : 'Mentions légales' }}</a>
             <a href="{{ $mainSite }}">{{ $isEn ? 'Main website' : 'Site principal' }}</a>
         </nav>
         <div class="gd-f-disclaimer">
@@ -112,7 +113,7 @@
                 ? 'The content on this site reflects my personal experience and opinions only. Nothing here constitutes professional medical or financial advice.'
                 : 'Le contenu de ce site reflète uniquement mon expérience et mes opinions personnelles. Rien ici ne constitue un conseil médical ou financier professionnel.' }}
         </div>
-        <div class="gd-f-copy">© Gaïa-Deer · 2024 – 2026</div>
+        <div class="gd-f-copy">{{ $isEn ? 'All rights reserved' : 'Tous droits réservés' }} © Gaïa-Deer &nbsp;·&nbsp; 2024 – 2026</div>
     </footer>
 
 </body>

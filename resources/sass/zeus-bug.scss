@@ -607,33 +607,87 @@ body.has-admin-bar .zb-header { top: 36px; }
 .zb-footer {
     background: $zb-bg2;
     border-top: 1px solid $zb-border;
-    padding: 48px 32px 32px;
+    padding: 52px 20px 28px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
-    text-align: center;
+    gap: 0;
+    color: $zb-muted;
+    font-size: 0.92em;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, $zb-teal, transparent);
+        opacity: 0.35;
+    }
 }
 
-.zb-f-identity { display: flex; align-items: center; gap: 12px; }
+.zb-f-identity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+
+    img { opacity: 0.85; filter: drop-shadow(0 0 10px rgba($zb-teal, 0.3)); }
+}
 
 .zb-f-name {
-    font-size: 1.1em;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: $zb-text;
-    font-family: $zb-mono;
     span { color: $zb-teal; }
+}
+
+.zb-f-sep {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    margin: 4px 0 0;
+    color: rgba($zb-border, 1.5);
+    font-size: 0.75em;
+    letter-spacing: 0.25em;
+
+    &::before, &::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: $zb-border;
+    }
 }
 
 .zb-f-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px 20px;
-    a { font-size: 0.85em; color: $zb-muted; &:hover { color: $zb-text; } }
+    gap: 6px 0;
+    margin-bottom: 28px;
+
+    a {
+        color: $zb-muted;
+        padding: 2px 16px;
+        border-right: 1px solid $zb-border;
+        line-height: 1.4;
+        transition: color 0.15s;
+        text-decoration: none;
+
+        &:hover { color: $zb-teal; }
+        &:last-child { border-right: none; }
+    }
 }
 
-.zb-f-copy { font-size: 0.75em; color: rgba($zb-muted, .5); }
+.zb-f-copy {
+    font-size: 0.8em;
+    letter-spacing: 0.04em;
+    color: rgba($zb-muted, .5);
+}
 
 // ============================================================
 // Back to top
