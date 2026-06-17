@@ -1,130 +1,114 @@
 @extends('layouts.janus-bee')
-
-@section('title', $locale === 'en' ? 'Origins & Goals - Janus-Bee' : 'Origines et Objectifs - Janus-Bee')
-
+@section('title', $locale === 'en' ? 'Origins - Janus-Bee' : 'Origines - Janus-Bee')
 @section('content')
+@php $isEn = ($locale ?? 'fr') === 'en'; @endphp
+
 <div class="content-origines">
     <div>
-        @if($locale === 'en')
-        <h1>Origins & Goals</h1>
+@if($isEn)
 
-        <h2>Welcome to my site</h2>
+        <h2>Welcome</h2>
         <p>
-            The purpose of this site is to showcase works that have marked and inspired me,
-            drawn from different media such as anime, films, books, video games
-            and short films.
+            This site is a personal catalogue of works that have marked or inspired me, drawn from
+            different media: anime, films, books, video games and short films. Not a review platform
+            or a ratings site — simply a curated collection of things worth knowing about.
         </p>
 
-        <h2>Origins of the name Janus Bee</h2>
+        <h2>Origins of the name</h2>
         <p>
-            The name Janus Bee combines two complementary symbols.
-            Janus, in Roman mythology, is the god of beginnings and transitions.
-            Depicted with two faces looking toward the past and the future,
-            he embodies accumulated experience, reflection, and the ability to anticipate.
+            Janus is the Roman god of beginnings, transitions and passageways. He is the only
+            major deity in the Roman pantheon with no Greek equivalent — he belongs entirely to Rome.
+            Depicted with two faces looking simultaneously toward the past and the future, he embodies
+            the capacity to hold both at once: what came before and what is coming next. The month of
+            January is named after him; every threshold, every door, every border crossing is under
+            his watch.
         </p>
         <p>
-            Bee evokes an organised and methodical insect, capable of building
-            a coherent structure. This image corresponds to the idea of gathering
-            and structuring content in a clear way.
+            The bee is an insect of extraordinary organisation. A hive operates without a central
+            authority: each individual follows simple local rules, and the result is a structure of
+            remarkable complexity. The bee builds, stores and communicates — it is the natural
+            metaphor for a catalogue: many things gathered, each in its place.
         </p>
         <p>
-            Janus Bee therefore represents a space where works carrying meaningful messages,
-            born from their authors' experience and reflection, are gathered and organised
-            so as to draw useful lessons for acting in the present and envisioning
-            the future more clearly.
+            Janus-Bee is the space where the past and future of culture meet, catalogued with the
+            care of a hive. Works that shaped something — a perspective, a feeling, a way of seeing
+            — gathered and organised so they can be found again.
         </p>
 
         <h2>About the content</h2>
         <p>
-            The site does not directly contain the works presented. It offers
-            information, descriptions and, where possible, links to the platforms
-            on which they are available (particularly YouTube for short films).
+            The site does not host the works themselves. It offers descriptions, filters by type and
+            genre, and links to the platforms where they are available. The goal is discovery and
+            reference, not reproduction.
         </p>
 
-        <h2>Why this project?</h2>
+        <h2>A learning project</h2>
         <p>
-            This project is above all an opportunity for me to practise and develop
-            my web development skills. It also allows me to share works that have
-            inspired me and that I hope will inspire others.
-        </p>
-        <p>Technologies used:</p>
-        <ul>
-            <li>HTML, CSS and JavaScript for structure and interface</li>
-            <li>PHP (Laravel) for data management and dynamic features</li>
-        </ul>
-
-        <h2>A remark or question?</h2>
-        <p>You can contact me:</p>
-        <ul>
-            <li>nicolas.bisaga@gmail.com</li>
-            <li><a href="{{ route('fr.sites') }}">Main website</a></li>
-        </ul>
-        <p>
-            Thank you for taking the time to visit Janus Bee. I hope this site
-            will offer you interesting works.
+            Janus-Bee is also part of my web development portfolio. Building it gave me the
+            opportunity to work on a full CRUD system, advanced filtering, multilingual content,
+            and an administration interface with Laravel.
         </p>
 
-        @else
-        <h1>Origines et Objectifs</h1>
-
-        <h2>Bienvenue sur mon site</h2>
+        <h2>Contact</h2>
         <p>
-            L'objectif du site est de proposer des œuvres qui m'ont marqué et inspiré,
-            issues de différents médias comme les animés, films, livres, jeux vidéo
-            ou encore les courts métrages.
+            You can reach me at <a href="mailto:nicola.bisaga@gmail.com">nicola.bisaga@gmail.com</a>
+            or via the <a href="{{ route('en.websites') }}">main website</a>.
         </p>
 
-        <h2>Origines du nom Janus Bee</h2>
+@else
+
+        <h2>Bienvenue</h2>
         <p>
-            Le nom Janus Bee repose sur l'association de deux symboles complémentaires.
-            Janus, dans la mythologie romaine, est le dieu des commencements et des
-            transitions. Représenté avec deux visages tournés vers le passé et l'avenir,
-            il incarne l'expérience acquise, la réflexion et la capacité à anticiper.
+            Ce site est un catalogue personnel d'œuvres qui m'ont marqué ou inspiré, issues de
+            différents médias : animés, films, livres, jeux vidéo et courts métrages. Pas une
+            plateforme de critiques ou un site de notes, simplement une collection soignée de
+            choses qui méritent d'être connues.
+        </p>
+
+        <h2>Origines du nom</h2>
+        <p>
+            Janus est le dieu romain des commencements, des transitions et des passages. Il est
+            le seul dieu majeur du panthéon romain sans équivalent grec : il appartient entièrement
+            à Rome. Représenté avec deux visages regardant simultanément vers le passé et l'avenir,
+            il incarne la capacité de tenir les deux à la fois : ce qui est advenu et ce qui vient.
+            Le mois de janvier porte son nom ; chaque seuil, chaque porte, chaque frontière est
+            sous sa garde.
         </p>
         <p>
-            Bee, qui signifie abeille en anglais, évoque un insecte organisé et
-            méthodique, capable de construire une structure cohérente. Cette image
-            correspond à l'idée de rassembler et de structurer des contenus de manière claire.
+            L'abeille est un insecte d'une organisation extraordinaire. Une ruche fonctionne sans
+            autorité centrale : chaque individu suit des règles locales simples, et le résultat est
+            une structure d'une complexité remarquable. L'abeille construit, stocke et communique :
+            c'est la métaphore naturelle d'un catalogue, de nombreuses choses rassemblées,
+            chacune à sa place.
         </p>
         <p>
-            Janus Bee représente ainsi un espace où des œuvres porteuses de messages,
-            issues de l'expérience et de la réflexion de leurs auteurs, sont réunies et
-            organisées afin d'en tirer des enseignements utiles pour agir dans le
-            présent et envisager l'avenir de façon plus lucide.
+            Janus-Bee est l'espace où le passé et l'avenir de la culture se rencontrent, catalogués
+            avec le soin d'une ruche. Des œuvres qui ont façonné quelque chose : une perspective,
+            un sentiment, une façon de voir, rassemblées et organisées pour qu'on puisse les
+            retrouver.
         </p>
 
         <h2>À propos du contenu</h2>
         <p>
-            Le site ne contient pas directement les œuvres présentées. Il propose
-            plutôt des informations, des descriptions et, lorsque c'est possible,
-            des liens vers les plateformes sur lesquelles elles sont disponibles
-            (notamment youtube pour les courts métrages).
+            Le site n'héberge pas les œuvres elles-mêmes. Il propose des descriptions, des filtres
+            par type et genre, et des liens vers les plateformes où elles sont disponibles.
+            L'objectif est la découverte et la référence, pas la reproduction.
         </p>
 
-        <h2>Pourquoi ce projet ?</h2>
+        <h2>Un projet d'apprentissage</h2>
         <p>
-            Ce projet est avant tout une occasion pour moi de mettre en pratique et de
-            développer mes compétences en développement web. Il me permet également
-            de partager des œuvres qui m'ont inspiré et qui, je l'espère, pourront
-            inspirer d'autres personnes.
+            Janus-Bee fait aussi partie de mon portfolio de développement web. Le construire m'a
+            permis de travailler sur un système CRUD complet, un filtrage avancé, du contenu
+            multilingue, et une interface d'administration avec Laravel.
         </p>
-        <p>Pour sa réalisation, j'ai utilisé plusieurs technologies :</p>
-        <ul>
-            <li>HTML, CSS et JavaScript pour la structure et l'interface</li>
-            <li>PHP (Laravel) pour la gestion des données et les fonctionnalités dynamiques</li>
-        </ul>
 
-        <h2>Une remarque ou une question ?</h2>
-        <p>Vous pouvez me contacter :</p>
-        <ul>
-            <li>nicolas.bisaga@gmail.com</li>
-            <li><a href="{{ route('fr.sites') }}">Site web principal</a></li>
-        </ul>
+        <h2>Contact</h2>
         <p>
-            Merci de prendre le temps de visiter Janus Bee, et j'espère que ce site
-            saura vous proposer des œuvres intéressantes.
+            Vous pouvez me contacter à <a href="mailto:nicola.bisaga@gmail.com">nicola.bisaga@gmail.com</a>
+            ou via le <a href="{{ route('fr.sites') }}">site principal</a>.
         </p>
-        @endif
+
+@endif
     </div>
 </div>
 @endsection

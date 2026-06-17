@@ -18,7 +18,7 @@ class PortfolioController extends Controller
     ];
 
     private const CONSTRUCTION_PROJECTS = [
-        'inari-fox', 'bragi-bird', 'gaia-deer', 'zeus-bug', 'ouranos-taurus',
+        'gaia-deer', 'zeus-bug', 'ouranos-taurus',
     ];
 
     // Pages avec une vue unifiée (sans sous-dossier fr/en)

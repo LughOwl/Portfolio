@@ -42,6 +42,7 @@ a:hover { color: $zb-text; }
     top: 0;
     z-index: 200;
     height: 36px;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
     background: $zb-bg;
     border-bottom: 1px solid rgba($zb-teal, .2);
     display: flex;
@@ -779,6 +780,33 @@ body.has-admin-bar .zb-header { top: 36px; }
     z-index: 50;
     &.visible { opacity: 1; pointer-events: auto; }
     &:hover { background: rgba($zb-teal, .25); }
+}
+
+// ============================================================
+// Prose (origines, pages statiques)
+// ============================================================
+
+.zb-prose {
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba($zb-text, .88);
+    font-size: .97rem;
+    line-height: 1.8;
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $zb-teal;
+        margin: 44px 0 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid $zb-border;
+        &:first-child { margin-top: 0; }
+    }
+
+    p { margin-bottom: 16px; }
+    ul, ol { margin: 0 0 16px 20px; li { margin-bottom: 6px; } }
+    a { color: $zb-teal-h; &:hover { color: $zb-text; } }
+    strong { color: $zb-text; font-weight: 600; }
 }
 
 // ============================================================

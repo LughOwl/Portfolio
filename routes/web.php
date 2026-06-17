@@ -1,11 +1,15 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminBragiBirdController;
+use App\Http\Controllers\AdminInariFoxController;
 use App\Http\Controllers\AdminGaiaDeerController;
 use App\Http\Controllers\AdminJanusBeeController;
 use App\Http\Controllers\AdminLughOwlController;
 use App\Http\Controllers\AdminPortfolioController;
 use App\Http\Controllers\AdminZeusBugController;
+use App\Http\Controllers\BragiBirdController;
+use App\Http\Controllers\InariFoxController;
 use App\Http\Controllers\ZeusBugController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GaiaDeerController;
@@ -97,12 +101,25 @@ Route::prefix('fr')->name('fr.')->group(function () {
         Route::get('/legal',               [ZeusBugController::class, 'legal'])->name('legal');
     });
 
-    // Sites en construction
-    foreach (['inari-fox','bragi-bird'] as $project) {
-        Route::get("/{$project}", [PortfolioController::class, 'construction'])
-            ->defaults('project', $project)
-            ->name($project);
-    }
+    // Bragi Bird FR
+    Route::prefix('bragi-bird')->name('bragi-bird.')->group(function () {
+        Route::get('/',              [BragiBirdController::class, 'accueil'])->name('accueil');
+        Route::get('/morceau/{id}',  [BragiBirdController::class, 'morceau'])->name('morceau');
+        Route::get('/origines',      [BragiBirdController::class, 'origines'])->name('origines');
+        Route::get('/plan',          [BragiBirdController::class, 'plan'])->name('plan');
+        Route::get('/legal',         [BragiBirdController::class, 'legal'])->name('legal');
+    });
+
+    // Inari-Fox FR
+    Route::prefix('inari-fox')->name('inari-fox.')->group(function () {
+        Route::get('/',                  [InariFoxController::class, 'accueil'])->defaults('locale', 'fr')->name('accueil');
+        Route::get('/recettes',          [InariFoxController::class, 'recettes'])->defaults('locale', 'fr')->name('recettes');
+        Route::get('/recettes/{slug}/pdf', [InariFoxController::class, 'pdf'])->defaults('locale', 'fr')->name('recette.pdf');
+        Route::get('/recettes/{slug}',   [InariFoxController::class, 'recette'])->defaults('locale', 'fr')->name('recette');
+        Route::get('/origines',          [InariFoxController::class, 'origines'])->defaults('locale', 'fr')->name('origines');
+        Route::get('/plan',              [InariFoxController::class, 'plan'])->defaults('locale', 'fr')->name('plan');
+        Route::get('/legal',             [InariFoxController::class, 'legal'])->defaults('locale', 'fr')->name('legal');
+    });
 
     // Entrée admin FR
     Route::get('/nico-admin', fn() => auth()->check()
@@ -181,13 +198,25 @@ Route::prefix('en')->name('en.')->group(function () {
         Route::get('/legal',               [ZeusBugController::class, 'legal'])->name('legal');
     });
 
-    // Sites en construction
-    foreach (['inari-fox','bragi-bird'] as $project) {
-        Route::get("/{$project}", [PortfolioController::class, 'construction'])
-            ->defaults('project', $project)
-            ->defaults('locale', 'en')
-            ->name($project);
-    }
+    // Bragi Bird EN
+    Route::prefix('bragi-bird')->name('bragi-bird.')->group(function () {
+        Route::get('/',             [BragiBirdController::class, 'accueil'])->name('accueil');
+        Route::get('/piece/{id}',   [BragiBirdController::class, 'morceau'])->name('morceau');
+        Route::get('/origins',      [BragiBirdController::class, 'origines'])->name('origines');
+        Route::get('/sitemap',      [BragiBirdController::class, 'plan'])->name('plan');
+        Route::get('/legal',        [BragiBirdController::class, 'legal'])->name('legal');
+    });
+
+    // Inari-Fox EN
+    Route::prefix('inari-fox')->name('inari-fox.')->group(function () {
+        Route::get('/',                  [InariFoxController::class, 'accueil'])->defaults('locale', 'en')->name('accueil');
+        Route::get('/recipes',           [InariFoxController::class, 'recettes'])->defaults('locale', 'en')->name('recettes');
+        Route::get('/recipes/{slug}/pdf', [InariFoxController::class, 'pdf'])->defaults('locale', 'en')->name('recette.pdf');
+        Route::get('/recipes/{slug}',    [InariFoxController::class, 'recette'])->defaults('locale', 'en')->name('recette');
+        Route::get('/origins',           [InariFoxController::class, 'origines'])->defaults('locale', 'en')->name('origines');
+        Route::get('/sitemap',           [InariFoxController::class, 'plan'])->defaults('locale', 'en')->name('plan');
+        Route::get('/legal',             [InariFoxController::class, 'legal'])->defaults('locale', 'en')->name('legal');
+    });
 
     // Entrée admin EN
     Route::get('/nico-admin', fn() => auth()->check()
@@ -257,6 +286,50 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         Route::delete('/{id}',               [AdminZeusBugController::class, 'destroy'])->name('destroy');
         Route::post('/{id}/publie',          [AdminZeusBugController::class, 'togglePublie'])->name('publie');
         Route::post('/{id}/move',            [AdminZeusBugController::class, 'move'])->name('move');
+    });
+
+    // Bragi Bird — CRUD morceaux
+    Route::prefix('sites/bragi-bird')->name('bragi-bird.')->group(function () {
+        Route::get('/',             [AdminBragiBirdController::class, 'index'])->name('index');
+        Route::get('/create',       [AdminBragiBirdController::class, 'create'])->name('create');
+        Route::post('/',            [AdminBragiBirdController::class, 'store'])->name('store');
+        Route::get('/{id}/edit',    [AdminBragiBirdController::class, 'edit'])->name('edit');
+        Route::put('/{id}',         [AdminBragiBirdController::class, 'update'])->name('update');
+        Route::delete('/{id}',      [AdminBragiBirdController::class, 'destroy'])->name('destroy');
+        Route::post('/{id}/publie', [AdminBragiBirdController::class, 'togglePublie'])->name('publie');
+        Route::post('/{id}/move',   [AdminBragiBirdController::class, 'move'])->name('move');
+    });
+
+    // Inari-Fox — CRUD recettes + référentiel
+    Route::prefix('sites/inari-fox')->name('inari-fox.')->group(function () {
+        Route::get('/', [AdminInariFoxController::class, 'index'])->name('index');
+
+        // Recettes
+        Route::get('/recettes/create',        [AdminInariFoxController::class, 'create'])->name('recette.create');
+        Route::post('/recettes',              [AdminInariFoxController::class, 'store'])->name('recette.store');
+        Route::get('/recettes/{id}/edit',     [AdminInariFoxController::class, 'edit'])->name('recette.edit');
+        Route::put('/recettes/{id}',          [AdminInariFoxController::class, 'update'])->name('recette.update');
+        Route::delete('/recettes/{id}',       [AdminInariFoxController::class, 'destroy'])->name('recette.destroy');
+        Route::post('/recettes/{id}/publie',  [AdminInariFoxController::class, 'togglePublie'])->name('recette.publie');
+        Route::post('/recettes/{id}/vedette', [AdminInariFoxController::class, 'toggleVedette'])->name('recette.vedette');
+
+        // Référentiel — Ingrédients
+        Route::get('/ingredients',            [AdminInariFoxController::class, 'ingredients'])->name('ingredients');
+        Route::post('/ingredients',           [AdminInariFoxController::class, 'ingredientStore'])->name('ingredient.store');
+        Route::put('/ingredients/{id}',       [AdminInariFoxController::class, 'ingredientUpdate'])->name('ingredient.update');
+        Route::delete('/ingredients/{id}',    [AdminInariFoxController::class, 'ingredientDestroy'])->name('ingredient.destroy');
+
+        // Référentiel — Catégories ingrédients
+        Route::post('/categories',            [AdminInariFoxController::class, 'categorieStore'])->name('categorie.store');
+        Route::put('/categories/{id}',        [AdminInariFoxController::class, 'categorieUpdate'])->name('categorie.update');
+
+        // Référentiel — Unités
+        Route::post('/unites',                [AdminInariFoxController::class, 'uniteStore'])->name('unite.store');
+        Route::put('/unites/{id}',            [AdminInariFoxController::class, 'uniteUpdate'])->name('unite.update');
+
+        // Référentiel — Régimes
+        Route::post('/regimes',               [AdminInariFoxController::class, 'regimeStore'])->name('regime.store');
+        Route::put('/regimes/{id}',           [AdminInariFoxController::class, 'regimeUpdate'])->name('regime.update');
     });
 
     // Autres sites (placeholder)

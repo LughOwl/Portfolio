@@ -1,0 +1,1127 @@
+@use 'sass:color';
+
+// ============================================================
+// Inari Fox — Dark warm theme (vermilion & amber)
+// ============================================================
+
+$if-bg:     #0d0707;
+$if-bg2:    #150c0c;
+$if-bg3:    #1e1313;
+$if-border: rgba(200, 0, 0, 0.15);
+$if-red:    #c80000;
+$if-red-h:  #e84040;
+$if-amber:  #e07820;
+$if-text:   #f0e6e0;
+$if-muted:  #7a5a5a;
+$if-sans:   'Inter', 'Segoe UI', system-ui, sans-serif;
+
+// ============================================================
+// Reset & base
+// ============================================================
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: $if-bg;
+    color: $if-text;
+    font-family: $if-sans;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: $if-red-h; text-decoration: none; }
+a:hover { color: $if-text; }
+
+// ============================================================
+// Admin bar
+// ============================================================
+
+.if-admin-bar {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    height: 36px;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background: $if-bg;
+    border-bottom: 1px solid rgba($if-red, .2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 0.72em;
+    gap: 12px;
+}
+
+.if-admin-left, .if-admin-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.if-admin-label {
+    color: $if-red;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+.if-admin-link {
+    color: $if-muted;
+    text-decoration: none;
+    padding: 2px 10px;
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 5px;
+    transition: color .15s, border-color .15s;
+    &:hover { color: $if-text; border-color: rgba($if-red, .35); }
+}
+
+.if-admin-user { color: color.adjust($if-muted, $lightness: -10%); }
+
+.if-admin-hide-sm { display: inline; }
+
+.if-admin-logout {
+    background: none;
+    border: none;
+    color: color.adjust($if-muted, $lightness: -10%);
+    font-family: inherit;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 0;
+    &:hover { color: $if-text; }
+}
+
+@media (max-width: 600px) {
+    .if-admin-hide-sm { display: none; }
+    .if-admin-bar { padding: 0 12px; gap: 8px; }
+    .if-admin-left, .if-admin-right { gap: 8px; }
+}
+
+// ============================================================
+// Header
+// ============================================================
+
+.if-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 0 32px;
+    gap: 20px;
+    height: 60px;
+    background: $if-bg;
+    border-bottom: 1px solid $if-border;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    .has-admin-bar & { top: 36px; }
+}
+
+.if-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: $if-text;
+    &:hover { color: $if-red-h; }
+}
+
+.if-logo { display: block; }
+
+.if-brand-text {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    color: $if-text;
+    em {
+        font-style: italic;
+        color: $if-red;
+    }
+}
+
+.if-nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.if-nav-link {
+    color: $if-muted;
+    font-size: .9rem;
+    font-weight: 500;
+    letter-spacing: .02em;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: color .2s, border-color .2s;
+    &:hover, &.active {
+        color: $if-text;
+        border-bottom-color: $if-red;
+    }
+}
+
+.if-nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.if-lang {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+}
+
+.if-lang-active { color: $if-red; }
+.if-lang-sep { color: $if-muted; }
+.if-lang-off { color: $if-muted; &:hover { color: $if-text; } }
+
+// ============================================================
+// Main
+// ============================================================
+
+.if-main {
+    min-height: calc(100vh - 60px - 180px);
+}
+
+// ============================================================
+// Content wrappers
+// ============================================================
+
+.if-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px 64px;
+}
+
+.if-content-narrow { max-width: 700px; }
+
+// ============================================================
+// Prose (origines, pages statiques)
+// ============================================================
+
+.if-prose {
+    color: rgba($if-text, .88);
+    font-size: .97rem;
+    line-height: 1.8;
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $if-red;
+        margin: 44px 0 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid $if-border;
+        &:first-child { margin-top: 0; }
+    }
+
+    p { margin-bottom: 16px; }
+    ul, ol { margin: 0 0 16px 20px; li { margin-bottom: 6px; } }
+    a { color: $if-red-h; &:hover { color: $if-text; } }
+    em { color: $if-red; font-style: italic; }
+    strong { color: $if-text; font-weight: 600; }
+}
+
+// ============================================================
+// Back to top
+// ============================================================
+
+#back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 38px;
+    height: 38px;
+    background: $if-bg2;
+    border: 1px solid $if-border;
+    color: $if-muted;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s;
+    z-index: 50;
+    &.visible { opacity: 1; pointer-events: auto; }
+    &:hover { color: $if-text; border-color: rgba($if-red, .4); }
+}
+
+// ============================================================
+// Footer
+// ============================================================
+
+.if-footer {
+    background: $if-bg2;
+    border-top: 1px solid $if-border;
+    padding: 52px 20px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    color: $if-muted;
+    font-size: 0.92em;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, $if-red, transparent);
+        opacity: 0.35;
+    }
+}
+
+.if-f-identity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    img { opacity: 0.85; filter: drop-shadow(0 0 10px rgba($if-red, 0.3)); }
+}
+
+.if-f-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $if-text;
+    span { color: $if-red; }
+}
+
+.if-f-sep {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    margin: 4px 0 0;
+    color: rgba($if-border, 1.5);
+    font-size: 0.75em;
+    letter-spacing: 0.25em;
+
+    &::before, &::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: $if-border;
+    }
+}
+
+.if-f-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 0;
+    margin-bottom: 28px;
+
+    a {
+        color: $if-muted;
+        padding: 2px 16px;
+        border-right: 1px solid $if-border;
+        line-height: 1.4;
+        transition: color 0.15s;
+        text-decoration: none;
+        &:hover { color: $if-red; }
+        &:last-child { border-right: none; }
+    }
+}
+
+.if-f-copy {
+    font-size: 0.8em;
+    letter-spacing: 0.04em;
+    color: rgba($if-muted, .5);
+}
+
+// ============================================================
+// Hero (accueil)
+// ============================================================
+
+.if-hero {
+    background: linear-gradient(180deg, $if-bg2 0%, $if-bg 100%);
+    border-bottom: 1px solid $if-border;
+    padding: 72px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, $if-red, transparent);
+        opacity: 0.5;
+    }
+}
+
+.if-hero-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.if-hero-logo {
+    opacity: .75;
+    filter: drop-shadow(0 0 20px rgba($if-red, 0.3));
+}
+
+.if-hero-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: $if-text;
+    em {
+        font-style: italic;
+        color: $if-red;
+    }
+}
+
+.if-hero-sub {
+    color: rgba($if-text, .6);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 440px;
+}
+
+.if-hero-cta {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 28px;
+    background: $if-red;
+    color: $if-text;
+    font-weight: 600;
+    font-size: .95rem;
+    border-radius: 5px;
+    letter-spacing: .02em;
+    transition: background .2s, transform .15s;
+    &:hover { background: $if-red-h; color: $if-text; transform: translateY(-1px); }
+}
+
+// ============================================================
+// Sections (accueil)
+// ============================================================
+
+.if-section {
+    padding: 52px 0;
+}
+
+.if-section--alt {
+    background: $if-bg2;
+    border-top: 1px solid $if-border;
+    border-bottom: 1px solid $if-border;
+}
+
+.if-section-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: $if-text;
+    margin-bottom: 28px;
+    letter-spacing: -.01em;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 36px;
+        height: 2px;
+        background: $if-red;
+        margin-top: 8px;
+        opacity: .7;
+    }
+}
+
+.if-section-cta {
+    text-align: center;
+    margin-top: 32px;
+}
+
+// ============================================================
+// Boutons
+// ============================================================
+
+.if-btn-outline {
+    display: inline-block;
+    padding: 9px 22px;
+    border: 1px solid rgba($if-red, .4);
+    color: $if-red-h;
+    font-size: .88rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: border-color .2s, color .2s, background .2s;
+    text-decoration: none;
+    &:hover {
+        border-color: $if-red;
+        background: rgba($if-red, .05);
+        color: $if-text;
+    }
+}
+
+// ============================================================
+// Cartes recettes (grille)
+// ============================================================
+
+.if-recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.if-recipe-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.if-recipe-card {
+    display: flex;
+    flex-direction: column;
+    background: $if-bg2;
+    border: 1px solid $if-border;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+
+    &:hover {
+        border-color: rgba($if-red, .35);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,.35);
+        color: $if-text;
+    }
+}
+
+.if-rc-photo {
+    height: 180px;
+    background: $if-bg3;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform .3s;
+    }
+
+    .if-recipe-card:hover & img { transform: scale(1.03); }
+}
+
+.if-rc-no-photo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    color: rgba($if-muted, .3);
+}
+
+.if-rc-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: .7rem;
+    padding: 3px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    letter-spacing: .03em;
+
+    &--vedette {
+        background: $if-red;
+        color: #fff;
+    }
+}
+
+.if-rc-body {
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+.if-rc-cat {
+    font-size: .72rem;
+    color: $if-red;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+}
+
+.if-rc-title {
+    font-size: .97rem;
+    font-weight: 600;
+    color: $if-text;
+    line-height: 1.4;
+}
+
+.if-rc-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.if-rc-diff {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 3px;
+
+    &--facile    { background: rgba(39,174,96,.12); color: #27ae60; }
+    &--moyen     { background: rgba(230,126,34,.12); color: #e67e22; }
+    &--difficile { background: rgba(192,57,43,.12);  color: #c0392b; }
+}
+
+.if-rc-time {
+    font-size: .75rem;
+    color: $if-muted;
+}
+
+.if-rc-regimes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.if-rc-regime {
+    font-size: .68rem;
+    background: rgba($if-red, .07);
+    color: rgba($if-text, .6);
+    border-radius: 3px;
+    padding: 1px 5px;
+}
+
+// ============================================================
+// Page en-tête (explorer)
+// ============================================================
+
+.if-page-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 32px 0 24px;
+}
+
+.if-page-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: $if-text;
+    letter-spacing: -.02em;
+}
+
+.if-page-count {
+    font-size: .85rem;
+    color: $if-muted;
+}
+
+// ============================================================
+// Filtres
+// ============================================================
+
+.if-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-end;
+    padding: 16px 20px;
+    background: $if-bg2;
+    border: 1px solid $if-border;
+    border-radius: 6px;
+    margin-bottom: 28px;
+}
+
+.if-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 150px;
+}
+
+.if-filter-group--search {
+    min-width: 200px;
+    flex: 1;
+}
+
+.if-filter-group--reset {
+    min-width: auto;
+    justify-content: flex-end;
+}
+
+.if-filter-label {
+    font-size: .72rem;
+    font-weight: 600;
+    color: $if-muted;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.if-filter-select, .if-filter-input {
+    background: $if-bg3;
+    border: 1px solid $if-border;
+    color: $if-text;
+    font-family: $if-sans;
+    font-size: .85rem;
+    padding: 6px 10px;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color .15s;
+    width: 100%;
+
+    &:focus { border-color: rgba($if-red, .4); }
+}
+
+.if-filter-search {
+    display: flex;
+    gap: 0;
+    .if-filter-input { border-radius: 4px 0 0 4px; border-right: none; }
+}
+
+.if-filter-btn {
+    background: rgba($if-red, .15);
+    border: 1px solid $if-border;
+    border-left: none;
+    color: $if-red-h;
+    padding: 6px 12px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: .9rem;
+    transition: background .15s;
+    &:hover { background: rgba($if-red, .25); }
+}
+
+.if-filter-reset {
+    font-size: .8rem;
+    color: $if-muted;
+    text-decoration: none;
+    padding: 6px 0;
+    transition: color .15s;
+    white-space: nowrap;
+    &:hover { color: $if-text; }
+}
+
+// ============================================================
+// État vide
+// ============================================================
+
+.if-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: $if-muted;
+
+    p { font-size: .95rem; margin-bottom: 16px; }
+}
+
+// ============================================================
+// Pagination
+// ============================================================
+
+.if-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 40px;
+    padding-bottom: 12px;
+}
+
+.if-page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid $if-border;
+    border-radius: 4px;
+    color: $if-muted;
+    font-size: .85rem;
+    text-decoration: none;
+    transition: border-color .15s, color .15s;
+
+    &:hover { border-color: rgba($if-red, .4); color: $if-text; }
+
+    &--active {
+        background: $if-red;
+        border-color: $if-red;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    &--disabled {
+        opacity: .3;
+        cursor: not-allowed;
+    }
+}
+
+.if-page-ellipsis {
+    color: $if-muted;
+    width: 20px;
+    text-align: center;
+    font-size: .85rem;
+}
+
+// ============================================================
+// Fiche recette
+// ============================================================
+
+.if-recette { }
+
+.if-breadcrumb {
+    padding: 20px 0 8px;
+    a {
+        font-size: .82rem;
+        color: $if-muted;
+        text-decoration: none;
+        transition: color .15s;
+        &:hover { color: $if-text; }
+    }
+}
+
+.if-recette-header {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 40px;
+    align-items: start;
+    padding: 24px 0 40px;
+}
+
+.if-recette-photo {
+    border-radius: 8px;
+    overflow: hidden;
+    background: $if-bg2;
+    border: 1px solid $if-border;
+    aspect-ratio: 4/3;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.if-recette-no-photo {
+    height: 100%;
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: rgba($if-muted, .2);
+}
+
+.if-recette-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.if-recette-cat {
+    font-size: .75rem;
+    font-weight: 700;
+    color: $if-red;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.if-recette-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: $if-text;
+    line-height: 1.25;
+    letter-spacing: -.02em;
+}
+
+.if-recette-desc {
+    color: rgba($if-text, .65);
+    font-size: .95rem;
+    line-height: 1.65;
+}
+
+.if-recette-regimes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.if-recette-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.if-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    background: $if-bg2;
+    border: 1px solid $if-border;
+    border-radius: 6px;
+    padding: 10px 14px;
+    min-width: 80px;
+
+    &--total {
+        border-color: rgba($if-red, .2);
+        background: rgba($if-red, .04);
+    }
+}
+
+.if-stat-icon { font-size: 1rem; }
+
+.if-stat-label {
+    font-size: .65rem;
+    color: $if-muted;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-weight: 600;
+}
+
+.if-stat-value {
+    font-size: .9rem;
+    font-weight: 700;
+    color: $if-text;
+
+    &.if-rc-diff--facile    { color: #27ae60; }
+    &.if-rc-diff--moyen     { color: #e67e22; }
+    &.if-rc-diff--difficile { color: #c0392b; }
+}
+
+.if-portions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.if-portions-label {
+    font-size: .78rem;
+    font-weight: 600;
+    color: $if-muted;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.if-portions-ctrl {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid $if-border;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.if-portions-btn {
+    background: $if-bg2;
+    border: none;
+    color: $if-text;
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background .15s;
+
+    &:hover:not(:disabled) { background: rgba($if-red, .12); }
+    &:disabled { opacity: .3; cursor: default; }
+}
+
+.if-portions-val {
+    min-width: 40px;
+    text-align: center;
+    font-weight: 700;
+    font-size: .95rem;
+    color: $if-text;
+    background: $if-bg3;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid $if-border;
+    border-right: 1px solid $if-border;
+}
+
+.if-portions-hint {
+    font-size: .75rem;
+    color: $if-muted;
+    font-style: italic;
+}
+
+.if-recette-actions { margin-top: 6px; }
+
+// ── Corps recette ────────────────────────────────────────────
+
+.if-recette-body {
+    padding-bottom: 64px;
+}
+
+.if-recette-section {
+    margin-bottom: 48px;
+}
+
+.if-recette-h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $if-text;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $if-border;
+    letter-spacing: -.01em;
+
+    &::before {
+        content: '// ';
+        color: $if-red;
+        font-weight: 400;
+    }
+}
+
+.if-ingredients-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.if-ingredient-line {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba($if-border, .5);
+
+    &:last-child { border-bottom: none; }
+}
+
+.if-ingredient-qty {
+    font-weight: 700;
+    color: $if-text;
+    min-width: 90px;
+    font-size: .92rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.if-ingredient-nom {
+    color: rgba($if-text, .75);
+    font-size: .92rem;
+}
+
+.if-etapes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.if-etape {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.if-etape-num {
+    width: 44px;
+    height: 44px;
+    background: $if-red;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: .9rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.if-etape-content { }
+
+.if-etape-titre {
+    font-size: 1rem;
+    font-weight: 700;
+    color: $if-text;
+    margin-bottom: 4px;
+}
+
+.if-etape-duree {
+    font-size: .72rem;
+    color: $if-muted;
+    display: inline-block;
+    margin-bottom: 6px;
+    margin-left: 8px;
+}
+
+.if-etape-desc {
+    color: rgba($if-text, .72);
+    font-size: .92rem;
+    line-height: 1.7;
+}
+
+.if-astuces {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.if-astuce {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: $if-bg2;
+    border-left: 3px solid $if-amber;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+
+    p {
+        color: rgba($if-text, .75);
+        font-size: .92rem;
+        line-height: 1.65;
+        margin: 0;
+    }
+}
+
+.if-astuce-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+// ============================================================
+// Responsive
+// ============================================================
+
+@media (max-width: 900px) {
+    .if-recette-header {
+        grid-template-columns: 1fr;
+    }
+    .if-recipe-grid--3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .if-header { padding: 0 16px; gap: 12px; }
+    .if-main { min-height: 40vh; }
+    .if-hero { padding: 48px 16px 56px; }
+    .if-hero-title { font-size: 2rem; }
+    .if-filters { padding: 12px; gap: 8px; }
+    .if-filter-group { min-width: 140px; }
+    .if-recipe-grid { grid-template-columns: 1fr 1fr; }
+    .if-recipe-grid--3 { grid-template-columns: 1fr; }
+    .if-recette-header { gap: 20px; }
+    .if-recette-title { font-size: 1.5rem; }
+    .if-recette-stats { gap: 6px; }
+    .if-stat { min-width: 66px; padding: 8px 10px; }
+    .if-etape { grid-template-columns: 36px 1fr; gap: 12px; }
+    .if-etape-num { width: 36px; height: 36px; font-size: .8rem; }
+}
+
+@media (max-width: 420px) {
+    .if-recipe-grid { grid-template-columns: 1fr; }
+}

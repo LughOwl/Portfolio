@@ -41,6 +41,7 @@ a:hover { color: $ot-text; }
     top: 0;
     z-index: 200;
     height: 36px;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
     background: $ot-bg;
     border-bottom: 1px solid rgba($ot-purple, .2);
     display: flex;
@@ -758,6 +759,33 @@ body.has-admin-bar .ot-header { top: 36px; }
     z-index: 50;
     &.visible { opacity: 1; pointer-events: auto; }
     &:hover { background: rgba($ot-purple, .3); }
+}
+
+// ============================================================
+// Prose (origines, pages statiques)
+// ============================================================
+
+.ot-prose {
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba($ot-text, .88);
+    font-size: .97rem;
+    line-height: 1.8;
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $ot-purple;
+        margin: 44px 0 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid $ot-border;
+        &:first-child { margin-top: 0; }
+    }
+
+    p { margin-bottom: 16px; }
+    ul, ol { margin: 0 0 16px 20px; li { margin-bottom: 6px; } }
+    a { color: $ot-purple-h; &:hover { color: $ot-text; } }
+    strong { color: $ot-text; font-weight: 600; }
 }
 
 // ============================================================

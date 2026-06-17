@@ -38,14 +38,18 @@
                 $siteUrl   = route('fr.zeus-bug.accueil');
                 $siteColor = '#00f0d2';
                 $siteLabel = 'Zeus-Bug';
+            } elseif (request()->routeIs('admin.bragi-bird.*')) {
+                $siteUrl   = route('fr.bragi-bird.accueil');
+                $siteColor = '#ff8c00';
+                $siteLabel = 'Bragi-Bird';
+            } elseif (request()->routeIs('*.inari-fox.*')) {
+                $siteUrl   = route('fr.inari-fox.accueil');
+                $siteColor = '#c80000';
+                $siteLabel = 'Inari-Fox';
             } elseif (request()->is('fr/ouranos-taurus*') || request()->is('en/ouranos-taurus*')) {
                 $siteUrl   = route('fr.ouranos-taurus.accueil');
                 $siteColor = '#8b5cf6';
                 $siteLabel = 'Ouranos-Taurus';
-            } elseif ($routeSite && isset($allSites[$routeSite])) {
-                $siteUrl   = route('fr.sites');
-                $siteColor = $allSites[$routeSite]['color'];
-                $siteLabel = $allSites[$routeSite]['label'];
             } else {
                 $siteUrl   = route('fr.presentation');
                 $siteColor = '#00ff88';
@@ -101,36 +105,22 @@
             </a>
             @endforeach
 
-            {{-- Sites actifs --}}
-            <div class="sidebar-section-title"><span class="sidebar-label">Sites actifs</span></div>
+            {{-- Sites --}}
+            <div class="sidebar-section-title"><span class="sidebar-label">Sites</span></div>
             @php
             $activeSites = [
-                'janus-bee'      => ['label' => 'Janus-Bee',       'color' => '#ffdc00', 'route' => 'admin.janus-bee.index', 'routeIs' => 'admin.janus-bee.*'],
-                'lugh-owl'       => ['label' => 'Lugh-Owl',        'color' => '#0078ff', 'route' => 'admin.lugh-owl.index',  'routeIs' => 'admin.lugh-owl.*'],
-                'gaia-deer'      => ['label' => 'Gaïa-Deer',       'color' => '#00af00', 'route' => 'admin.gaia-deer.index', 'routeIs' => 'admin.gaia-deer.*'],
-                'zeus-bug'       => ['label' => 'Zeus-Bug',         'color' => '#00f0d2', 'route' => 'admin.zeus-bug.index',  'routeIs' => 'admin.zeus-bug.*'],
+                ['label' => 'Inari-Fox',      'color' => '#c80000', 'route' => 'admin.inari-fox.index',   'routeIs' => 'admin.inari-fox.*'],
+                ['label' => 'Bragi-Bird',     'color' => '#ff8c00', 'route' => 'admin.bragi-bird.index',  'routeIs' => 'admin.bragi-bird.*'],
+                ['label' => 'Janus-Bee',      'color' => '#ffdc00', 'route' => 'admin.janus-bee.index',   'routeIs' => 'admin.janus-bee.*'],
+                ['label' => 'Gaïa-Deer',      'color' => '#00af00', 'route' => 'admin.gaia-deer.index',   'routeIs' => 'admin.gaia-deer.*'],
+                ['label' => 'Zeus-Bug',        'color' => '#00f0d2', 'route' => 'admin.zeus-bug.index',    'routeIs' => 'admin.zeus-bug.*'],
+                ['label' => 'Lugh-Owl',        'color' => '#0078ff', 'route' => 'admin.lugh-owl.index',   'routeIs' => 'admin.lugh-owl.*'],
+                ['label' => 'Ouranos-Taurus',  'color' => '#8b5cf6', 'route' => 'fr.ouranos-taurus.accueil', 'routeIs' => '*.ouranos-taurus.*'],
             ];
             @endphp
             @foreach($activeSites as $info)
             <a href="{{ route($info['route']) }}" data-label="{{ $info['label'] }}"
                class="sidebar-link {{ request()->routeIs($info['routeIs']) ? 'active' : '' }}">
-                <span class="sidebar-dot" style="background:{{ $info['color'] }};"></span>
-                <span class="sidebar-label">{{ $info['label'] }}</span>
-            </a>
-            @endforeach
-
-            {{-- Sites publics sans admin --}}
-            <a href="{{ route('fr.ouranos-taurus.accueil') }}" target="_blank" data-label="Ouranos-Taurus"
-               class="sidebar-link {{ request()->routeIs('*.ouranos-taurus.*') ? 'active' : '' }}">
-                <span class="sidebar-dot" style="background:#8b5cf6;"></span>
-                <span class="sidebar-label">Ouranos-Taurus ↗</span>
-            </a>
-
-            {{-- Sites en construction --}}
-            <div class="sidebar-section-title"><span class="sidebar-label">En construction</span></div>
-            @foreach(['inari-fox'=>['label'=>'Inari-Fox','color'=>'#c80000'],'bragi-bird'=>['label'=>'Bragi-Bird','color'=>'#ff8c00']] as $key => $info)
-            <a href="{{ route('admin.site', $key) }}" data-label="{{ $info['label'] }}"
-               class="sidebar-link {{ request()->route('site') === $key ? 'active' : '' }}">
                 <span class="sidebar-dot" style="background:{{ $info['color'] }};"></span>
                 <span class="sidebar-label">{{ $info['label'] }}</span>
             </a>
@@ -151,6 +141,8 @@
         </main>
 
     </div>
+
+    @stack('scripts')
 
     <script>
     // Restaure la position de scroll après un submit de formulaire

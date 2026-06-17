@@ -32,6 +32,7 @@ body {
     z-index: 200;
     width: 100%;
     height: 36px;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
     background: #0a0a0a;
     border-bottom: 1px solid rgba(255,220,0,.2);
     display: flex;
@@ -867,13 +868,15 @@ body.has-admin-bar .nav-menu { top: 36px; }
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 15px;
     margin-bottom: 2em;
     color: var(--tx-2);
 
     div { max-width: 800px; width: 100%; }
     h1  { margin: .5em 0 1em; padding: 0; color: var(--tx); }
-    h2  { font-size: 1.3em; margin: 1.5em 0 .5em; padding: 0 0 0 .75em; border-left: 4px solid var(--jaune-bee); color: var(--tx); }
+    h2  { font-size: 1.1rem; font-weight: 600; color: var(--jaune-bee); margin: 2em 0 .6em; padding-bottom: 8px; border-bottom: 1px solid var(--bd); &:first-child { margin-top: 0; } }
     p   { margin: .75em 0; line-height: 1.7; }
+    a   { color: var(--jaune-bee); text-decoration: none; &:hover { color: var(--tx); } }
 }
 
 .content-origines ul,

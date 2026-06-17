@@ -1,43 +1,88 @@
 @extends('layouts.portfolio')
-
 @section('title', 'Sitemap — Nicolas BISAGA')
-
 @section('content')
+
 <div class="container">
     <div class="page-header">
         <h1 class="page-title"><span class="prefix">//</span> Sitemap</h1>
-        <p class="page-subtitle">$ tree . — Site structure</p>
+        <p class="page-subtitle">$ find / -type page</p>
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 800px; padding-bottom: 60px;">
-        <div class="cyber-card">
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.78em; color: var(--accent-green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">
-                // Portfolio (EN)
-            </div>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.88em;">
-                <li><a href="{{ route('en.presentation') }}" style="color: var(--accent-green);">→ Home</a></li>
-                <li><a href="{{ route('en.profil') }}" style="color: var(--accent-green);">→ Profile</a></li>
-                <li><a href="{{ route('en.parcours') }}" style="color: var(--accent-green);">→ Career</a></li>
-                <li><a href="{{ route('en.websites') }}" style="color: var(--accent-green);">→ Projects & Websites</a></li>
-                <li><a href="{{ route('en.contact') }}" style="color: var(--accent-green);">→ Contact</a></li>
-                <li><a href="{{ route('en.termsofuse') }}" style="color: var(--text-muted);">→ Terms of use</a></li>
-            </ul>
-        </div>
+    <div class="plan-content">
 
-        <div class="cyber-card">
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.78em; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">
-                // Leisure websites
-            </div>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.88em;">
-                <li><a href="{{ route('fr.janus-bee.accueil') }}" style="color: #f0a500;">→ Janus-Bee <span class="badge badge-green" style="font-size:.7em; margin-left:4px; vertical-align:middle;">Online</span></a></li>
-                <li><a href="{{ route('fr.lugh-owl.accueil') }}" style="color: #0078ff;">→ Lugh-Owl <span class="badge badge-green" style="font-size:.7em; margin-left:4px; vertical-align:middle;">Online</span></a></li>
-                <li style="color: var(--text-muted); font-size:.88em;">○ Inari-Fox — Under construction</li>
-                <li style="color: var(--text-muted); font-size:.88em;">○ Bragi-Bird — Under construction</li>
-                <li style="color: var(--text-muted); font-size:.88em;">○ Gaïa-Deer — Under construction</li>
-                <li style="color: var(--text-muted); font-size:.88em;">○ Zeus-Bug — Under construction</li>
-                <li style="color: var(--text-muted); font-size:.88em;">○ Ouranos-Taurus — Under construction</li>
-            </ul>
-        </div>
+        <h2>Portfolio</h2>
+        <ul>
+            <li><a href="{{ route('en.presentation') }}">→ Home</a></li>
+            <li><a href="{{ route('en.profil') }}">→ Profile</a></li>
+            <li><a href="{{ route('en.parcours') }}">→ Career</a></li>
+            <li><a href="{{ route('en.websites') }}">→ Websites</a></li>
+            <li><a href="{{ route('en.contact') }}">→ Contact</a></li>
+            <li><a href="{{ route('en.termsofuse') }}">→ Legal Notice</a></li>
+            <li><a href="{{ route('en.sitemap') }}">→ Sitemap</a></li>
+        </ul>
+
+        <h2>Inari-Fox</h2>
+        <ul>
+            <li><a href="{{ route('en.inari-fox.accueil') }}">→ Home</a></li>
+            <li><a href="{{ route('en.inari-fox.recettes') }}">→ Recipes</a></li>
+            <li><a href="{{ route('en.inari-fox.origines') }}">→ Origins</a></li>
+            <li><a href="{{ route('en.inari-fox.legal') }}">→ Legal Notice</a></li>
+        </ul>
+
+        <h2>Bragi-Bird</h2>
+        <ul>
+            <li><a href="{{ route('en.bragi-bird.accueil') }}">→ Home</a></li>
+            <li><a href="{{ route('en.bragi-bird.origines') }}">→ Origins</a></li>
+            <li><a href="{{ route('en.bragi-bird.legal') }}">→ Legal Notice</a></li>
+        </ul>
+
+        <h2>Janus-Bee</h2>
+        <ul>
+            <li><a href="{{ route('en.janus-bee.accueil') }}">→ Home</a></li>
+            <li><a href="{{ route('en.janus-bee.catalogue') }}">→ Catalogue</a></li>
+            <li><a href="{{ route('en.janus-bee.origines') }}">→ Origins</a></li>
+            <li><a href="{{ route('en.janus-bee.legal') }}">→ Legal Notice</a></li>
+        </ul>
+
+        <h2>Gaïa-Deer</h2>
+        <ul>
+            <li><a href="{{ route('en.gaia-deer.accueil') }}">→ Home</a></li>
+            <li><a href="{{ route('en.gaia-deer.sante') }}">→ Health</a></li>
+            <li><a href="{{ route('en.gaia-deer.nutrition') }}">→ Nutrition</a></li>
+            <li><a href="{{ route('en.gaia-deer.investissement') }}">→ Investing</a></li>
+            <li><a href="{{ route('en.gaia-deer.origines') }}">→ Origins</a></li>
+            <li><a href="{{ route('en.gaia-deer.legal') }}">→ Legal Notice</a></li>
+        </ul>
+
+        <h2>Zeus-Bug</h2>
+        <ul>
+            <li><a href="{{ route('en.zeus-bug.accueil') }}">→ Home</a></li>
+            <li><a href="{{ route('en.zeus-bug.origines') }}">→ Origins</a></li>
+            <li><a href="{{ route('en.zeus-bug.legal') }}">→ Legal Notice</a></li>
+        </ul>
+
+        <h2>Lugh-Owl</h2>
+        <ul>
+            <li><a href="{{ route('en.lugh-owl.accueil') }}">→ Home</a></li>
+            <li><a href="{{ route('en.lugh-owl.catalogue', ['cat' => 'modeles']) }}">→ Philosophical Models</a></li>
+            <li><a href="{{ route('en.lugh-owl.catalogue', ['cat' => 'idees']) }}">→ Timeless Ideas</a></li>
+            <li><a href="{{ route('en.lugh-owl.catalogue', ['cat' => 'vie']) }}">→ Life is [...]</a></li>
+            <li><a href="{{ route('en.lugh-owl.origines') }}">→ Origins</a></li>
+            <li><a href="{{ route('en.lugh-owl.legal') }}">→ Legal Notice</a></li>
+        </ul>
+
+        <h2>Ouranos-Taurus</h2>
+        <ul>
+            <li><a href="{{ route('en.ouranos-taurus.accueil') }}">→ Home</a></li>
+            <li><a href="{{ route('en.ouranos-taurus.planetes') }}">→ Planets</a></li>
+            <li><a href="{{ route('en.ouranos-taurus.constellations') }}">→ Constellations</a></li>
+            <li><a href="{{ route('en.ouranos-taurus.phenomenes') }}">→ Phenomena</a></li>
+            <li><a href="{{ route('en.ouranos-taurus.mythologie') }}">→ Mythology</a></li>
+            <li><a href="{{ route('en.ouranos-taurus.observer') }}">→ Observe</a></li>
+            <li><a href="{{ route('en.ouranos-taurus.origines') }}">→ Origins</a></li>
+            <li><a href="{{ route('en.ouranos-taurus.legal') }}">→ Legal Notice</a></li>
+        </ul>
+
     </div>
 </div>
 @endsection

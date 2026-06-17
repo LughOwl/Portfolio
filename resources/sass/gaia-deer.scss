@@ -44,6 +44,7 @@ h1, h2, h3 { color: $gd-heading; margin: 0 0 0.5em; line-height: 1.25; }
     top: 0;
     z-index: 200;
     height: 36px;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
     background: $gd-bg;
     border-bottom: 1px solid rgba($gd-green, .2);
     display: flex;
@@ -103,8 +104,7 @@ h1, h2, h3 { color: $gd-heading; margin: 0 0 0.5em; line-height: 1.25; }
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba($gd-bg, .92);
-    backdrop-filter: blur(12px);
+    background: $gd-bg;
     border-bottom: 1px solid $gd-border;
     height: 60px;
     display: flex;
@@ -743,7 +743,7 @@ h1, h2, h3 { color: $gd-heading; margin: 0 0 0.5em; line-height: 1.25; }
 .gd-static {
     max-width: 720px;
     margin: 0 auto;
-    padding: 56px 28px 80px;
+    padding: 15px 28px 80px;
 
     h1 {
         font-size: 2em;

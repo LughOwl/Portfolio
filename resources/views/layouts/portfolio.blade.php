@@ -29,7 +29,7 @@
     <div class="admin-bar" id="adminBar">
         <div class="admin-bar-left">
             <span class="admin-bar-label">// Admin</span>
-            <a href="{{ route('admin.dashboard') }}" class="admin-bar-link">Tableau de bord</a>
+            <a href="{{ route('admin.dashboard') }}" class="admin-bar-link admin-bar-hide-sm">Tableau de bord</a>
             @php
             $adminRouteMap = [
                 'fr.presentation' => 'admin.portfolio.presentation',
@@ -45,7 +45,7 @@
             @endif
         </div>
         <div class="admin-bar-right">
-            <span class="admin-bar-user">{{ auth()->user()->name }}</span>
+            <span class="admin-bar-user admin-bar-hide-sm">{{ auth()->user()->name }}</span>
             <form method="POST" action="{{ route('logout') }}" style="display:inline">
                 @csrf
                 <button type="submit" class="admin-bar-logout">Déconnexion</button>

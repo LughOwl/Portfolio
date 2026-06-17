@@ -132,9 +132,6 @@
                 @endif
             @endforeach
 
-            <div style="margin-top: 8px; padding-bottom: 60px;">
-                <a href="{{ route('en.contact') }}" class="btn btn-primary" style="font-size: 0.85em;">Contact me</a>
-            </div>
         </div>
     </div>
 </div>
