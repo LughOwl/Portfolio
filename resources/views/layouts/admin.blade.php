@@ -30,6 +30,18 @@
                 $siteUrl   = route('fr.lugh-owl.accueil');
                 $siteColor = '#0078ff';
                 $siteLabel = 'Lugh-Owl';
+            } elseif (request()->routeIs('admin.gaia-deer.*')) {
+                $siteUrl   = route('fr.gaia-deer.accueil');
+                $siteColor = '#00af00';
+                $siteLabel = 'Gaïa-Deer';
+            } elseif (request()->routeIs('admin.zeus-bug.*')) {
+                $siteUrl   = route('fr.zeus-bug.accueil');
+                $siteColor = '#00f0d2';
+                $siteLabel = 'Zeus-Bug';
+            } elseif (request()->is('fr/ouranos-taurus*') || request()->is('en/ouranos-taurus*')) {
+                $siteUrl   = route('fr.ouranos-taurus.accueil');
+                $siteColor = '#8b5cf6';
+                $siteLabel = 'Ouranos-Taurus';
             } elseif ($routeSite && isset($allSites[$routeSite])) {
                 $siteUrl   = route('fr.sites');
                 $siteColor = $allSites[$routeSite]['color'];
@@ -91,21 +103,32 @@
 
             {{-- Sites actifs --}}
             <div class="sidebar-section-title"><span class="sidebar-label">Sites actifs</span></div>
-            @foreach(['janus-bee' => ['label'=>'Janus-Bee','color'=>'#ffdc00'], 'lugh-owl' => ['label'=>'Lugh-Owl','color'=>'#0078ff']] as $key => $info)
             @php
-            $href   = $key === 'janus-bee' ? route('admin.janus-bee.index') : route('admin.lugh-owl.index');
-            $active = $key === 'janus-bee' ? request()->routeIs('admin.janus-bee.*') : request()->routeIs('admin.lugh-owl.*');
+            $activeSites = [
+                'janus-bee'      => ['label' => 'Janus-Bee',       'color' => '#ffdc00', 'route' => 'admin.janus-bee.index', 'routeIs' => 'admin.janus-bee.*'],
+                'lugh-owl'       => ['label' => 'Lugh-Owl',        'color' => '#0078ff', 'route' => 'admin.lugh-owl.index',  'routeIs' => 'admin.lugh-owl.*'],
+                'gaia-deer'      => ['label' => 'Gaïa-Deer',       'color' => '#00af00', 'route' => 'admin.gaia-deer.index', 'routeIs' => 'admin.gaia-deer.*'],
+                'zeus-bug'       => ['label' => 'Zeus-Bug',         'color' => '#00f0d2', 'route' => 'admin.zeus-bug.index',  'routeIs' => 'admin.zeus-bug.*'],
+            ];
             @endphp
-            <a href="{{ $href }}" data-label="{{ $info['label'] }}"
-               class="sidebar-link {{ $active ? 'active' : '' }}">
+            @foreach($activeSites as $info)
+            <a href="{{ route($info['route']) }}" data-label="{{ $info['label'] }}"
+               class="sidebar-link {{ request()->routeIs($info['routeIs']) ? 'active' : '' }}">
                 <span class="sidebar-dot" style="background:{{ $info['color'] }};"></span>
                 <span class="sidebar-label">{{ $info['label'] }}</span>
             </a>
             @endforeach
 
+            {{-- Sites publics sans admin --}}
+            <a href="{{ route('fr.ouranos-taurus.accueil') }}" target="_blank" data-label="Ouranos-Taurus"
+               class="sidebar-link {{ request()->routeIs('*.ouranos-taurus.*') ? 'active' : '' }}">
+                <span class="sidebar-dot" style="background:#8b5cf6;"></span>
+                <span class="sidebar-label">Ouranos-Taurus ↗</span>
+            </a>
+
             {{-- Sites en construction --}}
             <div class="sidebar-section-title"><span class="sidebar-label">En construction</span></div>
-            @foreach(['inari-fox'=>['label'=>'Inari-Fox','color'=>'#c80000'],'bragi-bird'=>['label'=>'Bragi-Bird','color'=>'#ff8c00'],'gaia-deer'=>['label'=>'Gaïa-Deer','color'=>'#00af00'],'zeus-bug'=>['label'=>'Zeus-Bug','color'=>'#00f0d2'],'ouranos-taurus'=>['label'=>'Ouranos-Taurus','color'=>'#7d00b4']] as $key => $info)
+            @foreach(['inari-fox'=>['label'=>'Inari-Fox','color'=>'#c80000'],'bragi-bird'=>['label'=>'Bragi-Bird','color'=>'#ff8c00']] as $key => $info)
             <a href="{{ route('admin.site', $key) }}" data-label="{{ $info['label'] }}"
                class="sidebar-link {{ request()->route('site') === $key ? 'active' : '' }}">
                 <span class="sidebar-dot" style="background:{{ $info['color'] }};"></span>

@@ -44,7 +44,7 @@
         <ul>
             <li><a href="{{ route('fr.inari-fox') }}">Inari-Fox</a></li>
             <li><a href="{{ route('fr.bragi-bird') }}">Bragi-Bird</a></li>
-            <li><a href="{{ route('fr.gaia-deer') }}">Gaïa-Deer</a></li>
+            <li><a href="{{ route('fr.gaia-deer.accueil') }}">Gaïa-Deer</a></li>
             <li><a href="{{ route('fr.zeus-bug') }}">Zeus-Bug</a></li>
             <li><a href="{{ route('fr.ouranos-taurus') }}">Ouranos-Taurus</a></li>
         </ul>

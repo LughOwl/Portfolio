@@ -310,11 +310,11 @@ class PortfolioData
             [
                 'nom'   => 'Gaïa-Deer',
                 'sujet' => 'Randonnée & Santé',
-                'desc'  => 'Ressources sur la randonnée, les stratégies de vie saine et le bien-être physique et mental.',
+                'desc'  => 'Réflexions personnelles sur la santé physique, la nutrition et l\'investissement à long terme.',
                 'logo'  => '/assets/Gaia-Deer/1.logo.png',
                 'color' => '#00af00',
-                'route' => 'fr.gaia-deer',
-                'etat'  => 'construction',
+                'route' => 'fr.gaia-deer.accueil',
+                'etat'  => 'ligne',
             ],
             [
                 'nom'   => 'Zeus-Bug',
@@ -322,8 +322,8 @@ class PortfolioData
                 'desc'  => "Blog technique sur l'informatique, la cybersécurité, les projets numériques et les ressources pour apprendre.",
                 'logo'  => '/assets/Zeus-Bug/1.logo.png',
                 'color' => '#00f0d2',
-                'route' => 'fr.zeus-bug',
-                'etat'  => 'construction',
+                'route' => 'fr.zeus-bug.accueil',
+                'etat'  => 'ligne',
             ],
             [
                 'nom'   => 'Lugh-Owl',
@@ -340,8 +340,8 @@ class PortfolioData
                 'desc'  => "Exploration de l'astronomie, de la physique fondamentale et de la mythologie liée aux astres et aux constellations.",
                 'logo'  => '/assets/Ouranos-Taurus/1.logo.png',
                 'color' => '#7d00b4',
-                'route' => 'fr.ouranos-taurus',
-                'etat'  => 'construction',
+                'route' => 'fr.ouranos-taurus.accueil',
+                'etat'  => 'ligne',
             ],
         ];
     }

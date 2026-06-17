@@ -1,0 +1,747 @@
+@use 'sass:color';
+
+// ============================================================
+// Gaïa-Deer — Dark nature theme
+// ============================================================
+
+$gd-bg:        #0a0f0a;
+$gd-bg2:       #101810;
+$gd-bg3:       #172017;
+$gd-border:    rgba(0, 175, 0, 0.15);
+$gd-green:     #00af00;
+$gd-green-h:   #00d400;
+$gd-green-dim: #007a00;
+$gd-text:      #d4e8d4;
+$gd-muted:     #7a9e7a;
+$gd-heading:   #e8f5e8;
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: $gd-bg;
+    color: $gd-text;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a { color: $gd-green; text-decoration: none; }
+a:hover { color: $gd-green-h; }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { color: $gd-heading; margin: 0 0 0.5em; line-height: 1.25; }
+
+// ============================================================
+// Admin bar
+// ============================================================
+
+.gd-admin-bar {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    height: 36px;
+    background: $gd-bg;
+    border-bottom: 1px solid rgba($gd-green, .2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 0.72em;
+    gap: 12px;
+}
+
+.gd-admin-left, .gd-admin-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.gd-admin-label {
+    color: $gd-green;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+.gd-admin-link {
+    color: $gd-muted;
+    text-decoration: none;
+    padding: 2px 10px;
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 5px;
+    transition: color .15s, border-color .15s;
+    &:hover { color: $gd-text; border-color: rgba($gd-green, .35); }
+}
+
+.gd-admin-user { color: color.adjust($gd-muted, $lightness: -15%); }
+
+.gd-admin-hide-sm { display: inline; }
+
+.gd-admin-logout {
+    background: none;
+    border: none;
+    color: color.adjust($gd-muted, $lightness: -15%);
+    font-family: inherit;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 0;
+    &:hover { color: $gd-text; }
+}
+
+@media (max-width: 600px) {
+    .gd-admin-hide-sm { display: none; }
+}
+
+// ============================================================
+// Header
+// ============================================================
+
+.gd-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba($gd-bg, .92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid $gd-border;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 28px;
+    gap: 24px;
+
+    .has-admin-bar & { top: 36px; }
+}
+
+.gd-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.gd-logo { width: 32px; height: 32px; object-fit: contain; }
+
+.gd-brand-text {
+    font-size: 1.15em;
+    font-weight: 700;
+    color: $gd-heading;
+    letter-spacing: .02em;
+    em { color: $gd-green; font-style: normal; }
+}
+
+.gd-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 8px;
+    flex: 1;
+}
+
+.gd-nav-link {
+    color: $gd-muted;
+    font-size: 0.88em;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 6px;
+    transition: color .15s, background .15s;
+    white-space: nowrap;
+
+    &:hover {
+        color: $gd-text;
+        background: rgba($gd-green, .08);
+    }
+
+    &.active {
+        color: $gd-green;
+        background: rgba($gd-green, .1);
+    }
+}
+
+.gd-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+}
+
+.gd-lang {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.78em;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+}
+
+.gd-lang-active { color: $gd-green; }
+.gd-lang-sep    { color: rgba($gd-green, .3); }
+.gd-lang-off    { color: $gd-muted; &:hover { color: $gd-text; } }
+
+@media (max-width: 700px) {
+    .gd-header { padding: 0 16px; gap: 12px; }
+    .gd-nav { display: none; }
+}
+
+// ============================================================
+// Main
+// ============================================================
+
+.gd-main {
+    flex: 1;
+    width: 100%;
+}
+
+// ============================================================
+// Hero (accueil)
+// ============================================================
+
+.gd-hero {
+    padding: 80px 28px 60px;
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.gd-hero-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto 28px;
+    opacity: .9;
+}
+
+.gd-hero-title {
+    font-size: clamp(2em, 5vw, 3.2em);
+    font-weight: 800;
+    color: $gd-heading;
+    margin-bottom: 16px;
+    em { color: $gd-green; font-style: normal; }
+}
+
+.gd-hero-sub {
+    font-size: 1.05em;
+    color: $gd-muted;
+    max-width: 560px;
+    margin: 0 auto 40px;
+    line-height: 1.75;
+}
+
+// ============================================================
+// Cards (accueil rubriques)
+// ============================================================
+
+.gd-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0 28px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.gd-card {
+    background: $gd-bg2;
+    border: 1px solid $gd-border;
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: transform .2s, border-color .2s, box-shadow .2s;
+
+    &:hover {
+        transform: translateY(-3px);
+        border-color: rgba($gd-green, .35);
+        box-shadow: 0 8px 32px rgba($gd-green, .08);
+    }
+}
+
+.gd-card-visual {
+    height: 160px;
+    background: $gd-bg3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid $gd-border;
+    color: rgba($gd-green, .55);
+    transition: color .2s;
+
+    .gd-card:hover & {
+        color: $gd-green;
+    }
+}
+
+.gd-card-body {
+    padding: 22px 24px 26px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.gd-card-cat {
+    font-size: 0.7em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: $gd-green;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 10px;
+}
+
+.gd-card-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: $gd-heading;
+    margin-bottom: 10px;
+}
+
+.gd-card-desc {
+    font-size: 0.88em;
+    color: $gd-muted;
+    line-height: 1.65;
+    flex: 1;
+}
+
+.gd-card-cta {
+    margin-top: 18px;
+    font-size: 0.82em;
+    font-weight: 600;
+    color: $gd-green;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+// ============================================================
+// Page rubrique — contenu
+// ============================================================
+
+.gd-page-hero {
+    padding: 56px 28px 40px;
+    border-bottom: 1px solid $gd-border;
+    background: linear-gradient(180deg, rgba($gd-green, .04) 0%, transparent 100%);
+}
+
+.gd-page-header {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.gd-page-cat {
+    font-size: 0.72em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: $gd-green;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 14px;
+}
+
+.gd-page-title {
+    font-size: clamp(1.8em, 4vw, 2.8em);
+    font-weight: 800;
+    color: $gd-heading;
+    margin-bottom: 16px;
+}
+
+.gd-page-intro {
+    font-size: 1.05em;
+    color: $gd-muted;
+    line-height: 1.75;
+    max-width: 640px;
+}
+
+.gd-disclaimer {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background: rgba($gd-green, .06);
+    border-left: 3px solid rgba($gd-green, .4);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.82em;
+    color: $gd-muted;
+    font-style: italic;
+}
+
+.gd-content {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 28px 80px;
+}
+
+.gd-section {
+    margin-bottom: 52px;
+
+    &:last-child { margin-bottom: 0; }
+}
+
+.gd-section-title {
+    font-size: 1.35em;
+    font-weight: 700;
+    color: $gd-heading;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $gd-border;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 1.1em;
+        background: $gd-green;
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+}
+
+.gd-text {
+    color: $gd-text;
+    line-height: 1.8;
+
+    p { margin: 0 0 1.1em; }
+    p:last-child { margin-bottom: 0; }
+
+    strong { color: $gd-heading; font-weight: 600; }
+
+    ul, ol {
+        margin: 0 0 1.1em;
+        padding-left: 1.4em;
+        li { margin-bottom: .35em; }
+    }
+}
+
+// ============================================================
+// Programme musculation
+// ============================================================
+
+.gd-program {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.gd-day {
+    background: $gd-bg2;
+    border: 1px solid $gd-border;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gd-day-header {
+    padding: 12px 18px;
+    background: rgba($gd-green, .08);
+    border-bottom: 1px solid $gd-border;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.gd-day-name {
+    font-weight: 700;
+    color: $gd-green;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.gd-day-focus {
+    font-size: 0.8em;
+    color: $gd-muted;
+}
+
+.gd-day-body {
+    padding: 14px 18px;
+}
+
+.gd-exo-group {
+    margin-bottom: 10px;
+
+    &:last-child { margin-bottom: 0; }
+}
+
+.gd-exo-muscle {
+    font-size: 0.7em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: $gd-muted;
+    margin-bottom: 4px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.gd-exo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        font-size: 0.85em;
+        color: $gd-text;
+        padding: 2px 0 2px 14px;
+        position: relative;
+
+        &::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: $gd-green-dim;
+        }
+
+        span {
+            color: $gd-muted;
+            font-size: 0.88em;
+            margin-left: 4px;
+        }
+    }
+}
+
+// ============================================================
+// Cardio block
+// ============================================================
+
+.gd-cardio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.gd-cardio-item {
+    background: $gd-bg2;
+    border: 1px solid $gd-border;
+    border-radius: 10px;
+    padding: 16px 18px;
+}
+
+.gd-cardio-day {
+    font-size: 0.72em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: $gd-green;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 6px;
+}
+
+.gd-cardio-detail {
+    font-size: 0.88em;
+    color: $gd-text;
+}
+
+// ============================================================
+// Stat highlights
+// ============================================================
+
+.gd-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.gd-stat {
+    background: $gd-bg2;
+    border: 1px solid $gd-border;
+    border-radius: 10px;
+    padding: 14px 20px;
+    text-align: center;
+    min-width: 120px;
+}
+
+.gd-stat-value {
+    font-size: 1.6em;
+    font-weight: 800;
+    color: $gd-green;
+    line-height: 1;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.gd-stat-label {
+    font-size: 0.75em;
+    color: $gd-muted;
+    margin-top: 5px;
+}
+
+// ============================================================
+// Repas / assiette
+// ============================================================
+
+.gd-plate {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+
+    @media (max-width: 500px) { grid-template-columns: 1fr; }
+}
+
+.gd-plate-part {
+    background: $gd-bg2;
+    border: 1px solid $gd-border;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.gd-plate-pct {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: $gd-green;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.gd-plate-name {
+    font-size: 0.85em;
+    color: $gd-text;
+    font-weight: 600;
+    margin: 4px 0;
+}
+
+.gd-plate-ex {
+    font-size: 0.75em;
+    color: $gd-muted;
+}
+
+// ============================================================
+// Back to top
+// ============================================================
+
+#back-to-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 50;
+    width: 40px;
+    height: 40px;
+    background: rgba($gd-bg3, .9);
+    border: 1px solid rgba($gd-green, .3);
+    border-radius: 50%;
+    color: $gd-green;
+    font-size: 1.1em;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+    transition: background .15s, border-color .15s;
+
+    &:hover { background: rgba($gd-green, .15); border-color: $gd-green; }
+    &.visible { display: flex; }
+}
+
+// ============================================================
+// Footer
+// ============================================================
+
+.gd-footer {
+    background: $gd-bg2;
+    border-top: 1px solid $gd-border;
+    padding: 40px 28px 28px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.gd-f-identity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.gd-f-name {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: $gd-heading;
+    span { color: $gd-green; }
+}
+
+.gd-f-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    font-size: 0.85em;
+
+    a { color: $gd-muted; &:hover { color: $gd-green; } }
+}
+
+.gd-f-disclaimer {
+    font-size: 0.75em;
+    color: rgba($gd-muted, .7);
+    max-width: 560px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.gd-f-copy {
+    font-size: 0.75em;
+    color: rgba($gd-muted, .5);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+// ============================================================
+// Pages statiques (origines, legal, plan)
+// ============================================================
+
+.gd-static {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 28px 80px;
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+        color: $gd-green;
+        margin: 36px 0 12px;
+    }
+
+    p { margin: 0 0 1em; color: $gd-text; }
+
+    a { color: $gd-green; &:hover { color: $gd-green-h; } }
+}
+
+.gd-static-sub {
+    font-size: 0.85em;
+    color: $gd-muted;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 36px;
+}
+
+// Plan / sitemap
+.gd-sitemap-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding: 8px 0;
+        border-bottom: 1px solid rgba($gd-green, .08);
+        font-size: 0.95em;
+
+        &:last-child { border-bottom: none; }
+
+        a { color: $gd-text; font-weight: 500; &:hover { color: $gd-green; } }
+
+        span {
+            font-size: 0.78em;
+            color: $gd-muted;
+            margin-left: 8px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+    }
+}

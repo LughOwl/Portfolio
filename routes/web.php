@@ -1,10 +1,15 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminGaiaDeerController;
 use App\Http\Controllers\AdminJanusBeeController;
 use App\Http\Controllers\AdminLughOwlController;
 use App\Http\Controllers\AdminPortfolioController;
+use App\Http\Controllers\AdminZeusBugController;
+use App\Http\Controllers\ZeusBugController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GaiaDeerController;
+use App\Http\Controllers\OuranosTaurusController;
 use App\Http\Controllers\JanusBeeController;
 use App\Http\Controllers\LughOwlController;
 use App\Http\Controllers\PortfolioController;
@@ -58,8 +63,42 @@ Route::prefix('fr')->name('fr.')->group(function () {
         Route::get('/{slug}',    [LughOwlController::class, 'article'])->name('article');
     });
 
+    // Gaïa-Deer
+    Route::prefix('gaia-deer')->name('gaia-deer.')->group(function () {
+        Route::get('/',                [GaiaDeerController::class, 'accueil'])->name('accueil');
+        Route::get('/sante',           [GaiaDeerController::class, 'sante'])->name('sante');
+        Route::get('/nutrition',       [GaiaDeerController::class, 'nutrition'])->name('nutrition');
+        Route::get('/investissement',  [GaiaDeerController::class, 'investissement'])->name('investissement');
+        Route::get('/origines',        [GaiaDeerController::class, 'origines'])->name('origines');
+        Route::get('/plan',            [GaiaDeerController::class, 'plan'])->name('plan');
+        Route::get('/legal',           [GaiaDeerController::class, 'legal'])->name('legal');
+    });
+
+    // Ouranos-Taurus
+    Route::prefix('ouranos-taurus')->name('ouranos-taurus.')->group(function () {
+        Route::get('/',                [OuranosTaurusController::class, 'accueil'])->name('accueil');
+        Route::get('/planetes',        [OuranosTaurusController::class, 'planetes'])->name('planetes');
+        Route::get('/constellations',  [OuranosTaurusController::class, 'constellations'])->name('constellations');
+        Route::get('/phenomenes',      [OuranosTaurusController::class, 'phenomenes'])->name('phenomenes');
+        Route::get('/mythologie',      [OuranosTaurusController::class, 'mythologie'])->name('mythologie');
+        Route::get('/observer',        [OuranosTaurusController::class, 'observer'])->name('observer');
+        Route::get('/origines',        [OuranosTaurusController::class, 'origines'])->name('origines');
+        Route::get('/plan',            [OuranosTaurusController::class, 'plan'])->name('plan');
+        Route::get('/legal',           [OuranosTaurusController::class, 'legal'])->name('legal');
+    });
+
+    // Zeus-Bug FR
+    Route::prefix('zeus-bug')->name('zeus-bug.')->group(function () {
+        Route::get('/',                    [ZeusBugController::class, 'accueil'])->name('accueil');
+        Route::get('/article/{id}',        [ZeusBugController::class, 'article'])->name('article');
+        Route::get('/categorie/{slug}',    [ZeusBugController::class, 'categorie'])->name('categorie');
+        Route::get('/origines',            [ZeusBugController::class, 'origines'])->name('origines');
+        Route::get('/plan',                [ZeusBugController::class, 'plan'])->name('plan');
+        Route::get('/legal',               [ZeusBugController::class, 'legal'])->name('legal');
+    });
+
     // Sites en construction
-    foreach (['inari-fox','bragi-bird','gaia-deer','zeus-bug','ouranos-taurus'] as $project) {
+    foreach (['inari-fox','bragi-bird'] as $project) {
         Route::get("/{$project}", [PortfolioController::class, 'construction'])
             ->defaults('project', $project)
             ->name($project);
@@ -108,8 +147,42 @@ Route::prefix('en')->name('en.')->group(function () {
         Route::get('/{slug}',    [LughOwlController::class, 'article'])->name('article');
     });
 
+    // Gaïa-Deer EN
+    Route::prefix('gaia-deer')->name('gaia-deer.')->group(function () {
+        Route::get('/',          [GaiaDeerController::class, 'accueil'])->name('accueil');
+        Route::get('/health',    [GaiaDeerController::class, 'sante'])->name('sante');
+        Route::get('/nutrition', [GaiaDeerController::class, 'nutrition'])->name('nutrition');
+        Route::get('/investing', [GaiaDeerController::class, 'investissement'])->name('investissement');
+        Route::get('/origins',   [GaiaDeerController::class, 'origines'])->name('origines');
+        Route::get('/sitemap',   [GaiaDeerController::class, 'plan'])->name('plan');
+        Route::get('/legal',     [GaiaDeerController::class, 'legal'])->name('legal');
+    });
+
+    // Ouranos-Taurus EN
+    Route::prefix('ouranos-taurus')->name('ouranos-taurus.')->group(function () {
+        Route::get('/',                [OuranosTaurusController::class, 'accueil'])->name('accueil');
+        Route::get('/planets',         [OuranosTaurusController::class, 'planetes'])->name('planetes');
+        Route::get('/constellations',  [OuranosTaurusController::class, 'constellations'])->name('constellations');
+        Route::get('/phenomena',       [OuranosTaurusController::class, 'phenomenes'])->name('phenomenes');
+        Route::get('/mythology',       [OuranosTaurusController::class, 'mythologie'])->name('mythologie');
+        Route::get('/observe',         [OuranosTaurusController::class, 'observer'])->name('observer');
+        Route::get('/origins',         [OuranosTaurusController::class, 'origines'])->name('origines');
+        Route::get('/sitemap',         [OuranosTaurusController::class, 'plan'])->name('plan');
+        Route::get('/legal',           [OuranosTaurusController::class, 'legal'])->name('legal');
+    });
+
+    // Zeus-Bug EN
+    Route::prefix('zeus-bug')->name('zeus-bug.')->group(function () {
+        Route::get('/',                    [ZeusBugController::class, 'accueil'])->name('accueil');
+        Route::get('/article/{id}',        [ZeusBugController::class, 'article'])->name('article');
+        Route::get('/category/{slug}',     [ZeusBugController::class, 'categorie'])->name('categorie');
+        Route::get('/origins',             [ZeusBugController::class, 'origines'])->name('origines');
+        Route::get('/sitemap',             [ZeusBugController::class, 'plan'])->name('plan');
+        Route::get('/legal',               [ZeusBugController::class, 'legal'])->name('legal');
+    });
+
     // Sites en construction
-    foreach (['inari-fox','bragi-bird','gaia-deer','zeus-bug','ouranos-taurus'] as $project) {
+    foreach (['inari-fox','bragi-bird'] as $project) {
         Route::get("/{$project}", [PortfolioController::class, 'construction'])
             ->defaults('project', $project)
             ->defaults('locale', 'en')
@@ -149,6 +222,18 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         Route::delete('/genres/{id}',  [AdminJanusBeeController::class, 'genreDestroy'])->name('genre.destroy');
     });
 
+    // Gaïa-Deer — CRUD sections
+    Route::prefix('sites/gaia-deer')->name('gaia-deer.')->group(function () {
+        Route::get('/',                      [AdminGaiaDeerController::class, 'index'])->name('index');
+        Route::get('/sections/create',       [AdminGaiaDeerController::class, 'create'])->name('section.create');
+        Route::post('/sections',             [AdminGaiaDeerController::class, 'store'])->name('section.store');
+        Route::get('/sections/{id}/edit',    [AdminGaiaDeerController::class, 'edit'])->name('section.edit');
+        Route::put('/sections/{id}',         [AdminGaiaDeerController::class, 'update'])->name('section.update');
+        Route::delete('/sections/{id}',      [AdminGaiaDeerController::class, 'destroy'])->name('section.destroy');
+        Route::post('/sections/{id}/publie', [AdminGaiaDeerController::class, 'togglePublie'])->name('section.publie');
+        Route::post('/sections/{id}/move',   [AdminGaiaDeerController::class, 'move'])->name('section.move');
+    });
+
     // Lugh-Owl — CRUD articles
     Route::prefix('sites/lugh-owl')->name('lugh-owl.')->group(function () {
         Route::get('/',              [AdminLughOwlController::class, 'index'])->name('index');
@@ -160,6 +245,18 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         Route::post('/{id}/publie',  [AdminLughOwlController::class, 'togglePublie'])->name('publie');
         Route::post('/{id}/vedette', [AdminLughOwlController::class, 'toggleVedette'])->name('vedette');
         Route::post('/{id}/move',    [AdminLughOwlController::class, 'move'])->name('move');
+    });
+
+    // Zeus-Bug — CRUD articles
+    Route::prefix('sites/zeus-bug')->name('zeus-bug.')->group(function () {
+        Route::get('/',                      [AdminZeusBugController::class, 'index'])->name('index');
+        Route::get('/create',                [AdminZeusBugController::class, 'create'])->name('create');
+        Route::post('/',                     [AdminZeusBugController::class, 'store'])->name('store');
+        Route::get('/{id}/edit',             [AdminZeusBugController::class, 'edit'])->name('edit');
+        Route::put('/{id}',                  [AdminZeusBugController::class, 'update'])->name('update');
+        Route::delete('/{id}',               [AdminZeusBugController::class, 'destroy'])->name('destroy');
+        Route::post('/{id}/publie',          [AdminZeusBugController::class, 'togglePublie'])->name('publie');
+        Route::post('/{id}/move',            [AdminZeusBugController::class, 'move'])->name('move');
     });
 
     // Autres sites (placeholder)

@@ -82,7 +82,7 @@
                 'en.sitemap'      => 'fr.plan',
                 'en.termsofuse'   => 'fr.legal',
             ];
-            $currentRoute = request()->route()->getName() ?? '';
+            $currentRoute = request()->route()?->getName() ?? '';
             $altRoute     = $langMap[$currentRoute] ?? (($locale ?? 'fr') === 'fr' ? 'en.presentation' : 'fr.presentation');
             $altUrl       = route($altRoute);
             @endphp
