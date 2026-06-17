@@ -99,8 +99,7 @@ body.has-admin-bar .nav-menu { top: 36px; }
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     padding: .8rem 1.5rem;
-    background: rgba(#181818, .92);
-    backdrop-filter: blur(12px);
+    background: var(--bg-surface);
     border-bottom: 1px solid var(--bd);
     box-shadow: 0 1px 0 0 var(--jaune-bee);
     gap: 20px;
