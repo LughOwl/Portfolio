@@ -17,10 +17,17 @@
                 ? 'A collection of recipes to cook with curiosity and simplicity.'
                 : 'Une collection de recettes à cuisiner avec curiosité et simplicité.' }}
         </p>
-        <a href="{{ $isEn ? route('en.inari-fox.recettes') : route('fr.inari-fox.recettes') }}"
-           class="if-hero-cta">
-            {{ $isEn ? 'Browse recipes' : 'Parcourir les recettes' }}
-        </a>
+        <div class="if-hero-ctas">
+            <a href="{{ $isEn ? route('en.inari-fox.recettes') : route('fr.inari-fox.recettes') }}"
+               class="if-hero-cta">
+                {{ $isEn ? 'Browse recipes' : 'Parcourir les recettes' }}
+            </a>
+            <a href="{{ $isEn ? route('en.inari-fox.random') : route('fr.inari-fox.random') }}"
+               class="if-hero-cta if-hero-cta--ghost">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                {{ $isEn ? 'Random recipe' : 'Recette aléatoire' }}
+            </a>
+        </div>
     </div>
 </section>
 

@@ -11,7 +11,7 @@ class IfEtape extends Model
 
     protected $fillable = [
         'recette_id', 'position', 'titre_fr', 'titre_en',
-        'description_fr', 'description_en', 'duree',
+        'description_fr', 'description_en',
     ];
 
     public function recette(): BelongsTo

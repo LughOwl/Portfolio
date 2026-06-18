@@ -14,11 +14,43 @@
 <div class="admin-alert error">✕ {{ session('error') }}</div>
 @endif
 
-<div style="display:flex; gap:12px; margin-bottom:24px;">
+<div style="display:flex; gap:12px; margin-bottom:16px;">
     <a href="{{ route('admin.inari-fox.recette.create') }}" class="btn-admin btn-save">+ Nouvelle recette</a>
     <a href="{{ route('admin.inari-fox.ingredients') }}" class="btn-admin btn-outline">⚙ Référentiel</a>
     <a href="{{ route('fr.inari-fox.recettes') }}" target="_blank" class="btn-admin btn-outline">↗ Voir le site FR</a>
 </div>
+
+<form method="GET" action="{{ route('admin.inari-fox.index') }}"
+      style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:20px;">
+    <select name="categorie" class="admin-input" style="width:auto; min-width:160px;" onchange="this.form.submit()">
+        <option value="">Toutes catégories</option>
+        @foreach(['entree'=>'Entrée','plat_principal'=>'Plat principal','accompagnement'=>'Accompagnement','dessert'=>'Dessert','aperitif'=>'Apéritif','petit_dejeuner'=>'Petit-déjeuner','encas_gouter'=>'Encas / Goûter','boisson'=>'Boisson'] as $val => $label)
+        <option value="{{ $val }}" @selected(request('categorie') === $val)>{{ $label }}</option>
+        @endforeach
+    </select>
+
+    <select name="statut" class="admin-input" style="width:auto; min-width:130px;" onchange="this.form.submit()">
+        <option value="">Tous statuts</option>
+        <option value="publiee"   @selected(request('statut') === 'publiee')>Publiées</option>
+        <option value="brouillon" @selected(request('statut') === 'brouillon')>Brouillons</option>
+    </select>
+
+    <select name="vedette" class="admin-input" style="width:auto; min-width:120px;" onchange="this.form.submit()">
+        <option value="">★ Toutes</option>
+        <option value="1" @selected(request('vedette') === '1')>★ Vedettes seulement</option>
+    </select>
+
+    <select name="tri" class="admin-input" style="width:auto; min-width:140px;" onchange="this.form.submit()">
+        <option value="date"       @selected(request('tri','date') === 'date')>Tri : Date ↓</option>
+        <option value="titre"      @selected(request('tri') === 'titre')>Tri : Titre A→Z</option>
+        <option value="categorie"  @selected(request('tri') === 'categorie')>Tri : Catégorie</option>
+        <option value="difficulte" @selected(request('tri') === 'difficulte')>Tri : Difficulté</option>
+    </select>
+
+    @if(request()->hasAny(['categorie','statut','vedette','tri']))
+    <a href="{{ route('admin.inari-fox.index') }}" class="btn-admin btn-outline btn-sm" style="white-space:nowrap;">✕ Réinitialiser</a>
+    @endif
+</form>
 
 <div class="admin-form-card" style="max-width:none; padding:0; overflow:hidden;">
     <div style="overflow-x:auto;">

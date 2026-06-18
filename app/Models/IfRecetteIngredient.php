@@ -12,7 +12,7 @@ class IfRecetteIngredient extends Model
     protected $table = 'if_recette_ingredient';
 
     protected $fillable = [
-        'recette_id', 'ingredient_id', 'quantite', 'unite_id', 'precision_libre', 'position',
+        'recette_id', 'ingredient_id', 'quantite', 'unite_id', 'precision_libre', 'precision_libre_en', 'position',
     ];
 
     protected $casts = ['quantite' => 'float'];
@@ -34,11 +34,12 @@ class IfRecetteIngredient extends Model
 
     public function nomIngredient(string $locale = 'fr'): string
     {
-        if ($this->precision_libre) {
-            $nom = $locale === 'en' ? $this->ingredient->nom_en : $this->ingredient->nom_fr;
-            return "{$nom} — {$this->precision_libre}";
-        }
-        return $this->ingredient->nomComplet($locale);
+        $nom = $locale === 'en' ? $this->ingredient->nom_en : $this->ingredient->nom_fr;
+        $precision = $locale === 'en'
+            ? ($this->precision_libre_en ?: $this->precision_libre)
+            : $this->precision_libre;
+
+        return $precision ? "{$nom} — {$precision}" : $this->ingredient->nomComplet($locale);
     }
 
     public function abreviationUnite(string $locale = 'fr'): string

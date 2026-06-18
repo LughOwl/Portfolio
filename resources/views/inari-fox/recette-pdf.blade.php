@@ -11,6 +11,7 @@
         color: #1a1a1a;
         background: #fff;
         line-height: 1.55;
+        margin: 18mm 16mm;
     }
 
     /* ── Header ── */
@@ -71,8 +72,8 @@
     .pdf-etape-num    { display: table-cell; width: 28px; vertical-align: top; padding-top: 1px; }
     .pdf-etape-badge  {
         width: 22px; height: 22px; background: #c80000; color: #fff;
-        border-radius: 50%; font-size: 8pt; font-weight: bold;
-        text-align: center; line-height: 22px;
+        border-radius: 50%; font-size: 7.5pt; font-weight: bold;
+        text-align: center; line-height: 1; padding-top: 5px;
     }
     .pdf-etape-body   { display: table-cell; vertical-align: top; padding-left: 8px; }
     .pdf-etape-titre  { font-size: 9.5pt; font-weight: bold; color: #1a1a1a; }
@@ -211,6 +212,7 @@
 <div class="pdf-footer">
     inari-fox.fr &nbsp;·&nbsp; {{ $locale === 'en' ? 'All rights reserved' : 'Tous droits réservés' }} © {{ date('Y') }}
 </div>
+
 
 </body>
 </html>

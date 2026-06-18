@@ -29,14 +29,7 @@
     {{-- Santé physique --}}
     <a href="{{ $locale === 'en' ? route('en.gaia-deer.sante') : route('fr.gaia-deer.sante') }}" class="gd-card">
         <div class="gd-card-visual">
-            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6.5 6.5h1M16.5 6.5h1M6.5 17.5h1M16.5 17.5h1"/>
-                <line x1="4" y1="12" x2="7.5" y2="12"/>
-                <line x1="16.5" y1="12" x2="20" y2="12"/>
-                <line x1="7.5" y1="9" x2="7.5" y2="15"/>
-                <line x1="16.5" y1="9" x2="16.5" y2="15"/>
-                <line x1="7.5" y1="12" x2="16.5" y2="12"/>
-            </svg>
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 6.5 11 11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/></svg>
         </div>
         <div class="gd-card-body">
             <div class="gd-card-cat">{{ $locale === 'en' ? 'Physical health' : 'Santé physique' }}</div>
@@ -53,11 +46,7 @@
     {{-- Nutrition --}}
     <a href="{{ $locale === 'en' ? route('en.gaia-deer.nutrition') : route('fr.gaia-deer.nutrition') }}" class="gd-card">
         <div class="gd-card-visual">
-            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2a7 7 0 0 1 7 7c0 4-3 6-5 8H10c-2-2-5-4-5-8a7 7 0 0 1 7-7z"/>
-                <line x1="12" y1="17" x2="12" y2="22"/>
-                <line x1="9" y1="22" x2="15" y2="22"/>
-            </svg>
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
         </div>
         <div class="gd-card-body">
             <div class="gd-card-cat">Nutrition</div>
@@ -74,10 +63,7 @@
     {{-- Investissement --}}
     <a href="{{ $locale === 'en' ? route('en.gaia-deer.investissement') : route('fr.gaia-deer.investissement') }}" class="gd-card">
         <div class="gd-card-visual">
-            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="3 17 8 11 13 14 21 6"/>
-                <polyline points="17 6 21 6 21 10"/>
-            </svg>
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
         </div>
         <div class="gd-card-body">
             <div class="gd-card-cat">{{ $locale === 'en' ? 'Investing' : 'Investissement' }}</div>

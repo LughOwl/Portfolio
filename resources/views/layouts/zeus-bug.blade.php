@@ -30,6 +30,7 @@
     <meta property="og:site_name" content="Zeus-Bug">
     <meta property="og:title" content="@yield('title', 'Zeus-Bug')">
     <meta property="og:description" content="@yield('meta_description', $isEn ? 'Zeus-Bug — Tech articles and project write-ups.' : 'Zeus-Bug — Articles tech et projets informatiques.')">
+    <meta property="og:image" content="{{ url('/assets/Zeus-Bug/1.logo.png') }}">
     <meta property="og:url" content="{{ request()->url() }}">
     <meta name="twitter:card" content="summary">
     @vite(['resources/sass/zeus-bug.scss', 'resources/js/zeus-bug.js'])

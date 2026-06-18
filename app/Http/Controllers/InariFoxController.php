@@ -93,6 +93,15 @@ class InariFoxController extends Controller
         return $pdf->download($filename);
     }
 
+    public function random(string $locale = 'fr')
+    {
+        $recette = IfRecette::where('est_publiee', true)->inRandomOrder()->firstOrFail();
+
+        $route = $locale === 'en' ? 'en.inari-fox.recette' : 'fr.inari-fox.recette';
+
+        return redirect()->route($route, $recette->slug);
+    }
+
     public function origines(string $locale = 'fr')
     {
         return view('inari-fox.origines', compact('locale'));

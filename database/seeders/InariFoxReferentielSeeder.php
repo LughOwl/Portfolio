@@ -33,7 +33,7 @@ class InariFoxReferentielSeeder extends Seeder
             ['ordre' => 6,  'icone' => '🫘', 'nom_fr' => 'Légumineuses & Soja',           'nom_en' => 'Legumes & Soy'],
             ['ordre' => 7,  'icone' => '🌾', 'nom_fr' => 'Féculents & Céréales',          'nom_en' => 'Starches & Grains'],
             ['ordre' => 8,  'icone' => '🥜', 'nom_fr' => 'Noix & Graines',               'nom_en' => 'Nuts & Seeds'],
-            ['ordre' => 9,  'icone' => '🥩', 'nom_fr' => 'Viandes & Charcuterie',        'nom_en' => 'Meat & Charcuterie'],
+            ['ordre' => 9,  'icone' => '🥩', 'nom_fr' => 'Viandes',                       'nom_en' => 'Meat'],
             ['ordre' => 10, 'icone' => '🐟', 'nom_fr' => 'Poissons & Fruits de mer',     'nom_en' => 'Fish & Seafood'],
             ['ordre' => 11, 'icone' => '🧀', 'nom_fr' => 'Produits laitiers & Œufs',     'nom_en' => 'Dairy & Eggs'],
             ['ordre' => 12, 'icone' => '🧈', 'nom_fr' => 'Matières grasses',             'nom_en' => 'Fats & Oils'],
@@ -42,6 +42,7 @@ class InariFoxReferentielSeeder extends Seeder
             ['ordre' => 15, 'icone' => '⚗️', 'nom_fr' => 'Texturants',                   'nom_en' => 'Thickeners & Texturants'],
             ['ordre' => 16, 'icone' => '🍯', 'nom_fr' => 'Sucres & Douceurs',            'nom_en' => 'Sugars & Sweets'],
             ['ordre' => 17, 'icone' => '🍶', 'nom_fr' => 'Boissons & Liquides',          'nom_en' => 'Beverages & Liquids'],
+            ['ordre' => 18, 'icone' => '🥐', 'nom_fr' => 'Pâtes & préparations de base', 'nom_en' => 'Pastry bases & Preparations'],
         ];
 
         DB::table('if_categories_ingredient')->insert(
@@ -147,9 +148,7 @@ class InariFoxReferentielSeeder extends Seeder
             ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Patate douce',     'nom_en' => 'Sweet potato',      'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Courgette',        'nom_en' => 'Zucchini',          'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Aubergine',        'nom_en' => 'Eggplant',          'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Poivron rouge',    'nom_en' => 'Red bell pepper',   'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Poivron vert',     'nom_en' => 'Green bell pepper', 'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Poivron jaune',    'nom_en' => 'Yellow bell pepper','precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Poivron',           'nom_en' => 'Bell pepper',       'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Brocoli',          'nom_en' => 'Broccoli',          'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Chou-fleur',       'nom_en' => 'Cauliflower',       'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Chou',             'nom_en' => 'Cabbage',           'precision_fr' => $n, 'precision_en' => $n],
@@ -177,6 +176,14 @@ class InariFoxReferentielSeeder extends Seeder
             ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Gingembre',        'nom_en' => 'Ginger',            'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Piment',           'nom_en' => 'Chili pepper',      'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Citronnelle',      'nom_en' => 'Lemongrass',        'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Courge',           'nom_en' => 'Squash',            'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Endive',           'nom_en' => 'Endive',            'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Céleri-rave',      'nom_en' => 'Celeriac',          'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Chou rouge',       'nom_en' => 'Red cabbage',       'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Oignon nouveau',   'nom_en' => 'Spring onion',      'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Mâche',            'nom_en' => 'Lamb\'s lettuce',   'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Choucroute',       'nom_en' => 'Sauerkraut',        'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Légumes'], 'nom_fr' => 'Topinambour',      'nom_en' => 'Jerusalem artichoke','precision_fr' => $n, 'precision_en' => $n],
 
             // ── 3. Champignons ────────────────────────────────────────────────
             ['categorie_id' => $cat['Champignons'], 'nom_fr' => 'Champignon de Paris', 'nom_en' => 'Button mushroom',  'precision_fr' => $n, 'precision_en' => $n],
@@ -215,12 +222,7 @@ class InariFoxReferentielSeeder extends Seeder
 
             // ── 7. Féculents & Céréales ───────────────────────────────────────
             ['categorie_id' => $cat['Féculents & Céréales'], 'nom_fr' => 'Riz',                    'nom_en' => 'Rice',              'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Féculents & Céréales'], 'nom_fr' => 'Riz basmati',            'nom_en' => 'Basmati rice',      'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Féculents & Céréales'], 'nom_fr' => 'Riz pour sushi',         'nom_en' => 'Sushi rice',        'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Féculents & Céréales'], 'nom_fr' => 'Pâtes',                  'nom_en' => 'Pasta',             'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Féculents & Céréales'], 'nom_fr' => 'Spaghetti',              'nom_en' => 'Spaghetti',         'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Féculents & Céréales'], 'nom_fr' => 'Tagliatelle',            'nom_en' => 'Tagliatelle',       'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Féculents & Céréales'], 'nom_fr' => 'Penne',                  'nom_en' => 'Penne',             'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Féculents & Céréales'], 'nom_fr' => 'Lasagne',                'nom_en' => 'Lasagna sheets',    'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Féculents & Céréales'], 'nom_fr' => 'Nouilles de riz',        'nom_en' => 'Rice noodles',      'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Féculents & Céréales'], 'nom_fr' => 'Vermicelles de riz',     'nom_en' => 'Rice vermicelli',   'precision_fr' => $n, 'precision_en' => $n],
@@ -258,24 +260,19 @@ class InariFoxReferentielSeeder extends Seeder
             ['categorie_id' => $cat['Noix & Graines'], 'nom_fr' => 'Cacahuète',          'nom_en' => 'Peanut',          'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Noix & Graines'], 'nom_fr' => 'Noix du Brésil',     'nom_en' => 'Brazil nut',      'precision_fr' => $n, 'precision_en' => $n],
 
-            // ── 9. Viandes & Charcuterie ──────────────────────────────────────
-            // Viandes : ingrédient générique uniquement. La coupe, la partie ou la
-            // préparation (cuisse, blanc, escalope, haché, émincé…) se renseignent
+            // ── 9. Viandes ────────────────────────────────────────────────────
+            // Ingrédient générique uniquement. La coupe, la partie ou la préparation
+            // (cuisse, blanc, escalope, haché, lardons, jambon, bacon…) se renseignent
             // dans le champ precision_libre de la recette.
-            // Charcuterie : produits commerciaux distincts conservés tels quels.
-            ['categorie_id' => $cat['Viandes & Charcuterie'], 'nom_fr' => 'Poulet',     'nom_en' => 'Chicken',    'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Viandes & Charcuterie'], 'nom_fr' => 'Bœuf',       'nom_en' => 'Beef',       'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Viandes & Charcuterie'], 'nom_fr' => 'Porc',       'nom_en' => 'Pork',       'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Viandes & Charcuterie'], 'nom_fr' => 'Agneau',     'nom_en' => 'Lamb',       'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Viandes & Charcuterie'], 'nom_fr' => 'Veau',       'nom_en' => 'Veal',       'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Viandes & Charcuterie'], 'nom_fr' => 'Canard',     'nom_en' => 'Duck',       'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Viandes & Charcuterie'], 'nom_fr' => 'Dinde',      'nom_en' => 'Turkey',     'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Viandes & Charcuterie'], 'nom_fr' => 'Lardons',    'nom_en' => 'Bacon bits', 'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Viandes & Charcuterie'], 'nom_fr' => 'Jambon',     'nom_en' => 'Ham',        'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Viandes & Charcuterie'], 'nom_fr' => 'Saucisse',   'nom_en' => 'Sausage',    'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Viandes & Charcuterie'], 'nom_fr' => 'Chorizo',    'nom_en' => 'Chorizo',    'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Viandes & Charcuterie'], 'nom_fr' => 'Bacon',      'nom_en' => 'Bacon',      'precision_fr' => $n, 'precision_en' => $n],
-            ['categorie_id' => $cat['Viandes & Charcuterie'], 'nom_fr' => 'Pancetta',   'nom_en' => 'Pancetta',   'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Viandes'], 'nom_fr' => 'Poulet',  'nom_en' => 'Chicken', 'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Viandes'], 'nom_fr' => 'Bœuf',    'nom_en' => 'Beef',    'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Viandes'], 'nom_fr' => 'Porc',    'nom_en' => 'Pork',    'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Viandes'], 'nom_fr' => 'Agneau',  'nom_en' => 'Lamb',    'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Viandes'], 'nom_fr' => 'Veau',    'nom_en' => 'Veal',    'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Viandes'], 'nom_fr' => 'Canard',  'nom_en' => 'Duck',    'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Viandes'], 'nom_fr' => 'Dinde',   'nom_en' => 'Turkey',  'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Viandes'], 'nom_fr' => 'Lapin',   'nom_en' => 'Rabbit',  'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Viandes'], 'nom_fr' => 'Gibier',  'nom_en' => 'Game',    'precision_fr' => $n, 'precision_en' => $n],
 
             // ── 10. Poissons & Fruits de mer ──────────────────────────────────
             // Espèces uniquement. La forme (fumé, en conserve, séché…) va dans
@@ -298,6 +295,13 @@ class InariFoxReferentielSeeder extends Seeder
             ['categorie_id' => $cat['Poissons & Fruits de mer'], 'nom_fr' => 'Poulpe',             'nom_en' => 'Octopus',     'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Poissons & Fruits de mer'], 'nom_fr' => 'Calmar',             'nom_en' => 'Squid',       'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Poissons & Fruits de mer'], 'nom_fr' => 'Huître',             'nom_en' => 'Oyster',      'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Poissons & Fruits de mer'], 'nom_fr' => 'Sole',               'nom_en' => 'Sole',        'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Poissons & Fruits de mer'], 'nom_fr' => 'Anchois',            'nom_en' => 'Anchovy',     'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Poissons & Fruits de mer'], 'nom_fr' => 'Turbot',             'nom_en' => 'Turbot',      'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Poissons & Fruits de mer'], 'nom_fr' => 'Rouget',             'nom_en' => 'Red mullet',  'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Poissons & Fruits de mer'], 'nom_fr' => 'Hareng',             'nom_en' => 'Herring',     'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Poissons & Fruits de mer'], 'nom_fr' => 'Palourde',           'nom_en' => 'Clam',        'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Poissons & Fruits de mer'], 'nom_fr' => 'Seiche',             'nom_en' => 'Cuttlefish',  'precision_fr' => $n, 'precision_en' => $n],
 
             // ── 11. Produits laitiers & Œufs ──────────────────────────────────
             ['categorie_id' => $cat['Produits laitiers & Œufs'], 'nom_fr' => 'Œuf',                   'nom_en' => 'Egg',               'precision_fr' => $n, 'precision_en' => $n],
@@ -316,6 +320,9 @@ class InariFoxReferentielSeeder extends Seeder
             ['categorie_id' => $cat['Produits laitiers & Œufs'], 'nom_fr' => 'Roquefort',            'nom_en' => 'Roquefort',         'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Produits laitiers & Œufs'], 'nom_fr' => 'Fromage de chèvre',    'nom_en' => "Goat's cheese",     'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Produits laitiers & Œufs'], 'nom_fr' => 'Mascarpone',           'nom_en' => 'Mascarpone',        'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Produits laitiers & Œufs'], 'nom_fr' => 'Reblochon',           'nom_en' => 'Reblochon',         'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Produits laitiers & Œufs'], 'nom_fr' => 'Camembert',           'nom_en' => 'Camembert',         'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Produits laitiers & Œufs'], 'nom_fr' => 'Brie',                'nom_en' => 'Brie',              'precision_fr' => $n, 'precision_en' => $n],
 
             // ── 12. Matières grasses ──────────────────────────────────────────
             // Huile de coco supprimée : utiliser "Noix de coco" (cat. 8) avec
@@ -327,6 +334,7 @@ class InariFoxReferentielSeeder extends Seeder
             ['categorie_id' => $cat['Matières grasses'], 'nom_fr' => 'Huile de noix',    'nom_en' => 'Walnut oil',   'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Matières grasses'], 'nom_fr' => 'Graisse de canard','nom_en' => 'Duck fat',     'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Matières grasses'], 'nom_fr' => 'Margarine',        'nom_en' => 'Margarine',    'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Matières grasses'], 'nom_fr' => 'Saindoux',         'nom_en' => 'Lard',         'precision_fr' => $n, 'precision_en' => $n],
 
             // ── 13. Épices & Herbes ───────────────────────────────────────────
             // Gingembre frais = Légumes (cat. 2). Ici : formes séchées/moulues uniquement.
@@ -361,6 +369,10 @@ class InariFoxReferentielSeeder extends Seeder
             ['categorie_id' => $cat['Épices & Herbes'], 'nom_fr' => 'Vanille',             'nom_en' => 'Vanilla',           'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Épices & Herbes'], 'nom_fr' => 'Furikake',            'nom_en' => 'Furikake',          'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Épices & Herbes'], 'nom_fr' => 'Shichimi togarashi',  'nom_en' => 'Shichimi togarashi','precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Épices & Herbes'], 'nom_fr' => 'Cerfeuil',            'nom_en' => 'Chervil',           'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Épices & Herbes'], 'nom_fr' => 'Baies roses',         'nom_en' => 'Pink peppercorns',  'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Épices & Herbes'], 'nom_fr' => 'Genièvre',            'nom_en' => 'Juniper berries',   'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Épices & Herbes'], 'nom_fr' => 'Poivre de Sichuan',   'nom_en' => 'Sichuan pepper',    'precision_fr' => $n, 'precision_en' => $n],
 
             // ── 14. Condiments & Sauces ───────────────────────────────────────
             ['categorie_id' => $cat['Condiments & Sauces'], 'nom_fr' => 'Sauce soja',            'nom_en' => 'Soy sauce',           'precision_fr' => $n, 'precision_en' => $n],
@@ -386,6 +398,8 @@ class InariFoxReferentielSeeder extends Seeder
             ['categorie_id' => $cat['Condiments & Sauces'], 'nom_fr' => 'Tahini',                'nom_en' => 'Tahini',              'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Condiments & Sauces'], 'nom_fr' => 'Beurre de cacahuète',   'nom_en' => 'Peanut butter',       'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Condiments & Sauces'], 'nom_fr' => 'Pâte de curry',         'nom_en' => 'Curry paste',         'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Condiments & Sauces'], 'nom_fr' => 'Vinaigre de cidre',     'nom_en' => 'Apple cider vinegar', 'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Condiments & Sauces'], 'nom_fr' => 'Harissa',               'nom_en' => 'Harissa',             'precision_fr' => $n, 'precision_en' => $n],
 
             // ── 15. Texturants ────────────────────────────────────────────────
             ['categorie_id' => $cat['Texturants'], 'nom_fr' => 'Maïzena',              'nom_en' => 'Cornstarch',      'precision_fr' => $n, 'precision_en' => $n],
@@ -431,6 +445,35 @@ class InariFoxReferentielSeeder extends Seeder
             ['categorie_id' => $cat['Boissons & Liquides'], 'nom_fr' => 'Café',                    'nom_en' => 'Coffee',              'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Boissons & Liquides'], 'nom_fr' => 'Thé',                     'nom_en' => 'Tea',                 'precision_fr' => $n, 'precision_en' => $n],
             ['categorie_id' => $cat['Boissons & Liquides'], 'nom_fr' => 'Eau de fleur d\'oranger', 'nom_en' => 'Orange blossom water','precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Boissons & Liquides'], 'nom_fr' => 'Bouillon de veau',       'nom_en' => 'Veal broth',          'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Boissons & Liquides'], 'nom_fr' => 'Bouillon de poisson',    'nom_en' => 'Fish broth',          'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Boissons & Liquides'], 'nom_fr' => 'Cidre',                  'nom_en' => 'Cider',               'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Boissons & Liquides'], 'nom_fr' => 'Bière',                  'nom_en' => 'Beer',                'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Boissons & Liquides'], 'nom_fr' => 'Calvados',               'nom_en' => 'Calvados',            'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Boissons & Liquides'], 'nom_fr' => 'Porto',                  'nom_en' => 'Port wine',           'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Boissons & Liquides'], 'nom_fr' => 'Kirsch',                 'nom_en' => 'Kirsch',              'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Boissons & Liquides'], 'nom_fr' => 'Grand Marnier',          'nom_en' => 'Grand Marnier',       'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Boissons & Liquides'], 'nom_fr' => 'Cointreau',              'nom_en' => 'Cointreau',           'precision_fr' => $n, 'precision_en' => $n],
+
+            // ── 18. Pâtes & préparations de base ─────────────────────────────
+            // Préparations de base réutilisables achetées ou faites maison.
+            // Permet d'utiliser "Pâte feuilletée" directement dans une recette
+            // sans avoir à lister chaque ingrédient de la pâte.
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Pâte brisée',       'nom_en' => 'Shortcrust pastry',    'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Pâte sablée',       'nom_en' => 'Sweet shortcrust',     'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Pâte feuilletée',   'nom_en' => 'Puff pastry',          'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Pâte à choux',      'nom_en' => 'Choux pastry',         'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Pâte à pizza',      'nom_en' => 'Pizza dough',          'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Pâte à pain',       'nom_en' => 'Bread dough',          'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Pâte phyllo',       'nom_en' => 'Phyllo dough',         'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Crème pâtissière',  'nom_en' => 'Pastry cream',         'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Crème chantilly',   'nom_en' => 'Whipped cream',        'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Fond de veau',      'nom_en' => 'Veal stock',           'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Fond de volaille',  'nom_en' => 'Chicken stock',        'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Pralin',            'nom_en' => 'Praline paste',        'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Pâte de noisette',  'nom_en' => 'Hazelnut paste',       'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Pâte d\'amande',    'nom_en' => 'Almond paste',         'precision_fr' => $n, 'precision_en' => $n],
+            ['categorie_id' => $cat['Pâtes & préparations de base'], 'nom_fr' => 'Crème de marrons',  'nom_en' => 'Chestnut cream',       'precision_fr' => $n, 'precision_en' => $n],
         ];
 
         DB::table('if_ingredients')->insert(

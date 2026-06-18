@@ -20,11 +20,28 @@ class AdminInariFoxController extends Controller
 {
     // ── Index ─────────────────────────────────────────────────────────────────
 
-    public function index(): View
+    public function index(Request $request): View
     {
-        $recettes = IfRecette::withCount(['ingredients', 'etapes'])
-            ->latest()
-            ->paginate(20);
+        $query = IfRecette::withCount(['ingredients', 'etapes']);
+
+        if ($request->filled('categorie')) {
+            $query->where('categorie', $request->categorie);
+        }
+        if ($request->filled('statut')) {
+            $query->where('est_publiee', $request->statut === 'publiee');
+        }
+        if ($request->filled('vedette')) {
+            $query->where('est_vedette', true);
+        }
+
+        match ($request->get('tri', 'date')) {
+            'titre'      => $query->orderBy('titre_fr'),
+            'difficulte' => $query->orderByRaw("FIELD(difficulte,'facile','moyen','difficile')"),
+            'categorie'  => $query->orderBy('categorie'),
+            default      => $query->latest(),
+        };
+
+        $recettes = $query->paginate(20)->withQueryString();
 
         return view('admin.sites.inari-fox', compact('recettes'));
     }
@@ -324,8 +341,9 @@ class AdminInariFoxController extends Controller
                 'ingredient_id' => $row['ingredient_id'],
                 'quantite'      => $row['quantite'],
                 'unite_id'      => $row['unite_id'],
-                'precision_libre' => $row['precision_libre'] ?? null,
-                'position'      => $pos,
+                'precision_libre'    => $row['precision_libre']    ?? null,
+                'precision_libre_en' => $row['precision_libre_en'] ?? null,
+                'position'           => $pos,
             ]);
         }
     }
@@ -345,7 +363,6 @@ class AdminInariFoxController extends Controller
                 'titre_en'       => $row['titre_en'] ?? $row['titre_fr'],
                 'description_fr' => $row['description_fr'],
                 'description_en' => $row['description_en'] ?? $row['description_fr'],
-                'duree'          => !empty($row['duree']) ? (int)$row['duree'] : null,
             ]);
         }
     }

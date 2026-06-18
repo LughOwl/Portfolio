@@ -391,9 +391,18 @@ a:hover { color: $if-text; }
     max-width: 440px;
 }
 
-.if-hero-cta {
-    display: inline-block;
+.if-hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
     margin-top: 8px;
+}
+
+.if-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 10px 28px;
     background: $if-red;
     color: $if-text;
@@ -403,6 +412,13 @@ a:hover { color: $if-text; }
     letter-spacing: .02em;
     transition: background .2s, transform .15s;
     &:hover { background: $if-red-h; color: $if-text; transform: translateY(-1px); }
+
+    &--ghost {
+        background: transparent;
+        border: 2px solid rgba($if-text, .35);
+        color: $if-text;
+        &:hover { background: rgba($if-text, .08); border-color: rgba($if-text, .6); transform: translateY(-1px); }
+    }
 }
 
 // ============================================================

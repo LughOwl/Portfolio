@@ -114,6 +114,7 @@ Route::prefix('fr')->name('fr.')->group(function () {
     Route::prefix('inari-fox')->name('inari-fox.')->group(function () {
         Route::get('/',                  [InariFoxController::class, 'accueil'])->defaults('locale', 'fr')->name('accueil');
         Route::get('/recettes',          [InariFoxController::class, 'recettes'])->defaults('locale', 'fr')->name('recettes');
+        Route::get('/aleatoire',         [InariFoxController::class, 'random'])->defaults('locale', 'fr')->name('random');
         Route::get('/recettes/{slug}/pdf', [InariFoxController::class, 'pdf'])->defaults('locale', 'fr')->name('recette.pdf');
         Route::get('/recettes/{slug}',   [InariFoxController::class, 'recette'])->defaults('locale', 'fr')->name('recette');
         Route::get('/origines',          [InariFoxController::class, 'origines'])->defaults('locale', 'fr')->name('origines');
@@ -211,6 +212,7 @@ Route::prefix('en')->name('en.')->group(function () {
     Route::prefix('inari-fox')->name('inari-fox.')->group(function () {
         Route::get('/',                  [InariFoxController::class, 'accueil'])->defaults('locale', 'en')->name('accueil');
         Route::get('/recipes',           [InariFoxController::class, 'recettes'])->defaults('locale', 'en')->name('recettes');
+        Route::get('/random',            [InariFoxController::class, 'random'])->defaults('locale', 'en')->name('random');
         Route::get('/recipes/{slug}/pdf', [InariFoxController::class, 'pdf'])->defaults('locale', 'en')->name('recette.pdf');
         Route::get('/recipes/{slug}',    [InariFoxController::class, 'recette'])->defaults('locale', 'en')->name('recette');
         Route::get('/origins',           [InariFoxController::class, 'origines'])->defaults('locale', 'en')->name('origines');
